@@ -22,6 +22,38 @@ https://<你的用户名>.github.io/<仓库名>/
 | 文件 | 说明 |
 | --- | --- |
 | `index.html` | 整个网站，单文件，无外部依赖、无 CDN、无统计脚本，可离线打开 |
+| `push-to-github.bat` | 首次上传用的脚本（本地提交已就绪，见下） |
+| `.nojekyll` | 让 GitHub Pages 原样发布文件，不做 Jekyll 处理 |
+
+## 发布到 GitHub Pages
+
+### 方式一：本站脚本（已装 Git 的人）
+
+把 `push-to-github.bat` 用鼠标拖进 **Git CMD** 或 **Git Bash** 窗口后回车，或在该目录执行：
+
+```
+push-to-github.bat <你的GitHub用户名> <仓库名>
+```
+
+脚本会修正提交归属、绑定远程、推送，并在成功后打印 GitHub Pages 的开启地址。
+
+若没有现成仓库，先到 <https://github.com/new> 建一个 **Public** 仓库，
+**不要**勾选 "Add a README file"。首次推送会弹出浏览器要求登录并授权。
+
+### 方式二：GitHub Desktop（不想碰命令行）
+
+1. 安装 <https://desktop.github.com>，登录 GitHub。
+2. File → Add local repository → 选择本文件夹。
+3. 点 **Publish repository**，取消勾选 "Keep this code private"，发布。
+
+### 方式三：网页上传（完全不装工具）
+
+1. 在 <https://github.com/new> 建一个 Public 仓库，不勾选任何初始化文件。
+2. 进入空仓库页，点 "uploading an existing file"。
+3. 把 `index.html` 和 `.nojekyll` 拖进去（文件名必须是 `index.html`），Commit。
+4. Settings → Pages → Source 选 `Deploy from a branch`，Branch 选 `main`、目录选 `/ (root)`，Save。
+
+三种方式完成后效果相同：等约一分钟，访问 `https://<用户名>.github.io/<仓库名>/`。
 
 ## 关于原文
 
