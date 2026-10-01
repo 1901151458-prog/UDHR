@@ -1,2 +1,3 @@
 # 统一以 LF 存入仓库，避免不同系统检出时产生无意义的整文件 diff
 * text=auto eol=lf
+push-to-github.bat text eol=crlf
