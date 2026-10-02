@@ -832,6 +832,132 @@
     clip:rect(0 0 0 0); clip-path:inset(50%);
   }
 
+  /* ============================================================
+     思想来源：每一条之下的伸缩说明（基督教 / 儒家 / 历史渊源）
+     用原生 details，键盘可操作、读屏器可读、无脚本也能展开
+     ============================================================ */
+  .sources{
+    max-width:760px;
+    margin:clamp(22px,3.2vh,32px) auto 0;
+    border-top:1px solid rgba(143,195,240,.20);
+  }
+  .sources summary{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:14px;
+    padding:clamp(13px,1.9vh,17px) 2px;
+    font-size:clamp(12.5px,1.08vw,14.5px);
+    font-weight:600; letter-spacing:.1em;
+    color:rgba(200,216,238,.86);
+    cursor:pointer;
+    list-style:none;
+    transition:color .3s ease;
+  }
+  .sources summary::-webkit-details-marker{display:none}
+  .sources summary::marker{content:''}
+  .sources summary:hover{color:var(--gold-lit)}
+  .sources summary:focus-visible{
+    outline:2px solid var(--un-blue-lit);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+  .sources summary .cap{
+    display:flex; align-items:baseline; gap:.7em;
+    flex-wrap:wrap;
+  }
+  .sources summary .cap .en{
+    font-size:.88em; font-weight:500; letter-spacing:.06em;
+    color:rgba(168,184,207,.72);
+  }
+  .sources summary .chev{
+    flex:none;
+    font-size:.92em;
+    color:var(--gold);
+    opacity:.85;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .sources[open] summary .chev{transform:rotate(180deg)}
+  .sources[open] summary{border-bottom:1px solid rgba(143,195,240,.14)}
+
+  .src-body{padding:clamp(16px,2.4vh,22px) 2px clamp(4px,1vh,8px)}
+  .src-note{
+    margin-bottom:clamp(18px,2.6vh,24px);
+    font-size:clamp(12.5px,1.06vw,14px);
+    line-height:1.95; letter-spacing:.02em;
+    color:rgba(180,196,219,.94);
+  }
+  .quote{
+    margin:0 0 clamp(16px,2.4vh,22px);
+    padding-left:clamp(13px,1.6vw,18px);
+    border-left:2px solid rgba(91,146,229,.42);
+  }
+  .quote:last-child{margin-bottom:0}
+  .quote.conf{border-left-color:rgba(217,179,130,.45)}
+  .quote .tradition{
+    display:inline-block;
+    margin-bottom:.5em;
+    padding:.16em .62em;
+    font-size:clamp(10px,0.9vw,11.5px);
+    font-weight:700; letter-spacing:.2em;
+    color:var(--gold-lit);
+    background:rgba(217,179,130,.10);
+    border:1px solid rgba(217,179,130,.28);
+    border-radius:3px;
+  }
+  .quote.conf .tradition{
+    color:var(--un-blue-lit);
+    background:rgba(91,146,229,.10);
+    border-color:rgba(91,146,229,.30);
+  }
+  .quote .txt{
+    font-size:clamp(15px,1.32vw,18px);
+    line-height:1.92; letter-spacing:.02em;
+    color:var(--ink);
+  }
+  .quote .txt.tw{
+    margin-top:.4em;
+    font-size:clamp(13.5px,1.14vw,16px);
+    color:var(--ink-dim);
+  }
+  .quote .src{
+    margin-top:.7em;
+    font-size:clamp(11.5px,0.98vw,13px);
+    line-height:1.7; letter-spacing:.04em;
+    color:var(--gold);
+    opacity:.92;
+  }
+  .quote .src .en{
+    display:block;
+    color:rgba(168,184,207,.82);
+    letter-spacing:.02em;
+  }
+  .quote .gloss{
+    margin-top:.6em;
+    font-size:clamp(12px,1.02vw,13.5px);
+    line-height:1.85;
+    color:rgba(180,196,219,.92);
+  }
+  .src-hist{
+    margin-top:clamp(18px,2.6vh,24px);
+    padding-top:clamp(14px,2vh,18px);
+    border-top:1px dashed rgba(143,195,240,.22);
+    font-size:clamp(12.5px,1.06vw,14px);
+    line-height:1.95; color:rgba(180,196,219,.94);
+  }
+  .src-hist .tag{
+    display:block;
+    margin-bottom:.55em;
+    font-size:clamp(10px,0.9vw,11.5px);
+    font-weight:700; letter-spacing:.22em;
+    color:var(--gold);
+  }
+  .src-disclaimer{
+    margin-top:clamp(14px,2vh,18px);
+    font-size:clamp(11px,0.94vw,12.5px);
+    line-height:1.8;
+    color:rgba(168,184,207,.76);
+  }
+  .src-disclaimer b{color:rgba(200,216,238,.9); font-weight:600}
+
   @media (max-width:640px){
     .hero{padding-top:max(4vh,30px)}
     .lang{text-align:left}
@@ -876,6 +1002,11 @@
   @media print{
     .bg-art,#bg,.hero-clear,.side-note,.scroll-cue,.read-progress,
     .rights-bar,.toast{display:none !important}
+    /* 打印时把思想来源全部展开：纸上不该藏着内容 */
+    .sources>summary{display:none !important}
+    details.sources .src-body{display:block !important}
+    .src-body{padding:0}
+    .quote{break-inside:avoid}
     body{background:#fff; color:#000}
     .reveal{opacity:1 !important}
   }
@@ -1208,96 +1339,465 @@ const UNITS = [
    —— 此段不属于《世界人权宣言》正文，仅为阅读引导。
    ══════════════════════════════════════════════════════════════ */
 const NOTES = {
-  1:{cn:'你出生的那天，没有人问过你愿不愿意来。但从那一刻起，你就已经是一个人了。',
-     tw:'你出生的那天，沒有人問過你願不願意來。但從那一刻起，你就已經是一個人了。',
-     en:'No one asked whether you wanted to be born. From that moment, you were already a person.'},
+  1:{cn:'生在哪里、父母是谁、是男是女，都不是你能选的。但你是什么人，从来不需要谁来批准。',
+     tw:'生在哪裡、父母是誰、是男是女，都不是你能選的。但你是什麼人，從來不需要誰來批准。',
+     en:'Where you are born, to whom, and as which sex is not your choice. But what you are has never needed anyone’s approval.'},
   2:{cn:'同一个候诊室里坐着不同肤色、不同口音、不同信仰的人。叫到号的时候，大家都往前走一步。',
      tw:'同一個候診室裡坐著不同膚色、不同口音、不同信仰的人。叫到號的時候，大家都往前走一步。',
      en:'Different colours, different accents, different faiths in one waiting room. When the number is called, everyone steps forward.'},
-  3:{cn:'孩子的第一声哭，母亲的第一次呼吸。这两件事，是同一个人的权利。',
-     tw:'孩子的第一聲哭，母親的第一次呼吸。這兩件事，是同一個人的權利。',
-     en:'A child’s first cry and a mother’s first breath: the same person’s right.'},
+  3:{cn:'出生纸上按下第一个手印，往后的日子才有可能。活着的每一天，都是这一条的兑现。',
+     tw:'出生紙上按下第一個手印，往後的日子才有可能。活著的每一天，都是這一條的兌現。',
+     en:'The first fingerprint on a birth record: only then can the rest of life follow. Every day alive is this article kept.'},
   4:{cn:'没有人应该被当作可以买卖的东西。这句话，人类用了几千年才写下来。',
-     tw:'沒有人應該被當作可以買賣的東西。這句話，人類用了几千年才寫下來。',
+     tw:'沒有人應該被當作可以買賣的東西。這句話，人類用幾千年才寫下來。',
      en:'No one should be a thing that can be bought. It took humanity millennia to write this down.'},
-  5:{cn:'疼痛没有语言，也不该被用来让人开口。',
-     tw:'疼痛沒有語言，也不該被用來讓人開口。',
-     en:'Pain has no language, and must never be used to make someone speak.'},
-  6:{cn:'名字被写进一份文件，你从此可以被找到、被承认、被负责。',
-     tw:'名字被寫進一份文件，你從此可以被找到、被承認、被負責。',
-     en:'A name entered into a record: from then on you can be found, recognised, and answered for.'},
-  7:{cn:'同样的错误，不该因为是谁犯的就得到两种结局。',
-     tw:'同樣的錯誤，不該因為是誰犯的就得到兩種結局。',
-     en:'The same mistake should not end two different ways depending on who made it.'},
-  8:{cn:'门被关上的时候，还应该有一扇可以敲的门。',
-     tw:'門被關上的時候，還應該有一扇可以敲的門。',
-     en:'When one door is shut, there must still be a door to knock on.'},
-  9:{cn:'一个人可以在半夜被带走，而没有人需要解释为什么——这样的事，不该再有下一次。',
-     tw:'一個人可以在半夜被帶走，而沒有人需要解釋為什麼——這樣的事，不該再有下一次。',
-     en:'Someone taken away at midnight with no explanation owed to anyone: never again.'},
+  5:{cn:'他后来一直记得那间屋子的灯光。人可以被关起来，但不必被弄坏。',
+     tw:'他後來一直記得那間屋子的燈光。人可以被關起來，但不必被弄壞。',
+     en:'He would remember that room’s light for the rest of his life. A person may be confined; there is no need to break them.'},
+  6:{cn:'报户口那天写下的名字，是他第一次被正式当作一个人算数。',
+     tw:'報戶口那天寫下的名字，是他第一次被正式當作一個人算數。',
+     en:'The name written down at registration was the first time he officially counted as a person.'},
+  7:{cn:'两件相似的事，只因为人的不同，落成了两样结局。法律要保证的，是同一把尺子。',
+     tw:'兩件相似的事，只因為人的不同，落成了兩樣結局。法律要保證的，是同一把尺子。',
+     en:'Two similar cases, two different endings, only because the people differed. What the law must guarantee is one measure.'},
+  8:{cn:'路都走不通的时候，还应该剩下一处可以申诉的地方，并且真的有人受理。',
+     tw:'路都走不通的時候，還應該剩下一處可以申訴的地方，並且真的有人受理。',
+     en:'When every road is blocked, there must still be one place to appeal — and someone who actually takes it up.'},
+  9:{cn:'带走一个人，总该有一张写清理由的纸，和一个能对得上的罪名。',
+     tw:'帶走一個人，總該有一張寫清理由的紙，和一個能對得上的罪名。',
+     en:'Taking a person away should require a paper that states the reason, and a charge that can be answered.'},
   10:{cn:'审你的人，不能同时是抓你的人，也不能是判你的人。',
       tw:'審你的人，不能同時是抓你的人，也不能是判你的人。',
       en:'Those who judge you cannot also be the ones who arrest you.'},
-  11:{cn:'在证明有罪之前，你先是一个无罪的人。',
-      tw:'在證明有罪之前，你先是一個無罪的人。',
-      en:'Before you are proven guilty, you are first an innocent person.'},
-  12:{cn:'你的房间、你的信、你的家人，构成了不必向任何人交代的那一部分生活。',
-      tw:'你的房間、你的信、你的家人，構成了不必向任何人交代的那一部分生活。',
-      en:'Your room, your letters, your family make up the part of life that answers to no one.'},
-  13:{cn:'世界很大，你应该能去看看，也应该回得来。',
-      tw:'世界很大，你應該能去看看，也應該回得來。',
-      en:'The world is wide: you should be able to go and see it, and to come home.'},
-  14:{cn:'逃出来的人，最后的一点力气用来敲门。开门的人是什么态度，就是这一条的分量。',
-      tw:'逃出來的人，最後的一點力氣用來敲門。開門的人是什麼態度，就是這一條的分量。',
-      en:'Someone who fled spends their last strength knocking. How they are received is the weight of this article.'},
-  15:{cn:'孩子要有自己的名字，也要有自己的祖国。这两样都不该被拿走。',
-      tw:'孩子要有自己的名字，也要有自己的祖國。這兩樣都不該被拿走。',
-      en:'A child needs a name, and a country. Neither should be taken away.'},
-  16:{cn:'婚礼上那句「我愿意」，必须是两个人都能说出口的。',
-      tw:'婚禮上那句「我願意」，必須是兩個人都能說出口的。',
-      en:'The “I do” at a wedding must be something both people can actually say.'},
-  17:{cn:'一间屋子、一块田、一张存折。它不只是一件东西，是一个人站得住的地方。',
-      tw:'一間屋子、一塊田、一張存摺。它不只是一件東西，是一個人站得住的地方。',
-      en:'A room, a field, a passbook: not merely things, but the place a person stands on.'},
-  18:{cn:'信什么、不信什么，是不能被规定的。',
-      tw:'信什麼、不信什麼，是不能被規定的。',
-      en:'What you believe, and what you do not, cannot be prescribed.'},
-  19:{cn:'有人敢说出和别人不一样的话，这个社会才不至于走错方向。',
-      tw:'有人敢說出和別人不一樣的話，這個社會才不至於走錯方向。',
-      en:'A society only keeps its bearings if someone dares to say the unwelcome thing.'},
-  20:{cn:'聚在一起的人，只要没有妨碍别人，就没有必要害怕。',
-      tw:'聚在一起的人，只要沒有妨礙別人，就沒有必要害怕。',
-      en:'People gathered together, harming no one, have nothing to fear.'},
+  11:{cn:'判决还没有下来之前，他可以抬着头在法庭上等。',
+      tw:'判決還沒有下來之前，他可以抬著頭在法庭上等。',
+      en:'Before the verdict comes down, he may wait in that courtroom with his head up.'},
+  12:{cn:'关上门，和自己家里人待着，这一段不需要向谁汇报。',
+      tw:'關上門，和自己家裡人待著，這一段不需要向誰匯報。',
+      en:'Closing the door and being with your own family: that hour owes no report to anyone.'},
+  13:{cn:'既出得去，也回得来——一个人对世界的想象才不会被自己的出生地困住。',
+      tw:'既出得去，也回得來——一個人對世界的想像才不會被自己的出生地困住。',
+      en:'Able to leave, and able to return: only then is your idea of the world not confined to your birthplace.'},
+  14:{cn:'逃出来的人，最后一点力气用来敲门。门会不会开、开门的脸色，就是这一条的分量。',
+      tw:'逃出來的人，最後一點力氣用來敲門。門會不會開、開門的臉色，就是這一條的分量。',
+      en:'Someone who fled spends their last strength knocking. Whether the door opens — and with what face — is the whole weight of this article.'},
+  15:{cn:'出生当天写下的名字，和那本护照，不是谁给的恩惠，是他本来就有的东西。',
+      tw:'出生當天寫下的名字，和那本護照，不是誰給的恩惠，是他本來就有的東西。',
+      en:'The name written on the day of birth, and that passport: not a favour granted, but what was already his.'},
+  16:{cn:'婚礼上那句「我愿意」，必须是两个人都真的能说出口的。',
+      tw:'婚禮上那句「我願意」，必須是兩個人都真的能說出口的。',
+      en:'The “I do” at a wedding must be something both people can truly say.'},
+  17:{cn:'一块田、一张存折、一间屋子的门锁。它不只是一件东西，是一个人站得住的地方。',
+      tw:'一塊田、一張存摺、一間屋子的門鎖。它不只是一件東西，是一個人站得住的地方。',
+      en:'A field, a passbook, the lock on a door: not merely things, but the place a person stands on.'},
+  18:{cn:'信什么、不信什么，是一个人心里的事，没有办法用规定去改。',
+      tw:'信什麼、不信什麼，是一個人心裡的事，沒有辦法用規定去改。',
+      en:'What one believes, and what one does not, is a matter of the heart; no regulation can rewrite it.'},
+  19:{cn:'如果没有人敢说不中听的话，就没有人知道事情是在哪一步走错的。',
+      tw:'如果沒有人敢說不中聽的話，就沒有人知道事情是在哪一步走錯的。',
+      en:'If no one dares to say the unwelcome thing, no one will know at which step things went wrong.'},
+  20:{cn:'几个人围着一张桌子说话、喝茶。只要没有妨碍别人，就不该因此害怕。',
+      tw:'幾個人圍著一張桌子說話、喝茶。只要沒有妨礙別人，就不該因此害怕。',
+      en:'A few people around one table, talking and drinking tea. If they harm no one, they should have nothing to fear.'},
   21:{cn:'这件事跟你有关系，所以在做决定的时候，你应该在场。',
       tw:'這件事跟你有關係，所以在做決定的時候，你應該在場。',
       en:'It concerns you, so you should be present when the decision is made.'},
-  22:{cn:'老了、病了、失业了——这不是谁不够努力，而是一个社会该接住的地方。',
-      tw:'老了、病了、失業了——這不是誰不夠努力，而是一個社會該接住的地方。',
-      en:'To grow old, to fall ill, to lose work: not a failure of effort, but what a society must catch.'},
-  23:{cn:'一天认真地工作，换来一个家可以过得下去的日子。',
-      tw:'一天認真的工作，換來一個家可以過得下去的日子。',
-      en:'An honest day’s work, in exchange for a life a family can actually live.'},
-  24:{cn:'深夜关灯之后的那几个小时，是不属于任何人的。',
-      tw:'深夜關燈之後的那幾個小時，是不屬於任何人的。',
-      en:'The hours after the lights go out belong to no one else.'},
-  25:{cn:'饭桌上的饭菜，孩子的药，冬天的暖气。尊严常常就是这些很具体的东西。',
-      tw:'飯桌上的飯菜，孩子的藥，冬天的暖氣。尊嚴常常就是這些很具體的東西。',
-      en:'Food on the table, a child’s medicine, heat in winter: dignity is often made of such concrete things.'},
-  26:{cn:'上学，是为了让一个孩子成为他自己，而不是成为别人需要的样子。',
-      tw:'上學，是為了讓一個孩子成為他自己，而不是成為別人需要的樣子。',
-      en:'Schooling is so a child can become themselves, not become what someone else needs.'},
-  27:{cn:'有人写下一首歌、一本书、一个算式。那些东西后来都成了我们共同的。',
-      tw:'有人寫下一首歌、一本書、一個算式。那些東西後來都成了我們共同的。',
-      en:'Someone wrote a song, a book, an equation. In time they became ours together.'},
-  28:{cn:'你希望的世界，不该只存在于希望里，它应该是一个可以要求的东西。',
-      tw:'你希望的世界，不該只存在於希望裡，它應該是一個可以要求的東西。',
+  22:{cn:'失业、生病、变老，都不是谁不够努力。人撑不住的时候，总得有个地方接一下。',
+      tw:'失業、生病、變老，都不是誰不夠努力。人撐不住的時候，總得有個地方接一下。',
+      en:'To lose work, to fall ill, to grow old: none of these is a failure of effort. When a person cannot hold on, something must hold them.'},
+  23:{cn:'一天的工作，换回来的应当是一个家能过得下去的日子，而不只是一个人的饭钱。',
+      tw:'一天的工作，換回來的應當是一個家能過得下去的日子，而不只是一個人的飯錢。',
+      en:'A day’s work should buy a life a family can actually live, not merely one person’s meals.'},
+  24:{cn:'一天做下来已经很累了。下班以后的休息，需要解释才能被拿走。',
+      tw:'一天做下來已經很累了。下班以後的休息，需要解釋才能被拿走。',
+      en:'A day’s work is tiring enough. Rest after hours should have to be justified before it is taken away.'},
+  25:{cn:'药买不起的时候，面子和尊严是同一件事。',
+      tw:'藥買不起的時候，面子和尊嚴是同一件事。',
+      en:'When medicine is out of reach, dignity and subsistence become the same question.'},
+  26:{cn:'上学不只是认字，是让一个孩子以后能选，而不是只能被选。',
+      tw:'上學不只是認字，是讓一個孩子以後能選，而不是只能被選。',
+      en:'Schooling is not only letters: it is so a child can later choose, rather than only be chosen.'},
+  27:{cn:'一个人画的东西、写的东西，后来怎么就变成了大家共有的。写的人也该有份。',
+      tw:'一個人畫的東西、寫的東西，後來怎麼就變成了大家共有的。寫的人也該有份。',
+      en:'What one person paints or writes somehow becomes everyone’s. The one who made it should have a share.'},
+  28:{cn:'你希望的世界，不该只停留在希望里，它应该是一件可以要求的事。',
+      tw:'你希望的世界，不該只停留在希望裡，它應該是一件可以要求的事。',
       en:'The world you hope for should not stay a hope; it should be something you can claim.'},
-  29:{cn:'你的自由到哪里为止？到别人的自由开始的地方。',
-      tw:'你的自由到哪裡為止？到別人的自由開始的地方。',
-      en:'Where does your freedom end? Where another’s begins.'},
+  29:{cn:'自由的尽头是另一条街的门。你的自由到那里为止，也从那里开始成立。',
+      tw:'自由的盡頭是另一條街的門。你的自由到那裡為止，也從那裡開始成立。',
+      en:'Freedom ends at another street’s door. Your liberty stops there — and is established from there.'},
   30:{cn:'没有人可以借权利之名，把别人的权利拿走。这是这份宣言为自己设的界限。',
       tw:'沒有人可以借權利之名，把別人的權利拿走。這是這份宣言為自己設的界限。',
       en:'No one may invoke rights in order to take away the rights of others. The Declaration’s limit on itself.'}
+};
+
+/* ══════════════════════════════════════════════════════════════
+   思想来源层 · 基督教与儒家典籍
+   每条之下可展开，说明该条的思想来源与历史渊源。
+
+   体例：
+   · 基督教部分引《圣经》和合本原文；
+   · 儒家部分引先秦典籍原文（文言），并附英译；
+   · 两者与《宣言》条文之间是「渊源 / 呼应」关系，不是引用关系；
+   · 凡不能确证为直接出处者，在 note 里写明「思想呼应」；
+   · hist 说明该观念进入现代人权文本的线索，不替代学术考据。
+   ══════════════════════════════════════════════════════════════ */
+const SOURCES = {
+  1:{
+    conf:[{text:'人人有贵于己者，弗思耳矣。',
+           tw:'人人有貴於己者，弗思耳矣。',
+           src:'《孟子·告子上》',
+           en:'Mencius, Gaozi I — “Everyone has that which is noble in himself; they simply do not think about it.”',
+           note:'儒家不把人的尊贵建立在出身与等级上，而说它本来就在每个人身上。这是与“固有尊严”最接近的中文典籍表述。'}],
+    christ:[{text:'神就照着自己的形像造人，乃是照着他的形像造男造女。',
+             src:'创世记 1:27',
+             en:'Genesis 1:27 — “So God created man in his own image, in the image of God he created him; male and female he created them.”',
+             note:'“形像”意味着人的价值不由任何人间标准授予，因而也不可被谁收回。另见诗篇 8:5。'}],
+    hist:'第一条历经五版。起草委员会主席为埃莉诺·罗斯福，中国代表张彭春为副主席，并且是最初三人核心起草小组之一（据联合国官网 Drafters of the Declaration）。其中 conscience（良心）一词由张彭春提出：他以其传统中的“仁”为理据，主张单以 reason（理性）不足以构成人的根本特质；此说见于哥伦比亚大学《宣言》起草史项目与 Morsink 的档案研究（Origins, Drafting, and Intent, 1999）。须注意：文本最终采用的是 conscience 而非“仁”，第一条是多方折中的产物，并非某一文明的独占贡献。另据联合国官网，All men 改为 All human beings 由印度代表 Hansa Mehta 促成。'
+  },
+  2:{
+    conf:[{text:'有教无类。',
+           tw:'有教無類。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “In teaching, there should be no distinction of classes.”',
+           note:'教育不问出身，是儒家最具平等意味的主张之一。'}],
+    christ:[{text:'并不分犹太人、希利尼人，自主的、为奴的，或男或女，因为你们在基督耶稣里都成为一了。',
+             src:'加拉太书 3:28',
+             en:'Galatians 3:28 — “There is neither Jew nor Greek, there is neither slave nor free, there is no male and female, for you are all one in Christ Jesus.”',
+             note:'另见使徒行传 10:34-35：“神是不偏待人。”'}],
+    hist:'把“不分种族、肤色、性别、语言、宗教……”逐项写出，被视为对纳粹种族法与殖民差别待遇的直接回应。'
+  },
+  3:{
+    conf:[{text:'身体发肤，受之父母，不敢毁伤，孝之始也。',
+           tw:'身體髮膚，受之父母，不敢毀傷，孝之始也。',
+           src:'《孝经·开宗明义章》',
+           en:'The Classic of Filial Piety, ch. 1 — “My body, hair and skin are received from my parents; I dare not injure them. This is the beginning of filial piety.”',
+           note:'以“不敢毁伤”肯定身体不可侵犯，与现代人身安全权在精神上相通；其出发点却是孝，而非个人权利，属思想呼应。'}],
+    christ:[{text:'凡流人血的，他的血也必被人所流，因为神造人是照自己的形像造的。',
+             src:'创世记 9:6',
+             en:'Genesis 9:6 — “Whoever sheds the blood of man, by man shall his blood be shed, for God made man in his own image.”',
+             note:'另见出埃及记 20:13“不可杀人”。'}],
+    hist:'生命权被列为第一条实体权利，与战后对“国家可以任意处置个人生命”的反思直接相关；人身安全则针对失踪、酷刑与法外处决。'
+  },
+  4:{
+    conf:[{text:'庖有肥肉，厩有肥马，民有饥色，野有饿莩，此率兽而食人也。',
+           tw:'庖有肥肉，廄有肥馬，民有飢色，野有餓莩，此率獸而食人也。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “In your kitchen there is fat meat, in your stables fat horses, but the people look hungry and in the wilds lie the bodies of the starved. This is leading beasts to devour men.”',
+           note:'思想呼应，非直接出处。先秦儒家没有主张废除奴隶制，也没有与废奴对应的概念；此句提供的是“不可把人不当人”的方向。'}],
+    christ:[{text:'拐带人口，或是把人卖了，或是留在他手下，必要把他治死。',
+             src:'出埃及记 21:16',
+             en:'Exodus 21:16 — “Whoever steals a man and sells him, and anyone found in possession of him, shall be put to death.”',
+             note:'《圣经》并未一开始就废除奴隶制，但直接把“把人卖了”定为死罪；此后废奴运动长期以此为据。另见提摩太前书 1:10（和合本作“抢人口的”）、加拉太书 3:28。'}],
+    hist:'1948 年时仍有国家主张保留奴隶制的合法地位，最终文本以“一切形式的奴隶制度和奴隶买卖”一并禁止，是当时谈判中较激烈的一处。'
+  },
+  5:{
+    conf:[{text:'己所不欲，勿施于人。',
+           tw:'己所不欲，勿施於人。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “Do not impose on others what you yourself do not desire.”',
+           note:'子贡问“有一言而可以终身行之者乎”，孔子以此句答之，并称其为“恕”。（《颜渊》篇另有“克己复礼为仁”一章，与此句不同。）'}],
+    christ:[{text:'所以，无论何事，你们愿意人怎样待你们，你们也要怎样待人，因为这就是律法和先知的道理。',
+             src:'马太福音 7:12',
+             en:'Matthew 7:12 — “So whatever you wish that others would do to you, do also to them, for this is the Law and the Prophets.”',
+             note:'思想呼应，非直接出处：没有人愿意被这样对待，这是禁止酷刑最直接的道德依据。'}],
+    hist:'酷刑之禁在起草时几乎无争议，分歧在于条文是否也约束“非国家”的施暴者。'
+  },
+  6:{
+    conf:[{text:'徒善不足以为政，徒法不能以自行。',
+           tw:'徒善不足以為政，徒法不能以自行。',
+           src:'《孟子·离娄上》',
+           en:'Mencius, Li Lou I — “Goodness alone is not enough for government; laws alone cannot carry themselves into practice.”',
+           note:'强调一个人在法律秩序中的位置必须被明确承认，与“法律前的人格”相通；属思想呼应。'}],
+    christ:[{text:'因为神不偏待人。',
+             src:'罗马书 2:11',
+             en:'Romans 2:11 — “For God shows no partiality.”',
+             note:'另见创世记 1:27：人格的根据在于人是照着神的形像造的。'}],
+    hist:'“法律前的人格”针对的是纳粹时期剥夺犹太人国籍、使其失去诉讼资格的做法。'
+  },
+  7:{
+    conf:[{text:'刑罚不中，则民无所措手足。',
+           tw:'刑罰不中，則民無所措手足。',
+           src:'《论语·子路》',
+           en:'The Analects, Zi Lu — “If punishments are not meted out correctly, the people will not know where to put hand or foot.”',
+           note:'“中”指恰当、一致：同一行为应得同一评价。（法家《商君书·赏刑》另有“刑无等级”，属另一传统，可作参照。）'}],
+    christ:[{text:'你们施行审判，不可行不义；不可偏护穷人，也不可重看有势力的人，只要按着公义审判你的邻舍。',
+             src:'利未记 19:15',
+             en:'Leviticus 19:15 — “You shall do no injustice in court. You shall not be partial to the poor or defer to the great, but in righteousness shall you judge your neighbour.”'}],
+    hist:'《宣言》特意写了两层：法律之前的平等，以及免于歧视的平等保护；后者要求法律本身不得区别对待。'
+  },
+  8:{
+    conf:[{text:'及陷乎罪，然后从而刑之，是罔民也。',
+           tw:'及陷乎罪，然後從而刑之，是罔民也。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “To wait until the people fall into crime and then punish them is to entrap the people.”',
+           note:'批评“先使人无以为生、再以刑加之”，正是“须有可救济之途”的古代表述。'}],
+    christ:[{text:'学习行善，寻求公平，解救受欺压的；给孤儿伸冤，为寡妇辨屈。',
+             src:'以赛亚书 1:17',
+             en:'Isaiah 1:17 — “Learn to do good; seek justice, correct oppression; bring justice to the fatherless, plead the widow’s cause.”'}],
+    hist:'“有效补救”这一条要求国家提供可以实际使用的救济途径，而不只是宣布权利。'
+  },
+  9:{
+    conf:[{text:'钦哉，钦哉，惟刑之恤哉！',
+           tw:'欽哉，欽哉，惟刑之恤哉！',
+           src:'《尚书·舜典》',
+           en:'The Book of Documents, “Canon of Shun” — “Reverent, reverent! Be compassionate in the use of punishment.”',
+           note:'恤刑，是中国法制传统中对用刑谨慎的最早表述之一。另见《孟子·梁惠王下》：“左右皆曰可杀，勿听……国人皆曰可杀，然后察之。”'}],
+    christ:[{text:'无论什么人，被告还没有和原告对质，未得机会分诉所告他的事，就先定他的罪，这不是罗马人的条例。',
+             src:'使徒行传 25:16',
+             en:'Acts 25:16 — “It is not the custom of the Romans to give up anyone before the accused meets the accusers face to face and has opportunity to make his defence.”'}],
+    hist:'这一条针对盖世太保式的“保护性拘禁”：不经起诉、不告知理由、无处申辩。'
+  },
+  10:{
+    conf:[{text:'两造具备，师听五辞。',
+           tw:'兩造具備，師聽五辭。',
+           src:'《尚书·吕刑》',
+           en:'The Book of Documents, “Marquis of Lü on Punishments” — “When both parties are present, the judge hears the five pleadings.”',
+           note:'要求双方到场听审，是中国典籍中较早的程序要求。另可对照《论语·颜渊》“听讼，吾犹人也，必也使无讼乎”——孔子此处贬抑诉讼，与现代“公开审判权”方向相反，属对照而非渊源。'}],
+    christ:[{text:'不可在穷人争讼的事上屈枉正直。',
+             src:'出埃及记 23:6',
+             en:'Exodus 23:6 — “You shall not pervert the justice due to your poor in his lawsuit.”',
+             note:'另见申命记 16:19：“不可屈枉正直；不可看人的外貌。也不可受贿赂。”'}],
+    hist:'“独立而无偏倚的法庭”“公开审讯”这两项要求，是把审判权从行政权中分离出来的制度性表达。'
+  },
+  11:{
+    conf:[{text:'与其杀不辜，宁失不经。',
+           tw:'與其殺不辜，寧失不經。',
+           src:'《尚书·大禹谟》',
+           en:'The Book of Documents, “Counsels of the Great Yu” — “Rather than put to death the innocent, prefer to err on the side of leniency.”',
+           note:'宁可放过，不可错杀——这是无罪推定在中国典籍中最接近的表述。须注意：《大禹谟》属东晋伪古文《尚书》，非先秦真本；作为慎刑思想的来源引用是恰当的，但不宜称其为先秦原文。'}],
+    christ:[{text:'你们中间谁是没有罪的，谁就可以先拿石头打他。',
+             src:'约翰福音 8:7',
+             en:'John 8:7 — “Let him who is without sin among you be the first to throw a stone at him.”',
+             note:'和合本此处作“打他”。另见申命记 19:15：不可凭一个人的口作见证定案。'}],
+    hist:'“法不溯及既往”写在同一之中：纽伦堡审判之后，各国对“事后立法入罪”的警惕达到高点。'
+  },
+  12:{
+    conf:[{text:'父为子隐，子为父隐，直在其中矣。',
+           tw:'父為子隱，子為父隱，直在其中矣。',
+           src:'《论语·子路》',
+           en:'The Analects, Zi Lu — “The father conceals the misconduct of the son, and the son conceals the misconduct of the father; uprightness is to be found in this.”',
+           note:'讲的是亲亲相隐（亲属免于举发），与隐私权相关但不是同一观念。另见《礼记·曲礼上》：“将上堂，声必扬；入国不驰，入里必式。”'}],
+    christ:[{text:'你祷告的时候，要进你的内屋，关上门，祷告你在暗中的父。',
+             src:'马太福音 6:6',
+             en:'Matthew 6:6 — “But when you pray, go into your room and shut the door and pray to your Father who is in secret.”',
+             note:'思想呼应：这是自愿退隐，不是制度性的住宅不受侵犯。'}],
+    hist:'这一条的背景是秘密警察、窃听与告密体系；1948 年时“隐私”尚未成为通行的法律概念，措辞因此具体列举住宅与通信。'
+  },
+  13:{
+    conf:[{text:'关讥而不征，则天下之旅皆悦，而愿出于其路矣。',
+           tw:'關譏而不征，則天下之旅皆悅，而願出於其路矣。',
+           src:'《孟子·公孙丑上》',
+           en:'Mencius, Gong Sun Chou I — “If the frontier posts inspect but do not tax, then all the travellers of the world will be glad and wish to come out on those roads.”',
+           note:'关卡只稽查而不征税——这是古代对往来通行不加阻拦的具体依据。'}],
+    christ:[{text:'耶和华对亚伯兰说：“你要离开本地、本族、父家，往我所要指示你的地去。”',
+             src:'创世记 12:1',
+             en:'Genesis 12:1 — “Go from your country and your kindred and your father’s house to the land that I will show you.”'}],
+    hist:'迁徙自由与“返回本国的权利”写在同一之中，直接针对战后的人口流动与难民问题。'
+  },
+  14:{
+    conf:[{text:'远方之人闻君行仁政，愿受一廛而为氓。',
+           tw:'遠方之人聞君行仁政，願受一廛而為氓。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “Men from far away, hearing that you practise benevolent government, wish to receive a plot of land and become your people.”',
+           note:'远人来归、愿意接受安置，与庇护的精神相邻；古代并没有现代意义上的“庇护权”制度。'}],
+    christ:[{text:'不可欺压寄居的；因为你们在埃及地作过寄居的，知道寄居的心。',
+             src:'出埃及记 23:9 ／ 利未记 19:34',
+             en:'Exodus 23:9 / Leviticus 19:34 — “You shall not oppress a sojourner… you were sojourners in the land of Egypt.”',
+             note:'根据是“你们自己也曾经是外人”。另见马太福音 25:35“我作客旅，你们留我住”、希伯来书 13:2。'}],
+    hist:'起草时，南斯拉夫代表主张把庇护权写成个人的权利，而不是国家的裁量权；这一立场最终进入条文，但受第十四条第二款的限制。'
+  },
+  15:{
+    conf:[{text:'四海之内，皆兄弟也。',
+           tw:'四海之內，皆兄弟也。',
+           src:'《论语·颜渊》',
+           en:'The Analects, Yan Yuan — “Within the four seas, all men are brothers.”',
+           note:'另见《论语·子路》“近者说，远者来”——那是治术的效果，与国籍权仍有距离。'}],
+    christ:[{text:'这样，你们不再作外人和客旅，是与圣徒同国，是神家里的人了。',
+             src:'以弗所书 2:19',
+             en:'Ephesians 2:19 — “So then you are no longer strangers and aliens, but you are fellow citizens with the saints and members of the household of God.”',
+             note:'腓立比书 3:20 另有“天上的国民”，那是超越性的身份，与世俗国籍权不同层，属思想呼应。'}],
+    hist:'国籍权在大规模剥夺国籍（如 1935 年纳粹《帝国公民法》）之后被写入《宣言》，并特别禁止任意剥夺国籍。'
+  },
+  16:{
+    conf:[{text:'昏礼者，将合二姓之好，上以事宗庙，而下以继后世也。',
+           tw:'昏禮者，將合二姓之好，上以事宗廟，而下以繼後世也。',
+           src:'《礼记·昏义》',
+           en:'The Book of Rites, “The Meaning of Marriage” — “The ceremony of marriage is to unite the goodwill of two surnames, to serve the ancestral temple above and continue posterity below.”',
+           note:'传统婚礼重在“合二姓之好”，即两个家族之间的事；《宣言》改以结婚双方的自由同意为唯一条件，这是明显的转折。孟子曾批评不待父母之命而结合者（《滕文公下》），方向与“自由同意”相反，故此条属张力而非渊源。'}],
+    christ:[{text:'因此，人要离开父母，与妻子连合，二人成为一体。',
+             src:'创世记 2:24',
+             en:'Genesis 2:24 — “Therefore a man shall leave his father and his mother and hold fast to his wife, and they shall become one flesh.”',
+             note:'以弗所书 5:25 要求丈夫爱妻子，但同章也要求妻子顺服丈夫；单引一节有选择性引用之嫌，此处并记。'}],
+    hist:'“只有经男女双方自由的和完全的同意，才能缔婚”这一句，针对包办婚姻与童婚；当时也是争议较大的一条。'
+  },
+  17:{
+    conf:[{text:'夫仁政，必自经界始。',
+           tw:'夫仁政，必自經界始。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “Benevolent government must begin with the marking out of land boundaries.”',
+           note:'孟子认为整理田界、使人有恒产，是仁政的第一步（同篇：“有恒产者有恒心，无恒产者无恒心”）。另见《礼记·礼运》“货恶其弃于地也，不必藏于己”，但那是“大同”的共有倾向，与私有财产权并非同向，属思想呼应。'}],
+    christ:[{text:'不可偷盗。',
+             src:'出埃及记 20:15',
+             en:'Exodus 20:15 — “You shall not steal.”',
+             note:'十诫另禁止挪移邻舍的地界（申命记 19:14），财产边界在此被视为道德秩序的一部分。'}],
+    hist:'“财产权”在起草过程中最受意识形态争论：条文既不承认绝对的所有权，也禁止任意剥夺，是当时社会主义与自由主义代表之间的折中。'
+  },
+  18:{
+    conf:[{text:'三军可夺帅也，匹夫不可夺志也。',
+           tw:'三軍可奪帥也，匹夫不可奪志也。',
+           src:'《论语·子罕》',
+           en:'The Analects, Zi Han — “The three armies can be deprived of their commander, but the will of even a common man cannot be taken from him.”',
+           note:'讲的是志不可夺，与思想、良心自由的精神相邻；另见《论语·子路》“君子和而不同”。'}],
+    christ:[{text:'神是个灵，所以拜他的必须用心灵和诚实拜他。',
+             src:'约翰福音 4:24',
+             en:'John 4:24 — “God is spirit, and those who worship him must worship in spirit and truth.”',
+             note:'另见使徒行传 5:29：“顺从神，不顺从人，是应当的。”'}],
+    hist:'这一条第一次把“改变宗教或信仰的自由”和“单独或集体、公开或秘密地表示”的自由写进国际文本。'
+  },
+  19:{
+    conf:[{text:'夫人朝夕退而游焉，以议执政之善否。其所善者，吾则行之；其所恶者，吾则改之。是吾师也，若之何毁之？',
+           tw:'夫人朝夕退而遊焉，以議執政之善否。其所善者，吾則行之；其所惡者，吾則改之。是吾師也，若之何毀之？',
+           src:'《左传·襄公三十一年》子产不毁乡校',
+           en:'Zuo Zhuan, 31st year of Duke Xiang — Zichan on not destroying the village school: “They discuss whether the government is good or bad. What they approve, I carry out; what they dislike, I reform. They are my teachers — why destroy it?”',
+           note:'子产不毁乡校，是中国典籍中为“议论国政”辩护的最著名段落。'}],
+    christ:[{text:'我们所看见所听见的，不能不说。',
+             src:'使徒行传 4:20',
+             en:'Acts 4:20 — “For we cannot but speak of what we have seen and heard.”',
+             note:'另见耶利米书 20:9：“我就含忍不住，不能自禁。”'}],
+    hist:'“不论国界”“通过任何媒介”这两处措辞，在 1948 年之后被反复援引：它把跨越国界的传播自由也写了进去。'
+  },
+  20:{
+    conf:[{text:'君子以文会友，以友辅仁。',
+           tw:'君子以文會友，以友輔仁。',
+           src:'《论语·颜渊》',
+           en:'The Analects, Yan Yuan — “The gentleman brings friends together through culture, and through friends promotes benevolence.”',
+           note:'另见《孟子·万章下》：“不挟长，不挟贵，不挟兄弟而友。友也者，友其德也。”'}],
+    christ:[{text:'都恒心遵守使徒的教训，彼此交接、擘饼、祈祷。',
+             src:'使徒行传 2:42',
+             en:'Acts 2:42 — “And they devoted themselves to the apostles’ teaching and fellowship, to the breaking of bread and the prayers.”',
+             note:'另见希伯来书 10:25：“你们不可停止聚会。”'}],
+    hist:'“任何人不得迫使隶属于某一团体”这半句，针对的是强制入会与强制性的群众组织。'
+  },
+  21:{
+    conf:[{text:'天视自我民视，天听自我民听。',
+           tw:'天視自我民視，天聽自我民聽。',
+           src:'《孟子·万章上》引《泰誓》',
+           en:'Cited in Mencius, Wan Zhang I, from the “Great Declaration” — “Heaven sees as my people see; Heaven hears as my people hear.”',
+           note:'此语常被引作中国民本思想的最高表述：天意即民意。今本《泰誓》属伪古文，但《孟子·万章上》确实引用了它。另见《孟子·尽心下》“民为贵，社稷次之，君为轻”。民本不等于民选，与现代选举问责仍有明确差别。'}],
+    christ:[{text:'并要从百姓中拣选有才能的人，就是敬畏神、诚实无妄、恨不义之财的人，派他们作千夫长、百夫长、五十夫长、十夫长，管理百姓。',
+             src:'出埃及记 18:21',
+             en:'Exodus 18:21 — “Moreover, look for able men from all the people, men who fear God, who are trustworthy and hate a bribe, and place such men over the people.”',
+             note:'思想呼应：这里是用人的标准，不是选举制度。罗马书 13:1-7 主张顺服掌权者，与“人民意志为政府权力基础”存在张力，故不并列引用。'}],
+    hist:'“人民的意志是政府权力的基础”是《宣言》中对政治正当性说得最直接的一句；不记名投票与定期选举也被具体写明。'
+  },
+  22:{
+    conf:[{text:'大道之行也，天下为公……故人不独亲其亲，不独子其子，使老有所终，壮有所用，幼有所长，矜寡孤独废疾者皆有所养。',
+           tw:'大道之行也，天下為公……故人不獨親其親，不獨子其子，使老有所終，壯有所用，幼有所長，矜寡孤獨廢疾者皆有所養。',
+           src:'《礼记·礼运》',
+           en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all… the aged find their end, the able their employment, the young their nurture, and the widowed, orphaned, solitary and disabled are all provided for.”',
+           note:'“皆有所养”常被视为中国典籍中最早的社会保障设想。另见《孟子·梁惠王下》：“此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。”'}],
+    christ:[{text:'你弟兄中若有一个穷人，你不可忍着心、揝着手不帮补你穷乏的弟兄。',
+             src:'申命记 15:7',
+             en:'Deuteronomy 15:7 — “If among you, one of your brothers should become poor, you shall not harden your heart or shut your hand against your poor brother.”',
+             note:'另见马太福音 25:35-40、哥林多后书 8:13-14“乃要均平”。'}],
+    hist:'第二十二条之后，《宣言》从公民与政治权利转向经济、社会、文化权利；这是 1948 年最艰难的一段谈判，也是后来两项国际公约分开制定的原因。'
+  },
+  23:{
+    conf:[{text:'明君制民之产，必使仰足以事父母，俯足以畜妻子，乐岁终身饱，凶年免于死亡。',
+           tw:'明君制民之產，必使仰足以事父母，俯足以畜妻子，樂歲終身飽，凶年免於死亡。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “A wise ruler settles the people’s livelihood so that above they may serve their parents, below they may nourish wife and children, in good years they are full all their days, in bad years they escape death.”',
+           note:'说的是“一份劳动应当养得起一个家”，与“公正和合适的报酬”相近。'}],
+    christ:[{text:'困苦穷乏的雇工……你不可欺负他。要当日给他工价，不可等到日落。',
+             src:'申命记 24:14-15',
+             en:'Deuteronomy 24:14-15 — “You shall not oppress a hired worker who is poor and needy… You shall give him his wages on the same day, before the sun sets.”',
+             note:'另见雅各书 5:4“这工钱有声音呼叫”、提摩太前书 5:18“工人得工价是应当的”。'}],
+    hist:'“同工同酬”的写入经过长期推动；1948 年时仍有国家主张保留男女工资差别。'
+  },
+  24:{
+    conf:[{text:'张而不弛，文武弗能也；弛而不张，文武弗为也。一张一弛，文武之道也。',
+           tw:'張而不弛，文武弗能也；弛而不張，文武弗為也。一張一弛，文武之道也。',
+           src:'《礼记·杂记下》',
+           en:'The Book of Rites, “Miscellaneous Records II” — “To be always tense and never relaxed, even King Wen and King Wu could not sustain; to be always relaxed and never tense, neither would do. Now tense, now relaxed: that was their way.”',
+           note:'把休息看作治理与生活的必要节奏，可与休息权相互参照。另见《论语·述而》“子之燕居，申申如也，夭夭如也”。'}],
+    christ:[{text:'当记念安息日，守为圣日。',
+             src:'出埃及记 20:8',
+             en:'Exodus 20:8 — “Remember the Sabbath day, to keep it holy.”',
+             note:'安息日传统把“休息”当作义务与权利来对待，是最早的相关制度之一。（创世记 2:2“到第七日……安息了”的措辞此处未及核对和合本，暂作待核。）'}],
+    hist:'八小时工作制、带薪休假在 1948 年仍属少数国家的现实；把它们写成普遍权利，在当时相当超前。'
+  },
+  25:{
+    conf:[{text:'老而无妻曰鳏，老而无夫曰寡，老而无子曰独，幼而无父曰孤。此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。',
+           tw:'老而無妻曰鰥，老而無夫曰寡，老而無子曰獨，幼而無父曰孤。此四者，天下之窮民而無告者。文王發政施仁，必先斯四者。',
+           src:'《孟子·梁惠王下》',
+           en:'Mencius, Liang Hui Wang II — “The aged without a wife, the aged without a husband, the aged without children, the young without a father: these four are the distressed of the world with no one to appeal to. When King Wen issued his government and spread benevolence, he necessarily began with these four.”',
+           note:'“必先斯四者”——救助从最无告的人开始，是儒家对次序的明确主张。另见《礼记·礼运》“老有所终，壮有所用，幼有所长”。'}],
+    christ:[{text:'你们当为贫寒的人和孤儿伸冤；当为困苦和穷乏的人施行公义。当保护贫寒和穷乏的人，救他们脱离恶人的手。',
+             src:'诗篇 82:3-4',
+             en:'Psalm 82:3-4 — “Give justice to the weak and the fatherless; maintain the right of the afflicted and the destitute. Rescue the weak and the needy; deliver them from the hand of the wicked.”',
+             note:'另见以赛亚书 1:17、马太福音 25 章。'}],
+    hist:'“母亲和儿童有权享受特别照顾和协助”在当时尚属新提法；“无论婚生或非婚生”则针对对非婚生子女的歧视。'
+  },
+  26:{
+    conf:[{text:'有教无类。',
+           tw:'有教無類。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “In teaching, there should be no distinction of classes.”',
+           note:'孔子办学不问出身，是中国教育史上“教育向所有人开放”的源头表述。另见《论语·述而》“学而不厌，诲人不倦”、《孟子·尽心上》“得天下英才而教育之，三乐也”。'}],
+    christ:[{text:'所以，你们要去，使万民作我的门徒……凡我所吩咐你们的，都教训他们遵守。',
+             src:'马太福音 28:19-20',
+             en:'Matthew 28:19-20 — “Go therefore and make disciples of all nations… teaching them to observe all that I have commanded you.”',
+             note:'另见箴言 1:7“敬畏耶和华是知识的开端”、提摩太后书 3:16。'}],
+    hist:'“至少在初级和基本阶段应如此”与“初级教育应属义务性质”，是把受教育权从理想转为国家义务的关键措辞。'
+  },
+  27:{
+    conf:[{text:'兴于诗，立于礼，成于乐。',
+           tw:'興於詩，立於禮，成於樂。',
+           src:'《论语·泰伯》',
+           en:'The Analects, Tai Bo — “It is by the Odes that the mind is aroused; by the Rites that the character is established; by Music that it is perfected.”',
+           note:'儒家把“乐”看作人格完成的最后一环，文化与艺术因此不是余事。另可对照《论语·述而》“述而不作，信而好古”——那推崇不事原创，与“知识产权保护”方向相反，属张力而非渊源。'}],
+    christ:[{text:'我也以我的灵充满了他，使他有智慧，有聪明，有知识，能做各样的工。',
+             src:'出埃及记 31:3',
+             en:'Exodus 31:3 — “And I have filled him with the Spirit of God, with ability and intelligence, with knowledge and all craftsmanship.”',
+             note:'思想呼应：此节讲的是圣灵赐技艺用于建造会幕，与“知识产权”关联间接。'}],
+    hist:'“知识产权”进入人权文本是 1948 年的新事；当时的讨论集中在作者的精神利益是否应受保护，而非单纯的财产权。'
+  },
+  28:{
+    conf:[{text:'大道之行也，天下为公。选贤与能，讲信修睦。',
+           tw:'大道之行也，天下為公。選賢與能，講信修睦。',
+           src:'《礼记·礼运》',
+           en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all; the worthy and the able are chosen; trust is cultivated and harmony maintained.”',
+           note:'“天下为公”的“大同”理想后来被孙中山反复引用。另见《论语·季氏》：“不患寡而患不均，不患贫而患不安。盖均无贫，和无寡，安无倾。”'}],
+    christ:[{text:'他们要将刀打成犁头，把枪打成镰刀。这国不举刀攻击那国；他们也不再学习战事。',
+             src:'以赛亚书 2:4 ／ 弥迦书 4:3',
+             en:'Isaiah 2:4 / Micah 4:3 — “They shall beat their swords into ploughshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more.”'}],
+    hist:'“人人有权要求一种社会的和国际的秩序”这一条较抽象，落点在序言所说的“世界自由、正义与和平”。'
+  },
+  29:{
+    conf:[{text:'己欲立而立人，己欲达而达人。',
+           tw:'己欲立而立人，己欲達而達人。',
+           src:'《论语·雍也》',
+           en:'The Analects, Yong Ye — “Wishing to establish himself, he establishes others; wishing to succeed himself, he helps others succeed.”',
+           note:'与“己所不欲，勿施于人”互为两面：权利与义务在此是同一件事的两端。'}],
+    christ:[{text:'弟兄们，你们蒙召是要得自由，只是不可将你们的自由当作放纵情欲的机会，总要用爱心互相服事。',
+             src:'加拉太书 5:13',
+             en:'Galatians 5:13 — “For you were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh, but through love serve one another.”',
+             note:'另见马太福音 22:21“该撒的物当归给该撒”、罗马书 13:8-10、彼得前书 2:16。'}],
+    hist:'第二十九条是《宣言》中最具张力的一条：它承认权利须受法律限制，同时把这种限制严格限定在“承认和尊重旁人的权利与自由”“道德、公共秩序和普遍福利”之内。'
+  },
+  30:{
+    conf:[{text:'人必自侮，然后人侮之；家必自毁，然后人毁之；国必自伐，然后人伐之。',
+           tw:'人必自侮，然後人侮之；家必自毀，然後人毀之；國必自伐，然後人伐之。',
+           src:'《孟子·离娄上》',
+           en:'Mencius, Li Lou I — “A man must first insult himself before others insult him; a house must first be destroyed from within before others destroy it; a state must first attack itself before others attack it.”',
+           note:'思想呼应，非直接出处。先秦儒家中没有与“滥用权利”直接对应的条文；此句提供的是“自取其祸”的思维方式。'}],
+    christ:[{text:'因为有些人偷着进来，就是自古被定受刑罚的，是不虔诚的，将我们神的恩变作放纵情欲的机会。',
+             src:'犹大书 1:4 ／ 彼得前书 2:16',
+             en:'Jude 4 / 1 Peter 2:16 — “…ungodly people, who pervert the grace of our God into sensuality.” / “Live as people who are free, not using your freedom as a cover-up for evil.”',
+             note:'这一传统反复提醒：自由与恩典都可能被滥用，因此需要自我限制的条款。'}],
+    hist:'第三十条是一条“自我防卫条款”，在人权文书里并不常见：它禁止任何人以《宣言》所载权利为名，去破坏《宣言》所载的权利。'
+  }
 };
 
 /* ══════════════════════════════════════════════════════════════
@@ -1337,6 +1837,39 @@ const NOTES = {
       </div>`;
   };
 
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  const quoteHtml = (q, cls) => {
+    const tw = q.tw && q.tw !== q.text
+      ? `<div class="txt tw" lang="zh-Hant">${q.tw}</div>` : '';
+    return `<div class="quote ${cls}">
+        <span class="tradition">${cls === 'conf' ? '儒家典籍' : '基督教典籍'}</span>
+        <div class="txt" lang="zh-Hans">${q.text}</div>
+        ${tw}
+        <div class="src">${q.src}${q.en ? `<span class="en">${q.en}</span>` : ''}</div>
+        ${q.note ? `<div class="gloss">${q.note}</div>` : ''}
+      </div>`;
+  };
+
+  const srcHtml = n => {
+    const s = SOURCES[n];
+    if (!s) return '';
+    return `<details class="sources" id="sources-${n}">
+        <summary>
+          <span class="cap">查看思想来源
+            <span class="en">Sources &amp; tradition</span></span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="src-body">
+          <p class="src-note">这一条写在 1948 年，但它所回答的问题并不新。下面是两个更古老的传统在同一件事上说过的部分，供对照其来源与渊源。</p>
+          ${(s.conf || []).map(q => quoteHtml(q, 'conf')).join('')}
+          ${(s.christ || []).map(q => quoteHtml(q, 'christ')).join('')}
+          ${s.hist ? `<div class="src-hist"><span class="tag">历史渊源</span>${s.hist}</div>` : ''}
+          <p class="src-disclaimer"><b>辨析：</b>典籍与《宣言》条文之间是渊源与呼应的关系，不是引用关系；标注“思想呼应”者，表示该条在这个传统里没有直接对应，只有相近的问题意识。《宣言》是世俗文本，其条文不建立在任何宗教或学派之上。</p>
+        </div>
+      </details>`;
+  };
+
   const aWrap = document.getElementById('articles');
   aWrap.innerHTML = '';          /* 幂等：重复执行时覆盖而非叠加 */
   let currentUnit = null;
@@ -1359,6 +1892,8 @@ const NOTES = {
     const art = document.createElement('article');
     art.className = 'article' + (a.n === 1 ? ' highlight' : '');
     art.id = 'art-' + a.n;
+    art.tabIndex = 0;                     /* 锚点跳到本条后可获得焦点 */
+    art.setAttribute('tabindex', '0');    /* 同时写属性，便于脚本与无障碍树读取 */
     art.dataset.n = String(a.n);
     art.dataset.cn = a.cn.replace(/<br>/g, ' ');
     art.dataset.tw = a.tw.replace(/<br>/g, ' ');
@@ -1375,6 +1910,7 @@ const NOTES = {
       block('lang-cn', a.cn) +
       block('lang-tw', a.tw) +
       block('lang-en', a.en) +
+      srcHtml(a.n) +
       `<div class="act">
          <button type="button" class="mark-btn" data-mark="${a.n}"
                  aria-pressed="false"
