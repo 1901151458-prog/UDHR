@@ -206,6 +206,15 @@ for (const [k, a] of Object.entries(AGENCIES)) {
     urlBad.push(k + '(含待核占位)');
 }
 ok(urlBad.length === 0, '所有机构 URL 均为 https 且无占位残留', urlBad.join(' '));
+ok(script.includes('individual-communications-procedures-treaty-bodies'),
+   'OHCHR 个人来文使用规范路径（实测确认）');
+ok(html.includes('spsubmission.ohchr.org'), '特别程序来文提交站已列出');
+ok(!script.includes("complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications'"),
+   '无旧版来文 URL 残留');
+ok(html.includes('unodc.org') && html.includes('african-court.org') && html.includes('countries/nhri'),
+   '通用说明含 UNODC 法律援助、非洲人权法院与 NHRI 名录');
+ok(html.includes('不构成法律意见'), '页面带有“非法律意见”免责说明');
+ok(html.includes('亚洲目前没有可受理个人申诉的区域人权法院'), '如实写明亚洲无区域申诉法院的结构性事实');
 ok(script.includes('helpHtml') && script.includes('target="_blank" rel="noopener noreferrer"'),
    '求助渠道以新窗口 + noopener 链接渲染');
 
