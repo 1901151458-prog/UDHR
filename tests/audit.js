@@ -93,7 +93,7 @@ for (const n of srcKeys) {
   }
 }
 ok(sBad.length === 0, '思想来源数据齐全（儒家/基督教/历史渊源/简繁）', sBad.join(' '));
-ok(confCount === 30 && christCount === 30, '儒家与基督教各 30 条引文',
+ok(confCount === 38 && christCount === 30, '儒家 38 条（含宋明）、基督教 30 条引文',
    '儒家 ' + confCount + ' / 基督教 ' + christCount);
 
 /* 5c. 引文内容抽查：防止数据被改坏 */
@@ -109,6 +109,18 @@ ok(hasText('天视自我民视'), '含《泰誓》民本句');
 ok(hasText('钦哉，钦哉，惟刑之恤哉'), '含《舜典》恤刑句');
 ok(hasText('与其杀不辜，宁失不经'), '含《大禹谟》疑罪从轻句');
 ok(hasText('不可偏护穷人'), '含《利未记》19:15 审判不偏');
+ok(hasText('天命之谓性'), '含子思《中庸》「天命之谓性」');
+ok(hasText('个个人心有仲尼'), '含王阳明《咏良知四首示诸生》');
+ok(hasText('万物并育而不相害'), '含子思《中庸》「万物并育而不相害」');
+ok(hasText('故君子必慎其独也'), '含《大学》「慎独」（旧题曾子作）');
+ok(hasText('良知者，孟子所谓'), '含王阳明《大学问》良知句');
+ok(hasText('老吾老'), '含孟子「老吾老以及人之老」');
+ok(hasText('皆入小学'), '含朱熹《大学章句序》「皆入小学」');
+ok(hasText('尽己之谓忠'), '含朱熹《论语集注》忠恕句');
+ok(hasText('曾子曰：君子以文会友'), '第二十条标明「曾子曰」');
+const sages = ['子思','王阳明','朱熹','曾子'].filter(name =>
+  srcKeys.some(n => JSON.stringify([].concat(SOURCES[n].conf)).includes(name)));
+ok(sages.length === 4, '曾子/子思/朱熹/王阳明均有引文', sages.join(','));
 
 /* 5d. 出处准确性：几处必须写对的地方 */
 ok(SOURCES[5].conf[0].src.includes('卫灵公'), '「己所不欲」出处为《卫灵公》');
@@ -156,6 +168,16 @@ ok(/aria-haspopup="dialog"/.test(html) && /aria-controls="tocSheet"/.test(html),
 ok(/setAttribute\('tabindex', '-1'\)/.test(script), '条文 tabindex=-1（不进 Tab 序列，可编程聚焦）');
 ok(/document\.hidden/.test(script), '粒子循环在页面隐藏时暂停');
 ok(/esc\(q\.text\)/.test(script), '引文经 esc 转义后渲染');
+
+/* 6i. 标题粒子：汇聚成字后不再叠加印刷体白字（.hero-clear 已整体移除） */
+ok(!/heroClear|applyHeroText|heroLayout|heroDim|escapeHtml/.test(script),
+   '脚本中无 hero-clear 残留（白字叠加层已移除）');
+ok(!html.includes('hero-clear'), 'HTML 中无 .hero-clear 元素');
+
+/* 6j. 常驻目录：正文阅读时可见 */
+ok(/id="tocFloat"/.test(html) && /aria-controls="tocSheet"/.test(html), '常驻目录按钮在 HTML 中并指向目录对话框');
+ok(/updateFloat/.test(script), '常驻按钮随滚动显隐的逻辑存在');
+ok(/\.toc-float\{/.test(style), '常驻按钮样式已定义');
 
 /* 6h. 结尾黄金律：六传统对照（4 张新卡） */
 ok(!html.includes('【待填'), '黄金律卡片无占位残留');

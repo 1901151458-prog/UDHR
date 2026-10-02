@@ -151,22 +151,6 @@
     to  {opacity:1; transform:translateY(0)}
   }
 
-  /* ── 标题清晰文字：粒子汇聚完成后短暂显示 ── */
-  .hero-clear{
-    position:fixed;
-    left:0; right:0; top:0;
-    transform:translateY(-50%);
-    z-index:0;
-    text-align:center;
-    font-family:var(--serif-body);
-    font-weight:700;
-    letter-spacing:.04em;
-    color:#f5f9ff;
-    text-shadow:0 0 30px rgba(91,146,229,.45), 0 0 4px rgba(0,0,0,.65);
-    pointer-events:none;
-    opacity:0;
-    transition:opacity .38s ease;
-  }
 
   /* ============================================================
      文档主体
@@ -1059,6 +1043,28 @@
   }
   .article.jump{animation:jumpGlow 2.2s ease-out 1}
 
+  /* 常驻目录：正文标题的目录按钮滚出屏幕后，右上角浮现 */
+  .toc-float{
+    position:fixed; top:12px; right:14px; z-index:16;
+    display:inline-flex; align-items:center; gap:.45em;
+    padding:.5em .95em;
+    font-family:var(--serif-body);
+    font-size:clamp(12px,1vw,13.5px);
+    font-weight:700; letter-spacing:.14em;
+    color:rgba(226,234,246,.92);
+    background:rgba(6,16,32,.82);
+    border:1px solid rgba(143,195,240,.30);
+    border-radius:999px; cursor:pointer;
+    box-shadow:0 8px 26px rgba(0,0,0,.45);
+    backdrop-filter:blur(8px);
+    opacity:0; pointer-events:none; transform:translateY(-8px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .toc-float.on{opacity:1; pointer-events:auto; transform:translateY(0)}
+  .toc-float:hover{color:var(--gold-lit); border-color:rgba(217,179,130,.60)}
+  .toc-float:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:3px}
+  .toc-float .tf-ico{font-size:1.05em; line-height:1}
+
   @media (max-width:640px){
     .hero{padding-top:max(4vh,30px)}
     .lang{text-align:left}
@@ -1101,8 +1107,8 @@
     .read-progress .fill{background:Highlight}
   }
   @media print{
-    .bg-art,#bg,.hero-clear,.side-note,.scroll-cue,.read-progress,
-    .rights-bar,.toast,.toc-ctl,.toc-open{display:none !important}
+    .bg-art,#bg,.side-note,.scroll-cue,.read-progress,
+    .rights-bar,.toast,.toc-ctl,.toc-open,.toc-float{display:none !important}
     .g-grid{grid-template-columns:1fr 1fr}
     /* 打印时把思想来源全部展开：纸上不该藏着内容 */
     .sources>summary{display:none !important}
@@ -1124,7 +1130,6 @@
 
 <canvas id="bg" aria-hidden="true"></canvas>
 
-<div class="hero-clear" aria-hidden="true"></div>
 
 <!-- 正文两侧题记（“天降生民”简繁同形，共用一组字形） -->
 <div class="side-note left"  lang="zh-Hans" aria-hidden="true">天降生民</div>
@@ -1316,6 +1321,11 @@
   </div>
 </dialog>
 
+<button type="button" class="toc-float" id="tocFloat"
+        aria-haspopup="dialog" aria-controls="tocSheet" aria-label="打开三十条目录">
+  <span class="tf-ico" aria-hidden="true">≡</span>
+  <span class="tf-txt" aria-hidden="true">目录</span>
+</button>
 <dialog class="sheet toc" id="tocSheet" aria-labelledby="tocTitle">
   <div class="sheet-inner">
     <div class="sheet-head">
@@ -1661,7 +1671,17 @@ const SOURCES = {
            tw:'人人有貴於己者，弗思耳矣。',
            src:'《孟子·告子上》',
            en:'Mencius, Gaozi I — “Everyone has that which is noble in himself; they simply do not think about it.”',
-           note:'儒家不把人的尊贵建立在出身与等级上，而说它本来就在每个人身上。这是与“固有尊严”最接近的中文典籍表述。'}],
+           note:'儒家不把人的尊贵建立在出身与等级上，而说它本来就在每个人身上。这是与“固有尊严”最接近的中文典籍表述。'},
+          {text:'天命之谓性，率性之谓道，修道之谓教。',
+           tw:'天命之謂性，率性之謂道，修道之謂教。',
+           src:'子思《中庸》第一章（旧题子思作）',
+           en:'Zisi, The Doctrine of the Mean, ch. 1 (traditionally attributed to Zisi) — “What Heaven has conferred is called human nature; to follow this nature is called the Way; to cultivate the Way is called teaching.”',
+           note:'人的本性来自天赋，不由人间权力授予——这是“固有尊严”在儒家传统里的另一套说法。'},
+          {text:'个个人心有仲尼，自将闻见苦遮迷。而今指与真头面，只是良知更莫疑。',
+           tw:'個個人心有仲尼，自將聞見苦遮迷。而今指與真頭面，只是良知更莫疑。',
+           src:'王阳明《咏良知四首示诸生》其一',
+           en:'Wang Yangming, “Four Poems on Liangzhi, Shown to My Students,” No. 1 — “Every heart contains a Confucius; hearing and seeing have veiled it. Now I point out the true face: it is nothing but liangzhi — do not doubt it.”',
+           note:'明代王阳明（1472–1529）说得更直接：圣人不在别处，人人心里都有。这与第一条的“固有尊严”异曲同工。'}],
     christ:[{text:'神就照着自己的形像造人，乃是照着他的形像造男造女。',
              src:'创世记 1:27',
              en:'Genesis 1:27 — “So God created man in his own image, in the image of God he created him; male and female he created them.”',
@@ -1790,7 +1810,12 @@ const SOURCES = {
            tw:'父為子隱，子為父隱，直在其中矣。',
            src:'《论语·子路》',
            en:'The Analects, Zi Lu — “The father conceals the misconduct of the son, and the son conceals the misconduct of the father; uprightness is to be found in this.”',
-           note:'讲的是亲亲相隐（亲属免于举发），与隐私权相关但不是同一观念。另见《礼记·曲礼上》：“将上堂，声必扬；入国不驰，入里必式。”'}],
+           note:'讲的是亲亲相隐（亲属免于举发），与隐私权相关但不是同一观念。另见《礼记·曲礼上》：“将上堂，声必扬；入国不驰，入里必式。”'},
+          {text:'此谓诚于中，形于外，故君子必慎其独也。',
+           tw:'此謂誠於中，形於外，故君子必慎其獨也。',
+           src:'《大学》第六章（旧题曾子作）',
+           en:'The Great Learning, ch. 6 (traditionally attributed to Zengzi) — “What is truly within will show without; therefore the junzi is watchful over himself when he is alone.”',
+           note:'“慎独”承认：每个人都有一个独处时只属于自己的角落。这是儒家对“人需要不被打扰的空间”的早期表达。'}],
     christ:[{text:'你祷告的时候，要进你的内屋，关上门，祷告你在暗中的父。',
              src:'马太福音 6:6',
              en:'Matthew 6:6 — “But when you pray, go into your room and shut the door and pray to your Father who is in secret.”',
@@ -1861,7 +1886,12 @@ const SOURCES = {
            tw:'三軍可奪帥也，匹夫不可奪志也。',
            src:'《论语·子罕》',
            en:'The Analects, Zi Han — “The three armies can be deprived of their commander, but the will of even a common man cannot be taken from him.”',
-           note:'讲的是志不可夺，与思想、良心自由的精神相邻；另见《论语·子路》“君子和而不同”。'}],
+           note:'讲的是志不可夺，与思想、良心自由的精神相邻；另见《论语·子路》“君子和而不同”。'},
+          {text:'良知者，孟子所谓「是非之心，人皆有之」者也。',
+           tw:'良知者，孟子所謂「是非之心，人皆有之」者也。',
+           src:'王阳明《大学问》',
+           en:'Wang Yangming, Inquiry on the Great Learning — “Liangzhi is what Mencius called the sense of right and wrong that everyone possesses.”',
+           note:'王阳明把“良知”说成每个人心里本有的是非感——它不听命于任何外在命令，这正是良心自由的内在依据。'}],
     christ:[{text:'神是个灵，所以拜他的必须用心灵和诚实拜他。',
              src:'约翰福音 4:24',
              en:'John 4:24 — “God is spirit, and those who worship him must worship in spirit and truth.”',
@@ -1881,9 +1911,9 @@ const SOURCES = {
     hist:'“不论国界”“通过任何媒介”这两处措辞，在 1948 年之后被反复援引：它把跨越国界的传播自由也写了进去。'
   },
   20:{
-    conf:[{text:'君子以文会友，以友辅仁。',
-           tw:'君子以文會友，以友輔仁。',
-           src:'《论语·颜渊》',
+    conf:[{text:'曾子曰：君子以文会友，以友辅仁。',
+           tw:'曾子曰：君子以文會友，以友輔仁。',
+           src:'《论语·颜渊》曾子语',
            en:'The Analects, Yan Yuan — “The gentleman brings friends together through culture, and through friends promotes benevolence.”',
            note:'另见《孟子·万章下》：“不挟长，不挟贵，不挟兄弟而友。友也者，友其德也。”'}],
     christ:[{text:'都恒心遵守使徒的教训，彼此交接、擘饼、祈祷。',
@@ -1909,7 +1939,12 @@ const SOURCES = {
            tw:'大道之行也，天下為公……故人不獨親其親，不獨子其子，使老有所終，壯有所用，幼有所長，矜寡孤獨廢疾者皆有所養。',
            src:'《礼记·礼运》',
            en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all… the aged find their end, the able their employment, the young their nurture, and the widowed, orphaned, solitary and disabled are all provided for.”',
-           note:'“皆有所养”常被视为中国典籍中最早的社会保障设想。另见《孟子·梁惠王下》：“此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。”'}],
+           note:'“皆有所养”常被视为中国典籍中最早的社会保障设想。另见《孟子·梁惠王下》：“此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。”'},
+          {text:'老吾老，以及人之老；幼吾幼，以及人之幼。',
+           tw:'老吾老，以及人之老；幼吾幼，以及人之幼。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “Treat the elders in your own family as elders, and extend it to the elders of others; treat the young in your own family as young, and extend it to the young of others.”',
+           note:'社会保障在儒家这里不是施舍，而是把对自己家人的照护，推及所有人的家人。'}],
     christ:[{text:'你弟兄中若有一个穷人，你不可忍着心、揝着手不帮补你穷乏的弟兄。',
              src:'申命记 15:7',
              en:'Deuteronomy 15:7 — “If among you, one of your brothers should become poor, you shall not harden your heart or shut your hand against your poor brother.”',
@@ -1957,7 +1992,12 @@ const SOURCES = {
            tw:'有教無類。',
            src:'《论语·卫灵公》',
            en:'The Analects, Wei Ling Gong — “In teaching, there should be no distinction of classes.”',
-           note:'孔子办学不问出身，是中国教育史上“教育向所有人开放”的源头表述。另见《论语·述而》“学而不厌，诲人不倦”、《孟子·尽心上》“得天下英才而教育之，三乐也”。'}],
+           note:'孔子办学不问出身，是中国教育史上“教育向所有人开放”的源头表述。另见《论语·述而》“学而不厌，诲人不倦”、《孟子·尽心上》“得天下英才而教育之，三乐也”。'},
+          {text:'自王公以下，至于庶人之子弟，皆入小学。',
+           tw:'自王公以下，至於庶人之子弟，皆入小學。',
+           src:'朱熹《大学章句序》',
+           en:'Zhu Xi, Preface to the Great Learning with Collected Commentaries — “From the sons of kings and dukes down to the sons of commoners, all entered the elementary school.”',
+           note:'南宋朱熹（1130–1200）追述的虽然是古制理想，但“不分贵贱、人人入学”的主张由此成为后世办学的重要依据。'}],
     christ:[{text:'所以，你们要去，使万民作我的门徒……凡我所吩咐你们的，都教训他们遵守。',
              src:'马太福音 28:19-20',
              en:'Matthew 28:19-20 — “Go therefore and make disciples of all nations… teaching them to observe all that I have commanded you.”',
@@ -1981,7 +2021,12 @@ const SOURCES = {
            tw:'大道之行也，天下為公。選賢與能，講信修睦。',
            src:'《礼记·礼运》',
            en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all; the worthy and the able are chosen; trust is cultivated and harmony maintained.”',
-           note:'“天下为公”的“大同”理想后来被孙中山反复引用。另见《论语·季氏》：“不患寡而患不均，不患贫而患不安。盖均无贫，和无寡，安无倾。”'}],
+           note:'“天下为公”的“大同”理想后来被孙中山反复引用。另见《论语·季氏》：“不患寡而患不均，不患贫而患不安。盖均无贫，和无寡，安无倾。”'},
+          {text:'万物并育而不相害，道并行而不相悖。',
+           tw:'萬物並育而不相害，道並行而不相悖。',
+           src:'子思《中庸》第三十章',
+           en:'Zisi, The Doctrine of the Mean, ch. 30 — “All things are nourished together without harming one another; all ways proceed together without conflicting.”',
+           note:'不同的国家、文化与道路可以并存而不互相伤害——这是《中庸》给“国际秩序”最宽的一条路。'}],
     christ:[{text:'他们要将刀打成犁头，把枪打成镰刀。这国不举刀攻击那国；他们也不再学习战事。',
              src:'以赛亚书 2:4 ／ 弥迦书 4:3',
              en:'Isaiah 2:4 / Micah 4:3 — “They shall beat their swords into ploughshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more.”'}],
@@ -1992,7 +2037,12 @@ const SOURCES = {
            tw:'己欲立而立人，己欲達而達人。',
            src:'《论语·雍也》',
            en:'The Analects, Yong Ye — “Wishing to establish himself, he establishes others; wishing to succeed himself, he helps others succeed.”',
-           note:'与“己所不欲，勿施于人”互为两面：权利与义务在此是同一件事的两端。'}],
+           note:'与“己所不欲，勿施于人”互为两面：权利与义务在此是同一件事的两端。'},
+          {text:'尽己之谓忠，推己之谓恕。',
+           tw:'盡己之謂忠，推己之謂恕。',
+           src:'朱熹《论语集注·里仁》',
+           en:'Zhu Xi, Collected Commentaries on the Analects, “Li Ren” — “Doing one’s utmost is called zhong; extending oneself to others is called shu.”',
+           note:'朱熹把曾子的“忠恕”拆成两句：对自己尽本分，对别人将心比心——这正是权利与义务的平衡点。'}],
     christ:[{text:'弟兄们，你们蒙召是要得自由，只是不可将你们的自由当作放纵情欲的机会，总要用爱心互相服事。',
              src:'加拉太书 5:13',
              en:'Galatians 5:13 — “For you were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh, but through love serve one another.”',
@@ -2140,9 +2190,11 @@ const SOURCES = {
    ══════════════════════════════════════════════════════════════ */
 (function toc () {
   const openBtn = document.getElementById('tocOpen');
+  const float   = document.getElementById('tocFloat');
   const dlg     = document.getElementById('tocSheet');
   const body    = document.getElementById('tocBody');
   if (!openBtn || !dlg || !body) return;
+  let opener = openBtn;
 
   body.innerHTML = UNITS.map(u =>
     `<div class="unit-row">
@@ -2162,12 +2214,33 @@ const SOURCES = {
     else dlg.removeAttribute('open');
   }
 
-  openBtn.addEventListener('click', () => {
+  function openFrom (btn) {
+    opener = btn;
     if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); }
     else dlg.setAttribute('open', '');
-  });
+  }
 
-  dlg.addEventListener('close', () => openBtn.focus());
+  openBtn.addEventListener('click', () => openFrom(openBtn));
+
+  if (float) {
+    float.addEventListener('click', () => openFrom(float));
+    /* 正文标题处的目录按钮滚出屏幕后，常驻按钮浮现 */
+    let raf = false;
+    function updateFloat () {
+      raf = false;
+      let show = false;
+      try { show = openBtn.getBoundingClientRect().top < -60; } catch (e) {}
+      float.classList.toggle('on', show);
+    }
+    window.addEventListener('scroll', () => {
+      if (raf) return; raf = true;
+      requestAnimationFrame(updateFloat);
+    }, { passive: true });
+    window.addEventListener('resize', updateFloat, { passive: true });
+    updateFloat();
+  }
+
+  dlg.addEventListener('close', () => { if (opener) opener.focus(); });
 
   dlg.addEventListener('click', e => {
     if (e.target.closest && e.target.closest('#tocClose')) { close(); return; }
@@ -2493,33 +2566,12 @@ function setTargets (pts) {
   return true;
 }
 
-const heroClear = document.querySelector('.hero-clear');
-let heroLayout = null;
-
-function escapeHtml (s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-function applyHeroText (concept, s) {
-  if (!heroClear) return;
-  heroClear.innerHTML = concept.lines.map(l => '<div>' + escapeHtml(l) + '</div>').join('');
-  heroClear.style.fontSize   = (s.fs / DPR) + 'px';
-  heroClear.style.lineHeight = (s.lineH / DPR) + 'px';
-  heroClear.style.top        = (s.cy / DPR) + 'px';
-}
 
 /* 采样并切换到第 conceptIdx 个理念 */
 function showConcept (nextMode) {
   const c = CONCEPTS[conceptIdx];
   const s = samplePoints(c.lines);
   const ok = setTargets(s.pts);
-  if (ok) {
-    heroLayout = s;
-    applyHeroText(c, s);
-  } else {
-    heroLayout = null;
-    if (heroClear) heroClear.innerHTML = '';
-  }
   mode = ok ? nextMode : 'scatter';
   modeStart = performance.now();
 }
@@ -2543,7 +2595,6 @@ function resize () {
 let scrolledAway = false;
 
 let lastT = 0;
-let heroDim = 1;
 
 function loop (now) {
   if (document.hidden) {            /* 标签页在后台：跳过计算与绘制，省电 */
@@ -2575,16 +2626,6 @@ function loop (now) {
     k *= 0.90;
     if (el > 800) startNextWord('gather');
   }
-
-  /* 标题清晰文字：粒子汇聚完成后显示约 2 秒 */
-  const hEl = now - modeStart;
-  const heroOp = (!scrolledAway && heroLayout && mode === 'hold' &&
-                  hEl > 800 && hEl < 2500) ? '1' : '0';
-  if (heroClear && heroClear.style.opacity !== heroOp) heroClear.style.opacity = heroOp;
-
-  /* 清晰文字出现时，背景粒子相应减弱，使文字清晰可读 */
-  const dimTarget = heroOp === '1' ? 0.30 : 1;
-  heroDim += (dimTarget - heroDim) * Math.min(1, 0.14 * dt);
 
   mouse.sx += (mouse.x - mouse.sx) * Math.min(1, 0.28 * dt);
   mouse.sy += (mouse.y - mouse.sy) * Math.min(1, 0.28 * dt);
@@ -2676,7 +2717,7 @@ function loop (now) {
   const s    = baseSize * (0.5 + conv * 0.62);   /* 汇聚时 ≈ 采样间距，填满字形 */
   const half = s * 0.5;
 
-  ctx.globalAlpha = (0.92 + conv * 0.08) * heroDim;
+  ctx.globalAlpha = (0.92 + conv * 0.08);
 
   for (let c = 0; c < CN; c++) {
     ctx.fillStyle = PALETTE[c];
@@ -2760,8 +2801,6 @@ resize();
     phase[i] = Math.random() * Math.PI * 2;
   }
   setTargets(s.pts);
-  heroLayout = s;
-  applyHeroText(c, s);
   mode = 'gather';
   modeStart = performance.now();
   k = 0;

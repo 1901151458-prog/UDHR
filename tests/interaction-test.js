@@ -336,7 +336,7 @@ const srcBlocks = articlesWrap.querySelectorAll('.sources');
 ok(srcBlocks.length === 30, '每条条文下都有可展开的伸缩说明', 'count=' + srcBlocks.length);
 const confQ = articlesWrap.querySelectorAll('.quote.conf');
 const christQ = articlesWrap.querySelectorAll('.quote.christ');
-ok(confQ.length === 30 && christQ.length === 30, '儒家与基督教引文各 30 条',
+ok(confQ.length === 38 && christQ.length === 30, '儒家 38 条（含宋明圣贤）、基督教 30 条',
    '儒家 ' + confQ.length + ' / 基督教 ' + christQ.length);
 const srcBody = articlesWrap.querySelectorAll('.src-body');
 ok(srcBody.length === 30, '每条说明都有正文容器', 'count=' + srcBody.length);
@@ -366,6 +366,15 @@ ok(!tocSheetDlg.open, '点击条号后目录关闭');
 ok(byId.get('art-25')._focused === true, '跳转后目标条文获得焦点');
 ok(byId.get('art-25')._classes.has('jump'), '目标条文有跳转闪示');
 ok(byId.get('art-25')._scrolled === true, '目标条文执行了滚动定位');
+
+/* 常驻目录按钮：正文阅读时可见，与正文标题处的按钮共用同一对话框 */
+const tocFloat = byId.get('tocFloat');
+ok(!!tocFloat && tocFloat.getAttribute('aria-controls') === 'tocSheet', '常驻目录按钮存在且指向同一对话框');
+tocFloat.dispatch('click', { target: tocFloat });
+ok(tocSheetDlg.open, '常驻按钮也能打开目录');
+const chip1 = byId.get('tocBody').querySelectorAll('.chip')[0];
+chip1.dispatch('click', { target: chip1 });
+ok(!tocSheetDlg.open && tocFloat._focused === true, '经常驻按钮打开并跳转后，焦点回到常驻按钮');
 const goldenCards = byId.get('goldenGrid') ? byId.get('goldenGrid').querySelectorAll('.g-card') : [];
 ok(goldenCards.length === 4, '结尾黄金律新增 4 张传统卡片', 'count=' + goldenCards.length);
 ok(!String(byId.get('goldenGrid').innerHTML).includes('【待填'), '黄金律卡片无占位残留');
