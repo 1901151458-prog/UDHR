@@ -403,6 +403,47 @@
     color:var(--gold);
     opacity:.92;
   }
+  /* 结尾：黄金律的多传统对照 */
+  .ending .golden{margin-top:clamp(44px,6vh,70px)}
+  .ending .g-kicker{
+    font-size:clamp(12px,1.05vw,14px);
+    font-weight:700; letter-spacing:.3em;
+    color:var(--white-dim);
+    line-height:2.1;
+  }
+  .g-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap:clamp(14px,2vw,22px);
+    margin-top:clamp(22px,3vh,30px);
+    text-align:left;
+  }
+  .g-card{
+    padding:clamp(16px,2.2vh,24px) clamp(16px,2vw,22px);
+    background:linear-gradient(180deg, rgba(10,26,51,.36), rgba(10,26,51,.14));
+    border:1px solid rgba(143,195,240,.20);
+    border-top:1px solid rgba(217,179,130,.40);
+    border-radius:10px;
+    transition:border-color .35s ease, background .35s ease;
+  }
+  .g-card:hover{border-color:rgba(217,179,130,.55); background:linear-gradient(180deg, rgba(10,26,51,.50), rgba(10,26,51,.20))}
+  .g-card .g-q{
+    font-size:clamp(13.5px,1.16vw,15.5px);
+    line-height:1.9; letter-spacing:.02em;
+    color:var(--ink);
+  }
+  .g-card .g-q.en{
+    margin-top:.5em;
+    font-size:clamp(11.5px,0.94vw,12.5px);
+    color:var(--white-dim);
+  }
+  .g-card .g-src{
+    display:block; margin-top:.8em;
+    font-size:clamp(11px,0.9vw,12px);
+    letter-spacing:.08em; line-height:1.7;
+    color:var(--gold);
+  }
+
   .ending .quote .src + .src{margin-top:.2em}
 
   /* ============================================================
@@ -958,6 +999,66 @@
   }
   .src-disclaimer b{color:rgba(200,216,238,.9); font-weight:600}
 
+  /* ============================================================
+     三十条目录：按条号直达
+     ============================================================ */
+  .toc-ctl{display:flex; justify-content:center; margin:clamp(14px,2.2vh,22px) 0 0}
+  .toc-open{
+    display:inline-flex; align-items:center; gap:.55em;
+    padding:.6em 1.3em;
+    font-family:var(--serif-body);
+    font-size:clamp(12.5px,1.04vw,14.5px);
+    font-weight:700; letter-spacing:.18em;
+    color:rgba(226,234,246,.90);
+    background:rgba(10,26,51,.30);
+    border:1px solid rgba(143,195,240,.30);
+    border-radius:999px; cursor:pointer;
+    transition:color .3s ease, border-color .3s ease,
+               background .3s ease, transform .2s ease;
+  }
+  .toc-open:hover{
+    color:var(--gold-lit);
+    border-color:rgba(217,179,130,.60);
+    background:rgba(217,179,130,.10);
+    transform:translateY(-1px);
+  }
+  .toc-open:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:3px}
+  dialog.toc .unit-row{margin-bottom:clamp(18px,2.6vh,26px)}
+  dialog.toc .unit-row:last-child{margin-bottom:0}
+  dialog.toc .u-name{
+    margin-bottom:clamp(8px,1.2vh,12px);
+    font-size:clamp(11px,0.96vw,12.5px);
+    font-weight:700; letter-spacing:.24em;
+    color:var(--gold);
+  }
+  dialog.toc .chips{display:flex; flex-wrap:wrap; gap:8px}
+  dialog.toc .chip{
+    display:inline-flex; align-items:center; gap:.5em;
+    padding:.42em .85em;
+    font-family:var(--serif-body);
+    font-size:clamp(12px,1vw,13.5px);
+    font-weight:600; letter-spacing:.05em;
+    color:rgba(226,234,246,.88);
+    background:rgba(91,146,229,.07);
+    border:1px solid rgba(143,195,240,.24);
+    border-radius:999px; cursor:pointer;
+    transition:color .3s ease, border-color .3s ease,
+               background .3s ease, transform .2s ease;
+  }
+  dialog.toc .chip .no{font-size:.9em; color:var(--gold); font-weight:800}
+  dialog.toc .chip:hover{
+    color:var(--gold-lit);
+    border-color:rgba(217,179,130,.55);
+    background:rgba(217,179,130,.10);
+    transform:translateY(-1px);
+  }
+  dialog.toc .chip:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:2px}
+  @keyframes jumpGlow{
+    0%  {background:rgba(217,179,130,.16); box-shadow:0 0 0 1px rgba(217,179,130,.55), 0 0 46px rgba(217,179,130,.30)}
+    100%{background:transparent; box-shadow:none}
+  }
+  .article.jump{animation:jumpGlow 2.2s ease-out 1}
+
   @media (max-width:640px){
     .hero{padding-top:max(4vh,30px)}
     .lang{text-align:left}
@@ -1001,7 +1102,8 @@
   }
   @media print{
     .bg-art,#bg,.hero-clear,.side-note,.scroll-cue,.read-progress,
-    .rights-bar,.toast{display:none !important}
+    .rights-bar,.toast,.toc-ctl,.toc-open{display:none !important}
+    .g-grid{grid-template-columns:1fr 1fr}
     /* 打印时把思想来源全部展开：纸上不该藏着内容 */
     .sources>summary{display:none !important}
     details.sources .src-body{display:block !important}
@@ -1068,6 +1170,12 @@
         <div class="section-head">
           <h2 class="label" id="lbl-articles"><span lang="zh-Hans">正文</span><span class="sep" aria-hidden="true">·</span><span lang="zh-Hant">正文</span><span class="sep" aria-hidden="true">·</span><span lang="en">Articles</span></h2>
           <div class="bar" aria-hidden="true"></div>
+          <div class="toc-ctl">
+            <button type="button" class="toc-open" id="tocOpen"
+                    aria-haspopup="dialog" aria-controls="tocSheet">
+              目录 · 三十条 · INDEX
+            </button>
+          </div>
         </div>
 
         <div id="articles"></div>
@@ -1140,6 +1248,38 @@
           <p class="src" lang="en">Confucianism · The Analects · Wei Ling Gong</p>
         </div>
 
+        <div class="ending-block golden">
+          <p class="g-kicker" lang="zh-Hans">同一句话，其他古老的说法</p>
+          <p class="g-kicker" lang="zh-Hant">同一句話，其他古老的說法</p>
+          <p class="g-kicker" lang="en">The same rule, said elsewhere and long ago</p>
+          <div class="g-grid" id="goldenGrid">
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">你所憎恶的，不要施于你的同伴。这就是全部律法，其余都是解释——去学吧。</p>
+              <p class="g-q en" lang="en">That which is hateful to you, do not do to your fellow. This is the whole Torah; the rest is the explanation — go and learn.</p>
+              <p class="g-src" lang="zh-Hans">犹太教 · 希勒尔 · 《巴比伦塔木德·安息日篇》31a</p>
+              <p class="g-src" lang="en">Judaism · Hillel · Babylonian Talmud, Shabbat 31a</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">你们任何一人都没有真正的信仰，除非他为自己兄弟所喜爱的，正如为自己所喜爱的。</p>
+              <p class="g-q en" lang="en">None of you [truly] believes until he loves for his brother what he loves for himself.</p>
+              <p class="g-src" lang="zh-Hans">伊斯兰教 · 圣训 · 布哈里与穆斯林圣训集共收 · 纳瓦维四十则 第 13</p>
+              <p class="g-src" lang="en">Islam · Hadith · Bukhari &amp; Muslim, via An-Nawawi, Forty Hadith No. 13</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">一切众生皆畏惧刀杖，一切众生皆真爱生命；将心比心，人不应该杀害或教唆杀害。</p>
+              <p class="g-q en" lang="en">All tremble at force, dear is life to all. Likening others to oneself, kill not nor cause to kill.</p>
+              <p class="g-src" lang="zh-Hans">佛教 · 《法句经·刀杖品》129–130 偈 · 了参法师译（流传版）</p>
+              <p class="g-src" lang="en">Buddhism · Dhammapada, Daṇḍavagga 129–130</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">因此，绝对命令只有一条：要只按照你同时能够愿意它成为一条普遍法则的那个准则去行动。</p>
+              <p class="g-q en" lang="en">Act only in accordance with that maxim through which you can at the same time will that it become a universal law.</p>
+              <p class="g-src" lang="zh-Hans">伊曼努尔·康德 · 《道德形而上学奠基》(1785) · AA IV: 421</p>
+              <p class="g-src" lang="en">Immanuel Kant · Groundwork of the Metaphysics of Morals, AA IV: 421</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -1176,6 +1316,19 @@
   </div>
 </dialog>
 
+<dialog class="sheet toc" id="tocSheet" aria-labelledby="tocTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <div>
+        <h2 id="tocTitle">三十条 · 目录</h2>
+        <p class="sub" lang="zh-Hans">按意义单元排列，点击条号直达那一条。</p>
+        <p class="sub" lang="en">Grouped by the five sections. Tap a number to jump.</p>
+      </div>
+      <button type="button" class="sheet-close" id="tocClose" aria-label="关闭目录">✕</button>
+    </div>
+    <div class="sheet-body" id="tocBody"></div>
+  </div>
+</dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <noscript>
@@ -1724,7 +1877,7 @@ const SOURCES = {
     christ:[{text:'当记念安息日，守为圣日。',
              src:'出埃及记 20:8',
              en:'Exodus 20:8 — “Remember the Sabbath day, to keep it holy.”',
-             note:'安息日传统把“休息”当作义务与权利来对待，是最早的相关制度之一。（创世记 2:2“到第七日……安息了”的措辞此处未及核对和合本，暂作待核。）'}],
+             note:'安息日传统把“休息”当作义务与权利来对待，是最早的相关制度之一。（创世记 2:2：“到第七日，神造物的工已经完毕，就在第七日歇了他一切的工，安息了。”）'}],
     hist:'八小时工作制、带薪休假在 1948 年仍属少数国家的现实；把它们写成普遍权利，在当时相当超前。'
   },
   25:{
@@ -1841,13 +1994,13 @@ const SOURCES = {
 
   const quoteHtml = (q, cls) => {
     const tw = q.tw && q.tw !== q.text
-      ? `<div class="txt tw" lang="zh-Hant">${q.tw}</div>` : '';
+      ? `<div class="txt tw" lang="zh-Hant">${esc(q.tw)}</div>` : '';
     return `<div class="quote ${cls}">
         <span class="tradition">${cls === 'conf' ? '儒家典籍' : '基督教典籍'}</span>
-        <div class="txt" lang="zh-Hans">${q.text}</div>
+        <div class="txt" lang="zh-Hans">${esc(q.text)}</div>
         ${tw}
-        <div class="src">${q.src}${q.en ? `<span class="en">${q.en}</span>` : ''}</div>
-        ${q.note ? `<div class="gloss">${q.note}</div>` : ''}
+        <div class="src">${esc(q.src)}${q.en ? `<span class="en">${esc(q.en)}</span>` : ''}</div>
+        ${q.note ? `<div class="gloss">${esc(q.note)}</div>` : ''}
       </div>`;
   };
 
@@ -1892,8 +2045,8 @@ const SOURCES = {
     const art = document.createElement('article');
     art.className = 'article' + (a.n === 1 ? ' highlight' : '');
     art.id = 'art-' + a.n;
-    art.tabIndex = 0;                     /* 锚点跳到本条后可获得焦点 */
-    art.setAttribute('tabindex', '0');    /* 同时写属性，便于脚本与无障碍树读取 */
+    art.tabIndex = -1;                    /* 不进 Tab 序列（否则键盘用户要穿过 30 个条文） */
+    art.setAttribute('tabindex', '-1');   /* 可编程聚焦：目录跳转后由脚本 focus */
     art.dataset.n = String(a.n);
     art.dataset.cn = a.cn.replace(/<br>/g, ' ');
     art.dataset.tw = a.tw.replace(/<br>/g, ' ');
@@ -1919,6 +2072,60 @@ const SOURCES = {
          </button>
        </div>`;
     aWrap.appendChild(art);
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   三十条目录：按条号直达
+   ══════════════════════════════════════════════════════════════ */
+(function toc () {
+  const openBtn = document.getElementById('tocOpen');
+  const dlg     = document.getElementById('tocSheet');
+  const body    = document.getElementById('tocBody');
+  if (!openBtn || !dlg || !body) return;
+
+  body.innerHTML = UNITS.map(u =>
+    `<div class="unit-row">
+       <div class="u-name" lang="zh-Hans">${u.no} · ${u.cn}</div>
+       <div class="chips">
+         ${u.a.map(n =>
+           `<button type="button" class="chip" data-toc-n="${n}"
+                    aria-label="跳到第${CN_NUM[n]}条">
+              <span class="no" aria-hidden="true">${n}</span>
+              <span class="cn" aria-hidden="true">第${CN_NUM[n]}条</span>
+            </button>`).join('')}
+       </div>
+     </div>`).join('');
+
+  function close () {
+    if (typeof dlg.close === 'function' && dlg.open) dlg.close();
+    else dlg.removeAttribute('open');
+  }
+
+  openBtn.addEventListener('click', () => {
+    if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); }
+    else dlg.setAttribute('open', '');
+  });
+
+  dlg.addEventListener('close', () => openBtn.focus());
+
+  dlg.addEventListener('click', e => {
+    if (e.target.closest && e.target.closest('#tocClose')) { close(); return; }
+    const chip = e.target.closest ? e.target.closest('.chip') : null;
+    if (!chip) return;
+    const n   = Number(chip.dataset.tocN);
+    const art = document.getElementById('art-' + n);
+    close();
+    if (art) {
+      if (art.scrollIntoView) {
+        try { art.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        catch (e) { art.scrollIntoView(); }
+      }
+      art.classList.remove('jump');
+      void art.offsetWidth;            /* 重置动画，连续点同一条也能再次闪示 */
+      art.classList.add('jump');
+      art.focus({ preventScroll: true });
+    }
   });
 })();
 
@@ -2279,6 +2486,10 @@ let lastT = 0;
 let heroDim = 1;
 
 function loop (now) {
+  if (document.hidden) {            /* 标签页在后台：跳过计算与绘制，省电 */
+    requestAnimationFrame(loop);
+    return;
+  }
   if (!lastT) lastT = now;
   let dt = (now - lastT) / 16.667;
   lastT = now;
