@@ -218,6 +218,18 @@ ok(html.includes('亚洲目前没有可受理个人申诉的区域人权法院')
 ok(script.includes('helpHtml') && script.includes('target="_blank" rel="noopener noreferrer"'),
    '求助渠道以新窗口 + noopener 链接渲染');
 
+/* 6l. 企业责任与供应链渠道 + 自查方法 */
+ok(/id="helpSupply"/.test(html) && /id="helpCheck"/.test(html),
+   '供应链渠道与自查方法两个区块存在');
+ok(html.includes('bafa.de') && html.includes('mneguidelines.oecd.org') && html.includes('mohrss.gov.cn'),
+   '含 BAFA、OECD 联络点与国内 12333 渠道');
+ok((html.match(/<li><b>/g) || []).length === 7, '自查方法恰好七个问题');
+ok(html.includes('匿名示例'), '含匿名供应链场景示例');
+ok(html.includes('先备份') && html.includes('报复'), '含证据备份与报复风险提示');
+ok(!/星宇|比亚迪|宁德时代/.test(html), '不点名任何具体企业（通用化承诺）');
+const supUrls = (html.match(/https:\/\/[^"']*bafa\.de[^"']*/g) || []).concat(html.match(/https:\/\/[^"']*mneguidelines\.oecd\.org[^"']*/g) || []);
+ok(supUrls.length >= 2 && supUrls.every(u => u.startsWith('https://')), '供应链链接为 https', 'count=' + supUrls.length);
+
 /* 6h. 结尾黄金律：六传统对照（4 张新卡） */
 ok(!html.includes('【待填'), '黄金律卡片无占位残留');
 ok(/id="goldenGrid"/.test(html), '黄金律网格存在');

@@ -1043,6 +1043,16 @@
   }
   .article.jump{animation:jumpGlow 2.2s ease-out 1}
 
+  /* 自查清单：有序列表样式 */
+  .h-check{margin:0 0 clamp(12px,1.6vh,16px); padding-left:1.4em}
+  .h-check li{
+    margin:0 0 clamp(10px,1.4vh,13px);
+    font-size:clamp(12.5px,1.06vw,14px);
+    line-height:1.9; letter-spacing:.02em;
+    color:rgba(226,234,246,.90);
+  }
+  .h-check li b{color:var(--gold-lit); font-weight:700}
+
   /* 常驻目录：正文标题的目录按钮滚出屏幕后，右上角浮现 */
   .toc-float{
     position:fixed; top:12px; right:14px; z-index:16;
@@ -1180,6 +1190,10 @@
     /* 打印时把思想来源全部展开：纸上不该藏着内容 */
     .sources>summary{display:none !important}
     details.sources .src-body{display:block !important}
+    details.help-supply .help-body{display:block !important}
+    details.help-check .help-body{display:block !important}
+    details.help-supply>summary{display:none !important}
+    details.help-check>summary{display:none !important}
     details.help .help-body{display:block !important}
     details.help>summary{display:none !important}
     .src-body{padding:0}
@@ -1272,6 +1286,46 @@
     <p class="h-note">五条须知：一、条约机构的个人来文通常要求该国已批准相应公约（及任择议定书）、已用尽国内救济、同一事项未在其他国际程序审理；二、条约机构不提供律师、不发放补偿、不能强制一国执行，其结论是「意见」；三、紧急人身危险（酷刑、强迫失踪）有更快的紧急程序；四、地区机制（欧洲、美洲、非洲）往往比联合国机制更有效力，应优先考虑；五、不确定时，先找所在国的法律援助、国家人权机构、监察专员或工会；六、除东盟政府间人权委员会（AICHR）的咨询性机制外，亚洲目前没有可受理个人申诉的区域人权法院或委员会，亚洲读者应优先使用联合国条约机构与所在国国内渠道。本页为信息汇编，不构成法律意见；个案请咨询当地法律援助或执业律师。</p>
   </div>
 </details>
+<details class="help help-supply" id="helpSupply">
+  <summary>
+    <span class="cap">企业责任与供应链渠道<span class="en">Corporate accountability &amp; supply-chain grievance</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">适用于在跨国供应链中工作的人——供应商工厂的工人、实习生、劳务工。若侵权发生在某家外国大企业的供应链里，除了国内渠道，还可以向买家所在国的机制与买家企业的举报系统求助。</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">德国联邦经济事务和出口管制局 · 供应链投诉</a><span class="h-en">BAFA · LkSG Complaints Procedure</span><span class="h-kind">供应链</span><span class="h-can">可匿名</span></span><span class="h-scope">任何人（包括外国供应商的工人）都可提交；在线表格可匿名。前提：该外国公司是受约束德国企业（2024 年起德国境内员工 1,000 人以上）的供应商。本人受影响的申请会得到反馈；一般线索由 BAFA 依职权调查。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD《跨国企业准则》国家联络点数据库</a><span class="h-en">OECD National Contact Points</span><span class="h-kind">供应链</span></span><span class="h-scope">任何利害关系方都可提交「特定实例」（<a href="https://mneguidelines.oecd.org/specificinstances.htm" target="_blank" rel="noopener noreferrer">程序说明</a>）；联络点做调解与斡旋，非裁决、结果无约束力，不要求先穷尽内部渠道。各国联络点名单以数据库为准。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://commission.europa.eu/topics/human-rights/your-fundamental-rights-eu/protection-whistleblowers_en" target="_blank" rel="noopener noreferrer">欧盟举报人保护</a><span class="h-en">EU Whistleblower Protection</span><span class="h-kind">供应链</span></span><span class="h-scope">指令保护以「举报人与欧盟实体存在工作相关联系」为前提（条文：<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L1937" target="_blank" rel="noopener noreferrer">2019/1937</a>）；中国供应商工人通常不属其直接保护范围，正确路径是买家企业的投诉渠道——德国《供应链尽职调查法》第 8 条要求企业投诉程序对供应链人士开放。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.volkswagen-group.com/en/our-whistleblower-system-16041.html" target="_blank" rel="noopener noreferrer">大众集团 · 举报系统</a><span class="h-en">Volkswagen Group Complaints Procedure</span><span class="h-kind">买家渠道</span></span><span class="h-scope">德国车企多设有面向供应链的官方举报/申诉机制（可匿名），受理供应商工厂内的人权与劳工问题。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://bmwgroup.speakup.report/main" target="_blank" rel="noopener noreferrer">宝马集团 · 举报渠道</a><span class="h-en">BMW Group SpeakUP</span><span class="h-kind">买家渠道</span></span><span class="h-scope">宝马集团官方举报系统（自其合规页提取的官方链接）。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://group.mercedes-benz.com/bpo/en/" target="_blank" rel="noopener noreferrer">梅赛德斯-奔驰集团 · 商业实践办公室</a><span class="h-en">Mercedes-Benz Group BPO</span><span class="h-kind">买家渠道</span></span><span class="h-scope">处理供应链相关举报的官方渠道。这类企业举报系统一般受理员工、业务伙伴与第三方举报，多数支持匿名；供应链工人的法律依据是德国《供应链尽职调查法》第 8 条。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.mohrss.gov.cn/" target="_blank" rel="noopener noreferrer">人力资源和社会保障部 · 12333</a><span class="h-en">MOHRSS China · 12333</span><span class="h-kind">国内一线</span><span class="h-can">先尝试</span></span><span class="h-scope">欠薪、强制加班等劳动争议应先走国内渠道：12333 热线、劳动保障监察投诉、劳动仲裁。</span></li>
+    </ul>
+    <p class="h-note">匿名示例：一家汽车零部件供应商的实习生遇到欠薪和强制加班，可以按顺序尝试——① 国内：拨打 12333 或向人社部门劳动保障监察投诉、申请劳动仲裁；② 供应链：若产品供应给受德国《供应链尽职调查法》约束的车企，向德国联邦经济事务和出口管制局（BAFA）提交供应链投诉，任何人可提、可匿名；③ 买家渠道：通过该车企官网的举报系统提交；④ 跨国准则：向 OECD 国家联络点提交「特定实例」寻求调解。走 ②③④ 之前，先把合同、考勤、工资记录、聊天记录整理并备份。</p>
+  </div>
+</details>
+<details class="help help-check" id="helpCheck">
+  <summary>
+    <span class="cap">怎么确认哪条渠道适合自己<span class="en">Is this channel right for you?</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">在提交前，用下面七个问题过一遍。答不出来或拿不准，就先补证据、先走国内渠道。</p>
+    <ol class="h-check">
+      <li><b>你在哪里工作？</b>先看你所在国有什么渠道——国内渠道通常最快、最便宜、最不怕语言障碍。</li>
+      <li><b>侵权属于哪一类？</b>欠薪与加班→劳动监察/仲裁；强迫劳动→ILO 与供应链机制；歧视→对应条约委员会；安全→职业安全机构。</li>
+      <li><b>投诉对象是谁？</b>直接雇主走国内渠道；若你是供应商工人、侵权发生在某外国买家的供应链内，才轮到 BAFA、OECD 联络点与买家举报系统。</li>
+      <li><b>你有证据吗？</b>合同、考勤、工资单、聊天记录、照片、证人——多数机制要求有可核实的材料；先备份再提交。</li>
+      <li><b>你能实名吗？</b>可匿名的：BAFA、多数买家举报系统、12333 部分渠道；通常需要身份的：OECD 联络点、劳动仲裁、条约机构个人来文。</li>
+      <li><b>试过内部渠道吗？</b>许多机制要求先向企业内部或本地渠道申诉（或书面说明为何不可行）；先做这一步能显著提高受理率。</li>
+      <li><b>你要什么结果？</b>要赔偿→劳动仲裁/法院；要调查与整改→BAFA 或买家渠道；要调解→OECD 联络点；要记录与曝光→媒体、联合国特别程序（最后手段）。</li>
+    </ol>
+    <p class="h-note">快速判断：工作地在中国 + 欠薪/加班 + 直接雇主 = 12333 与劳动仲裁优先；供应商工人 + 买家是受约束的欧盟企业 = BAFA（可匿名）或买家举报系统；要钱优先仲裁，要整改优先供应链机制。无论走哪条，先把证据备份到公司拿不到的地方。</p>
+    <p class="h-note">风险提示：举报可能带来报复。欧盟举报人指令与多国法律有保护条款，但执行程度不一；保留全部证据副本，必要时先咨询律师或工会。</p>
+  </div>
+</details>
+
 <div id="articles"></div>
       </section>
 

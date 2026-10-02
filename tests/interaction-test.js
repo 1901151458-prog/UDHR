@@ -392,6 +392,19 @@ ok(hLinks.every(a => !a.getAttribute('href').includes('待核')), '链接无占�
 ok(articlesWrap.querySelectorAll('.h-kind').length >= 60, '渠道带有机构类型标签');
 const helpSum = helpBlocks[0].querySelector('summary');
 ok(!!helpSum && helpSum.textContent.includes('求助与监督渠道'), '折叠标题文案正确');
+/* ── 供应链渠道与自查方法（正文标题下的通用区块） ── */
+const supply = byId.get('helpSupply');
+const check = byId.get('helpCheck');
+ok(!!supply && !!check, '供应链渠道与自查方法区块存在');
+ok(supply.querySelector('summary').textContent.includes('企业责任与供应链渠道'), '供应链区块标题正确');
+ok(check.querySelector('summary').textContent.includes('怎么确认哪条渠道适合自己'), '自查区块标题正确');
+const hCheckList = check.querySelector('.h-check');
+ok(!!hCheckList && hCheckList.children.filter(c => c.tagName === 'LI').length === 7,
+   '自查清单七个问题', 'count=' + (hCheckList ? hCheckList.children.filter(c => c.tagName === 'LI').length : 0));
+const supplyLinks = supply.querySelectorAll('.h-name');
+const supplyAnchors = supplyLinks.map(el => el.children.find(c => c.tagName === 'A')).filter(Boolean);
+ok(supplyAnchors.length >= 6, '供应链渠道链接数量充足', 'count=' + supplyAnchors.length);
+ok(supplyAnchors.every(a => /^https:\/\//.test(a.getAttribute('href'))), '供应链链接全部为 https');
 const notes = articlesWrap.querySelectorAll('.note');
 ok(notes.length === 30, '每条正文前都有「人的处境」', 'count=' + notes.length);
 
