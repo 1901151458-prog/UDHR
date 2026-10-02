@@ -218,12 +218,36 @@ ok(html.includes('亚洲目前没有可受理个人申诉的区域人权法院')
 ok(script.includes('helpHtml') && script.includes('target="_blank" rel="noopener noreferrer"'),
    '求助渠道以新窗口 + noopener 链接渲染');
 
+/* 6n. 适用于中国的国际求助途径 */
+ok(/id="helpChina"/.test(html), '中国渠道区块存在');
+ok(html.includes('spsubmission.ohchr.org') && html.includes('unesco.org/en/node/66661'),
+   '含特别程序与 UNESCO 来文入口');
+ok(html.includes('accountability-mechanism/how-file-complaint') && html.includes('cao-ombudsman.org'),
+   '含 ADB 问责机制与世界银行 CAO');
+ok(html.includes('national-contact-point-for-the-oecd-guidelines') && html.includes('industriall-union.org'),
+   '含德国 NCP 与 IndustriALL');
+ok(html.includes('对中国全部不可用'), '如实写明条约机构个人来文对中国全部不可用');
+ok((html.match(/中国未批准任何来文议定书/g) || []).length >= 2, '条文旁与通用说明均标注中国状态',
+   'count=' + (html.match(/中国未批准任何来文议定书/g) || []).length);
+ok(html.includes('12348.gov.cn') && html.includes('women.org.cn') && html.includes('mem.gov.cn'),
+   '国内热线官方页链接齐全');
+
+/* 6m. 维权步骤指南 */
+ok(/id="helpGuide"/.test(html), '维权步骤指南区块存在');
+ok(html.includes('12333') && html.includes('12348') && html.includes('12351') && html.includes('12338') && html.includes('12345') && html.includes('12350'),
+   '国内六大热线齐全');
+ok(html.includes('一年') && html.includes('仲裁'), '含仲裁时效提示');
+ok(html.includes('备份') && html.includes('留痕'), '含证据备份与内部留痕提示');
+
 /* 6l. 企业责任与供应链渠道 + 自查方法 */
 ok(/id="helpSupply"/.test(html) && /id="helpCheck"/.test(html),
    '供应链渠道与自查方法两个区块存在');
 ok(html.includes('bafa.de') && html.includes('mneguidelines.oecd.org') && html.includes('mohrss.gov.cn'),
    '含 BAFA、OECD 联络点与国内 12333 渠道');
-ok((html.match(/<li><b>/g) || []).length === 7, '自查方法恰好七个问题');
+const chkBlock = html.match(/<details class="help help-check"[\s\S]*?<\/details>/);
+const gdBlock  = html.match(/<details class="help help-guide"[\s\S]*?<\/details>/);
+ok(!!chkBlock && (chkBlock[0].match(/<li><b>/g) || []).length === 7, '自查方法恰好七个问题');
+ok(!!gdBlock && (gdBlock[0].match(/<li><b>/g) || []).length === 7, '维权指南恰好七步');
 ok(html.includes('匿名示例'), '含匿名供应链场景示例');
 ok(html.includes('先备份') && html.includes('报复'), '含证据备份与报复风险提示');
 ok(!/星宇|比亚迪|宁德时代/.test(html), '不点名任何具体企业（通用化承诺）');

@@ -393,6 +393,19 @@ ok(articlesWrap.querySelectorAll('.h-kind').length >= 60, '渠道带有机构类
 const helpSum = helpBlocks[0].querySelector('summary');
 ok(!!helpSum && helpSum.textContent.includes('求助与监督渠道'), '折叠标题文案正确');
 /* ── 供应链渠道与自查方法（正文标题下的通用区块） ── */
+const china = byId.get('helpChina');
+ok(!!china, '中国渠道区块存在');
+ok(china.querySelector('summary').textContent.includes('适用于中国的国际求助途径'), '中国区块标题正确');
+const chinaNames = china.querySelectorAll('.h-name');
+const chinaAnchors = chinaNames.map(el => el.children.find(c => c.tagName === 'A')).filter(Boolean);
+ok(chinaAnchors.length >= 9, '中国渠道链接数量充足', 'count=' + chinaAnchors.length);
+ok(chinaAnchors.every(a => /^https?:\/\//.test(a.getAttribute('href'))), '中国渠道链接均带协议');
+const guide = byId.get('helpGuide');
+ok(!!guide, '维权步骤指南区块存在');
+ok(guide.querySelector('summary').textContent.includes('维权步骤指南'), '指南区块标题正确');
+const gList = guide.querySelector('.h-check');
+ok(!!gList && gList.children.filter(c => c.tagName === 'LI').length === 7, '指南恰好七步',
+   'count=' + (gList ? gList.children.filter(c => c.tagName === 'LI').length : 0));
 const supply = byId.get('helpSupply');
 const check = byId.get('helpCheck');
 ok(!!supply && !!check, '供应链渠道与自查方法区块存在');
