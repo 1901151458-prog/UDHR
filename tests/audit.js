@@ -179,6 +179,36 @@ ok(/id="tocFloat"/.test(html) && /aria-controls="tocSheet"/.test(html), '常驻�
 ok(/updateFloat/.test(script), '常驻按钮随滚动显隐的逻辑存在');
 ok(/\.toc-float\{/.test(style), '常驻按钮样式已定义');
 
+/* 6k. 求助与监督渠道：机构字典与条文映射 */
+const agMatch = script.match(/const AGENCIES = (\{[\s\S]*?\n\});/);
+const hlMatch = script.match(/const HELPLINES = (\{[\s\S]*?\n\});/);
+ok(!!agMatch && !!hlMatch, 'AGENCIES / HELPLINES 数据块可定位');
+const AGENCIES = eval('(' + agMatch[1] + ')');
+const HELPLINES = eval('(' + hlMatch[1] + ')');
+const agKeys = Object.keys(AGENCIES);
+ok(agKeys.length >= 15, '机构字典覆盖条约机构与专门机构', 'count=' + agKeys.length);
+const hlKeys = Object.keys(HELPLINES).map(Number).filter(n => n >= 1 && n <= 30);
+ok(hlKeys.length === 30, '30 条均有求助渠道映射', 'count=' + hlKeys.length);
+const hlBad = [];
+for (const n of hlKeys) {
+  const h = HELPLINES[n];
+  const refs = [].concat(h.un || [], h.spec || [], h.regional || [], h.general || []);
+  if (!refs.length) hlBad.push(n + '(无渠道)');
+  for (const k of refs) if (!AGENCIES[k]) hlBad.push(n + '(机构未定义:' + k + ')');
+}
+ok(hlBad.length === 0, '每条映射的机构都已定义', hlBad.join(' '));
+const urlBad = [];
+for (const [k, a] of Object.entries(AGENCIES)) {
+  if (!a.zh) urlBad.push(k + '(缺中文名)');
+  if (!a.url || !/^https:\/\//.test(a.url)) urlBad.push(k + '(主页缺 https URL)');
+  if (a.complaint && !/^https:\/\//.test(a.complaint)) urlBad.push(k + '(申诉入口非 https)');
+  if ((a.url + (a.complaint || '')).includes('待核') || (a.url + (a.complaint || '')).includes('pending'))
+    urlBad.push(k + '(含待核占位)');
+}
+ok(urlBad.length === 0, '所有机构 URL 均为 https 且无占位残留', urlBad.join(' '));
+ok(script.includes('helpHtml') && script.includes('target="_blank" rel="noopener noreferrer"'),
+   '求助渠道以新窗口 + noopener 链接渲染');
+
 /* 6h. 结尾黄金律：六传统对照（4 张新卡） */
 ok(!html.includes('【待填'), '黄金律卡片无占位残留');
 ok(/id="goldenGrid"/.test(html), '黄金律网格存在');

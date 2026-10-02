@@ -1065,6 +1065,73 @@
   .toc-float:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:3px}
   .toc-float .tf-ico{font-size:1.05em; line-height:1}
 
+  /* ============================================================
+     求助与监督渠道：每条之下的伸缩说明
+     ============================================================ */
+  .help{
+    max-width:760px;
+    margin:clamp(16px,2.4vh,24px) auto 0;
+    border-top:1px solid rgba(143,195,240,.16);
+  }
+  .help summary{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:14px;
+    padding:clamp(12px,1.8vh,15px) 2px;
+    font-size:clamp(12.5px,1.08vw,14.5px);
+    font-weight:600; letter-spacing:.1em;
+    color:rgba(200,216,238,.80);
+    cursor:pointer; list-style:none;
+    transition:color .3s ease;
+  }
+  .help summary::-webkit-details-marker{display:none}
+  .help summary::marker{content:''}
+  .help summary:hover{color:var(--gold-lit)}
+  .help summary:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:3px; border-radius:4px}
+  .help summary .cap .en{font-size:.88em; font-weight:500; letter-spacing:.06em; color:rgba(168,184,207,.66)}
+  .help summary .chev{color:var(--gold); opacity:.85; transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+  .help[open] summary .chev{transform:rotate(180deg)}
+  .help[open] summary{border-bottom:1px solid rgba(143,195,240,.12)}
+  .help-body{padding:clamp(14px,2vh,20px) 2px clamp(4px,1vh,8px)}
+  .h-list{list-style:none; margin:0; padding:0}
+  .h-item{
+    display:flex; flex-direction:column; gap:.3em;
+    padding:clamp(10px,1.4vh,14px) 0;
+    border-bottom:1px solid rgba(143,195,240,.10);
+  }
+  .h-item:last-child{border-bottom:none}
+  .h-name{display:flex; align-items:baseline; gap:.6em; flex-wrap:wrap}
+  .h-name a{
+    color:var(--un-blue-lit);
+    text-decoration:none;
+    border-bottom:1px solid rgba(143,195,240,.35);
+    transition:color .3s ease, border-color .3s ease;
+  }
+  .h-name a:hover{color:var(--gold-lit); border-color:rgba(217,179,130,.6)}
+  .h-name a:focus-visible{outline:2px solid var(--un-blue-lit); outline-offset:3px}
+  .h-en{font-size:.88em; color:rgba(168,184,207,.72)}
+  .h-kind{
+    font-size:clamp(10px,0.86vw,11.5px);
+    font-weight:700; letter-spacing:.14em;
+    padding:.14em .55em;
+    color:var(--un-blue-lit);
+    background:rgba(91,146,229,.10);
+    border:1px solid rgba(91,146,229,.30);
+    border-radius:3px;
+  }
+  .h-can{
+    font-size:clamp(10px,0.86vw,11.5px);
+    font-weight:700; letter-spacing:.14em;
+    padding:.14em .55em;
+    color:var(--gold-lit);
+    background:rgba(217,179,130,.10);
+    border:1px solid rgba(217,179,130,.32);
+    border-radius:3px;
+  }
+  .h-scope{font-size:clamp(12px,1vw,13.5px); line-height:1.8; color:rgba(180,196,219,.90)}
+  .h-note{margin-top:clamp(10px,1.4vh,14px); font-size:clamp(12px,1vw,13.5px); line-height:1.9; color:rgba(180,196,219,.92)}
+  .h-disclaimer{margin-top:clamp(12px,1.6vh,16px); font-size:clamp(11px,0.92vw,12px); line-height:1.8; color:rgba(168,184,207,.72)}
+  .h-disclaimer b{color:rgba(200,216,238,.88); font-weight:600}
+
   @media (max-width:640px){
     .hero{padding-top:max(4vh,30px)}
     .lang{text-align:left}
@@ -1113,6 +1180,8 @@
     /* 打印时把思想来源全部展开：纸上不该藏着内容 */
     .sources>summary{display:none !important}
     details.sources .src-body{display:block !important}
+    details.help .help-body{display:block !important}
+    details.help>summary{display:none !important}
     .src-body{padding:0}
     .quote{break-inside:avoid}
     body{background:#fff; color:#000}
@@ -1183,7 +1252,26 @@
           </div>
         </div>
 
-        <div id="articles"></div>
+        <details class="help help-general" id="helpGeneral">
+  <summary>
+    <span class="cap">求助渠道通用说明<span class="en">General guidance &amp; regional mechanisms</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><a href="https://www.echr.coe.int/web/echr/apply-to-the-court-other-languages" target="_blank" rel="noopener noreferrer">欧洲人权法院</a><span class="h-en">European Court of Human Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交申诉</span></span><span class="h-scope">受理对《欧洲人权公约》缔约国的个人申诉；须先穷尽国内救济。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.oas.org/ext/en/human-rights/iachr-petitions-and-cases-system" target="_blank" rel="noopener noreferrer">美洲人权委员会</a><span class="h-en">Inter-American Commission on Human Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交申诉</span></span><span class="h-scope">受理美洲国家组织成员国的个人申诉。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://achpr.au.int/en" target="_blank" rel="noopener noreferrer">非洲人权和民族权委员会</a><span class="h-en">African Commission on Human and Peoples' Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交来文</span></span><span class="h-scope">受理《非洲人权和民族权宪章》下的个人来文。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.ohchr.org/en/home" target="_blank" rel="noopener noreferrer">联合国人权事务高级专员办事处</a><span class="h-en">OHCHR</span><span class="h-kind">通用入口</span></span><span class="h-scope">条约机构申诉总入口：<a href="https://www.ohchr.org/en/treaty-bodies/individual-communications" target="_blank" rel="noopener noreferrer">个人来文</a> · <a href="https://www.ohchr.org/en/special-procedures-human-rights-council" target="_blank" rel="noopener noreferrer">特别程序</a>。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://ganhri.org/membership/" target="_blank" rel="noopener noreferrer">国家人权机构全球联盟</a><span class="h-en">GANHRI</span><span class="h-kind">通用入口</span></span><span class="h-scope">查找所在国的国家人权机构（NHRI）名录。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.theioi.org/" target="_blank" rel="noopener noreferrer">国际监察专员协会</a><span class="h-en">International Ombudsman Institute</span><span class="h-kind">通用入口</span></span><span class="h-scope">查找各国监察专员（Ombudsman）。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.icrc.org/en/contact" target="_blank" rel="noopener noreferrer">红十字国际委员会</a><span class="h-en">ICRC</span><span class="h-kind">人道组织</span></span><span class="h-scope">探视被拘者、失踪人员、人道求助。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.icc-cpi.int/" target="_blank" rel="noopener noreferrer">国际刑事法院</a><span class="h-en">International Criminal Court</span><span class="h-kind">说明</span></span><span class="h-scope">只起诉灭绝、危害人类、战争罪等最严重国际罪行，不受理个人赔偿或申诉——与个人求助是两回事。</span></li>
+    </ul>
+    <p class="h-note">五条须知：一、条约机构的个人来文通常要求该国已批准相应公约（及任择议定书）、已用尽国内救济、同一事项未在其他国际程序审理；二、条约机构不提供律师、不发放补偿、不能强制一国执行，其结论是「意见」；三、紧急人身危险（酷刑、强迫失踪）有更快的紧急程序；四、地区机制（欧洲、美洲、非洲）往往比联合国机制更有效力，应优先考虑；五、不确定时，先找所在国的法律援助、国家人权机构、监察专员或工会。</p>
+  </div>
+</details>
+<div id="articles"></div>
       </section>
 
       <div class="colophon">
@@ -2064,6 +2152,70 @@ const SOURCES = {
 };
 
 /* ══════════════════════════════════════════════════════════════
+   求助与监督渠道 · 机构字典
+   kind: treaty 联合国条约机构 / agency 专门机构 / regional 地区机制 /
+         humanitarian 人道组织 / general 通用入口
+   url 为官方主页，complaint 为个人申诉（来文）入口；
+   全部 URL 须经逐站实测后方可上线。
+   ══════════════════════════════════════════════════════════════ */
+const AGENCIES = {
+  /* ── 联合国条约机构 ── */
+  CCPR:  {zh:'人权事务委员会', en:'Human Rights Committee', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/ccpr', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《公民权利和政治权利国际公约》' },
+  CESCR: {zh:'经济、社会及文化权利委员会', en:'Committee on Economic, Social and Cultural Rights', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cescr', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《经济、社会及文化权利国际公约》' },
+  CERD:  {zh:'消除种族歧视委员会', en:'Committee on the Elimination of Racial Discrimination', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cerd', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《消除一切形式种族歧视国际公约》' },
+  CEDAW: {zh:'消除对妇女歧视委员会', en:'Committee on the Elimination of Discrimination against Women', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cedaw', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《消除对妇女一切形式歧视公约》' },
+  CAT:   {zh:'禁止酷刑委员会', en:'Committee against Torture', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cat', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《禁止酷刑公约》，可直接受理个人来文' },
+  CRC:   {zh:'儿童权利委员会', en:'Committee on the Rights of the Child', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/crc', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《儿童权利公约》' },
+  CRPD:  {zh:'残疾人权利委员会', en:'Committee on the Rights of Persons with Disabilities', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/crpd', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《残疾人权利公约》' },
+  CED:   {zh:'强迫失踪问题委员会', en:'Committee on Enforced Disappearances', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/ced', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'可发「紧急行动请求」查找失踪者' },
+  CMW:   {zh:'移徙工人委员会', en:'Committee on Migrant Workers', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cmw', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications', scope:'监督《保护所有移徙工人及其家庭成员权利国际公约》' },
+  /* ── 联合国专门机构 ── */
+  ILO:   {zh:'国际劳工组织', en:'International Labour Organization', kind:'agency', url:'https://www.ilo.org/', complaint:'https://www.ilo.org/international-labour-standards/ilo-supervisory-system-special-procedures/complaint-procedure-art26', scope:'劳工标准监督与投诉（结社自由、强迫劳动、同工同酬）' },
+  UNESCO:{zh:'联合国教科文组织', en:'UNESCO', kind:'agency', url:'https://www.unesco.org/en/right-education', scope:'受教育权与文化权利的监督' },
+  WHO:   {zh:'世界卫生组织', en:'World Health Organization', kind:'agency', url:'https://www.who.int/news-room/fact-sheets/detail/human-rights-and-health', scope:'健康权' },
+  UNHCR: {zh:'联合国难民署', en:'UNHCR, the UN Refugee Agency', kind:'agency', url:'https://help.unhcr.org/', scope:'庇护申请、难民与无国籍者求助' },
+  UNICEF:{zh:'联合国儿童基金会', en:'UNICEF', kind:'agency', url:'https://www.unicef.org/protection', scope:'儿童保护' },
+  UNWOMEN:{zh:'联合国妇女署', en:'UN Women', kind:'agency', url:'https://www.unwomen.org/en', scope:'妇女权利' },
+  IOM:   {zh:'国际移民组织', en:'International Organization for Migration', kind:'agency', url:'https://www.iom.int/', scope:'移民与人口贩运求助' },
+  /* ── 人道组织 ── */
+  ICRC:  {zh:'红十字国际委员会', en:'International Committee of the Red Cross', kind:'humanitarian', url:'https://www.icrc.org/en/contact', scope:'探视被拘者、失踪人员、人道求助' }
+};
+
+/* 每条条文对应的渠道：un 条约机构 / spec 专门机构 / regional 地区机制 */
+const HELPLINES = {
+  1:{un:['CCPR','CESCR'], note:'不确定向哪个机构申诉时，先联系所在国的国家人权机构或监察专员（见上方通用说明）。'},
+  2:{un:['CERD','CEDAW','CRPD','CCPR'], note:'按歧视理由选择委员会：种族→消除种族歧视委员会，性别→消除对妇女歧视委员会，残疾→残疾人权利委员会。'},
+  3:{un:['CCPR'], humanitarian:['ICRC'], note:'任意剥夺生命、失踪与酷刑相关，可向人权事务委员会提交来文；失踪人员与探视被拘者的人道请求，联系红十字国际委员会。'},
+  4:{un:['CCPR','CEDAW','CRC'], spec:['ILO','IOM'], note:'强迫劳动可向国际劳工组织投诉；人口贩运可联系国际移民组织。'},
+  5:{un:['CAT','CCPR'], humanitarian:['ICRC'], note:'禁止酷刑委员会可直接受理个人来文（须该国承认其职权）。'},
+  6:{un:['CCPR']},
+  7:{un:['CCPR','CERD','CEDAW','CRPD'], note:'歧视类申诉按歧视理由对应不同委员会（种族/性别/残疾等）。'},
+  8:{un:['CCPR'], note:'通常须先穷尽国内救济（法院、监察专员、国家人权机构），再向条约机构提交来文。'},
+  9:{un:['CCPR','CED'], humanitarian:['ICRC'], note:'强迫失踪可向强迫失踪问题委员会提交紧急请求（须该国已加入公约）。'},
+  10:{un:['CCPR']},
+  11:{un:['CCPR']},
+  12:{un:['CCPR','CRC']},
+  13:{un:['CCPR','CMW'], spec:['IOM']},
+  14:{un:['CAT','CCPR'], spec:['UNHCR'], note:'庇护申请向所在国或难民署驻当地办事处提出；不遣返原则由禁止酷刑委员会与《难民公约》共同保障。'},
+  15:{un:['CRC'], spec:['UNHCR'], note:'无国籍状态可向联合国难民署求助，其负有专门的无国籍者保护职责。'},
+  16:{un:['CEDAW','CRC','CCPR'], note:'强迫婚姻、童婚可向消除对妇女歧视委员会或儿童权利委员会申诉。'},
+  17:{un:['CCPR','CEDAW']},
+  18:{un:['CCPR']},
+  19:{un:['CCPR'], spec:['UNESCO'], note:'表达自由案件可向人权事务委员会提交；记者与媒体安全另有联合国教科文组织机制。'},
+  20:{un:['CCPR'], spec:['ILO'], note:'工会权利被侵害可向国际劳工组织结社自由委员会投诉（该机制不要求穷尽国内救济）。'},
+  21:{un:['CCPR','CEDAW']},
+  22:{un:['CESCR'], spec:['ILO'], note:'经社文权利委员会受理个人来文的条件：该国已批准《经社文权利公约任择议定书》。'},
+  23:{un:['CESCR','CEDAW'], spec:['ILO'], note:'同工同酬、强迫劳动、职业安全可向国际劳工组织投诉。'},
+  24:{un:['CESCR'], spec:['ILO']},
+  25:{un:['CESCR','CRC','CEDAW'], spec:['WHO','UNICEF'], note:'健康与基本生活水准向经社文权利委员会申诉；儿童处境可联系儿童基金会。'},
+  26:{un:['CESCR','CRC','CEDAW'], spec:['UNESCO'], note:'受教育权可向经社文权利委员会申诉。'},
+  27:{un:['CESCR'], spec:['UNESCO'], note:'文化权利与作者权益可向经社文权利委员会申诉。'},
+  28:{un:['CESCR'], note:'这一条较抽象，通常作为其他权利受侵害时的背景主张。'},
+  29:{un:['CCPR','CESCR'], note:'当限制超出必要限度时，按被限制的具体权利提交来文。'},
+  30:{un:['CCPR'], note:'常与其他条款一并援引。'}
+};
+
+/* ══════════════════════════════════════════════════════════════
    渲染：三语并列 · 意义单元 · 人的处境
    （标记状态由下方的「我的权利清单」负责恢复）
    ══════════════════════════════════════════════════════════════ */
@@ -2112,6 +2264,41 @@ const SOURCES = {
         <div class="src">${esc(q.src)}${q.en ? `<span class="en">${esc(q.en)}</span>` : ''}</div>
         ${q.note ? `<div class="gloss">${esc(q.note)}</div>` : ''}
       </div>`;
+  };
+
+  const helpHtml = n => {
+    const h = HELPLINES[n];
+    if (!h || (!h.un && !h.spec && !h.regional)) return '';
+    const kinds = {
+      treaty:'联合国条约机构', agency:'联合国专门机构', regional:'地区机制', humanitarian:'人道组织', general:'通用入口'
+    };
+    const item = key => {
+      const a = AGENCIES[key];
+      if (!a) return '';
+      const url = a.complaint || a.url;
+      return `<li class="h-item">
+        <span class="h-name">
+          <a href="${url}" target="_blank" rel="noopener noreferrer">${esc(a.zh)}</a>
+          ${a.en ? `<span class="h-en">${esc(a.en)}</span>` : ''}
+          <span class="h-kind">${kinds[a.kind] || '机构'}</span>
+          ${a.complaint && a.complaint !== a.url ? '<span class="h-can">可提交申诉</span>' : ''}
+        </span>
+        ${a.scope ? `<span class="h-scope">${esc(a.scope)}</span>` : ''}
+      </li>`;
+    };
+    const list = [].concat(h.un, h.spec, h.regional, h.general).filter(Boolean);
+    return `<details class="help" id="help-${n}">
+        <summary>
+          <span class="cap">求助与监督渠道
+            <span class="en">Where to seek help &amp; oversight</span></span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="help-body">
+          <ul class="h-list">${list.map(item).join('')}</ul>
+          ${h.note ? `<p class="h-note">${esc(h.note)}</p>` : ''}
+          <p class="h-disclaimer"><b>须知：</b>联合国条约机构的个人来文通常要求：该国已批准相应公约、已用尽国内救济、同一事项未在其他国际程序中审理；条约机构不提供律师，其结论以「意见」形式作出。紧急人身危险请优先联系本地法律援助、红十字国际委员会或所在国监察机构。</p>
+        </div>
+      </details>`;
   };
 
   const srcHtml = n => {
@@ -2174,6 +2361,7 @@ const SOURCES = {
       block('lang-tw', a.tw) +
       block('lang-en', a.en) +
       srcHtml(a.n) +
+      helpHtml(a.n) +
       `<div class="act">
          <button type="button" class="mark-btn" data-mark="${a.n}"
                  aria-pressed="false"

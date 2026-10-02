@@ -378,6 +378,20 @@ ok(!tocSheetDlg.open && tocFloat._focused === true, '经常驻按钮打开并跳
 const goldenCards = byId.get('goldenGrid') ? byId.get('goldenGrid').querySelectorAll('.g-card') : [];
 ok(goldenCards.length === 4, '结尾黄金律新增 4 张传统卡片', 'count=' + goldenCards.length);
 ok(!String(byId.get('goldenGrid').innerHTML).includes('【待填'), '黄金律卡片无占位残留');
+/* ── 求助与监督渠道 ── */
+const helpBlocks = articlesWrap.querySelectorAll('.help');
+ok(helpBlocks.length === 30, '每条条文下都有求助渠道伸缩区', 'count=' + helpBlocks.length);
+/* 测试桩不支持后代选择器，改为：取 .h-name 下的 <a> 子元素 */
+const hNames = articlesWrap.querySelectorAll('.h-name');
+const hLinks = hNames.map(el => el.children.find(c => c.tagName === 'A')).filter(Boolean);
+ok(hLinks.length >= 60, '求助渠道链接数量充足', 'count=' + hLinks.length);
+ok(hLinks.every(a => a.getAttribute('target') === '_blank' && (a.getAttribute('rel') || '').includes('noopener')),
+   '所有渠道链接 target=_blank 且带 noopener');
+ok(hLinks.every(a => /^https:\/\//.test(a.getAttribute('href'))), '所有渠道链接为 https');
+ok(hLinks.every(a => !a.getAttribute('href').includes('待核')), '链接无占位残留');
+ok(articlesWrap.querySelectorAll('.h-kind').length >= 60, '渠道带有机构类型标签');
+const helpSum = helpBlocks[0].querySelector('summary');
+ok(!!helpSum && helpSum.textContent.includes('求助与监督渠道'), '折叠标题文案正确');
 const notes = articlesWrap.querySelectorAll('.note');
 ok(notes.length === 30, '每条正文前都有「人的处境」', 'count=' + notes.length);
 
