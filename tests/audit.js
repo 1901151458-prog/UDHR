@@ -139,9 +139,14 @@ for (const [n, t] of Object.entries(NOTES)) {
 }
 ok(badLines.length === 0, '注文三语字段齐全', badLines.join(','));
 const noteLen = Object.entries(NOTES).map(([n, t]) => [n, t.cn.length]);
-const tooLong = noteLen.filter(([, l]) => l > 46);
-ok(tooLong.length === 0, '注文长度适合作为引文（<=46 字）',
+const tooLong = noteLen.filter(([, l]) => l > 200);
+ok(tooLong.length === 0, '注文长度适合作为叙事段落（<=200 字）',
    tooLong.map(([n, l]) => n + ':' + l).join(','));
+const notFactual = Object.entries(NOTES).map(([n, t]) => [n, t.cn])
+  .filter(([, cn]) => !/\d{4}|一九四|一九\d|联合国|国际|美国|英国|法国|德国|瑞士|南非|意大利|中国|苏联|孟|孔子|郑国|奥威尔|阿伦特|罗斯福|贝弗里奇|杜南|纽伦堡|柏林|芝加哥|伯尔尼|伯恩|索尔费里诺|英格兰|大宪章|法王|亨利四世|南特/.test(cn))
+  .map(([n]) => n);
+ok(notFactual.length === 0, '每条注文都含可核实的真事要素（年份/机构/人名/地名）',
+   '缺失条目 ' + notFactual.join(','));
 
 /* 6f. 三十条目录：标记、对话框与 tabindex 策略 */
 ok(/id="tocOpen"/.test(html) && /id="tocSheet"/.test(html) && /id="tocBody"/.test(html),
