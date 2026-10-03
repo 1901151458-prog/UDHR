@@ -218,6 +218,16 @@ ok(html.includes('亚洲目前没有可受理个人申诉的区域人权法院')
 ok(script.includes('helpHtml') && script.includes('target="_blank" rel="noopener noreferrer"'),
    '求助渠道以新窗口 + noopener 链接渲染');
 
+/* 6o. 求助渠道总索引与供应链对华适用性澄清 */
+ok(/id="helpIndex"/.test(html), '求助渠道总索引区块存在');
+ok(html.includes('按目的找') && html.includes('按侵权类型找') && html.includes('对中国是否可用 · 速查'),
+   '索引三组齐全（按目的/按类型/按可用性）');
+ok(html.includes('从中国境内就可以直接在线使用'), '供应链区块写明：从中国境内可直接在线使用');
+ok((html.match(/对中国适用/g) || []).length >= 4, '供应链渠道逐条注明对中国适用',
+   'count=' + (html.match(/对中国适用/g) || []).length);
+ok(html.includes('国际渠道不意味着要出国'), '指南第五步澄清国际渠道无需出国');
+ok(html.includes('details.help-index .help-body'), '打印时索引区块展开');
+
 /* 6n. 适用于中国的国际求助途径 */
 ok(/id="helpChina"/.test(html), '中国渠道区块存在');
 ok(html.includes('spsubmission.ohchr.org') && html.includes('unesco.org/en/node/66661'),

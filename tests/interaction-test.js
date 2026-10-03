@@ -393,6 +393,13 @@ ok(articlesWrap.querySelectorAll('.h-kind').length >= 60, '渠道带有机构类
 const helpSum = helpBlocks[0].querySelector('summary');
 ok(!!helpSum && helpSum.textContent.includes('求助与监督渠道'), '折叠标题文案正确');
 /* ── 供应链渠道与自查方法（正文标题下的通用区块） ── */
+const idx = byId.get('helpIndex');
+ok(!!idx, '求助渠道总索引区块存在');
+ok(idx.querySelector('summary').textContent.includes('求助渠道总索引'), '索引标题正确');
+const idxGroups = idx.querySelectorAll('.idx-group');
+ok(idxGroups.length === 3, '索引三组', 'count=' + idxGroups.length);
+const idxItems = idx.querySelectorAll('.h-item');
+ok(idxItems.length >= 15, '索引条目数量充足', 'count=' + idxItems.length);
 const china = byId.get('helpChina');
 ok(!!china, '中国渠道区块存在');
 ok(china.querySelector('summary').textContent.includes('适用于中国的国际求助途径'), '中国区块标题正确');

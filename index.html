@@ -1043,6 +1043,15 @@
   }
   .article.jump{animation:jumpGlow 2.2s ease-out 1}
 
+  /* 求助渠道总索引：分组标题 */
+  .idx-group{
+    margin:clamp(16px,2.2vh,22px) 0 clamp(6px,1vh,10px);
+    font-size:clamp(12px,1.02vw,14px);
+    font-weight:800; letter-spacing:.24em;
+    color:var(--gold);
+  }
+  .idx-group:first-of-type{margin-top:0}
+
   /* 自查清单：有序列表样式 */
   .h-check{margin:0 0 clamp(12px,1.6vh,16px); padding-left:1.4em}
   .h-check li{
@@ -1194,10 +1203,12 @@
     details.help-check .help-body{display:block !important}
     details.help-guide .help-body{display:block !important}
     details.help-china .help-body{display:block !important}
+    details.help-index .help-body{display:block !important}
     details.help-supply>summary{display:none !important}
     details.help-check>summary{display:none !important}
     details.help-guide>summary{display:none !important}
     details.help-china>summary{display:none !important}
+    details.help-index>summary{display:none !important}
     details.help .help-body{display:block !important}
     details.help>summary{display:none !important}
     .src-body{padding:0}
@@ -1270,7 +1281,50 @@
           </div>
         </div>
 
-        <details class="help help-general" id="helpGeneral">
+        <details class="help help-index" id="helpIndex">
+  <summary>
+    <span class="cap">求助渠道总索引<span class="en">Index of all channels</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">先把本页所有渠道归总。带 <span class="h-kind">对中国可用</span> 标记的，从中国境内就能直接使用（在线提交即可，不需要人在国外）；带 <span class="h-kind">须批准</span> 的，个人来文对中国不可用。</p>
+
+    <p class="idx-group">按目的找</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>要补发工资与赔偿</b></span><span class="h-scope">国内：12333 劳动保障监察、<b>劳动争议仲裁</b>（时效一年）、法院。</span></li>
+      <li class="h-item"><span class="h-name"><b>要公司被调查、整改</b></span><span class="h-scope">国内：12333、12350 安全生产举报；供应链内德企：<a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">BAFA 供应链投诉</a>（对中国可用，可匿名）。</span></li>
+      <li class="h-item"><span class="h-name"><b>要一个记录、把事情摆到台面</b></span><span class="h-scope"><a href="https://spsubmission.ohchr.org/" target="_blank" rel="noopener noreferrer">联合国特别程序</a>（对中国可用，任何个人可提）、买家举报系统、媒体。</span></li>
+      <li class="h-item"><span class="h-name"><b>要调解、双方谈</b></span><span class="h-scope"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD 国家联络点</a>（对中国可用）、全球工会。</span></li>
+      <li class="h-item"><span class="h-name"><b>要庇护 / 难民保护</b></span><span class="h-scope"><a href="https://help.unhcr.org/" target="_blank" rel="noopener noreferrer">联合国难民署求助站</a>。</span></li>
+      <li class="h-item"><span class="h-name"><b>被拘者探视 / 失踪人员</b></span><span class="h-scope"><a href="https://www.icrc.org/en/contact" target="_blank" rel="noopener noreferrer">红十字国际委员会</a>（人道求助）。</span></li>
+    </ul>
+
+    <p class="idx-group">按侵权类型找</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>欠薪、强制加班</b></span><span class="h-scope">12333、仲裁；供应链内 → BAFA / 买家举报系统（对中国可用）。</span></li>
+      <li class="h-item"><span class="h-name"><b>强迫劳动、人口贩运</b></span><span class="h-scope">ILO、IOM、BAFA、买家系统。</span></li>
+      <li class="h-item"><span class="h-name"><b>歧视（种族 / 性别 / 残疾）</b></span><span class="h-scope">国内：12338 妇联、仲裁；国际：特别程序（对中国可用）。条约机构个人来文对中国不可用。</span></li>
+      <li class="h-item"><span class="h-name"><b>酷刑、任意拘押、强迫失踪</b></span><span class="h-scope">特别程序（对中国可用）、ICRC 人道求助；强迫失踪委员会紧急行动（须该国已加入公约）。</span></li>
+      <li class="h-item"><span class="h-name"><b>妇女、儿童权益</b></span><span class="h-scope">国内：12338、12348；国际：UNICEF、UN Women（了解与协助）；个人来文对中国不可用。</span></li>
+      <li class="h-item"><span class="h-name"><b>健康、受教育权</b></span><span class="h-scope">WHO（了解）；<a href="https://www.unesco.org/en/node/66661" target="_blank" rel="noopener noreferrer">UNESCO 受教育权来文</a>（对中国可用，任何个人可提）。</span></li>
+      <li class="h-item"><span class="h-name"><b>结社、工会权利</b></span><span class="h-scope">ILO 结社自由投诉（须经工人组织）、12351 工会热线。</span></li>
+      <li class="h-item"><span class="h-name"><b>外国企业供应链内的侵权</b></span><span class="h-scope">BAFA、OECD 国家联络点、买家举报系统——<b>全部可从中国境内在线提交</b>。</span></li>
+      <li class="h-item"><span class="h-name"><b>亚行 / 世行投资项目</b></span><span class="h-scope">ADB 问责机制、世界银行 CAO（对中国可用）。</span></li>
+    </ul>
+
+    <p class="idx-group">对中国是否可用 · 速查</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>联合国条约机构个人来文</b></span><span class="h-scope">对中国不可用（未批准任何来文议定书）。</span></li>
+      <li class="h-item"><span class="h-name"><b>联合国特别程序 / 人权理事会来文 / UPR</b></span><span class="h-scope">对中国可用（无批准前提；UPR 经 NGO 参与）。</span></li>
+      <li class="h-item"><span class="h-name"><b>UNESCO 受教育权来文</b></span><span class="h-scope">对中国可用（任何个人可提）。</span></li>
+      <li class="h-item"><span class="h-name"><b>ILO 结社自由投诉</b></span><span class="h-scope">对中国可用（须经工人组织提交）。</span></li>
+      <li class="h-item"><span class="h-name"><b>ADB 问责机制 / 世界银行 CAO</b></span><span class="h-scope">对中国可用（项目相关）。</span></li>
+      <li class="h-item"><span class="h-name"><b>德国 NCP / 买家举报系统 / BAFA</b></span><span class="h-scope">对中国可用（从中国境内在线提交）。</span></li>
+      <li class="h-item"><span class="h-name"><b>地区人权法院（欧洲 / 美洲 / 非洲）</b></span><span class="h-scope">按居住/发生地适用；亚洲无此类法院。</span></li>
+    </ul>
+  </div>
+</details>
+<details class="help help-general" id="helpGeneral">
   <summary>
     <span class="cap">求助渠道通用说明<span class="en">General guidance &amp; regional mechanisms</span></span>
     <span class="chev" aria-hidden="true">▾</span>
@@ -1296,14 +1350,14 @@
     <span class="chev" aria-hidden="true">▾</span>
   </summary>
   <div class="help-body">
-    <p class="src-note">适用于在跨国供应链中工作的人——供应商工厂的工人、实习生、劳务工。若侵权发生在某家外国大企业的供应链里，除了国内渠道，还可以向买家所在国的机制与买家企业的举报系统求助。</p>
+    <p class="src-note">适用于在跨国供应链中工作的人——供应商工厂的工人、实习生、劳务工。若侵权发生在某家外国大企业的供应链里，除了国内渠道，还可以向买家所在国的机制与买家企业的举报系统求助。<b>这些渠道从中国境内就可以直接在线使用——不需要人在国外，多数支持匿名。</b></p>
     <ul class="h-list">
-      <li class="h-item"><span class="h-name"><a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">德国联邦经济事务和出口管制局 · 供应链投诉</a><span class="h-en">BAFA · LkSG Complaints Procedure</span><span class="h-kind">供应链</span><span class="h-can">可匿名</span></span><span class="h-scope">任何人（包括外国供应商的工人）都可提交；在线表格可匿名。前提：该外国公司是受约束德国企业（2024 年起德国境内员工 1,000 人以上）的供应商。本人受影响的申请会得到反馈；一般线索由 BAFA 依职权调查。</span></li>
-      <li class="h-item"><span class="h-name"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD《跨国企业准则》国家联络点数据库</a><span class="h-en">OECD National Contact Points</span><span class="h-kind">供应链</span></span><span class="h-scope">任何利害关系方都可提交「特定实例」（<a href="https://mneguidelines.oecd.org/specificinstances.htm" target="_blank" rel="noopener noreferrer">程序说明</a>）；联络点做调解与斡旋，非裁决、结果无约束力，不要求先穷尽内部渠道。各国联络点名单以数据库为准。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">德国联邦经济事务和出口管制局 · 供应链投诉</a><span class="h-en">BAFA · LkSG Complaints Procedure</span><span class="h-kind">供应链</span><span class="h-can">可匿名</span></span><span class="h-scope">任何人（包括外国供应商的工人）都可提交；在线表格可匿名。<b>对中国适用：从中国境内可直接在线提交，不需要人在国外。</b>前提：该外国公司是受约束德国企业（2024 年起德国境内员工 1,000 人以上）的供应商。本人受影响的申请会得到反馈；一般线索由 BAFA 依职权调查。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD《跨国企业准则》国家联络点数据库</a><span class="h-en">OECD National Contact Points</span><span class="h-kind">供应链</span></span><span class="h-scope">任何利害关系方都可提交「特定实例」（<a href="https://mneguidelines.oecd.org/specificinstances.htm" target="_blank" rel="noopener noreferrer">程序说明</a>）；联络点做调解与斡旋，非裁决、结果无约束力，不要求先穷尽内部渠道。<b>对中国适用：可向相关国家的联络点从中国境内在线提交。</b>各国联络点名单以数据库为准。</span></li>
       <li class="h-item"><span class="h-name"><a href="https://commission.europa.eu/topics/human-rights/your-fundamental-rights-eu/protection-whistleblowers_en" target="_blank" rel="noopener noreferrer">欧盟举报人保护</a><span class="h-en">EU Whistleblower Protection</span><span class="h-kind">供应链</span></span><span class="h-scope">指令保护以「举报人与欧盟实体存在工作相关联系」为前提（条文：<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L1937" target="_blank" rel="noopener noreferrer">2019/1937</a>）；中国供应商工人通常不属其直接保护范围，正确路径是买家企业的投诉渠道——德国《供应链尽职调查法》第 8 条要求企业投诉程序对供应链人士开放。</span></li>
-      <li class="h-item"><span class="h-name"><a href="https://www.volkswagen-group.com/en/our-whistleblower-system-16041.html" target="_blank" rel="noopener noreferrer">大众集团 · 举报系统</a><span class="h-en">Volkswagen Group Complaints Procedure</span><span class="h-kind">买家渠道</span></span><span class="h-scope">德国车企多设有面向供应链的官方举报/申诉机制（可匿名），受理供应商工厂内的人权与劳工问题。</span></li>
-      <li class="h-item"><span class="h-name"><a href="https://bmwgroup.speakup.report/main" target="_blank" rel="noopener noreferrer">宝马集团 · 举报渠道</a><span class="h-en">BMW Group SpeakUP</span><span class="h-kind">买家渠道</span></span><span class="h-scope">宝马集团官方举报系统（自其合规页提取的官方链接）。</span></li>
-      <li class="h-item"><span class="h-name"><a href="https://group.mercedes-benz.com/bpo/en/" target="_blank" rel="noopener noreferrer">梅赛德斯-奔驰集团 · 商业实践办公室</a><span class="h-en">Mercedes-Benz Group BPO</span><span class="h-kind">买家渠道</span></span><span class="h-scope">处理供应链相关举报的官方渠道。这类企业举报系统一般受理员工、业务伙伴与第三方举报，多数支持匿名；供应链工人的法律依据是德国《供应链尽职调查法》第 8 条。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.volkswagen-group.com/en/our-whistleblower-system-16041.html" target="_blank" rel="noopener noreferrer">大众集团 · 举报系统</a><span class="h-en">Volkswagen Group Complaints Procedure</span><span class="h-kind">买家渠道</span></span><span class="h-scope">德国车企多设有面向供应链的官方举报/申诉机制（可匿名），受理供应商工厂内的人权与劳工问题。<b>对中国适用：供应商工厂的工人可从中国境内直接在线提交。</b></span></li>
+      <li class="h-item"><span class="h-name"><a href="https://bmwgroup.speakup.report/main" target="_blank" rel="noopener noreferrer">宝马集团 · 举报渠道</a><span class="h-en">BMW Group SpeakUP</span><span class="h-kind">买家渠道</span></span><span class="h-scope">宝马集团官方举报系统（自其合规页提取的官方链接）。<b>对中国适用：可从中国境内在线提交。</b></span></li>
+      <li class="h-item"><span class="h-name"><a href="https://group.mercedes-benz.com/bpo/en/" target="_blank" rel="noopener noreferrer">梅赛德斯-奔驰集团 · 商业实践办公室</a><span class="h-en">Mercedes-Benz Group BPO</span><span class="h-kind">买家渠道</span></span><span class="h-scope">处理供应链相关举报的官方渠道。这类企业举报系统一般受理员工、业务伙伴与第三方举报，多数支持匿名；供应链工人的法律依据是德国《供应链尽职调查法》第 8 条。<b>对中国适用：可从中国境内在线提交。</b></span></li>
       <li class="h-item"><span class="h-name"><a href="https://www.mohrss.gov.cn/" target="_blank" rel="noopener noreferrer">人力资源和社会保障部 · 12333</a><span class="h-en">MOHRSS China · 12333</span><span class="h-kind">国内一线</span><span class="h-can">先尝试</span></span><span class="h-scope">欠薪、强制加班等劳动争议应先走国内渠道：12333 热线、劳动保障监察投诉、劳动仲裁。</span></li>
     </ul>
     <p class="h-note">匿名示例：一家汽车零部件供应商的实习生遇到欠薪和强制加班，可以按顺序尝试——① 国内：拨打 12333 或向人社部门劳动保障监察投诉、申请劳动仲裁；② 供应链：若产品供应给受德国《供应链尽职调查法》约束的车企，向德国联邦经济事务和出口管制局（BAFA）提交供应链投诉，任何人可提、可匿名；③ 买家渠道：通过该车企官网的举报系统提交；④ 跨国准则：向 OECD 国家联络点提交「特定实例」寻求调解。走 ②③④ 之前，先把合同、考勤、工资记录、聊天记录整理并备份。</p>
@@ -1342,7 +1396,7 @@
       <li><b>把证据留全、备份。</b>劳动合同、录用通知、考勤与打卡记录、工资条和银行流水、工作群聊天记录、邮件、录音录像（注意本地法律对录音的要求）、能作证的同事。全部复制到公司拿不到的地方：个人邮箱、云盘、可信亲友。</li>
       <li><b>先走内部渠道并留痕。</b>向 HR 或主管书面提出，保存往来记录；有工会的找工会；公司有举报系统的先用。许多国际机制要求先内部申诉，或书面说明为何不可行——先做这一步，后面处处顺。</li>
       <li><b>国内渠道（中国，一般最快）。</b>① 12333 人力资源社会保障服务热线：欠薪、强制加班、社保等劳动保障监察投诉；② 劳动争议仲裁：要赔偿走这条，注意申请仲裁的时效是知道权利被侵害之日起一年；③ 12348 法律援助咨询热线：经济困难可申请免费法律援助；④ 12351 职工维权热线（工会）；⑤ 12338 妇女维权热线（妇联）；⑥ 12345 政务服务便民热线（转办）；⑦ 12350 安全生产举报投诉电话。欠薪另可留意「全国根治欠薪线索反映平台」。</li>
-      <li><b>国际渠道（何时才用）。</b>侵权发生在外国大企业的供应链里（见上方「企业责任与供应链渠道」）；涉及强迫劳动、人口贩运；或国内渠道确实无效、不敢用——再考虑联合国特别程序、UNESCO 来文程序、亚洲开发银行/世界银行问责机制等（见「适用于中国的国际求助途径」）。</li>
+      <li><b>国际渠道（何时才用）。</b>侵权发生在外国大企业的供应链里（见上方「企业责任与供应链渠道」）；涉及强迫劳动、人口贩运；或国内渠道确实无效、不敢用——再考虑联合国特别程序、UNESCO 来文程序、亚洲开发银行/世界银行问责机制等（见「适用于中国的国际求助途径」）。注意：国际渠道不意味着要出国——绝大多数从国内就能在线提交。</li>
       <li><b>提交写清楚五件事。</b>时间、地点、经过（一次说清一件事）；证据清单（编号）；明确诉求；是否要求保密/匿名；你的联系方式。短比长好，事实比形容词好。</li>
       <li><b>保护自己。</b>优先选择支持匿名的渠道；提交前评估报复风险；保留全部证据副本；必要时先咨询律师、工会或可信的劳工组织再行动。</li>
     </ol>
