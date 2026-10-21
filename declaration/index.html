@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>美国独立宣言 · The Declaration of Independence · 獨立宣言</title>
+<meta name="description" content="美国《独立宣言》全文三语对照：1776 年 7 月 4 日大陆会议通过，简、繁中文与英文并列，附历史背景、思想脉络、27 条控诉与签署人。与世界人权宣言同站。">
+<meta name="theme-color" content="#090a0c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美国独立宣言 · 三语对照">
+<meta property="og:description" content="人人生而平等，造物主赋予他们若干不可剥夺的权利。1776 年《独立宣言》全文简繁英对照。">
+<meta property="og:locale" content="zh_CN">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#090a0c;
+  --bg-2:#101216;
+  --ink:#e8e2d6;
+  --ink-dim:#c8c0b1;
+  --muted:#9b9385;
+  --gold:#d9b382;
+  --gold-lit:#f0d5a0;
+  --gold-deep:#8a6b45;
+  --blue:#8fb4d9;
+  --line:rgba(217,179,130,.22);
+  --line-2:rgba(232,226,214,.10);
+  --serif-cn:"Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif;
+  --serif-en:Georgia,"Times New Roman","Iowan Old Style",serif;
+  --serif-body:Georgia,"Times New Roman","Iowan Old Style","Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif;
+  --scale:1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--serif-body);
+  font-size:calc(16px * var(--scale));
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(1100px 640px at 70% -10%,rgba(143,180,217,.13),transparent 62%),
+    radial-gradient(900px 600px at 8% 4%,rgba(217,179,130,.10),transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(60,85,115,.14),transparent 66%),
+    linear-gradient(180deg,#0b0d10 0%,#090a0c 48%,#0c0e12 100%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(217,179,130,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(217,179,130,.035) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse at 50% 24%,#000 18%,transparent 76%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 24%,#000 18%,transparent 76%);
+}
+a{color:var(--gold-lit);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+::selection{background:rgba(217,179,130,.28);color:#15110c}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:90;background:transparent}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lit));transition:width .08s linear}
+
+/* 顶栏 */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:80;background:linear-gradient(180deg,rgba(9,10,12,.94),rgba(9,10,12,.78));border-bottom:1px solid var(--line-2);backdrop-filter:blur(12px)}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:10px clamp(16px,3vw,36px);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:13px;letter-spacing:.12em}
+.brand:hover{text-decoration:none;color:var(--gold-lit)}
+.brand-mark{width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,#e7cc99,#a97b35);color:#1a140d;display:grid;place-items:center;font-weight:700;font-size:13px;box-shadow:0 0 0 4px rgba(217,179,130,.1)}
+.doc-switch{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.doc-switch a{font-family:var(--serif-cn);font-size:12px;letter-spacing:.08em;padding:5px 11px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted)}
+.doc-switch a:hover{border-color:var(--line);color:var(--gold-lit);text-decoration:none}
+.doc-switch a.on{background:rgba(217,179,130,.14);border-color:var(--line);color:var(--gold-lit)}
+.tools{display:flex;align-items:center;gap:6px}
+.tool-btn{font-family:var(--serif-cn);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 10px;cursor:pointer}
+.tool-btn:hover{color:var(--gold-lit);border-color:var(--line)}
+
+/* 首屏 */
+.hero{position:relative;padding:clamp(110px,16vh,180px) 20px clamp(54px,8vh,86px);text-align:center;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;top:18%;width:min(900px,92vw);height:520px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(217,179,130,.13),transparent 62%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.24em;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:7px 16px;background:rgba(217,179,130,.05)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-lit);box-shadow:0 0 12px var(--gold-lit)}
+.hero h1{font-family:var(--serif-cn);font-size:clamp(46px,7.4vw,94px);font-weight:700;letter-spacing:.14em;line-height:1.08;margin:26px 0 10px;color:#f3ead9;text-indent:.14em}
+.hero h1 small{display:block;margin-top:14px;font-family:var(--serif-en);font-size:clamp(12px,1.24vw,16px);letter-spacing:.28em;color:var(--muted);font-weight:400;text-indent:0}
+.hero .adopted{margin:18px auto 0;max-width:760px;font-family:var(--serif-cn);font-size:clamp(12px,1.1vw,14px);letter-spacing:.12em;color:var(--muted);line-height:1.9}
+.hero .epigraph{margin:34px auto 0;max-width:900px;padding:26px 8px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:24px;text-align:left}
+.hero .epigraph p{margin:0;font-size:clamp(13px,1.15vw,15px);line-height:1.9;color:var(--ink-dim)}
+.hero .epigraph .en{font-family:var(--serif-en);font-style:italic;color:#d9d1c3}
+.scroll-cue{margin-top:40px;font-family:var(--serif-cn);font-size:11px;letter-spacing:.3em;color:var(--gold);opacity:.75}
+.scroll-cue .line{display:block;width:1px;height:34px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent)}
+
+/* 正文 */
+.doc{position:relative;z-index:1;padding:0 0 clamp(80px,12vh,150px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,36px)}
+.section-head{position:relative;margin:clamp(58px,9vh,104px) 0 clamp(28px,4vh,42px);text-align:center}
+.section-head .sec-no{display:inline-block;font-family:var(--serif-en);font-size:11px;letter-spacing:.28em;color:var(--gold);margin-bottom:10px}
+.section-head h2{margin:0;font-family:var(--serif-cn);font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:.2em;color:#f0e7d7}
+.section-head h2 .sep{margin:0 .28em;color:var(--gold-deep);font-weight:400}
+.section-head .sec-en{margin:10px 0 0;font-family:var(--serif-en);font-size:11.5px;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}
+.section-head::after{content:"";display:block;width:60px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.lang-heads{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:clamp(18px,3vw,36px);padding:0 4px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;font-family:var(--serif-cn);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.lang-heads .en{font-family:var(--serif-en);letter-spacing:.18em}
+.para{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:clamp(18px,3vw,36px);padding:clamp(18px,2.4vh,26px) 4px;border-bottom:1px solid var(--line-2);align-items:start}
+.para:last-child{border-bottom:0}
+.para p{margin:0;font-size:clamp(14.5px,1.18vw,16.5px);line-height:2.02;color:var(--ink)}
+.para .en p{font-family:var(--serif-en);font-size:clamp(13.5px,1.05vw,15px);line-height:1.82;color:#d5cdbf}
+.para .lang-col[lang="zh-Hant"] p{color:#ddd5c7}
+
+/* 控诉 */
+.lead-note{max-width:760px;margin:0 auto 18px;text-align:center;font-family:var(--serif-cn);font-size:12px;color:var(--muted);letter-spacing:.05em}
+.grievance{display:grid;grid-template-columns:58px 1fr;gap:0;border-bottom:1px solid var(--line-2)}
+.grievance:last-of-type{border-bottom:0}
+.g-no{font-family:var(--serif-en);font-size:13px;letter-spacing:.08em;color:var(--gold);padding-top:24px}
+.g-body .para{border-bottom:0;padding-top:22px;padding-bottom:22px}
+.g-body .para p{font-size:clamp(14px,1.1vw,15.5px)}
+
+/* 注释 */
+.note{margin:24px auto 0;max-width:960px;border:1px solid var(--line-2);border-radius:2px;background:rgba(255,255,255,.018)}
+.note summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--serif-cn);font-size:12.5px;letter-spacing:.12em;color:var(--gold)}
+.note summary::-webkit-details-marker{display:none}
+.note summary .chev{transition:transform .2s ease;font-size:11px;color:var(--muted)}
+.note[open] summary .chev{transform:rotate(180deg)}
+.note-body{padding:0 20px 20px;border-top:1px solid var(--line-2)}
+.note-body p{margin:14px 0 0;font-size:14px;line-height:1.95;color:var(--ink-dim)}
+.note-body .note-k{margin:18px 0 0;font-family:var(--serif-cn);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+
+/* 签署人 */
+.signers-wrap{margin:24px auto 0;max-width:1000px;border:1px solid var(--line-2);border-radius:2px;background:rgba(255,255,255,.018)}
+.signers-wrap summary{list-style:none;cursor:pointer;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif-cn);font-size:13px;letter-spacing:.14em;color:var(--gold)}
+.signers-wrap summary::-webkit-details-marker{display:none}
+.signers-wrap .chev{transition:transform .2s;font-size:11px;color:var(--muted)}
+.signers-wrap[open] .chev{transform:rotate(180deg)}
+.signers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 26px;padding:4px 22px 26px;border-top:1px solid var(--line-2)}
+.signer-state h3{margin:16px 0 8px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.14em;color:var(--ink);font-weight:600}
+.signer-state h3 em{display:block;margin-top:3px;font-family:var(--serif-en);font-size:10px;letter-spacing:.12em;color:var(--muted);font-style:normal}
+.signer-state ul{list-style:none;margin:0;padding:0}
+.signer-state li{font-family:var(--serif-en);font-size:12.5px;line-height:1.9;color:var(--ink-dim);border-bottom:1px dotted rgba(232,226,214,.08);padding:2px 0}
+
+/* 与我有关 */
+.check-section{max-width:960px;margin:clamp(58px,8vh,92px) auto 0;padding:30px clamp(20px,3vw,34px);border:1px solid var(--line);background:linear-gradient(180deg,rgba(217,179,130,.055),rgba(255,255,255,.012));position:relative}
+.check-section::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lit),var(--gold-deep))}
+.check-head .sec-no{font-family:var(--serif-en);font-size:11px;letter-spacing:.28em;color:var(--gold)}
+.check-head h2{margin:8px 0 6px;font-family:var(--serif-cn);font-size:clamp(22px,2.6vw,30px);letter-spacing:.16em;color:#f0e7d7}
+.check-head p{margin:0 0 20px;font-size:12.5px;color:var(--muted)}
+.check-list{display:grid;gap:9px}
+.check-item{display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:10px 12px;border:1px solid var(--line-2);background:rgba(10,12,15,.35);transition:border-color .15s,background .15s}
+.check-item:hover{border-color:var(--line);background:rgba(217,179,130,.05)}
+.check-item input{position:absolute;opacity:0}
+.check-item .box{flex:none;width:18px;height:18px;margin-top:3px;border:1px solid var(--gold-deep);border-radius:2px;display:grid;place-items:center}
+.check-item input:checked + .box{background:var(--gold);border-color:var(--gold)}
+.check-item input:checked + .box::after{content:"✓";color:#1a140d;font-size:12px;font-weight:700}
+.check-item input:focus-visible + .box{outline:2px solid var(--blue);outline-offset:2px}
+.c-cn b{display:block;font-weight:400;font-size:14.5px;color:var(--ink)}
+.c-cn em{display:block;margin-top:3px;font-family:var(--serif-en);font-size:11.5px;color:var(--muted);font-style:normal}
+.check-foot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--muted)}
+.check-foot #checkCount{margin-right:auto}
+.btn-line{font-family:var(--serif-cn);font-size:12px;letter-spacing:.08em;color:var(--gold);background:transparent;border:1px solid var(--line);padding:7px 13px;cursor:pointer}
+.btn-line:hover{background:rgba(217,179,130,.1)}
+
+/* 文本说明 */
+.colophon{max-width:1040px;margin:clamp(66px,9vh,104px) auto 0;border-top:1px solid var(--line);padding-top:6px}
+.colophon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px;margin-top:8px}
+.colophon-grid h3{margin:0 0 8px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.18em;color:var(--gold)}
+.colophon-grid p{margin:0;font-size:13px;line-height:1.95;color:var(--ink-dim)}
+.colophon-grid a{color:var(--gold-lit)}
+
+/* 目录抽屉 */
+.toc-btn{position:fixed;right:18px;bottom:22px;z-index:85;font-family:var(--serif-cn);font-size:12px;letter-spacing:.12em;color:#1a140d;background:linear-gradient(180deg,#edd3a4,#c79a5a);border:0;border-radius:999px;padding:10px 16px;box-shadow:0 10px 26px rgba(0,0,0,.35);cursor:pointer}
+.toc-overlay{position:fixed;inset:0;z-index:95;background:rgba(4,5,7,.62);opacity:0;pointer-events:none;transition:opacity .2s}
+.toc-panel{position:fixed;right:0;top:0;bottom:0;z-index:96;width:min(380px,88vw);background:#0e1014;border-left:1px solid var(--line);padding:22px 22px 30px;overflow:auto;transform:translateX(102%);transition:transform .24s ease}
+body.toc-open .toc-overlay{opacity:1;pointer-events:auto}
+body.toc-open .toc-panel{transform:translateX(0)}
+.toc-panel h2{margin:0 0 4px;font-family:var(--serif-cn);font-size:16px;letter-spacing:.16em;color:var(--gold)}
+.toc-panel p{margin:0 0 16px;font-size:11px;color:var(--muted)}
+.toc-panel a{display:flex;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line-2);font-family:var(--serif-cn);font-size:13px;color:var(--ink-dim)}
+.toc-panel a:hover{color:var(--gold-lit);text-decoration:none}
+.toc-panel a b{font-family:var(--serif-en);font-weight:400;font-size:11px;color:var(--gold);min-width:20px}
+.toc-close{position:absolute;right:14px;top:12px;background:transparent;border:0;color:var(--muted);font-size:20px;cursor:pointer}
+
+/* 页脚 */
+.footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px 20px 46px;text-align:center;color:var(--muted);font-size:12px;line-height:1.9}
+.footer a{color:var(--gold)}
+.footer .foot-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px}
+
+@media(max-width:900px){
+  .hero .epigraph{grid-template-columns:1fr;gap:10px;text-align:center}
+  .para,.lang-heads{grid-template-columns:1fr;gap:8px}
+  .lang-heads{padding-bottom:8px}
+  .para{padding:16px 2px}
+  .para .lang-col[lang="zh-Hans"]::before{content:"简";display:inline-block;font-family:var(--serif-cn);font-size:10px;color:var(--gold);margin-right:8px}
+  .para .lang-col[lang="zh-Hant"]::before{content:"繁";display:inline-block;font-family:var(--serif-cn);font-size:10px;color:var(--gold);margin-right:8px}
+  .para .lang-col.en::before{content:"EN";display:inline-block;font-family:var(--serif-en);font-size:10px;color:var(--gold);margin-right:8px;letter-spacing:.12em}
+  .grievance{grid-template-columns:38px 1fr}
+  .signers-grid{grid-template-columns:repeat(2,1fr)}
+  .colophon-grid{grid-template-columns:1fr}
+  .topbar-inner{padding-top:8px;padding-bottom:8px}
+  .doc-switch{order:3;width:100%;justify-content:center}
+}
+@media(max-width:560px){
+  .hero{padding-top:120px}
+  .hero h1{letter-spacing:.08em;text-indent:.08em}
+  .signers-grid{grid-template-columns:1fr}
+  .check-section{padding:24px 16px}
+  .brand span:not(.brand-mark){display:none}
+  .tools .tool-btn:first-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="readFill"></i></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">宣</span><span>世界人权宣言 · 美国独立宣言</span></a>
+    <nav class="doc-switch" aria-label="文献切换">
+      <a href="../index.html">世界人权宣言</a>
+      <a class="on" href="./index.html" aria-current="page">美国独立宣言</a>
+    </nav>
+    <div class="tools">
+      <button type="button" class="tool-btn" data-font="-0.06" title="缩小字号">A−</button>
+      <button type="button" class="tool-btn" data-font="0.06" title="放大字号">A+</button>
+    </div>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="dot"></span>IN CONGRESS · JULY 4, 1776</p>
+      <h1>独立宣言<small>THE DECLARATION OF INDEPENDENCE</small></h1>
+      <p class="adopted">美利坚合众国十三个州一致通过的宣言<br><span style="font-family:var(--serif-en);letter-spacing:.08em;font-size:.92em">The unanimous Declaration of the thirteen united States of America</span></p>
+      <div class="epigraph">
+        <p lang="zh-Hans">“我们认为以下真理是不言而喻的：人人生而平等，造物主赋予他们若干不可剥夺的权利，其中包括生命、自由和追求幸福的权利。”</p>
+        <p lang="zh-Hant">「我們認為以下真理是不言而喻的：人人生而平等，造物主賦予他們若干不可剝奪的權利，其中包括生命、自由和追求幸福的權利。」</p>
+        <p class="en" lang="en">“We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.”</p>
+      </div>
+      <div class="scroll-cue">滚动阅读 · SCROLL<span class="line"></span></div>
+    </div>
+  </section>
+  <div class="doc">
+    <div class="wrap">
+      <div class="lang-heads"><span lang="zh-Hans">简体中文</span><span lang="zh-Hant">繁體中文</span><span class="en" lang="en">English</span></div>
+      <div class="section-head" id="intro">
+  <span class="sec-no">01</span>
+  <h2><span lang="zh-Hans">导言</span><span class="sep">·</span><span lang="zh-Hant">導言</span></h2>
+  <p class="sec-en">Introduction</p>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>在人类事务的进程中，当一个民族必须解除与另一个民族之间的政治纽带，并在世界列国之间，取得自然法则与自然之神所赋予的独立平等地位时，出于对人类舆论的应有尊重，应当说明迫使他们分离的原因。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>在人類事務的進程中，當一個民族必須解除與另一個民族之間的政治紐帶，並在世界列國之間，取得自然法則與自然之神所賦予的獨立平等地位時，出於對人類輿論的應有尊重，應當說明迫使他們分離的原因。</p></div>
+  <div class="lang-col en" lang="en"><p>When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p></div>
+</div><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>1776 年 6 月，弗吉尼亚代表理查德·亨利·李向大陆会议提出“这些联合殖民地是、也应当是自由独立的国家”的决议。会议随后任命杰斐逊、亚当斯、富兰克林、谢尔曼、利文斯顿五人起草宣言，杰斐逊执笔。7 月 2 日，独立决议通过；7 月 4 日，宣言文本被正式通过。宣言首先是一份对外说明理由的政治文件：它要说服“公正的世界”，而不只是记录情绪。</p>
+    <p class="note-k">思想脉络</p><p>自然法学说在 17—18 世纪欧洲政治思想中已很成熟：格劳秀斯、普芬道夫、洛克都讨论过自然权利、政府契约与反抗暴政。宣言把这些语言压缩成一份面向公众的“事实清单”。</p>
+  </div>
+</details><div class="section-head" id="truths">
+  <span class="sec-no">02</span>
+  <h2><span lang="zh-Hans">不言而喻的真理</span><span class="sep">·</span><span lang="zh-Hant">不言而喻的真理</span></h2>
+  <p class="sec-en">Self-Evident Truths</p>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>我们认为以下真理是不言而喻的：人人生而平等，造物主赋予他们若干不可剥夺的权利，其中包括生命、自由和追求幸福的权利。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們認爲以下真理是不言而喻的：人人生而平等，造物主賦予他們若干不可剝奪的權利，其中包括生命、自由和追求幸福的權利。</p></div>
+  <div class="lang-col en" lang="en"><p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>为了保障这些权利，人类才建立政府；政府的正当权力，来自被统治者的同意。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲了保障這些權利，人類才建立政府；政府的正當權力，來自被統治者的同意。</p></div>
+  <div class="lang-col en" lang="en"><p>That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed,—</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>当任何形式的政府破坏这些目标时，人民便有权更换或废除它，并建立新政府；新政府应以这样的原则为基础，以这样的形式组织权力，使人民认为最有可能实现他们的安全与幸福。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>當任何形式的政府破壞這些目標時，人民便有權更換或廢除它，並建立新政府；新政府應以這樣的原則爲基礎，以這樣的形式組織權力，使人民認爲最有可能實現他們的安全與幸福。</p></div>
+  <div class="lang-col en" lang="en"><p>That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>诚然，审慎会告诉我们：成立已久的政府，不应因轻微而短暂的原因而更换；一切经验也表明，只要祸害尚可忍受，人类更愿意忍受，而不愿废除他们习以为常的形式来纠正自身。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>誠然，審慎會告訴我們：成立已久的政府，不應因輕微而短暫的原因而更換；一切經驗也表明，只要禍害尚可忍受，人類更願意忍受，而不願廢除他們習以爲常的形式來糾正自身。</p></div>
+  <div class="lang-col en" lang="en"><p>Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>但是，当一长串滥用职权和强取豪夺的行为，始终追求同一目标，表明其企图把人民置于绝对专制之下时，人民就有权、也有义务推翻这样的政府，并为未来的安全提供新的保障。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>但是，當一長串濫用職權和強取豪奪的行爲，始終追求同一目標，表明其企圖把人民置於絕對專制之下時，人民就有權、也有義務推翻這樣的政府，併爲未來的安全提供新的保障。</p></div>
+  <div class="lang-col en" lang="en"><p>But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>这些殖民地已经耐心忍受了这一切；如今，形势迫使它们改变原有的政府制度。当今大不列颠国王的历史，是一部反复伤害和篡夺的历史，其直接目标是在这些州建立绝对暴政。为了证明这一点，让我们把事实提交给公正的世界。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>這些殖民地已經耐心忍受了這一切；如今，形勢迫使它們改變原有的政府制度。當今大不列顛國王的歷史，是一部反覆傷害和篡奪的歷史，其直接目標是在這些州建立絕對暴政。爲了證明這一點，讓我們把事實提交給公正的世界。</p></div>
+  <div class="lang-col en" lang="en"><p>Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.</p></div>
+</div><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>“人人生而平等”“不可剥夺的权利”“被统治者的同意”——这些句子并非 1776 年才被发明，而是启蒙政治思想长期积累的结果。杰斐逊的表述刻意简洁，使它能够被不同立场的人反复引用；也正因为简洁，它留下了巨大的解释空间。</p>
+    <p class="note-k">思想脉络</p><p>最直接的文本渊源是约翰·洛克《政府论》（1689）：自然状态、自然权利、政府源于同意、暴政使人民有权革命。孟德斯鸠的分权思想、英国辉格党传统（西德尼、弥尔顿）也提供了语言资源。
+
+与儒家传统对照，可列出“思想呼应”而非“直接影响”：孟子说“民为贵，社稷次之，君为轻”（《孟子·尽心下》）；《易·革》说“汤武革命，顺乎天而应乎人”；黄宗羲《明夷待访录·原君》说“天下为主，君为客”。这些命题与“政府应为人民而设”可以对话，但各自的历史语境与论证方式并不相同，不能简单等同于 1776 年的自然权利学说。</p>
+  </div>
+</details><div class="section-head" id="grievances">
+  <span class="sec-no">03</span>
+  <h2><span lang="zh-Hans">对英王的控诉</span><span class="sep">·</span><span lang="zh-Hant">對英王的控訴</span></h2>
+  <p class="sec-en">The Grievances · 27 Articles</p>
+</div><p class="lead-note">以下 27 条按原文章次排列；每条先列英文原文，再列简、繁中文。原文中的拼写与标点保留历史原貌。</p><div class="grievance">
+  <div class="g-no">01</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他拒绝批准对公共福祉最有益、最必要的法律。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他拒絕批准對公共福祉最有益、最必要的法律。</p></div>
+  <div class="lang-col en" lang="en"><p>He has refused his Assent to Laws, the most wholesome and necessary for the public good.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">02</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他禁止他的总督批准刻不容缓、极为重要的法律，除非暂缓施行直到取得他的同意；而一旦暂缓，他又完全置之不理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他禁止他的總督批准刻不容緩、極爲重要的法律，除非暫緩施行直到取得他的同意；而一旦暫緩，他又完全置之不理。</p></div>
+  <div class="lang-col en" lang="en"><p>He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">03</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他拒绝批准便利广大地区人民的其他法律，除非这些人民放弃在立法机构中的代表权——这项权利对他们无比珍贵，只有暴君才畏惧它。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他拒絕批准便利廣大地區人民的其他法律，除非這些人民放棄在立法機構中的代表權——這項權利對他們無比珍貴，只有暴君才畏懼它。</p></div>
+  <div class="lang-col en" lang="en"><p>He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">04</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他把立法机构召集到异乎寻常、令人不适、远离公共档案保存地的场所开会，唯一目的就是让他们疲惫不堪，从而屈从他的措施。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他把立法機構召集到異乎尋常、令人不適、遠離公共檔案保存地的場所開會，唯一目的就是讓他們疲憊不堪，從而屈從他的措施。</p></div>
+  <div class="lang-col en" lang="en"><p>He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">05</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他多次解散众议院，因为众议院以坚定的气概反对他侵犯人民的权利。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他多次解散衆議院，因爲衆議院以堅定的氣概反對他侵犯人民的權利。</p></div>
+  <div class="lang-col en" lang="en"><p>He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">06</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>解散之后，他又长期拒绝让人民另选议员；于是，无法被消灭的立法权便回到广大人民手中，由人民行使；在此期间，各州面临外敌入侵和内部动乱的一切危险。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>解散之後，他又長期拒絕讓人民另選議員；於是，無法被消滅的立法權便回到廣大人民手中，由人民行使；在此期間，各州面臨外敵入侵和內部動亂的一切危險。</p></div>
+  <div class="lang-col en" lang="en"><p>He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">07</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他竭力阻止这些州的人口增长：为此阻挠外国人入籍法，拒绝批准鼓励移民迁来的其他法律，并提高新分配土地的条件。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他竭力阻止這些州的人口增長：爲此阻撓外國人入籍法，拒絕批准鼓勵移民遷來的其他法律，並提高新分配土地的條件。</p></div>
+  <div class="lang-col en" lang="en"><p>He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">08</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他拒绝批准建立司法权的法律，从而阻碍司法行政。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他拒絕批准建立司法權的法律，從而阻礙司法行政。</p></div>
+  <div class="lang-col en" lang="en"><p>He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">09</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他使法官的任期、薪金数额和支付完全取决于他个人的意志。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他使法官的任期、薪金數額和支付完全取決於他個人的意志。</p></div>
+  <div class="lang-col en" lang="en"><p>He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">10</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他设立大批新官职，派来成群官吏骚扰我们的人民，吞噬他们的财物。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他設立大批新官職，派來成羣官吏騷擾我們的人民，吞噬他們的財物。</p></div>
+  <div class="lang-col en" lang="en"><p>He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">11</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他在和平时期，未经我们立法机构同意，就在我们中间维持常备军。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他在和平時期，未經我們立法機構同意，就在我們中間維持常備軍。</p></div>
+  <div class="lang-col en" lang="en"><p>He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">12</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他力图使军队独立于文官权力，并凌驾于文官权力之上。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他力圖使軍隊獨立於文官權力，並凌駕於文官權力之上。</p></div>
+  <div class="lang-col en" lang="en"><p>He has affected to render the Military independent of and superior to the Civil power.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">13</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他同他人勾结，把我们置于一种与我们的宪法格格不入、且我们的法律不予承认的管辖之下，并批准他们那些伪立法的法案：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他同他人勾結，把我們置於一種與我們的憲法格格不入、且我們的法律不予承認的管轄之下，並批准他們那些僞立法的法案：</p></div>
+  <div class="lang-col en" lang="en"><p>He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">14</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为在我们中间驻扎大批武装部队：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲在我們中間駐紮大批武裝部隊：</p></div>
+  <div class="lang-col en" lang="en"><p>For Quartering large bodies of armed troops among us:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">15</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为通过虚假审判保护他们，使其在我们各州居民身上犯下的任何谋杀罪行免受惩罚：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲通過虛假審判保護他們，使其在我們各州居民身上犯下的任何謀殺罪行免受懲罰：</p></div>
+  <div class="lang-col en" lang="en"><p>For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">16</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为切断我们与世界各地的贸易：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲切斷我們與世界各地的貿易：</p></div>
+  <div class="lang-col en" lang="en"><p>For cutting off our Trade with all parts of the world:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">17</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为未经我们同意便向我们征税：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲未經我們同意便向我們徵稅：</p></div>
+  <div class="lang-col en" lang="en"><p>For imposing Taxes on us without our Consent:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">18</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为在许多案件中剥夺我们享有陪审团审判的利益：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲在許多案件中剝奪我們享有陪審團審判的利益：</p></div>
+  <div class="lang-col en" lang="en"><p>For depriving us in many cases, of the benefits of Trial by Jury:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">19</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为以莫须有的罪名把我们押往海外受审：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲以莫須有的罪名把我們押往海外受審：</p></div>
+  <div class="lang-col en" lang="en"><p>For transporting us beyond Seas to be tried for pretended offences:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">20</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为在邻省废除英国法律的自由制度，在那里建立专制政府，并扩大其疆界，使其立即成为向这些殖民地推行同样绝对统治的榜样和合适工具：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲在鄰省廢除英國法律的自由制度，在那裏建立專制政府，並擴大其疆界，使其立即成爲向這些殖民地推行同樣絕對統治的榜樣和合適工具：</p></div>
+  <div class="lang-col en" lang="en"><p>For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">21</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为夺走我们的特许状，废除我们最宝贵的法律，并从根本上改变我们政府的形式：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲奪走我們的特許狀，廢除我們最寶貴的法律，並從根本上改變我們政府的形式：</p></div>
+  <div class="lang-col en" lang="en"><p>For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments:</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">22</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>为中止我们自己的立法机构，并宣称他们有权在任何情况下为我们立法。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲中止我們自己的立法機構，並宣稱他們有權在任何情況下爲我們立法。</p></div>
+  <div class="lang-col en" lang="en"><p>For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">23</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他宣布我们不在他的保护之下，并向我们发动战争，从而在这里放弃了他的政府。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他宣佈我們不在他的保護之下，並向我們發動戰爭，從而在這裏放棄了他的政府。</p></div>
+  <div class="lang-col en" lang="en"><p>He has abdicated Government here, by declaring us out of his Protection and waging War against us.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">24</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他在我们的海域掠夺，蹂躏我们的海岸，焚烧我们的城镇，残害我们人民的生命。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他在我們的海域掠奪，蹂躪我們的海岸，焚燒我們的城鎮，殘害我們人民的生命。</p></div>
+  <div class="lang-col en" lang="en"><p>He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">25</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他此时正运送大批外国雇佣军，来完成死亡、荒凉与暴政的勾当；其残忍与背信，即使在最野蛮的时代也几乎无与伦比，完全不配做文明国家的元首。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他此時正運送大批外國僱傭軍，來完成死亡、荒涼與暴政的勾當；其殘忍與背信，即使在最野蠻的時代也幾乎無與倫比，完全不配做文明國家的元首。</p></div>
+  <div class="lang-col en" lang="en"><p>He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty &amp; perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">26</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他强迫在公海被俘的同胞拿起武器对抗自己的国家，让他们成为朋友和兄弟的刽子手，或者让他们死于亲友之手。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他強迫在公海被俘的同胞拿起武器對抗自己的國家，讓他們成爲朋友和兄弟的劊子手，或者讓他們死於親友之手。</p></div>
+  <div class="lang-col en" lang="en"><p>He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands.</p></div>
+</div></div>
+</div><div class="grievance">
+  <div class="g-no">27</div>
+  <div class="g-body"><div class="para g-para">
+  <div class="lang-col" lang="zh-Hans"><p>他在我们中间煽动内乱，并竭力把凶残的印第安“野蛮人”引到我们的边疆居民身上；而众所周知，他们的作战规则是不分年龄、性别和身份地毁灭一切。（原文中的“Indian Savages”是当时殖民者的偏见用语，此处保留以存历史原貌。）</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>他在我們中間煽動內亂，並竭力把兇殘的印第安“野蠻人”引到我們的邊疆居民身上；而衆所周知，他們的作戰規則是不分年齡、性別和身份地毀滅一切。（原文中的“Indian Savages”是當時殖民者的偏見用語，此處保留以存歷史原貌。）</p></div>
+  <div class="lang-col en" lang="en"><p>He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>27 条控诉把英国议会与国王在 1763—1776 年间的殖民地政策逐条列出：征税、驻军、解散议会、司法干预、贸易限制、魁北克法案等。它们既是政治指控，也是动员舆论的修辞。现代史学指出，其中若干条在事实层面有夸大或片面之处；但作为“宣布独立的原因”，它们完成了当时最重要的功能：把分散的不满组织成一个可被阅读、传播和签署的清单。</p>
+    <p class="note-k">思想脉络</p><p>这份清单的文体模仿了当时请愿书、陈情书与英国普通法传统中的“列举侵害”格式。它把抽象的自然权利落实到具体事件，使读者不必先接受整套哲学，也能理解“为什么必须分离”。</p>
+  </div>
+</details><div class="section-head" id="appeal">
+  <span class="sec-no">04</span>
+  <h2><span lang="zh-Hans">最后的申诉</span><span class="sep">·</span><span lang="zh-Hant">最後的申訴</span></h2>
+  <p class="sec-en">The Final Appeal</p>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>在这些压迫的每一个阶段，我们都以最谦卑的措辞请求纠正；我们反复的请愿，得到的只是反复的伤害。一个君主，其品格被每一个足以界定暴君的行为所标记，就不配做自由人民的统治者。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>在這些壓迫的每一個階段，我們都以最謙卑的措辭請求糾正；我們反覆的請願，得到的只是反覆的傷害。一個君主，其品格被每一個足以界定暴君的行爲所標記，就不配做自由人民的統治者。</p></div>
+  <div class="lang-col en" lang="en"><p>In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince, whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>我们也没有忽视我们的英国兄弟。我们不时警告他们，他们的立法机关企图把不合理的管辖权扩展到我们身上；我们提醒他们我们移民和在此定居的情况；我们诉诸他们天生的正义感和宽厚，并以共同血缘的纽带恳求他们摒弃这些篡夺行为——这些行为势必中断我们之间的联系与往来。然而，他们对正义和血缘的呼声同样充耳不闻。因此，我们不得不接受分离的必要，并像对待世上其他人一样对待他们：战时为敌，和时为友。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們也沒有忽視我們的英國兄弟。我們不時警告他們，他們的立法機關企圖把不合理的管轄權擴展到我們身上；我們提醒他們我們移民和在此定居的情況；我們訴諸他們天生的正義感和寬厚，並以共同血緣的紐帶懇求他們摒棄這些篡奪行爲——這些行爲勢必中斷我們之間的聯繫與往來。然而，他們對正義和血緣的呼聲同樣充耳不聞。因此，我們不得不接受分離的必要，並像對待世上其他人一樣對待他們：戰時爲敵，和時爲友。</p></div>
+  <div class="lang-col en" lang="en"><p>Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends.</p></div>
+</div><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>在宣布独立之前，殖民地曾多次向英王和议会请愿，包括 1774 年第一次大陆会议的《致国王书》和 1775 年的《橄榄枝请愿书》。宣言用“最谦卑的措辞”与“反复的伤害”形成强烈对照，把分离的责任推给英王，而不是殖民地。</p>
+    <p class="note-k">思想脉络</p><p>这种“先陈情、后决裂”的结构，使宣言在修辞上显得克制：它不是煽动叛乱，而是声称在一切和平手段用尽之后，才诉诸独立。</p>
+  </div>
+</details><div class="section-head" id="independence">
+  <span class="sec-no">05</span>
+  <h2><span lang="zh-Hans">独立宣言</span><span class="sep">·</span><span lang="zh-Hant">獨立宣言</span></h2>
+  <p class="sec-en">The Declaration</p>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>因此，我们，美利坚合众国的代表们，在大陆会议中集会，向世界最高裁判者申诉我们意图的正当，并以这些殖民地善良人民的名义和授权，郑重地发布并宣布：这些联合殖民地是，而且按理应当是自由独立的国家；它们解除对英国王室的一切效忠，它们与大不列颠国之间的一切政治联系，是而且应当完全解除；作为自由独立的国家，它们有充分权力宣战、媾和、结盟、通商，并做独立国家有权做的一切其他事情。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>因此，我們，美利堅合衆國的代表們，在大陸會議中集會，向世界最高裁判者申訴我們意圖的正當，並以這些殖民地善良人民的名義和授權，鄭重地發佈並宣佈：這些聯合殖民地是，而且按理應當是自由獨立的國家；它們解除對英國王室的一切效忠，它們與大不列顛國之間的一切政治聯繫，是而且應當完全解除；作爲自由獨立的國家，它們有充分權力宣戰、媾和、結盟、通商，並做獨立國家有權做的一切其他事情。</p></div>
+  <div class="lang-col en" lang="en"><p>We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do.</p></div>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>为了支持这一宣言，我们坚定地信赖神圣天意的保护，彼此以我们的生命、财产和神圣荣誉互相宣誓。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲了支持這一宣言，我們堅定地信賴神聖天意的保護，彼此以我們的生命、財產和神聖榮譽互相宣誓。</p></div>
+  <div class="lang-col en" lang="en"><p>And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.</p></div>
+</div><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>最后一段完成了从“控诉”到“立国”的转折：宣言不再请求，而是宣布。它同时具备对外宣示与对内动员的双重功能。7 月 4 日通过的文本，直到 8 月 2 日才由大多数代表在羊皮纸上签署；纽约代表团迟至 7 月 9 日才授权，部分代表则是在更晚的时候补签。</p>
+    <p class="note-k">思想脉络</p><p>宣言没有建立具体政府结构，也没有写入奴隶制问题；它宣布的是“独立”的原则与事实，而不是一部宪法。制宪要等到 1787 年费城会议。</p>
+  </div>
+</details><div class="section-head" id="signers">
+  <span class="sec-no">06</span>
+  <h2><span lang="zh-Hans">签署人</span><span class="sep">·</span><span lang="zh-Hant">簽署人</span></h2>
+  <p class="sec-en">The Signers</p>
+</div><details class="signers-wrap">
+  <summary><span>五十六位签署人 · 按殖民地排列</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="signers-grid"><div class="signer-state"><h3><span>乔治亚</span><em>Georgia</em></h3><ul><li>Button Gwinnett</li><li>Lyman Hall</li><li>George Walton</li></ul></div><div class="signer-state"><h3><span>北卡罗来纳</span><em>North Carolina</em></h3><ul><li>William Hooper</li><li>Joseph Hewes</li><li>John Penn</li></ul></div><div class="signer-state"><h3><span>南卡罗来纳</span><em>South Carolina</em></h3><ul><li>Edward Rutledge</li><li>Thomas Heyward, Jr.</li><li>Thomas Lynch, Jr.</li><li>Arthur Middleton</li></ul></div><div class="signer-state"><h3><span>马萨诸塞</span><em>Massachusetts</em></h3><ul><li>John Hancock</li></ul></div><div class="signer-state"><h3><span>马里兰</span><em>Maryland</em></h3><ul><li>Samuel Chase</li><li>William Paca</li><li>Thomas Stone</li><li>Charles Carroll of Carrollton</li></ul></div><div class="signer-state"><h3><span>弗吉尼亚</span><em>Virginia</em></h3><ul><li>George Wythe</li><li>Richard Henry Lee</li><li>Thomas Jefferson</li><li>Benjamin Harrison</li><li>Thomas Nelson, Jr.</li><li>Francis Lightfoot Lee</li><li>Carter Braxton</li></ul></div><div class="signer-state"><h3><span>宾夕法尼亚</span><em>Pennsylvania</em></h3><ul><li>Robert Morris</li><li>Benjamin Rush</li><li>Benjamin Franklin</li><li>John Morton</li><li>George Clymer</li><li>James Smith</li><li>George Taylor</li><li>James Wilson</li><li>George Ross</li></ul></div><div class="signer-state"><h3><span>特拉华</span><em>Delaware</em></h3><ul><li>Caesar Rodney</li><li>George Read</li><li>Thomas McKean</li></ul></div><div class="signer-state"><h3><span>纽约</span><em>New York</em></h3><ul><li>William Floyd</li><li>Philip Livingston</li><li>Francis Lewis</li><li>Lewis Morris</li></ul></div><div class="signer-state"><h3><span>新泽西</span><em>New Jersey</em></h3><ul><li>Richard Stockton</li><li>John Witherspoon</li><li>Francis Hopkinson</li><li>John Hart</li><li>Abraham Clark</li></ul></div><div class="signer-state"><h3><span>新罕布什尔</span><em>New Hampshire</em></h3><ul><li>Josiah Bartlett</li><li>William Whipple</li></ul></div><div class="signer-state"><h3><span>马萨诸塞</span><em>Massachusetts</em></h3><ul><li>Samuel Adams</li><li>John Adams</li><li>Robert Treat Paine</li><li>Elbridge Gerry</li></ul></div><div class="signer-state"><h3><span>罗得岛</span><em>Rhode Island</em></h3><ul><li>Stephen Hopkins</li><li>William Ellery</li></ul></div><div class="signer-state"><h3><span>康涅狄格</span><em>Connecticut</em></h3><ul><li>Roger Sherman</li><li>Samuel Huntington</li><li>William Williams</li><li>Oliver Wolcott</li></ul></div><div class="signer-state"><h3><span>新罕布什尔</span><em>New Hampshire</em></h3><ul><li>Matthew Thornton</li></ul></div></div>
+</details><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>56 位签署人来自 13 个殖民地，身份包括律师、商人、种植园主、医生和农场主。签署意味着公开承认叛国罪的风险；在战争进程中，许多人因此遭受财产损失、流亡或家人受难。</p>
+    <p class="note-k">思想脉络</p><p>签署人名单本身也是一份政治地图：它展示了哪些殖民地、哪些精英群体选择了独立。</p>
+  </div>
+</details><details class="note">
+  <summary><span>历史背景与思想来源</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>宣言写下“人人生而平等”，但执笔人杰斐逊本人拥有奴隶；大陆会议删去了他草稿中谴责奴隶贸易的段落。宣言中的“人”在当时的法律与政治实践中并不包括非洲裔奴隶、印第安人和女性。</p>
+    <p class="note-k">思想脉络</p><p>这不是一句“虚伪”就能说完的历史。宣言的普遍语言一旦进入公共领域，就被后来的废奴运动、女权运动与民权运动反复引用：1848 年塞内卡福尔斯《感伤宣言》、林肯的葛底斯堡演说、马丁·路德·金的《我有一个梦想》，都把“人人生而平等”当作尚未兑现的承诺。文本的意义，部分由后来的阅读与斗争塑造。</p>
+  </div>
+</details><section class="check-section" id="with-me">
+  <div class="check-head"><span class="sec-no">07</span><h2>这些句子，与我有关</h2><p>勾选你愿意记住的句子；只保存在本机浏览器，不上传。</p></div>
+  <div class="check-list"><label class="check-item"><input type="checkbox" data-check="0"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>人人生而平等，不因出身、性别、种族或身份而减损。</b><em>All men are created equal.</em></span></label><label class="check-item"><input type="checkbox" data-check="1"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>生命、自由与追求幸福，是不可剥夺的权利。</b><em>Life, Liberty and the pursuit of Happiness are unalienable rights.</em></span></label><label class="check-item"><input type="checkbox" data-check="2"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>政府的正当权力，来自被统治者的同意。</b><em>Governments derive their just powers from the consent of the governed.</em></span></label><label class="check-item"><input type="checkbox" data-check="3"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>当政府破坏这些目标时，人民有权更换或废除它。</b><em>The people have the right to alter or abolish a destructive government.</em></span></label><label class="check-item"><input type="checkbox" data-check="4"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>独立不只是脱离，也意味着为共同未来承担责任。</b><em>Independence is not only separation, but responsibility for a shared future.</em></span></label></div>
+  <div class="check-foot"><span id="checkCount">已勾选 0 / 5</span><button type="button" class="btn-line" id="checkReset">清空</button><button type="button" class="btn-line" id="checkCopy">复制清单</button></div>
+</section><section class="colophon" id="colophon">
+  <div class="section-head"><span class="sec-no">08</span><h2>文本说明</h2><p class="sec-en">Textual Note</p></div>
+  <div class="colophon-grid">
+    <div><h3>英文原文</h3><p>据美国国家档案馆（National Archives and Records Administration）羊皮纸本转写，保留 18 世纪拼写与标点。原文链接：<a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" rel="noopener">archives.gov</a>。</p></div>
+    <div><h3>中文译文</h3><p>本站参考通行中译重新译校，非官方译本，仅供阅读与学习。繁体为简体之字形转换，个别用词依原文语境保留。</p></div>
+    <div><h3>历史张力</h3><p>宣言的“人人生而平等”与其时代的奴隶制、原住民政策与女性地位之间存在深刻矛盾。本页不回避这一张力，并在注释中说明其历史语境。</p></div>
+    <div><h3>同站另一篇</h3><p><a href="../index.html">《世界人权宣言》三语对照</a> · 1948 年联合国大会通过，三十条条文，可与本页对读。</p></div>
+  </div>
+</section>
+    </div>
+  </div>
+</main>
+<button type="button" class="toc-btn" id="tocOpen" aria-haspopup="dialog" aria-controls="tocPanel">目录 · INDEX</button>
+<div class="toc-overlay" id="tocOverlay"></div>
+<aside class="toc-panel" id="tocPanel" aria-label="目录">
+  <button type="button" class="toc-close" id="tocClose" aria-label="关闭目录">×</button>
+  <h2>目录</h2><p>共 8 个部分 · 27 条控诉</p>
+  <a href="#intro"><b>01</b>导言</a>
+  <a href="#truths"><b>02</b>不言而喻的真理</a>
+  <a href="#grievances"><b>03</b>对英王的控诉</a>
+  <a href="#appeal"><b>04</b>最后的申诉</a>
+  <a href="#independence"><b>05</b>独立宣言</a>
+  <a href="#signers"><b>06</b>签署人</a>
+  <a href="#with-me"><b>07</b>这些句子，与我有关</a>
+  <a href="#colophon"><b>08</b>文本说明</a>
+</aside>
+<footer class="footer">
+  <p>英文原文：美国国家档案馆（NARA）转写 · 中文译文：本站参考通行中译重新译校，仅供学习</p>
+  <p class="foot-links"><a href="../index.html">世界人权宣言</a><span>·</span><a href="https://1901151458-prog.github.io/english-materials/" target="_blank" rel="noopener">英语资料站</a><span>·</span><a href="#top">回到顶部</a></p>
+  <p style="margin-top:10px;opacity:.65">同一仓库 · 两份现代政治文献 · 1776 / 1948</p>
+</footer>
+<script>
+(function(){
+  var roots = document.documentElement;
+  // 字号
+  var scale = 1;
+  try { scale = Number(localStorage.getItem('declaration-scale')) || 1; } catch(e){}
+  function applyScale(){ roots.style.setProperty('--scale', scale.toFixed(2)); }
+  applyScale();
+  document.querySelectorAll('[data-font]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var d = Number(btn.getAttribute('data-font'));
+      scale = Math.min(1.3, Math.max(.88, scale + d));
+      applyScale();
+      try { localStorage.setItem('declaration-scale', scale); } catch(e){}
+    });
+  });
+  // 阅读进度
+  var fill = document.getElementById('readFill');
+  function progress(){
+    if(!fill) return;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    fill.style.width = (h > 0 ? Math.min(100, window.scrollY / h * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', progress, {passive:true});
+  window.addEventListener('resize', progress);
+  progress();
+  // 目录
+  var body = document.body;
+  document.getElementById('tocOpen').addEventListener('click', function(){ body.classList.add('toc-open'); });
+  document.getElementById('tocClose').addEventListener('click', function(){ body.classList.remove('toc-open'); });
+  document.getElementById('tocOverlay').addEventListener('click', function(){ body.classList.remove('toc-open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') body.classList.remove('toc-open'); });
+  // 勾选清单
+  var checks = Array.prototype.slice.call(document.querySelectorAll('[data-check]'));
+  var count = document.getElementById('checkCount');
+  function save(){
+    var v = checks.map(function(c){ return c.checked ? 1 : 0; }).join('');
+    try { localStorage.setItem('declaration-checks', v); } catch(e){}
+    if(count) count.textContent = '已勾选 ' + checks.filter(function(c){return c.checked;}).length + ' / ' + checks.length;
+  }
+  try {
+    var saved = localStorage.getItem('declaration-checks');
+    if(saved && saved.length === checks.length) checks.forEach(function(c,i){ c.checked = saved[i] === '1'; });
+  } catch(e){}
+  checks.forEach(function(c){ c.addEventListener('change', save); });
+  save();
+  var reset = document.getElementById('checkReset');
+  if(reset) reset.addEventListener('click', function(){ checks.forEach(function(c){ c.checked = false; }); save(); });
+  var copy = document.getElementById('checkCopy');
+  if(copy) copy.addEventListener('click', function(){
+    var lines = ['我的《独立宣言》清单'];
+    checks.forEach(function(c){
+      if(!c.checked) return;
+      var item = c.closest('.check-item');
+      var b = item.querySelector('.c-cn b'), em = item.querySelector('.c-cn em');
+      lines.push('· ' + (b ? b.textContent : '') + ' / ' + (em ? em.textContent : ''));
+    });
+    var text = lines.join('\n');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ copy.textContent = '已复制'; setTimeout(function(){ copy.textContent = '复制清单'; }, 1400); });
+    } else {
+      var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); copy.textContent = '已复制'; } catch(e){}
+      document.body.removeChild(ta);
+      setTimeout(function(){ copy.textContent = '复制清单'; }, 1400);
+    }
+  });
+})();
+</script>
+</body>
+</html>
