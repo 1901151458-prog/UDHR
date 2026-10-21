@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大宪章 · Magna Carta · 1215</title>
+<meta name="description" content="英国《大宪章》1215 年全文三语对照：63 条，简、繁中文与英文并列，附历史背景、思想脉络与 25 男爵保障条款；与《美国独立宣言》《世界人权宣言》同站。">
+<meta name="theme-color" content="#090a0c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大宪章 · Magna Carta · 1215">
+<meta property="og:description" content="王权亦须受法律约束：1215 年《大宪章》63 条全文，简繁英三语对照。">
+<meta property="og:locale" content="zh_CN">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#090a0c;
+  --bg-2:#101216;
+  --ink:#e8e2d6;
+  --ink-dim:#c8c0b1;
+  --muted:#9b9385;
+  --gold:#d9b382;
+  --gold-lit:#f0d5a0;
+  --gold-deep:#8a6b45;
+  --blue:#8fb4d9;
+  --line:rgba(217,179,130,.22);
+  --line-2:rgba(232,226,214,.10);
+  --serif-cn:"Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif;
+  --serif-en:Georgia,"Times New Roman","Iowan Old Style",serif;
+  --serif-body:Georgia,"Times New Roman","Iowan Old Style","Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif;
+  --scale:1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--serif-body);
+  font-size:calc(16px * var(--scale));
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(1100px 640px at 70% -10%,rgba(143,180,217,.13),transparent 62%),
+    radial-gradient(900px 600px at 8% 4%,rgba(217,179,130,.10),transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(60,85,115,.14),transparent 66%),
+    linear-gradient(180deg,#0b0d10 0%,#090a0c 48%,#0c0e12 100%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(217,179,130,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(217,179,130,.035) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse at 50% 24%,#000 18%,transparent 76%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 24%,#000 18%,transparent 76%);
+}
+a{color:var(--gold-lit);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+::selection{background:rgba(217,179,130,.28);color:#15110c}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:90;background:transparent}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lit));transition:width .08s linear}
+
+/* 顶栏 */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:80;background:linear-gradient(180deg,rgba(9,10,12,.94),rgba(9,10,12,.78));border-bottom:1px solid var(--line-2);backdrop-filter:blur(12px)}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:10px clamp(16px,3vw,36px);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:13px;letter-spacing:.12em}
+.brand:hover{text-decoration:none;color:var(--gold-lit)}
+.brand-mark{width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,#e7cc99,#a97b35);color:#1a140d;display:grid;place-items:center;font-weight:700;font-size:13px;box-shadow:0 0 0 4px rgba(217,179,130,.1)}
+.doc-switch{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.doc-switch a{font-family:var(--serif-cn);font-size:12px;letter-spacing:.08em;padding:5px 11px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted)}
+.doc-switch a:hover{border-color:var(--line);color:var(--gold-lit);text-decoration:none}
+.doc-switch a.on{background:rgba(217,179,130,.14);border-color:var(--line);color:var(--gold-lit)}
+.tools{display:flex;align-items:center;gap:6px}
+.tool-btn{font-family:var(--serif-cn);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 10px;cursor:pointer}
+.tool-btn:hover{color:var(--gold-lit);border-color:var(--line)}
+
+/* 首屏 */
+.hero{position:relative;padding:clamp(110px,16vh,180px) 20px clamp(54px,8vh,86px);text-align:center;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;top:18%;width:min(900px,92vw);height:520px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(217,179,130,.13),transparent 62%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.24em;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:7px 16px;background:rgba(217,179,130,.05)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-lit);box-shadow:0 0 12px var(--gold-lit)}
+.hero h1{font-family:var(--serif-cn);font-size:clamp(46px,7.4vw,94px);font-weight:700;letter-spacing:.14em;line-height:1.08;margin:26px 0 10px;color:#f3ead9;text-indent:.14em}
+.hero h1 small{display:block;margin-top:14px;font-family:var(--serif-en);font-size:clamp(12px,1.24vw,16px);letter-spacing:.28em;color:var(--muted);font-weight:400;text-indent:0}
+.hero .adopted{margin:18px auto 0;max-width:760px;font-family:var(--serif-cn);font-size:clamp(12px,1.1vw,14px);letter-spacing:.12em;color:var(--muted);line-height:1.9}
+.hero .epigraph{margin:34px auto 0;max-width:900px;padding:26px 8px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:24px;text-align:left}
+.hero .epigraph p{margin:0;font-size:clamp(13px,1.15vw,15px);line-height:1.9;color:var(--ink-dim)}
+.hero .epigraph .en{font-family:var(--serif-en);font-style:italic;color:#d9d1c3}
+.scroll-cue{margin-top:40px;font-family:var(--serif-cn);font-size:11px;letter-spacing:.3em;color:var(--gold);opacity:.75}
+.scroll-cue .line{display:block;width:1px;height:34px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent)}
+
+/* 正文 */
+.doc{position:relative;z-index:1;padding:0 0 clamp(80px,12vh,150px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,36px)}
+.section-head{position:relative;margin:clamp(58px,9vh,104px) 0 clamp(28px,4vh,42px);text-align:center}
+.section-head .sec-no{display:inline-block;font-family:var(--serif-en);font-size:11px;letter-spacing:.28em;color:var(--gold);margin-bottom:10px}
+.section-head h2{margin:0;font-family:var(--serif-cn);font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:.2em;color:#f0e7d7}
+.section-head h2 .sep{margin:0 .28em;color:var(--gold-deep);font-weight:400}
+.section-head .sec-en{margin:10px 0 0;font-family:var(--serif-en);font-size:11.5px;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}
+.section-head::after{content:"";display:block;width:60px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.lang-heads{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:clamp(18px,3vw,36px);padding:0 4px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;font-family:var(--serif-cn);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.lang-heads .en{font-family:var(--serif-en);letter-spacing:.18em}
+.para{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:clamp(18px,3vw,36px);padding:clamp(18px,2.4vh,26px) 4px;border-bottom:1px solid var(--line-2);align-items:start}
+.para:last-child{border-bottom:0}
+.para p{margin:0;font-size:clamp(14.5px,1.18vw,16.5px);line-height:2.02;color:var(--ink)}
+.para .en p{font-family:var(--serif-en);font-size:clamp(13.5px,1.05vw,15px);line-height:1.82;color:#d5cdbf}
+.para .lang-col[lang="zh-Hant"] p{color:#ddd5c7}
+
+/* 控诉 */
+.lead-note{max-width:760px;margin:0 auto 18px;text-align:center;font-family:var(--serif-cn);font-size:12px;color:var(--muted);letter-spacing:.05em}
+.grievance{display:grid;grid-template-columns:58px 1fr;gap:0;border-bottom:1px solid var(--line-2)}
+.grievance:last-of-type{border-bottom:0}
+.g-no{font-family:var(--serif-en);font-size:13px;letter-spacing:.08em;color:var(--gold);padding-top:24px}
+.g-body .para{border-bottom:0;padding-top:22px;padding-bottom:22px}
+.g-body .para p{font-size:clamp(14px,1.1vw,15.5px)}
+
+/* 注释 */
+.note{margin:24px auto 0;max-width:960px;border:1px solid var(--line-2);border-radius:2px;background:rgba(255,255,255,.018)}
+.note summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--serif-cn);font-size:12.5px;letter-spacing:.12em;color:var(--gold)}
+.note summary::-webkit-details-marker{display:none}
+.note summary .chev{transition:transform .2s ease;font-size:11px;color:var(--muted)}
+.note[open] summary .chev{transform:rotate(180deg)}
+.note-body{padding:0 20px 20px;border-top:1px solid var(--line-2)}
+.note-body p{margin:14px 0 0;font-size:14px;line-height:1.95;color:var(--ink-dim)}
+.note-body .note-k{margin:18px 0 0;font-family:var(--serif-cn);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+
+/* 签署人 */
+.signers-wrap{margin:24px auto 0;max-width:1000px;border:1px solid var(--line-2);border-radius:2px;background:rgba(255,255,255,.018)}
+.signers-wrap summary{list-style:none;cursor:pointer;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif-cn);font-size:13px;letter-spacing:.14em;color:var(--gold)}
+.signers-wrap summary::-webkit-details-marker{display:none}
+.signers-wrap .chev{transition:transform .2s;font-size:11px;color:var(--muted)}
+.signers-wrap[open] .chev{transform:rotate(180deg)}
+.signers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 26px;padding:4px 22px 26px;border-top:1px solid var(--line-2)}
+.signer-state h3{margin:16px 0 8px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.14em;color:var(--ink);font-weight:600}
+.signer-state h3 em{display:block;margin-top:3px;font-family:var(--serif-en);font-size:10px;letter-spacing:.12em;color:var(--muted);font-style:normal}
+.signer-state ul{list-style:none;margin:0;padding:0}
+.signer-state li{font-family:var(--serif-en);font-size:12.5px;line-height:1.9;color:var(--ink-dim);border-bottom:1px dotted rgba(232,226,214,.08);padding:2px 0}
+
+/* 与我有关 */
+.check-section{max-width:960px;margin:clamp(58px,8vh,92px) auto 0;padding:30px clamp(20px,3vw,34px);border:1px solid var(--line);background:linear-gradient(180deg,rgba(217,179,130,.055),rgba(255,255,255,.012));position:relative}
+.check-section::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lit),var(--gold-deep))}
+.check-head .sec-no{font-family:var(--serif-en);font-size:11px;letter-spacing:.28em;color:var(--gold)}
+.check-head h2{margin:8px 0 6px;font-family:var(--serif-cn);font-size:clamp(22px,2.6vw,30px);letter-spacing:.16em;color:#f0e7d7}
+.check-head p{margin:0 0 20px;font-size:12.5px;color:var(--muted)}
+.check-list{display:grid;gap:9px}
+.check-item{display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:10px 12px;border:1px solid var(--line-2);background:rgba(10,12,15,.35);transition:border-color .15s,background .15s}
+.check-item:hover{border-color:var(--line);background:rgba(217,179,130,.05)}
+.check-item input{position:absolute;opacity:0}
+.check-item .box{flex:none;width:18px;height:18px;margin-top:3px;border:1px solid var(--gold-deep);border-radius:2px;display:grid;place-items:center}
+.check-item input:checked + .box{background:var(--gold);border-color:var(--gold)}
+.check-item input:checked + .box::after{content:"✓";color:#1a140d;font-size:12px;font-weight:700}
+.check-item input:focus-visible + .box{outline:2px solid var(--blue);outline-offset:2px}
+.c-cn b{display:block;font-weight:400;font-size:14.5px;color:var(--ink)}
+.c-cn em{display:block;margin-top:3px;font-family:var(--serif-en);font-size:11.5px;color:var(--muted);font-style:normal}
+.check-foot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--muted)}
+.check-foot #checkCount{margin-right:auto}
+.btn-line{font-family:var(--serif-cn);font-size:12px;letter-spacing:.08em;color:var(--gold);background:transparent;border:1px solid var(--line);padding:7px 13px;cursor:pointer}
+.btn-line:hover{background:rgba(217,179,130,.1)}
+
+/* 文本说明 */
+.colophon{max-width:1040px;margin:clamp(66px,9vh,104px) auto 0;border-top:1px solid var(--line);padding-top:6px}
+.colophon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px;margin-top:8px}
+.colophon-grid h3{margin:0 0 8px;font-family:var(--serif-cn);font-size:12px;letter-spacing:.18em;color:var(--gold)}
+.colophon-grid p{margin:0;font-size:13px;line-height:1.95;color:var(--ink-dim)}
+.colophon-grid a{color:var(--gold-lit)}
+
+/* 目录抽屉 */
+.toc-btn{position:fixed;right:18px;bottom:22px;z-index:85;font-family:var(--serif-cn);font-size:12px;letter-spacing:.12em;color:#1a140d;background:linear-gradient(180deg,#edd3a4,#c79a5a);border:0;border-radius:999px;padding:10px 16px;box-shadow:0 10px 26px rgba(0,0,0,.35);cursor:pointer}
+.toc-overlay{position:fixed;inset:0;z-index:95;background:rgba(4,5,7,.62);opacity:0;pointer-events:none;transition:opacity .2s}
+.toc-panel{position:fixed;right:0;top:0;bottom:0;z-index:96;width:min(380px,88vw);background:#0e1014;border-left:1px solid var(--line);padding:22px 22px 30px;overflow:auto;transform:translateX(102%);transition:transform .24s ease}
+body.toc-open .toc-overlay{opacity:1;pointer-events:auto}
+body.toc-open .toc-panel{transform:translateX(0)}
+.toc-panel h2{margin:0 0 4px;font-family:var(--serif-cn);font-size:16px;letter-spacing:.16em;color:var(--gold)}
+.toc-panel p{margin:0 0 16px;font-size:11px;color:var(--muted)}
+.toc-panel a{display:flex;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line-2);font-family:var(--serif-cn);font-size:13px;color:var(--ink-dim)}
+.toc-panel a:hover{color:var(--gold-lit);text-decoration:none}
+.toc-panel a b{font-family:var(--serif-en);font-weight:400;font-size:11px;color:var(--gold);min-width:20px}
+.toc-close{position:absolute;right:14px;top:12px;background:transparent;border:0;color:var(--muted);font-size:20px;cursor:pointer}
+
+/* 页脚 */
+.footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px 20px 46px;text-align:center;color:var(--muted);font-size:12px;line-height:1.9}
+.footer a{color:var(--gold)}
+.footer .foot-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px}
+
+@media(max-width:900px){
+  .hero .epigraph{grid-template-columns:1fr;gap:10px;text-align:center}
+  .para,.lang-heads{grid-template-columns:1fr;gap:8px}
+  .lang-heads{padding-bottom:8px}
+  .para{padding:16px 2px}
+  .para .lang-col[lang="zh-Hans"]::before{content:"简";display:inline-block;font-family:var(--serif-cn);font-size:10px;color:var(--gold);margin-right:8px}
+  .para .lang-col[lang="zh-Hant"]::before{content:"繁";display:inline-block;font-family:var(--serif-cn);font-size:10px;color:var(--gold);margin-right:8px}
+  .para .lang-col.en::before{content:"EN";display:inline-block;font-family:var(--serif-en);font-size:10px;color:var(--gold);margin-right:8px;letter-spacing:.12em}
+  .grievance{grid-template-columns:38px 1fr}
+  .signers-grid{grid-template-columns:repeat(2,1fr)}
+  .colophon-grid{grid-template-columns:1fr}
+  .topbar-inner{padding-top:8px;padding-bottom:8px}
+  .doc-switch{order:3;width:100%;justify-content:center}
+}
+@media(max-width:560px){
+  .hero{padding-top:120px}
+  .hero h1{letter-spacing:.08em;text-indent:.08em}
+  .signers-grid{grid-template-columns:1fr}
+  .check-section{padding:24px 16px}
+  .brand span:not(.brand-mark){display:none}
+  .tools .tool-btn:first-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+.clause{display:grid;grid-template-columns:58px 1fr;border-bottom:1px solid var(--line-2)}
+.clause:last-child{border-bottom:0}
+.c-no{font-family:var(--serif-en);font-size:13px;letter-spacing:.08em;color:var(--gold);padding-top:24px}
+.c-body{padding:4px 0}
+.c-body .para{border-bottom:0;padding-top:20px;padding-bottom:20px}
+.c-body .para p{font-size:clamp(14px,1.08vw,15.5px)}
+.c-quote{margin:18px auto 0;max-width:900px;padding:18px 20px;border-left:2px solid var(--gold);background:rgba(217,179,130,.045);font-family:var(--serif-cn);font-size:14px;line-height:1.95;color:var(--gold-lit)}
+.c-quote small{display:block;margin-top:6px;font-family:var(--serif-en);font-size:10px;letter-spacing:.16em;color:var(--muted)}
+@media(max-width:900px){.clause{grid-template-columns:38px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="readFill"></i></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">宪</span><span>三部文献 · 大宪章</span></a>
+    <nav class="doc-switch" aria-label="文献切换">
+      <a class="on" href="./index.html" aria-current="page">大宪章</a>
+      <a href="../declaration/">美国独立宣言</a>
+      <a href="../udhr/">世界人权宣言</a>
+    </nav>
+    <div class="tools">
+      <button type="button" class="tool-btn" data-font="-0.06" title="缩小字号">A−</button>
+      <button type="button" class="tool-btn" data-font="0.06" title="放大字号">A+</button>
+    </div>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="dot"></span>RUNNYMEDE · 15 JUNE 1215</p>
+      <h1>大宪章<small>MAGNA CARTA</small></h1>
+      <p class="adopted">英格兰国王约翰在兰尼米德草地授予的封建特许状<br><span style="font-family:var(--serif-en);letter-spacing:.08em;font-size:.92em">The Great Charter of the Liberties of England</span></p>
+      <div class="epigraph">
+        <p lang="zh-Hans">“任何自由人，非经其同等者的合法裁判或依本国法律，不得被逮捕、监禁、剥夺财产、流放，或以任何方式被毁坏。”</p>
+        <p lang="zh-Hant">「任何自由人，非經其同等者的合法裁判或依本國法律，不得被逮捕、監禁、剝奪財產、流放，或以任何方式被毀壞。」</p>
+        <p class="en" lang="en">“No freeman shall be taken or imprisoned or disseised or exiled or in anyway destroyed … except by the lawful judgment of his peers or by the law of the land.”</p>
+      </div>
+      <div class="scroll-cue">滚动阅读 · SCROLL<span class="line"></span></div>
+    </div>
+  </section>
+  <div class="doc">
+    <div class="wrap">
+      <p class="lead-note" style="margin-bottom:24px">本页为 1215 年文本的 63 条全文 · 简 / 繁 / English 三语对照</p>
+      <div class="section-head" id="preamble">
+  <span class="sec-no">01</span>
+  <h2><span lang="zh-Hans">序言</span><span class="sep">·</span><span lang="zh-Hant">序言</span></h2>
+  <p class="sec-en">Preamble</p>
+</div><div class="para ">
+  <div class="lang-col" lang="zh-Hans"><p>约翰，蒙上帝恩典，英格兰国王、爱尔兰领主、诺曼底与阿基坦公爵、安茹伯爵，向他的大主教、主教、修院长、伯爵、男爵、法官、林务官、郡守、管家、仆役，以及所有官员和忠顺臣民，致意。
+
+须知，为了我们灵魂以及祖先和继承人的健康，为了上帝的荣耀、圣教会的提升和本王国的良好治理，在我们可敬的教父们——坎特伯雷大主教、全英格兰首席主教兼神圣罗马教会枢机斯蒂芬，都柏林大主教亨利，伦敦主教威廉，温切斯特主教彼得，巴斯和格拉斯顿伯里主教乔斯林，林肯主教休，伍斯特主教沃尔特，考文垂主教威廉，罗切斯特主教本尼迪克特，教皇家臣、副执事潘道夫，英格兰圣殿骑士团团长艾默里克修士，彭布罗克伯爵威廉·马歇尔，索尔兹伯里伯爵威廉，沃伦伯爵威廉，阿伦德尔伯爵威廉，苏格兰治安官艾伦·德·加洛韦，沃林·菲茨杰拉德，彼得·菲茨赫伯特，普瓦图总管休伯特·德·伯格，休·德·内维尔，马修·菲茨赫伯特，托马斯·巴塞特，艾伦·巴塞特，菲利普·多贝尼，罗伯特·德·罗佩利，约翰·马歇尔，约翰·菲茨休以及其他忠顺臣民的建议下：</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>約翰，蒙上帝恩典，英格蘭國王、愛爾蘭領主、諾曼底與阿基坦公爵、安茹伯爵，向他的大主教、主教、修院長、伯爵、男爵、法官、林務官、郡守、管家、僕役，以及所有官員和忠順臣民，致意。
+
+須知，爲了我們靈魂以及祖先和繼承人的健康，爲了上帝的榮耀、聖教會的提升和本王國的良好治理，在我們可敬的教父們——坎特伯雷大主教、全英格蘭首席主教兼神聖羅馬教會樞機斯蒂芬，都柏林大主教亨利，倫敦主教威廉，溫切斯特主教彼得，巴斯和格拉斯頓伯裏主教喬斯林，林肯主教休，伍斯特主教沃爾特，考文垂主教威廉，羅切斯特主教本尼迪克特，教皇家臣、副執事潘道夫，英格蘭聖殿騎士團團長艾默裏克修士，彭布羅克伯爵威廉·馬歇爾，索爾茲伯裏伯爵威廉，沃倫伯爵威廉，阿倫德爾伯爵威廉，蘇格蘭治安官艾倫·德·加洛韋，沃林·菲茨傑拉德，彼得·菲茨赫伯特，普瓦圖總管休伯特·德·伯格，休·德·內維爾，馬修·菲茨赫伯特，托馬斯·巴塞特，艾倫·巴塞特，菲利普·多貝尼，羅伯特·德·羅佩利，約翰·馬歇爾，約翰·菲茨休以及其他忠順臣民的建議下：</p></div>
+  <div class="lang-col en" lang="en"><p>JOHN, by the grace of God King of England, Lord of Ireland, Duke of Normandy and Aquitaine, and Count of Anjou, to his archbishops, bishops, abbots, earls, barons, justices, foresters, sheriffs, stewards, servants, and to all his officials and loyal subjects, Greeting. KNOW THAT BEFORE GOD, for the health of our soul and those of our ancestors and heirs, to the honour of God, the exaltation of the holy Church, and the better ordering of our kingdom, at the advice of our reverend fathers Stephen, archbishop of Canterbury, primate of all England, and cardinal of the holy Roman Church, Henry archbishop of Dublin, William bishop of London, Peter bishop of Winchester, Jocelin bishop of Bath and Glastonbury, Hugh bishop of Lincoln, Walter bishop of Worcester, William bishop of Coventry, Benedict bishop of Rochester, Master Pandulf subdeacon and member of the papal household, Brother Aymeric master of the knighthood of the Temple in England, William Marshal earl of Pembroke, William earl of Salisbury, William earl of Warren, William earl of Arundel, Alan de Galloway constable of Scotland, Warin Fitz Gerald, Peter Fitz Herbert, Hubert de Burgh seneschal of Poitou, Hugh de Neville, Matthew Fitz Herbert, Thomas Basset, Alan Basset, Philip Daubeny, Robert de Roppeley, John Marshal, John Fitz Hugh, and other loyal subjects:</p></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>1215 年 6 月，英格兰男爵们因税收、司法与封建权利问题反抗约翰王；6 月 15 日，双方在兰尼米德草地达成协议。这份文件最初是一份封建和解协议，并非现代成文宪法；教宗英诺森三世随后宣布它无效，内战继续。1216、1217、1225 年又多次重新发布，内容有所删改，后世所读的《大宪章》往往是 1225 年版。</p>
+    <p class="note-k">思想脉络</p><p>大宪章的许多条款处理的是继承税、监护、债务、森林与地方司法，而非抽象人权。它之所以成为象征，是因为后世不断从中读出“王权应受法律限制”的原则；第 39、40 条尤其被反复引用。</p>
+  </div>
+</details><div class="section-head" id="sec1">
+  <span class="sec-no">02</span>
+  <h2><span lang="zh-Hans">教会、继承与债务</span><span class="sep">·</span><span lang="zh-Hant">教會、繼承與債務</span></h2>
+  <p class="sec-en">Church, Wardship and Debt</p>
+</div><p class="lead-note">第 1—11 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">01</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>首先，我们已向上帝恩准，并以本特许状为我们和我们的继承人永久确认：英格兰教会应自由，其权利完整无损，其自由不受侵犯；我们愿意这一点得到遵守。这一点从以下事实可以看清：在我們与男爵们的争端爆发之前，我们出于纯粹而自愿的意志，曾赐予并确认教会选举的自由——这项自由被视为对英格兰教会最重要、最必不可少——并取得教宗英诺森三世的批准。我们将遵守这项自由，并愿我们的继承人永远善意遵守。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>首先，我們已向上帝恩准，並以本特許狀爲我們和我們的繼承人永久確認：英格蘭教會應自由，其權利完整無損，其自由不受侵犯；我們願意這一點得到遵守。這一點從以下事實可以看清：在我們與男爵們的爭端爆發之前，我們出於純粹而自願的意志，曾賜予並確認教會選舉的自由——這項自由被視爲對英格蘭教會最重要、最必不可少——並取得教宗英諾森三世的批准。我們將遵守這項自由，並願我們的繼承人永遠善意遵守。</p></div>
+  <div class="lang-col en" lang="en"><p>In the first place we have granted to God, and by this our present charter confirmed for us and our heirs for ever that the English church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from this that the freedom of elections, which is reckoned most important and very essential to the English church, we, of our pure and unconstrained will, did grant, and did by our charter confirm and did obtain the ratification of the same from our lord, Pope Innocent III., before the quarrel arose between us and our barons: and this we will observe, and our will is that it be observed in good faith by our heirs for ever. We have also granted to all freemen of our kingdom, for us and our heirs for ever, all the underwritten liberties, to be had and held by them and their heirs, of us and our heirs for ever.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">02</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何伯爵、男爵或其他以军役直接受封于王室土地的人去世时，若其继承人为成年人并应缴纳继承税，继承人应按古老税额取得遗产：伯爵的继承人为整个伯爵领缴纳一百镑；男爵的继承人为整个男爵领缴纳一百镑；骑士的继承人为整块骑士封地最多缴纳一百先令；应缴更少者依封地旧例缴纳更少。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何伯爵、男爵或其他以軍役直接受封於王室土地的人去世時，若其繼承人爲成年人並應繳納繼承稅，繼承人應按古老稅額取得遺產：伯爵的繼承人爲整個伯爵領繳納一百鎊；男爵的繼承人爲整個男爵領繳納一百鎊；騎士的繼承人爲整塊騎士封地最多繳納一百先令；應繳更少者依封地舊例繳納更少。</p></div>
+  <div class="lang-col en" lang="en"><p>If any of our earls or barons, or others holding of us in chief by military service shall have died, and at the time of his death his heir shall be of full age and owe “relief” he shall have his inheritance on payment of the ancient relief, namely the heir or heirs of an earl, 100 pounds for a whole earl’s barony; the heir or heirs of a baron, 100 pounds for a whole barony; the heir or heirs of a knight, 100 shillings at most for a whole knight’s fee; and whoever owes less let him give less, according to the ancient custom officers.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">03</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>但若上述继承人为未成年人并处于监护之下，成年后应取得遗产，免缴继承税与罚金。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>但若上述繼承人爲未成年人並處於監護之下，成年後應取得遺產，免繳繼承稅與罰金。</p></div>
+  <div class="lang-col en" lang="en"><p>If, however, the heir of any of the aforesaid has been under age and in wardship, let him have his inheritance without relief and without fine when he comes of age.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">04</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>未成年继承人的土地监护人，只能从土地收取合理的产出、合理的习惯性收益与合理的劳役，不得毁坏或浪费人力与财物。若我们把这类土地监护权交给郡守或任何对我们负责收益的人，而他造成毁坏或浪费，我们将向他索取赔偿，并把土地交给该封地中两位诚实谨慎的人，由他们对收益负责；若我们把监护权赠与或卖给他人而此人造成毁坏或浪费，他应丧失监护权，土地转交两位诚实谨慎的人。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>未成年繼承人的土地監護人，只能從土地收取合理的產出、合理的習慣性收益與合理的勞役，不得毀壞或浪費人力與財物。若我們把這類土地監護權交給郡守或任何對我們負責收益的人，而他造成毀壞或浪費，我們將向他索取賠償，並把土地交給該封地中兩位誠實謹慎的人，由他們對收益負責；若我們把監護權贈與或賣給他人而此人造成毀壞或浪費，他應喪失監護權，土地轉交兩位誠實謹慎的人。</p></div>
+  <div class="lang-col en" lang="en"><p>The guardian of the land of an heir who is thus under age, shall take from the land of the heir nothing but reasonably produce, reasonable customs, and reasonable services, and that without destruction or waste of men or goods; and if we have committed the wardship of the lands of any such minor to the sheriff, or to any other who is responsible to us for its issues, and he has made destruction or waste of what he holds in wardship, we will take of him amends, and the land shall be committed to two lawful and discreet men of that fee, who shall be responsible for the issues to us or to him to whom we shall assign them; and if we have given or sold the wardship of any such land to anyone and he has there in made destruction or waste, he shall lose that wardship, and it shall be transferred to two lawful and discreet men of that fief, who shall be responsible to us in like manner as aforesaid.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">05</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>监护人持有土地监护权期间，应以土地收益维护房屋、园林、鱼塘、池沼、磨坊及其他附属物；继承人成年时，应把全部土地连同犁具与农具交还，数量按农时所需与土地收益合理确定。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>監護人持有土地監護權期間，應以土地收益維護房屋、園林、魚塘、池沼、磨坊及其他附屬物；繼承人成年時，應把全部土地連同犁具與農具交還，數量按農時所需與土地收益合理確定。</p></div>
+  <div class="lang-col en" lang="en"><p>The guardian, moreover, so long as he has the wardship of the land, shall keep up the houses, parks, fishponds, stanks, mills, and other things pertaining to the land, out of the issues of the same land; and he shall restore to the heir, when he has come to full age, all his land, stocked with ploughs and “waynage,” according as the season of husbandry shall require, and the issues of the land can reasonably bear.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">06</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>继承人可以在不降低身份的前提下结婚，但婚礼前应通知其最近的血亲。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>繼承人可以在不降低身份的前提下結婚，但婚禮前應通知其最近的血親。</p></div>
+  <div class="lang-col en" lang="en"><p>Heirs shall be married without disparagement, yet so that before the marriage takes place the nearest in blood to that heir shall have notice.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">07</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>寡妇在丈夫死后，应立即且不受刁难地取得嫁资与遗产；她不得为嫁资、婚姻财产或她与丈夫在丈夫去世当日共同持有的遗产支付任何款项；她可以在丈夫的房屋中居留四十天，在此期间应为她指定嫁资。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>寡婦在丈夫死後，應立即且不受刁難地取得嫁資與遺產；她不得爲嫁資、婚姻財產或她與丈夫在丈夫去世當日共同持有的遺產支付任何款項；她可以在丈夫的房屋中居留四十天，在此期間應爲她指定嫁資。</p></div>
+  <div class="lang-col en" lang="en"><p>A widow, after the death of her husband, shall forthwith and without difficulty have her marriage portion and inheritance; nor shall she give anything for her dower, or for her marriage portion, or for the inheritance which her husband and she held on the day of the death of that husband; and she may remain in the house of her husband for fourty days after his death, within which time her dower shall be assigned to her.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">08</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>寡妇只要愿意不再婚，就不得被迫结婚；但若她持有我们的土地，须保证未经我们同意不再婚；若持有其他领主的土地，须保证未经该领主同意不再婚。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>寡婦只要願意不再婚，就不得被迫結婚；但若她持有我們的土地，須保證未經我們同意不再婚；若持有其他領主的土地，須保證未經該領主同意不再婚。</p></div>
+  <div class="lang-col en" lang="en"><p>No widow shall be compelled to marry, so long as she prefers to live without a husband; provided always that she gives security not to marry without our consent, if she holds of us, or without the consent of the lord of whom she holds, if she holds of another.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">09</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>只要债务人的动产足以清偿债务，我们和我们的官员就不得扣押其土地或租金；只要主债务人能够清偿，就不得扣押其担保人；若主债务人无财产清偿，担保人应负责偿还；担保人如愿，可取得债务人的土地与租金，直至其代偿的债务得到清偿，除非主债务人能证明已向担保人清偿。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>只要債務人的動產足以清償債務，我們和我們的官員就不得扣押其土地或租金；只要主債務人能夠清償，就不得扣押其擔保人；若主債務人無財產清償，擔保人應負責償還；擔保人如願，可取得債務人的土地與租金，直至其代償的債務得到清償，除非主債務人能證明已向擔保人清償。</p></div>
+  <div class="lang-col en" lang="en"><p>Neither we nor our bailiffs shall seize any land or rent for any debt, so long as the chattels of the debtor are sufficient to repay the debt; nor shall the sureties of the debtor be distrained so long as the principal debtor is able to satisfy the debt; and if the principal debtor shall fail to pay the debt, having nothing wherewith to pay it, then the sureties shall answer for the debt; and let them have the lands and rents of the debtor, if they desire them, until they are indemnified for the debt which they have paid for him, unless the principal debtor can show proof that he is discharged thereof as against the said sureties.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">10</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>向犹太人借款者若在债务清偿前去世，只要继承人未成年，债务不计利息，无论其土地受封于何人；若债务归入我们手中，我们只取契据所载本金。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>向猶太人借款者若在債務清償前去世，只要繼承人未成年，債務不計利息，無論其土地受封於何人；若債務歸入我們手中，我們只取契據所載本金。</p></div>
+  <div class="lang-col en" lang="en"><p>If one who has borrowed from the Jews any sum, great or small, die before that loan can be repaid, the debt shall not bear interest while the heir is under age, of whomsoever he may hold; and if the debt fall into our hands, we will not take anything except the principal sum contained in the bond.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">11</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若有人欠犹太人债务而去世，其妻可取嫁资，不必以嫁资偿债；若留有未成年子女，应按其土地持有情况供给所需；余款用于偿债，但保留对封建领主应尽的役务。欠非犹太人的债务同样处理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若有人欠猶太人債務而去世，其妻可取嫁資，不必以嫁資償債；若留有未成年子女，應按其土地持有情況供給所需；餘款用於償債，但保留對封建領主應盡的役務。欠非猶太人的債務同樣處理。</p></div>
+  <div class="lang-col en" lang="en"><p>And if any one die indebted to the Jews, his wife shall have her dower and pay nothing of that debt; and if any children of the deceased are left underage, necessaries shall be provided for them in keeping with the holding of the deceased; and out of the residue the debt shall be paid, reserving, however, service due to feudal lords; in like manner let it be done touching debts due to others than Jews.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>这一组条款保护教会的选举自由，规定封建继承与监护的边界，并处理寡妇的嫁资、债务与担保。它们展示了大宪章的具体利益结构：贵族、教会与债权人之间的权利安排，而不是普遍的公民权利。</p>
+    <p class="note-k">思想脉络</p><p>第 10、11 条涉及犹太人的债务。中世纪英格兰的犹太人被王室当作税收与借贷工具，受到严重的歧视与暴力；这些条款今天读来必须放在反犹历史中理解，不能当作中性金融规则。这里的“自由”主要指封建自由人的特权，不包括农奴与大多数女性。</p>
+  </div>
+</details><div class="section-head" id="sec2">
+  <span class="sec-no">03</span>
+  <h2><span lang="zh-Hans">税收、城市与封建义务</span><span class="sep">·</span><span lang="zh-Hant">稅收、城市與封建義務</span></h2>
+  <p class="sec-en">Taxation, Cities and Feudal Service</p>
+</div><p class="lead-note">第 12—16 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">12</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>未经全国共同议会同意，不得在本王国征收盾牌钱或协助金，但下列三种情况除外：赎回我们本人、册封我们的长子为骑士、以及我们长女出嫁一次；这三种情况也只能征收合理的协助金。伦敦城的协助金同样处理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>未經全國共同議會同意，不得在本王國徵收盾牌錢或協助金，但下列三種情況除外：贖回我們本人、冊封我們的長子爲騎士、以及我們長女出嫁一次；這三種情況也只能徵收合理的協助金。倫敦城的協助金同樣處理。</p></div>
+  <div class="lang-col en" lang="en"><p>No scutage nor aid shall be imposed on our kingdom, unless by common counsel of our kingdom, except for ransoming our person, for making our eldest son a knight, and for once marrying our eldest daughter; and for these there shall not be levied more than a reasonable aid. In like manner it shall be done concerning aids from the city of London.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">13</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>伦敦城应享有其一切古老的自由与惯例，无论陆上还是水上；我们还授予并确认，所有其他城市、自治市、城镇与港口都应享有其自由与惯例。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>倫敦城應享有其一切古老的自由與慣例，無論陸上還是水上；我們還授予並確認，所有其他城市、自治市、城鎮與港口都應享有其自由與慣例。</p></div>
+  <div class="lang-col en" lang="en"><p>And the city of London shall have all its ancient liberties and free customs, as well by land as by water; furthermore, we decree and grant that all other cities, boroughs, towns, and ports shall have all their liberties and free customs.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">14</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>为就征收协助金（上述三种情况除外）或盾牌钱取得全国共同议会同意，我们应分别以信件召集大主教、主教、修院长、伯爵与大男爵；并通过郡守与其他官员，普遍召集所有直接受封于我们的人，于至少提前四十天通知的固定日期、固定地点集会。一切召集信件应说明召集原因。召集之后，既定事务应按出席者的决议进行，即使并非所有被召集者都已到场。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>爲就徵收協助金（上述三種情況除外）或盾牌錢取得全國共同議會同意，我們應分別以信件召集大主教、主教、修院長、伯爵與大男爵；並通過郡守與其他官員，普遍召集所有直接受封於我們的人，於至少提前四十天通知的固定日期、固定地點集會。一切召集信件應說明召集原因。召集之後，既定事務應按出席者的決議進行，即使並非所有被召集者都已到場。</p></div>
+  <div class="lang-col en" lang="en"><p>And for obtaining the common counsel of the kingdom anent the assessing of an aid (except in the three cases aforesaid) or of a scutage, we will cause to be summoned the archbishops, bishops, abbots, earls, and greater barons, severally by our letters; and we will moreover cause to be summoned generally, through our sheriffs and bailiffs, all others who hold of us in chief, for a fixed date, namely, after the expiry of at least forty days, and at a fixed place; and in all letters of such summons we will specify the reason of the summons. And when the summons has thus been made, the business shall proceed on the day appointed, according to the counsel of such as are present, although not all who were summoned have come.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">15</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后我们不允许任何人向其自由佃户征收协助金，但为其本人赎身、册封长子为骑士、长女出嫁一次三种情况除外；这些情况也只能征收合理的协助金。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後我們不允許任何人向其自由佃戶徵收協助金，但爲其本人贖身、冊封長子爲騎士、長女出嫁一次三種情況除外；這些情況也只能徵收合理的協助金。</p></div>
+  <div class="lang-col en" lang="en"><p>We will not for the future grant to any one license to take an aid from his own free tenants, except to ransom his body, to make his eldest son a knight, and once to marry his eldest daughter; and on each of these occasions there shall be levied only a reasonable aid.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">16</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何人不得被强迫为其骑士封地或其他自由土地提供超过应尽义务的役务。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何人不得被強迫爲其騎士封地或其他自由土地提供超過應盡義務的役務。</p></div>
+  <div class="lang-col en" lang="en"><p>No one shall be distrained for performance of greater service for a knight’s fee, or for any other free tenement, than is due therefrom.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>第 12 条与第 14 条要求国王在征收盾牌钱或协助金时取得“全国共同议会”的同意，并规定召集程序。后世把这一条解释为“无代表不纳税”的远祖；但 1215 年的“共同议会”由大主教、主教、修院长、伯爵与大男爵组成，并不是现代代议制。</p>
+    <p class="note-k">思想脉络</p><p>第 13 条确认伦敦城及其他城市、港口的古老自由。城市自治与商人利益，是理解大宪章政治联盟的重要背景。</p>
+  </div>
+</details><div class="section-head" id="sec3">
+  <span class="sec-no">04</span>
+  <h2><span lang="zh-Hans">司法与罚金</span><span class="sep">·</span><span lang="zh-Hant">司法與罰金</span></h2>
+  <p class="sec-en">Justice and Amercements</p>
+</div><p class="lead-note">第 17—22 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">17</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>普通诉讼不再跟随我们的宫廷，而应在固定地点审理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>普通訴訟不再跟隨我們的宮廷，而應在固定地點審理。</p></div>
+  <div class="lang-col en" lang="en"><p>Common pleas shall not follow our court, but shall be held in some fixed place.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">18</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>新侵占之诉、祖先死亡之诉与最后推荐之诉，只应在相应的郡法院审理。我们，或我们不在国内时的首席法官，应每年四次向每郡派遣两名法官；这些法官应与郡中自选的四位骑士一起，在郡法院开庭之日与地点审理上述案件。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>新侵佔之訴、祖先死亡之訴與最後推薦之訴，只應在相應的郡法院審理。我們，或我們不在國內時的首席法官，應每年四次向每郡派遣兩名法官；這些法官應與郡中自選的四位騎士一起，在郡法院開庭之日與地點審理上述案件。</p></div>
+  <div class="lang-col en" lang="en"><p>Inquests of novel disseisin, of mort d’ancester, and of darrein presentment, shall not be held elsewhere than in their own county courts and that in manner following,—We, or, if we should be out of the realm, our chief justiciar, will send two justiciars through every county four times a year, who shall, along with four knights of the county chosen by the county, hold the said assize in the county court, on the day and in the place of meeting of that court.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">19</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若上述案件在郡法院开庭日无法审结，应留下足够的骑士与自由土地持有人，以便按事务多寡继续审理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若上述案件在郡法院開庭日無法審結，應留下足夠的騎士與自由土地持有人，以便按事務多寡繼續審理。</p></div>
+  <div class="lang-col en" lang="en"><p>And if any of the said assizes cannot be taken on the day of the county court, let there remain of the knights and freeholders, who were present at the county court on that day, as many as may be required for the efficient making of judgments, according as the business be more or less.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">20</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>自由人犯轻罪，其罚金应与其罪行程度相当；犯重罪，也应按罪行轻重处罚，但不得剥夺其生计。商人应保留其货物，农奴应保留其农具；上述罚金除由邻里诚实之人宣誓评估外，不得施加。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>自由人犯輕罪，其罰金應與其罪行程度相當；犯重罪，也應按罪行輕重處罰，但不得剝奪其生計。商人應保留其貨物，農奴應保留其農具；上述罰金除由鄰里誠實之人宣誓評估外，不得施加。</p></div>
+  <div class="lang-col en" lang="en"><p>A freeman shall not be amerced for a slight offense, except in accordance with the degree of the offense; and for a grave offense he shall be amerced in accordance with the gravity of the offense, yet saving always his “contentment;” and a merchant in the same way, saving his “merchandise;” and a villein shall be amerced in the same way, saving his “wainage”—if they have fallen into our mercy: and none of the aforesaid amercements shall be impsed except by the oath of honest men of the neighborhood.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">21</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>伯爵与男爵非经其同级贵族，不得被处罚金，且罚金应与其罪行轻重相当。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>伯爵與男爵非經其同級貴族，不得被處罰金，且罰金應與其罪行輕重相當。</p></div>
+  <div class="lang-col en" lang="en"><p>Earls and barons shall not be amerced except through their peers, and only in accordance with the degree of the offense.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">22</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>教士的世俗财产也应按上述原则处罚金，不得按其教会圣职收入的价值计算。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>教士的世俗財產也應按上述原則處罰金，不得按其教會聖職收入的價值計算。</p></div>
+  <div class="lang-col en" lang="en"><p>A clerk shall not be amerced in respect of his lay holding except after the manner of the others aforesaid; further, he shall not be amerced in accordance with the extent of his ecclesiastical benefice.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>这一组把普通诉讼固定在特定地点，规范巡回审判、罚金与贵族同侪审判。它针对的是国王及其官员任意执法、任意罚款的现实问题。</p>
+    <p class="note-k">思想脉络</p><p>第 20 条要求罚金与罪行相当，并保留自由人的生计；第 21 条要求伯爵与男爵只由同级贵族处罚。这些条款是“正当程序”与比例原则的早期表达，但仍以封建身份为前提。</p>
+  </div>
+</details><div class="section-head" id="sec4">
+  <span class="sec-no">05</span>
+  <h2><span lang="zh-Hans">王室特权、贸易与民生</span><span class="sep">·</span><span lang="zh-Hant">王室特權、貿易與民生</span></h2>
+  <p class="sec-en">Royal Prerogative, Trade and Livelihood</p>
+</div><p class="lead-note">第 23—35 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">23</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何村庄或个人不得被强迫在河岸修桥，但自古以来依法负有修桥义务者除外。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何村莊或個人不得被強迫在河岸修橋，但自古以來依法負有修橋義務者除外。</p></div>
+  <div class="lang-col en" lang="en"><p>No village or individual shall be compelled to make bridges at river-banks, except those who from of old were legally bound to do so.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">24</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何郡守、警官、验尸官或我们的其他官员，不得审理应由王室法官审理的案件。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何郡守、警官、驗屍官或我們的其他官員，不得審理應由王室法官審理的案件。</p></div>
+  <div class="lang-col en" lang="en"><p>No sheriff, constable, coroners, or others of our bailiffs, shall hold pleas of our Crown.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">25</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>所有郡、百户区、小邑与十户区，除我们的王室直属庄园外，应维持旧租金，不得增加。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>所有郡、百戶區、小邑與十戶區，除我們的王室直屬莊園外，應維持舊租金，不得增加。</p></div>
+  <div class="lang-col en" lang="en"><p>All counties, hundreds, wapentakes, and trithings (except our demesne manors) shall remain at old rents, and without any additional payment.***here may be an error</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">26</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若有人以世俗封地受封于我们而去世，我们的郡守或官员出示王室债务传唤令状，可在诚实之人见证下，扣押并登记死者世俗封地上的动产，价值以债务为限；在债务全部清偿前，不得移走任何物品；余款交给遗嘱执行人。若死者不欠王室债务，全部动产归死者，但其妻儿应得合理份额。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若有人以世俗封地受封於我們而去世，我們的郡守或官員出示王室債務傳喚令狀，可在誠實之人見證下，扣押並登記死者世俗封地上的動產，價值以債務爲限；在債務全部清償前，不得移走任何物品；餘款交給遺囑執行人。若死者不欠王室債務，全部動產歸死者，但其妻兒應得合理份額。</p></div>
+  <div class="lang-col en" lang="en"><p>If any one holding of us a lay fief shall die, and our sheriff or bailiff shall exhibit our letters patent of summons for a debt which the deceased owed to us, it shall be lawful for our sheriff or bailiff to attach and catalogue chattels of the deceased, found upon the lay fief, to the value of that debt, at the sight of law-worthy men, provided always that nothing whatever be then be removed until the debt which is evident shall be fully paid to us; and the residue shall be left to the executors to fulfil the will of the deceased; and if there be nothing due from him to us, all the chattels shall go to the deceased, saving to his wife and children their reasonable shares.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">27</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>自由人无遗嘱去世时，其动产应由最近的血亲与朋友在教会监督下分配，但应保留死者所欠各人的债务。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>自由人無遺囑去世時，其動產應由最近的血親與朋友在教會監督下分配，但應保留死者所欠各人的債務。</p></div>
+  <div class="lang-col en" lang="en"><p>If any freeman shall die intestate, his chattels shall be distributed by the hands of his nearest kinsfolk and friends, under supervision of the church, saving to every one the debts which the deceased owed to him.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">28</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何警官或我们的其他官员，不得未经立即付钱而从任何人处取走谷物或其他食物，但卖方自愿同意延期者除外。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何警官或我們的其他官員，不得未經立即付錢而從任何人處取走穀物或其他食物，但賣方自願同意延期者除外。</p></div>
+  <div class="lang-col en" lang="en"><p>No constable or other bailiff of ours shall take corn or other provisions from any one without immediately tendering money therefor, unless he can have postponement thereof by permission of the seller.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">29</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>警官不得强迫愿意亲自履行城堡守卫义务的骑士以钱代役；若骑士有合理理由不能亲自守卫，可派其他合适的人代守。骑士若被我们派去服军役，在服役期间免除城堡守卫义务。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>警官不得強迫願意親自履行城堡守衛義務的騎士以錢代役；若騎士有合理理由不能親自守衛，可派其他合適的人代守。騎士若被我們派去服軍役，在服役期間免除城堡守衛義務。</p></div>
+  <div class="lang-col en" lang="en"><p>No constable shall compel any knight to give money in lieu of castle-guard, when he is willing to perform it in his own person, or (if he cannot do it from any reasonable cause) then by another responsible man. Further, if we have led or sent him upon military service, he shall be relieved from guard in proportion to the time during which he has been on service because of us.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">30</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何郡守、我们的官员或其他人，不得违背自由人的意愿，征用其马匹或车辆从事运输。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何郡守、我們的官員或其他人，不得違背自由人的意願，徵用其馬匹或車輛從事運輸。</p></div>
+  <div class="lang-col en" lang="en"><p>No sheriff or bailiff of ours, or other person, shall take the horses or carts of any freeman for transport duty, against the will of the said freeman.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">31</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们和我们的官员不得未经木材所有人同意，为我们的城堡或其他工程取用不属于我们的木材。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們和我們的官員不得未經木材所有人同意，爲我們的城堡或其他工程取用不屬於我們的木材。</p></div>
+  <div class="lang-col en" lang="en"><p>Neither we nor our bailiffs shall take, for our castles or for any other work of ours, wood which is not ours, against the will of the owner of that wood.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">32</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>重罪犯的土地，我们不得保留超过一年零一日；之后应归还该封地的领主。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>重罪犯的土地，我們不得保留超過一年零一日；之後應歸還該封地的領主。</p></div>
+  <div class="lang-col en" lang="en"><p>We will not retain beyond one year and one day, the lands of those who have been convicted of felony, and the lands shall thereafter be handed over to the lords of the fiefs.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">33</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后应拆除泰晤士河、梅德韦河以及全英格兰的鱼梁，但海岸上的除外。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後應拆除泰晤士河、梅德韋河以及全英格蘭的魚梁，但海岸上的除外。</p></div>
+  <div class="lang-col en" lang="en"><p>All kiddles for the future shall be removed altogether from Thames and Medway, and throughout all England, except upon the seashore.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">34</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后不得就任何土地发出称为“praecipe”的令状，使自由人因此失去在其领主法庭受审的权利。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後不得就任何土地發出稱爲“praecipe”的令狀，使自由人因此失去在其領主法庭受審的權利。</p></div>
+  <div class="lang-col en" lang="en"><p>The writ which is called praecipe shall not for the future be issued to any one, regarding any tenement whereby a freeman may lose his court.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">35</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>全王国应统一酒、麦酒与谷物的度量，谷物以“伦敦夸特”为准；染色布、粗布与麻毛混织布的宽度应统一，即布边之间两厄尔；衡制也应统一。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>全王國應統一酒、麥酒與穀物的度量，穀物以“倫敦夸特”爲準；染色布、粗布與麻毛混織布的寬度應統一，即布邊之間兩厄爾；衡制也應統一。</p></div>
+  <div class="lang-col en" lang="en"><p>Let there be one measure of wine throughout our whole realm; and one measure of ale; and one measure of corn, to wit, “the London quarter;” and one width of cloth (whether dyed, or russet, or “halberget”), to wit, two ells within the selvages; of weights also let it be as of measures.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>从修桥、王室债务、粮食征购、马匹车辆征用，到鱼梁、令状、度量衡，这一组条款限制国王官员对地方社会与市场的不当干预。它们看似琐碎，却是大宪章最实际的部分：把王权从日常经济生活中划出边界。</p>
+    <p class="note-k">思想脉络</p><p>第 28—31 条保护臣民免受无偿征用；第 35 条统一度量衡，有利于市场交易。这些内容体现了贵族与城市、商人之间的共同利益。</p>
+  </div>
+</details><div class="section-head" id="sec5">
+  <span class="sec-no">06</span>
+  <h2><span lang="zh-Hans">自由与正当程序</span><span class="sep">·</span><span lang="zh-Hant">自由與正當程序</span></h2>
+  <p class="sec-en">Liberty and Due Process</p>
+</div><p class="lead-note">第 36—42 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">36</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后，生死或肢体调查令状不得收取任何费用，应免费发给，不得拒绝。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後，生死或肢體調查令狀不得收取任何費用，應免費發給，不得拒絕。</p></div>
+  <div class="lang-col en" lang="en"><p>Nothing in future shall be given or taken for a writ of inquisition of life or limbs, but freely it shall be granted, and never denied.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">37</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若有人以永租、农役或市镇租地方式持有我们的土地，同时又以骑士役持有他人的土地，我们不得以该永租、农役或市镇租地为由，监护其继承人，或监护属于他人封地的土地，除非该永租地负有骑士役。我们也不得因任何人以刀、箭等小役务持有我们的小块土地，而监护其继承人或其以骑士役持有他人的土地。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若有人以永租、農役或市鎮租地方式持有我們的土地，同時又以騎士役持有他人的土地，我們不得以該永租、農役或市鎮租地爲由，監護其繼承人，或監護屬於他人封地的土地，除非該永租地負有騎士役。我們也不得因任何人以刀、箭等小役務持有我們的小塊土地，而監護其繼承人或其以騎士役持有他人的土地。</p></div>
+  <div class="lang-col en" lang="en"><p>If any one holds of us by fee-farm, by socage, or by burgage, and holds also land of another lord by knight’s service, we will not (by reason of that fee-farm, socage, or burgage) have the wardship of the heir, or of such land of his as is of the fief of that other; nor shall we have wardship of that fee-farm, socage, or burgage, unless such fee-farm owes knight’s service. We will not by reason of any small serjeanty which any one may hold of us by the service of rendering to us knives, arrows, or the like, have wardship of his heir of the land which he holds of another lord by knight’s service.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">38</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后任何官员不得仅凭自己未经证实的指控，使任何人受审，除非提出可信证人证明其指控为真。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後任何官員不得僅憑自己未經證實的指控，使任何人受審，除非提出可信證人證明其指控爲真。</p></div>
+  <div class="lang-col en" lang="en"><p>No bailiff for the future shall, upon his own unsupported complaint, put any one to his “law,” without credible witnesses brought for this purpose.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">39</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何自由人，非经其同等者的合法裁判或依本国法律，不得被逮捕、监禁、剥夺财产、流放，或以任何方式被毁坏；我们也不得对他使用武力，或派人对他使用武力。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何自由人，非經其同等者的合法裁判或依本國法律，不得被逮捕、監禁、剝奪財產、流放，或以任何方式被毀壞；我們也不得對他使用武力，或派人對他使用武力。</p></div>
+  <div class="lang-col en" lang="en"><p>No freeman shall be taken or imprisoned or disseised or exiled or in anyway destroyed, nor will we go upon him nor send upon him, except by the lawful judgment of his peers or by the law of the land.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">40</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们不会向任何人出售、拒绝或拖延权利与正义。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們不會向任何人出售、拒絕或拖延權利與正義。</p></div>
+  <div class="lang-col en" lang="en"><p>To no one will we sell, to no one will we refuse or delay, right or justice.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">41</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>一切商人应能安全无惧地离开英格兰、进入英格兰，并有权在陆上或水上停留、往来，依古老而正当的惯例买卖，免除一切不正当的捐税；但在战争时期，属于与我们交战之国的商人除外。若此类商人在战争爆发时在我国境内，应被扣留，但不得伤害其人身或财物，直到我们或我们的首席法官查明我国商人在敌国所受待遇；若我国商人在彼处安全，他们在此处也应安全。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>一切商人應能安全無懼地離開英格蘭、進入英格蘭，並有權在陸上或水上停留、往來，依古老而正當的慣例買賣，免除一切不正當的捐稅；但在戰爭時期，屬於與我們交戰之國的商人除外。若此類商人在戰爭爆發時在我國境內，應被扣留，但不得傷害其人身或財物，直到我們或我們的首席法官查明我國商人在敵國所受待遇；若我國商人在彼處安全，他們在此處也應安全。</p></div>
+  <div class="lang-col en" lang="en"><p>All merchants shall have safe and secure exit from England, and entry to England, with the right to tarry there and to move about as well by land as by water, for buying and selling by the ancient and right customs, quit from all evil tolls, except (in time of war) such merchants as are of the land at war with us. And if such are found in our land at the beginning of the war, they shall be detained, without injury to their bodies or goods, until information be received by us, or by our chief justiciar, how the merchants of our land found in the land at war with us are treated; and if our men are safe there, the others shall be safe in our land.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">42</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>今后，任何人（依法被监禁或流放者、与我们交战之国的臣民，以及上述商人除外）都可以安全无惧地离开并返回我们的王国，无论陆路或水路，但须保留对我们的效忠；战争时期可因公共需要短暂限制。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>今後，任何人（依法被監禁或流放者、與我們交戰之國的臣民，以及上述商人除外）都可以安全無懼地離開並返回我們的王國，無論陸路或水路，但須保留對我們的效忠；戰爭時期可因公共需要短暫限制。</p></div>
+  <div class="lang-col en" lang="en"><p>It shall be lawful in future for any one (excepting always those imprisoned or outlawed in accordance with the law of the kingdom, and natives of any country at war with us, and merchants, who shall be treated as is above provided) to leave our kingdom and to return, safe and secure by land and water, except for a short period in time of war, on grounds of public policy—reserving always the allegiance due to us.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>第 39、40 条是大宪章最著名的两条：非经同等人合法裁判或依国法，不得逮捕、监禁、剥夺、流放或侵害自由人；不得出售、拒绝或拖延权利与正义。它们后来成为英美正当程序传统与《世界人权宣言》第 9—11 条的重要远祖。</p>
+    <p class="note-k">思想脉络</p><p>但第 39 条的“自由人”在 1215 年仍不包括农奴；它的“同等人裁判”也是封建等级内的裁判。文本的普遍化，是后世数百年阅读、解释与斗争的结果。</p>
+  </div>
+</details><div class="section-head" id="sec6">
+  <span class="sec-no">07</span>
+  <h2><span lang="zh-Hans">封建权利、森林与威尔士、苏格兰</span><span class="sep">·</span><span lang="zh-Hant">封建權利、森林與威爾士、蘇格蘭</span></h2>
+  <p class="sec-en">Feudal Rights, Forests, Wales and Scotland</p>
+</div><p class="lead-note">第 43—60 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">43</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若有人持有某些归复土地（如沃灵福德、诺丁汉、布洛涅、兰开斯特的荣誉，或我们手中其他属于男爵领的归复土地）而去世，其继承人只须向我们缴纳该男爵领若在男爵手中时应缴的继承税与役务；我们应按男爵持有该土地的方式持有。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若有人持有某些歸復土地（如沃靈福德、諾丁漢、布洛涅、蘭開斯特的榮譽，或我們手中其他屬於男爵領的歸復土地）而去世，其繼承人只須向我們繳納該男爵領若在男爵手中時應繳的繼承稅與役務；我們應按男爵持有該土地的方式持有。</p></div>
+  <div class="lang-col en" lang="en"><p>If any one holding of some escheat (such as the honor of Wallingford, Nottingham, Boulogne, Lancaster, or of other escheats which are in our hands and are baronies) shall die, his heir shall give no other relief, and perform no other service to us than he would have done to the baron, if that barony had been in the baron’s hand; and we shall hold it in the same manner in which the baron held it.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">44</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>居住在森林之外的人，今后不必因一般传唤而到我们的森林法官面前，除非他们实际涉讼，或为因森林犯罪而被捕者作担保。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>居住在森林之外的人，今後不必因一般傳喚而到我們的森林法官面前，除非他們實際涉訟，或爲因森林犯罪而被捕者作擔保。</p></div>
+  <div class="lang-col en" lang="en"><p>Men who dwell without the forest need not henceforth come before our justiciars of the forest upon a general summons, except those who are impleaded, or who have become sureties for any person or persons attached for forest offenses.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">45</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们只任命懂得王国法律并愿意遵守法律的人为法官、警官、郡守或其他官员。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們只任命懂得王國法律並願意遵守法律的人爲法官、警官、郡守或其他官員。</p></div>
+  <div class="lang-col en" lang="en"><p>We will appoint as justices, constables, sheriffs, or bailiffs only such as know the law of the realm and mean to observe it well.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">46</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>所有创建修院的男爵，若持有英格兰国王的特许状，或长期占有该修院，则在修院空缺期间应享有监护权，如同其应有的权利。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>所有創建修院的男爵，若持有英格蘭國王的特許狀，或長期佔有該修院，則在修院空缺期間應享有監護權，如同其應有的權利。</p></div>
+  <div class="lang-col en" lang="en"><p>All barons who have founded abbeys, concerning which they hold charters from the kings of England, or of which they have long-continued possession, shall have the wardship of them, when vacant, as they ought to have.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">47</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们在位期间新设的森林，应立即取消森林地位；我们在位期间圈占的河岸，也同样处理。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們在位期間新設的森林，應立即取消森林地位；我們在位期間圈佔的河岸，也同樣處理。</p></div>
+  <div class="lang-col en" lang="en"><p>All forests that have been made such in our time shall forthwith be disafforested; and a similar course shall be followed with regard to river-banks that have been placed “in defense” by us in our time.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">48</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>一切与森林、猎场、林务官、猎场看守、郡守及其官员、河岸及其看守有关的恶习，应立即由每郡十二名宣誓骑士在该郡诚实之人推选下进行调查；调查后四十天内，应彻底废除，永不恢复；但须先通知我们，或我们不在英格兰时通知我们的首席法官。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>一切與森林、獵場、林務官、獵場看守、郡守及其官員、河岸及其看守有關的惡習，應立即由每郡十二名宣誓騎士在該郡誠實之人推選下進行調查；調查後四十天內，應徹底廢除，永不恢復；但須先通知我們，或我們不在英格蘭時通知我們的首席法官。</p></div>
+  <div class="lang-col en" lang="en"><p>All evil customs connected with forests and warrens, foresters and warreners, sheriffs and their officers, river-banks and their wardens, shall immediately be inquired into in each county by twelve sworn knights of the same county chosen by the honest men of the same county, and shall, within forty days of the said inquest, be utterly abolished, so as never to be restored, provided always that we previously have intimation thereof, or our justiciar, if we should not be in England.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">49</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们应立即归还英国人为和平或忠诚服役而交给我们的全部人质与特许状。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們應立即歸還英國人爲和平或忠誠服役而交給我們的全部人質與特許狀。</p></div>
+  <div class="lang-col en" lang="en"><p>We will immediately restore all hostages and charters delivered to us by Englishmen, as sureties of the peace or of faithful service.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">50</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们应完全免除杰拉德·德·阿特（Gerard de Ath）的亲属在英格兰的职务，今后他们不得在英格兰担任任何职务。这些人包括：恩格拉德·德·西戈涅、彼得、居伊与安德鲁·德·尚索、居伊·德·西戈涅、若弗鲁瓦·德·马蒂尼及其兄弟、菲利普·马克及其兄弟与侄子若弗鲁瓦，以及他们的全部追随者。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們應完全免除傑拉德·德·阿特（Gerard de Ath）的親屬在英格蘭的職務，今後他們不得在英格蘭擔任任何職務。這些人包括：恩格拉德·德·西戈涅、彼得、居伊與安德魯·德·尚索、居伊·德·西戈涅、若弗魯瓦·德·馬蒂尼及其兄弟、菲利普·馬克及其兄弟與侄子若弗魯瓦，以及他們的全部追隨者。</p></div>
+  <div class="lang-col en" lang="en"><p>We will entirely remove from their bailiwicks, the relations of Gerard Athee (so that in future they shall have no bailiwick in England); namely, Engelard of Cigogne, Peter, Guy, and Andrew of Chanceaux, Guy of Cigogne, Geofrrey of Martigny with his brothers, Philip Mark with his brothers and his nephew Geoffrey, and the whole brood of the same.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">51</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>和平恢复后，我们应立即把一切外国出生的骑士、弩手、军士与雇佣兵，连同他们的马匹与武器，逐出王国；他们是为害王国而来的。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>和平恢復後，我們應立即把一切外國出生的騎士、弩手、軍士與僱傭兵，連同他們的馬匹與武器，逐出王國；他們是爲害王國而來的。</p></div>
+  <div class="lang-col en" lang="en"><p>As soon as peace is restored, we will banish from the kingdom all foreign-born knights, cross-bowmen, serjeants, and mercenary soldiers, who have come with horses and arms to the kingdom’s hurt.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">52</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何人若未经其同等人的合法裁判，被我们剥夺或取走土地、城堡、特许权或权利，我们应立即归还；如有争议，应由下文保障和平条款所提的二十五名男爵裁决。对于被我们的父亲亨利国王或兄弟理查国王未经合法裁判剥夺或取走、而仍在我们手中或由他人根据我们的担保持有的财产，我们应享有十字军战士通常享有的宽限期；但若在我们参加十字军之前已提起诉讼或经我们命令进行调查者除外。我们远征归来或放弃远征后，应立即给予完全正义。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何人若未經其同等人的合法裁判，被我們剝奪或取走土地、城堡、特許權或權利，我們應立即歸還；如有爭議，應由下文保障和平條款所提的二十五名男爵裁決。對於被我們的父親亨利國王或兄弟理查國王未經合法裁判剝奪或取走、而仍在我們手中或由他人根據我們的擔保持有的財產，我們應享有十字軍戰士通常享有的寬限期；但若在我們參加十字軍之前已提起訴訟或經我們命令進行調查者除外。我們遠征歸來或放棄遠征後，應立即給予完全正義。</p></div>
+  <div class="lang-col en" lang="en"><p>If any one has been dispossessed or removed by us, without the legal judgment of his peers, from his lands, castles, franchises, or from his right, we will immediately restore them to him; and if a dispute arise over this, then let it be decided by the five-and-twenty barons of whom mention is made below in the clause for securing the peace. Moreover, for all those possessions, from which any one has, without the lawful judgment of his peers, be endisseised or removed, by our father, King Henry, or by our brother, King Richard, and which we retain in our hand (or which are possessed by others, to whom we are bound to warrant them) we shall have respite until the usual term of crusaders; excepting those things about which a plea has been raised, or an inquest made by our order, before our taking of the cross; but as soon as were turn from our expedition (or if perchance we desist from the expedition) we will immediately grant full justice therein.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">53</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>对于因我们的父亲亨利或兄弟理查新设森林、或应取消森林地位而保留森林、或对他人封地内土地的监护、或对建于他人封地内的修院（该封地领主主张权利）而生的争议，我们同样享有上述宽限；我们远征归来或放弃远征后，应立即对申诉者给予完全正义。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>對於因我們的父親亨利或兄弟理查新設森林、或應取消森林地位而保留森林、或對他人封地內土地的監護、或對建於他人封地內的修院（該封地領主主張權利）而生的爭議，我們同樣享有上述寬限；我們遠征歸來或放棄遠征後，應立即對申訴者給予完全正義。</p></div>
+  <div class="lang-col en" lang="en"><p>We shall have, moreover, the same respite and in the same manner in rendering justice concerning the disafforestation or retention of those forests which Henry our father and Richard our brother afforested, and concerning wardship of lands which are of the fief of another (namely, such wardships as we have hitherto had by reason of a fief which any one held of us by knight’s service), and concerning abbeys founded on other fiefs than our own, in which the lord of the fief claims to have right; and when we have returned, or if we desist from our expedition, we will immediately grant full justice to all who complain of such things.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">54</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>任何人不得因妇女上告而遭逮捕或监禁，但该妇女控告其丈夫死亡者除外。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>任何人不得因婦女上告而遭逮捕或監禁，但該婦女控告其丈夫死亡者除外。</p></div>
+  <div class="lang-col en" lang="en"><p>No one shall be arrested or imprisoned upon the appeal of a woman, for the death of any other than her husband.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">55</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>一切不正当地、违反国法向我们缴纳的罚金与摊派，应全部退还；或由下文保障和平条款所提的二十五名男爵，会同坎特伯雷大主教斯蒂芬（若他能出席）及他愿意带来的人，按多数意见处理。若大主教不能出席，程序仍可进行；但若二十五名男爵中有人涉及同类诉讼，其裁决应回避，由其余男爵另选一人宣誓替代，仅限该案。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>一切不正當地、違反國法向我們繳納的罰金與攤派，應全部退還；或由下文保障和平條款所提的二十五名男爵，會同坎特伯雷大主教斯蒂芬（若他能出席）及他願意帶來的人，按多數意見處理。若大主教不能出席，程序仍可進行；但若二十五名男爵中有人涉及同類訴訟，其裁決應迴避，由其餘男爵另選一人宣誓替代，僅限該案。</p></div>
+  <div class="lang-col en" lang="en"><p>All fines made with us unjustly and against the law of the land, and all amercements imposed unjustly and against the law of the land, shall be entirely remitted, or else it shall be done concerning them according to the decision of the five-and-twenty barons of whom mention is made below in the clause for securing the peace, or according to the judgment of the majority of the same, along with the aforesaid Stephen, archbishop of Canterbury, if he can be present, and such others as he may wish to bring with him for this purpose, and if he cannot be present the business shall nevertheless proceed without him, provided always that if any one or more of the aforesaid five-and-twenty barons are in a similar suit, they shall be removed as far as concerns this particular judgment, others being substituted in their places after having been selected by the rest of the same five-and-twenty for this purpose only, and after having been sworn.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">56</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>若我们未经威尔士人同等人的合法裁判，在英格兰或威尔士剥夺其土地、自由或其他东西，应立即归还；如有争议，应在边区由同等人裁判。英格兰境内的土地依英格兰法，威尔士境内的土地依威尔士法，边区的土地依边区法；威尔士人对我们及我们的人也应如此。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>若我們未經威爾士人同等人的合法裁判，在英格蘭或威爾士剝奪其土地、自由或其他東西，應立即歸還；如有爭議，應在邊區由同等人裁判。英格蘭境內的土地依英格蘭法，威爾士境內的土地依威爾士法，邊區的土地依邊區法；威爾士人對我們及我們的人也應如此。</p></div>
+  <div class="lang-col en" lang="en"><p>If we have disseised or removed Welshmen from lands or liberties, or other things, without the legal judgment of their peers in England or in Wales, they shall be immediately restored to them; and if a dispute arise over this, then let it be decided in the marches by the judgment of their peers; for tenements in England according to the law of England, for tenements in Wales according to the law of Wales, and for tenements in the marches according to the law of the marches. Welshmen shall do the same to us and ours.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">57</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>对于我们的父亲亨利国王或兄弟理查国王未经威尔士人同等人合法裁判而剥夺或取走、仍在我们手中或由他人根据我们的担保持有的财产，我们应享有十字军战士通常的宽限期；但在我们参加十字军前已提起诉讼或经我们命令调查者除外。我们远征归来或放弃远征后，应立即依威尔士法与上述地区法律给予完全正义。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>對於我們的父親亨利國王或兄弟理查國王未經威爾士人同等人合法裁判而剝奪或取走、仍在我們手中或由他人根據我們的擔保持有的財產，我們應享有十字軍戰士通常的寬限期；但在我們參加十字軍前已提起訴訟或經我們命令調查者除外。我們遠征歸來或放棄遠征後，應立即依威爾士法與上述地區法律給予完全正義。</p></div>
+  <div class="lang-col en" lang="en"><p>Further, for all those possessions from which any Welshman has, without the lawful judgment of his peers, been disseised or removed by King Henry our father or King Richard our brother, and which we retain in our hand (or which are possessed by others, to whom we are bound to warrant them) we shall have respite until the usual term of crusaders; excepting those things about which a plea has been raised or an inquest made by our order before we took the cross; but as soon as we return (or if perchance we desist from our expedition), we will immediately grant full justice in accordance with the laws of the Welsh and in relation to the foresaid regions.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">58</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们应立即交出卢埃林（Llywelyn）之子、全部威尔士人质，以及作为和平担保交给我们的特许状。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們應立即交出盧埃林（Llywelyn）之子、全部威爾士人質，以及作爲和平擔保交給我們的特許狀。</p></div>
+  <div class="lang-col en" lang="en"><p>We will immediately give up the son of Llywelyn and all the hostages of Wales, and the charters delivered to us as security for the peace.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">59</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>对于苏格兰国王亚历山大，我们应就归还其姐妹、人质、特许权与权利，按我们对待英格兰其他男爵的同样方式处理；但若我们持有的其父、前苏格兰国王威廉的特许状另有规定，则不在此限。此事应由其同等人依我们的法庭裁判。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>對於蘇格蘭國王亞歷山大，我們應就歸還其姐妹、人質、特許權與權利，按我們對待英格蘭其他男爵的同樣方式處理；但若我們持有的其父、前蘇格蘭國王威廉的特許狀另有規定，則不在此限。此事應由其同等人依我們的法庭裁判。</p></div>
+  <div class="lang-col en" lang="en"><p>We will do toward Alexander, King of Scots, concerning the return of his sisters and his hostages, and concerning his franchises, and his right, in the same manner as we shall do toward our other barons of England, unless it ought to be otherwise according to the charters which we hold from William his father, formerly King of Scots; and this shall be according to the judgment of his peers in our court.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">60</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>上述一切习惯与自由，凡我们已在本王国授予我们的人者，应由王国内一切人——教士与俗人——在其与自己的属下关系中也同样遵守。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>上述一切習慣與自由，凡我們已在本王國授予我們的人者，應由王國內一切人——教士與俗人——在其與自己的屬下關係中也同樣遵守。</p></div>
+  <div class="lang-col en" lang="en"><p>Moreover, all these aforesaid customs and liberties, the observance of which we have granted in our kingdom as far as pertains to us toward our men, shall be observed by all of our kingdom, as well clergy as laymen, as far as pertains to them toward their men.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>这一组处理归复土地、森林、威尔士与苏格兰的人质、土地与法律适用问题。它们提醒我们：大宪章同时是一份战争与边疆政治的文件，包含对威尔士人、苏格兰人的强制与安排。</p>
+    <p class="note-k">思想脉络</p><p>第 47、48 条限制王室森林扩张，是当时非常具体的生态与地方治理议题；第 56—59 条涉及威尔士与苏格兰，须放在英格兰扩张的历史中理解。</p>
+  </div>
+</details><div class="section-head" id="sec7">
+  <span class="sec-no">08</span>
+  <h2><span lang="zh-Hans">保障条款与确认</span><span class="sep">·</span><span lang="zh-Hant">保障條款與確認</span></h2>
+  <p class="sec-en">Security and Confirmation</p>
+</div><p class="lead-note">第 61—63 条 · 英文原文保留旧式拼写，简、繁中文为本站译校。</p><div class="clause">
+  <div class="c-no">61</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>此外，为了上帝、为了本王国的改良、为了平息我们与男爵之间的争端，我们已授予上述一切让步，并希望他们永久完整地享有；因此我们授予并确认以下保障：男爵们应从他们中间选出二十五名男爵，由他们全力维护并促成本特许状所授予和确认的和平与自由。若我们、我们的首席法官、官员或任何仆役在任何方面对任何人有过失，或破坏本和平与保障条款的任何一条，且该过失被告知上述二十五名男爵中的四人，这四名男爵应来见我们（或我们不在国内时见首席法官），说明并请求立即纠正。若我们在被告知后四十天内未纠正（或我们不在国内时首席法官未纠正），这四名男爵应将此事提交其余二十五名男爵；二十五名男爵可会同全国共同体，以一切可能方式扣押并攻击我们——夺取我们的城堡、土地、财产或其他东西，但不得伤害我们本人、王后与我们的子女——直到他们认定应得的纠正得到实现；纠正实现后，他们应恢复对我们的正常服从。凡愿意者，均可宣誓服从二十五名男爵为上述目的发出的命令，并尽力与他们一起攻击我们；我们公开自由地允许任何人如此宣誓，且永不禁止。凡不愿宣誓者，我们应命令其宣誓。若二十五名男爵中有人死亡、离开王国或因其他原因不能履行职责，其余男爵应自行推选一人替代，并如同其他人一样宣誓。二十五名男爵受托处理的一切事项，若他们出席并有分歧，或其中有人被召集却不愿或不能出席，则出席者多数所决定或命令者，应视为确定有效，如同二十五人全体一致同意；二十五名男爵应宣誓忠实遵守上述一切，并尽力促使他人遵守。我们不得直接或间接向任何人取得任何东西，以撤销或减损上述让步与自由的任何部分；若取得此类东西，应属无效，我们永不行使。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>此外，爲了上帝、爲了本王國的改良、爲了平息我們與男爵之間的爭端，我們已授予上述一切讓步，並希望他們永久完整地享有；因此我們授予並確認以下保障：男爵們應從他們中間選出二十五名男爵，由他們全力維護並促成本特許狀所授予和確認的和平與自由。若我們、我們的首席法官、官員或任何僕役在任何方面對任何人有過失，或破壞本和平與保障條款的任何一條，且該過失被告知上述二十五名男爵中的四人，這四名男爵應來見我們（或我們不在國內時見首席法官），說明並請求立即糾正。若我們在被告知後四十天內未糾正（或我們不在國內時首席法官未糾正），這四名男爵應將此事提交其餘二十五名男爵；二十五名男爵可會同全國共同體，以一切可能方式扣押並攻擊我們——奪取我們的城堡、土地、財產或其他東西，但不得傷害我們本人、王后與我們的子女——直到他們認定應得的糾正得到實現；糾正實現後，他們應恢復對我們的正常服從。凡願意者，均可宣誓服從二十五名男爵爲上述目的發出的命令，並盡力與他們一起攻擊我們；我們公開自由地允許任何人如此宣誓，且永不禁止。凡不願宣誓者，我們應命令其宣誓。若二十五名男爵中有人死亡、離開王國或因其他原因不能履行職責，其餘男爵應自行推選一人替代，並如同其他人一樣宣誓。二十五名男爵受託處理的一切事項，若他們出席並有分歧，或其中有人被召集卻不願或不能出席，則出席者多數所決定或命令者，應視爲確定有效，如同二十五人全體一致同意；二十五名男爵應宣誓忠實遵守上述一切，並盡力促使他人遵守。我們不得直接或間接向任何人取得任何東西，以撤銷或減損上述讓步與自由的任何部分；若取得此類東西，應屬無效，我們永不行使。</p></div>
+  <div class="lang-col en" lang="en"><p>Since, moreover, for God and the amendment of our kingdom and for the better allaying of the quarrel that has arisen between us and our barons, we have granted all these concessions, desirous that they should enjoy them in complete and firm endurance for ever, we give and grant to them the underwritten security, namely, that the barons choose five-and-twenty barons of the kingdom, whomsoever they will, who shall be bound with all their might, to observe and hold, and cause to be observed, the peace and liberties we have granted and confirmed to them by this our present Charter, so that if we, or our justiciar, or our bailiffs or any one of our officers, shall in anything be at fault toward any one, or shall have broken any one of the articles of the peace or of this security, and the offense be notified to four barons of the foresaid five-and-twenty, the said four barons shall repair to us (or our justiciar, if we are out of the realm) and, laying the transgression before us, petition to have that transgression redressed without delay. And if we shall not have corrected the transgression (or, in the event of our being out of the realm, if our justiciar shall not have corrected it) within forty days, reckoning from the time it has been intimated to us (or to our justiciar, if we should be out of the realm), the four barons aforesaid shall refer that matter to the rest of the five-and-twenty barons, and those five-and-twenty barons shall, together with the community of the whole land, distrain and distress us in all possible ways, namely, by seizing our castles, lands, possessions, and in any other way they can, until redress has been obtained as they deem fit, saving harmless our own person, and the persons of our queen and children; and when redress has been obtained, they shall resume their old relations toward us. And let whoever in the country desires it, swear to obey the orders of the said five-and-twenty barons for the execution of all the aforesaid matters, and along with them, to molest us to the utmost of his power; and we publicly and freely grant leave to every one who wishes to swear, and we shall never forbid any one to swear. All those, moreover, in the land who of themselves and of their own accord are unwilling to swear to the twenty-five to help them in constraining and molesting us, we shall by our command compel the same to swear to the effect aforesaid. And if any one of the five-and-twenty barons shall have died or departed from the land, or be incapacitated in any other manner which would prevent the foresaid provisions being carried out, those of the said twenty-five barons who are left shall choose another in his place according to their own judgment, and he shall be sworn in the same way as the others. Further, in all matters, the execution of which is intrusted to these twenty-five barons, if perchance these twenty-five are present, that which the majority of those present ordain or command shall be held as fixed and established, exactly as if the whole twenty-five had concurred in this; and the said twenty-five shall swear that they will faithfully observe all that is aforesaid, and cause it to be observed with all their might. And we shall procure nothing from any one, directly or indirectly, whereby any part of these concessions and liberties might be revoked or diminished; and if any such thing has been procured, let it be void and null, and we shall never use it personally or by another.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">62</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>我们已完全赦免并宽恕自争端发生以来我们与我们的臣民——教士与俗人——之间产生的一切恶意、仇恨与怨愤。对于自我们在位第十六年复活节起至和平恢复之日止，因上述争端而发生的一切侵害，凡与我们有关者，我们已完全赦免并宽恕一切人，无论教士或俗人。为此，我们已请坎特伯雷大主教斯蒂芬、都柏林大主教亨利、上述主教们以及潘道夫先生就本保障与上述让步出具公开证明文件。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>我們已完全赦免並寬恕自爭端發生以來我們與我們的臣民——教士與俗人——之間產生的一切惡意、仇恨與怨憤。對於自我們在位第十六年復活節起至和平恢復之日止，因上述爭端而發生的一切侵害，凡與我們有關者，我們已完全赦免並寬恕一切人，無論教士或俗人。爲此，我們已請坎特伯雷大主教斯蒂芬、都柏林大主教亨利、上述主教們以及潘道夫先生就本保障與上述讓步出具公開證明文件。</p></div>
+  <div class="lang-col en" lang="en"><p>And all the ill-will, hatreds, and bitterness that have arisen between us and our men, clergy and lay, from the date of the quarrel, we have completely remitted and pardoned every one. Moreover, all trespasses occasioned by the said quarrel, from Easter in the sixteenth year of our reign till the restoration of peace, we have fully remitted to all, both clergy and laymen, and completely forgiven, as far as pertains to us. And, on this head, we have caused to be made for them letters testimonial patent of the lord Stephen, archbishop of Canterbury, of the lord Henry, archbishop of Dublin, of the bishops aforesaid, and of Master Pandulf as touching this security and the concessions aforesaid.</p></div>
+</div></div>
+</div><div class="clause">
+  <div class="c-no">63</div>
+  <div class="c-body"><div class="para c-para">
+  <div class="lang-col" lang="zh-Hans"><p>因此，我们愿意并坚决命令：英格兰教会应自由；我们王国内的人应为我们和我们的继承人、并为他们自己和他们的继承人，在一切方面、一切地方永久完整、和平、自由、安静地享有并持有上述一切自由、权利与让步。我们与男爵们均已宣誓，善意遵守上述一切条件，不怀恶意。以上由我们亲笔签署，上述诸人及许多其他人见证；地点在温莎与斯泰恩斯之间的兰尼米德草地，时间为我们在位第十七年六月十五日。</p></div>
+  <div class="lang-col" lang="zh-Hant"><p>因此，我們願意並堅決命令：英格蘭教會應自由；我們王國內的人應爲我們和我們的繼承人、併爲他們自己和他們的繼承人，在一切方面、一切地方永久完整、和平、自由、安靜地享有並持有上述一切自由、權利與讓步。我們與男爵們均已宣誓，善意遵守上述一切條件，不懷惡意。以上由我們親筆簽署，上述諸人及許多其他人見證；地點在溫莎與斯泰恩斯之間的蘭尼米德草地，時間爲我們在位第十七年六月十五日。</p></div>
+  <div class="lang-col en" lang="en"><p>Wherefore it is our will, and we firmly enjoin, that the English Church be free, and that the men in our kingdom have and hold all the aforesaid liberties, rights, and concessions, well and peaceably, freely and quietly, fully and wholly, for themselves and their heirs, of us and our heirs, in all respects and in all places for ever, as is aforesaid. An oath, moreover, has been taken, as well on our part as on the part of the barons, that all these conditions aforesaid shall be kept in good faith and without evil intent. Given under our hand—the above-named and many others being witnesses—in the meadow which is called Runnymede, between Windsor and Staines, on the fifteenth day of June, in the seventeenth year of our reign. The text of THE MAGNA CARTA The Magna Carta (The Great Charter): Preamble: John, by the grace of God, king of England, lord of Ireland, duke of Normandy and Aquitaine, and count of Anjou, to the archbishop, bishops, abbots, earls, barons, justiciaries, foresters, sheriffs, stewards, servants, and to all his bailiffs and liege subjects, greetings. Know that, having regard to God and for the salvation of our soul, and those of all our ancestors and heirs, and unto the honor of God and the advancement of his holy Church and for the rectifying of our realm, we have granted as underwritten by advice of our venerable fathers, Stephen, archbishop of Canterbury, primate of all England and cardinal of the holy Roman Church, Henry, archbishop of Dublin, William of London, Peter of Winchester, Jocelyn of Bath and Glastonbury, Hugh of Lincoln, Walter of Worcester, William of Coventry, Benedict of Rochester, bishops; of Master Pandulf, subdeacon and member of the household of our lord the Pope, of brother Aymeric (master of the Knights of the Temple in England), and of the illustrious men William Marshal, earl of Pembroke, William, earl of Salisbury, William, earl of Warenne, William, earl of Arundel, Alan of Galloway (constable of Scotland), Waren Fitz Gerold, Peter Fitz Herbert, Hubert De Burgh (seneschal of Poitou), Hugh de Neville, Matthew Fitz Herbert, Thomas Basset, Alan Basset, Philip d’Aubigny, Robert of Roppesley, John Marshal, John Fitz Hugh, and others, our liegemen.</p></div>
+</div></div>
+</div><details class="note">
+  <summary><span>历史背景与思想脉络</span><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="note-body">
+    <p class="note-k">历史背景</p><p>第 61 条设立二十五名男爵组成的保障机制：若国王违约，男爵们可以扣押其城堡与财产，直至纠正。这个机制在 1215 年并未真正稳定运行，却显示了大宪章试图把“限制王权”写成可执行的程序，而不只是道德承诺。</p>
+    <p class="note-k">思想脉络</p><p>第 62、63 条是大赦与最终确认。大宪章以“国王亲笔”与见证人结束；它的权威并不来自现代意义上的民意，而来自封建契约、教会与贵族力量的平衡。</p>
+  </div>
+</details><section class="check-section" id="with-me">
+  <div class="check-head"><span class="sec-no">08</span><h2>这些条款，与我有关</h2><p>勾选你愿意记住的原则；只保存在本机浏览器，不上传。</p></div>
+  <div class="check-list"><label class="check-item"><input type="checkbox" data-check="0"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>王权亦须受法律约束，而不是凭君主意志任意行使。</b><em>The king is subject to law, not above it.</em></span></label><label class="check-item"><input type="checkbox" data-check="1"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>非经合法裁判，不得剥夺自由人的生命、自由或财产。</b><em>No free man may be deprived of life, liberty or property without lawful judgment.</em></span></label><label class="check-item"><input type="checkbox" data-check="2"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>权利与正义不得被出售、拒绝或拖延。</b><em>Right and justice shall not be sold, denied or delayed.</em></span></label><label class="check-item"><input type="checkbox" data-check="3"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>征税应取得共同体或其代表的同意。</b><em>Taxation requires the consent of the community or its representatives.</em></span></label><label class="check-item"><input type="checkbox" data-check="4"><span class="box" aria-hidden="true"></span><span class="c-cn"><b>“自由”应当及于每一个人——这是后世不断斗争才逐步兑现的承诺。</b><em>Liberty must extend to everyone—a promise later generations struggled to fulfil.</em></span></label></div>
+  <div class="check-foot"><span id="checkCount">已勾选 0 / 5</span><button type="button" class="btn-line" id="checkReset">清空</button><button type="button" class="btn-line" id="checkCopy">复制清单</button></div>
+</section><section class="colophon" id="colophon">
+  <div class="section-head"><span class="sec-no">09</span><h2>文本说明</h2><p class="sec-en">Textual Note</p></div>
+  <div class="colophon-grid">
+    <div><h3>英文原文</h3><p>据 Project Gutenberg 电子文本（The Magna Carta, eBook #10000）所收 1215 年英译本，保留旧式拼写。原文件为拉丁文；本页不提供拉丁原文，以免版本混淆。</p></div>
+    <div><h3>中文译文</h3><p>本站参考通行中译重新译校，非学术定本，仅供阅读与学习。封建术语（relief、scutage、amercement 等）在译文中以意译处理，必要处保留原词。</p></div>
+    <div><h3>版本提示</h3><p>1215 年文本随后被教宗宣布无效，1216、1217、1225 年重新发布；1225 年版删去部分条款，成为后世《大宪章》的通行基础。本页所列为 1215 年文本的 63 条。</p></div>
+    <div><h3>历史张力</h3><p>大宪章的“自由”主要是封建自由人的自由；农奴、妇女、犹太人与威尔士人、苏格兰人的处境，须放在当时的等级、宗教与战争语境中理解。第 39、40 条的普遍化，是后世解释与斗争的结果。</p></div>
+    <div><h3>同站文献</h3><p><a href="../declaration/">《美国独立宣言》</a> · <a href="../udhr/">《世界人权宣言》</a> · <a href="../index.html">三部文献首页</a></p></div>
+  </div>
+</section>
+    </div>
+  </div>
+</main>
+<button type="button" class="toc-btn" id="tocOpen" aria-haspopup="dialog" aria-controls="tocPanel">目录 · INDEX</button>
+<div class="toc-overlay" id="tocOverlay"></div>
+<aside class="toc-panel" id="tocPanel" aria-label="目录">
+  <button type="button" class="toc-close" id="tocClose" aria-label="关闭目录">×</button>
+  <h2>目录</h2><p>63 条 · 8 个部分</p>
+  <a href="#preamble"><b>01</b>序言</a>
+  <a href="#sec1"><b>02</b>教会、继承与债务（1–11）</a>
+  <a href="#sec2"><b>03</b>税收、城市与封建义务（12–16）</a>
+  <a href="#sec3"><b>04</b>司法与罚金（17–22）</a>
+  <a href="#sec4"><b>05</b>王室特权、贸易与民生（23–35）</a>
+  <a href="#sec5"><b>06</b>自由与正当程序（36–42）</a>
+  <a href="#sec6"><b>07</b>封建权利、森林、威尔士与苏格兰（43–60）</a>
+  <a href="#sec7"><b>08</b>保障条款与确认（61–63）</a>
+  <a href="#with-me"><b>09</b>这些条款，与我有关</a>
+  <a href="#colophon"><b>10</b>文本说明</a>
+</aside>
+<footer class="footer">
+  <p>英文原文：Project Gutenberg #10000 · 中文译文：本站参考通行中译重新译校，仅供学习</p>
+  <p class="foot-links"><a href="../index.html">三部文献首页</a><span>·</span><a href="../declaration/">独立宣言</a><span>·</span><a href="../udhr/">世界人权宣言</a><span>·</span><a href="https://1901151458-prog.github.io/english-materials/" target="_blank" rel="noopener">英语资料站</a></p>
+  <p style="margin-top:10px;opacity:.65">同一仓库 · 1215 · 1776 · 1948</p>
+</footer>
+<script>
+(function(){
+  var roots = document.documentElement;
+  // 字号
+  var scale = 1;
+  try { scale = Number(localStorage.getItem('declaration-scale')) || 1; } catch(e){}
+  function applyScale(){ roots.style.setProperty('--scale', scale.toFixed(2)); }
+  applyScale();
+  document.querySelectorAll('[data-font]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var d = Number(btn.getAttribute('data-font'));
+      scale = Math.min(1.3, Math.max(.88, scale + d));
+      applyScale();
+      try { localStorage.setItem('declaration-scale', scale); } catch(e){}
+    });
+  });
+  // 阅读进度
+  var fill = document.getElementById('readFill');
+  function progress(){
+    if(!fill) return;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    fill.style.width = (h > 0 ? Math.min(100, window.scrollY / h * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', progress, {passive:true});
+  window.addEventListener('resize', progress);
+  progress();
+  // 目录
+  var body = document.body;
+  document.getElementById('tocOpen').addEventListener('click', function(){ body.classList.add('toc-open'); });
+  document.getElementById('tocClose').addEventListener('click', function(){ body.classList.remove('toc-open'); });
+  document.getElementById('tocOverlay').addEventListener('click', function(){ body.classList.remove('toc-open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') body.classList.remove('toc-open'); });
+  // 勾选清单
+  var checks = Array.prototype.slice.call(document.querySelectorAll('[data-check]'));
+  var count = document.getElementById('checkCount');
+  function save(){
+    var v = checks.map(function(c){ return c.checked ? 1 : 0; }).join('');
+    try { localStorage.setItem('declaration-checks', v); } catch(e){}
+    if(count) count.textContent = '已勾选 ' + checks.filter(function(c){return c.checked;}).length + ' / ' + checks.length;
+  }
+  try {
+    var saved = localStorage.getItem('declaration-checks');
+    if(saved && saved.length === checks.length) checks.forEach(function(c,i){ c.checked = saved[i] === '1'; });
+  } catch(e){}
+  checks.forEach(function(c){ c.addEventListener('change', save); });
+  save();
+  var reset = document.getElementById('checkReset');
+  if(reset) reset.addEventListener('click', function(){ checks.forEach(function(c){ c.checked = false; }); save(); });
+  var copy = document.getElementById('checkCopy');
+  if(copy) copy.addEventListener('click', function(){
+    var lines = ['我的《独立宣言》清单'];
+    checks.forEach(function(c){
+      if(!c.checked) return;
+      var item = c.closest('.check-item');
+      var b = item.querySelector('.c-cn b'), em = item.querySelector('.c-cn em');
+      lines.push('· ' + (b ? b.textContent : '') + ' / ' + (em ? em.textContent : ''));
+    });
+    var text = lines.join('\n');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ copy.textContent = '已复制'; setTimeout(function(){ copy.textContent = '复制清单'; }, 1400); });
+    } else {
+      var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); copy.textContent = '已复制'; } catch(e){}
+      document.body.removeChild(ta);
+      setTimeout(function(){ copy.textContent = '复制清单'; }, 1400);
+    }
+  });
+})();
+</script>
+</body>
+</html>
