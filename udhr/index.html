@@ -7,7 +7,7 @@
 <title>世界人权宣言 · 世界人權宣言 · Universal Declaration of Human Rights</title>
 
 <script src="/sw-register.js?v=3" defer></script>
-<link rel="stylesheet" href="assets/udhr.min.css?v=2">
+<link rel="stylesheet" href="assets/udhr.min.css?v=3">
 <link rel="preload" as="image" href="assets/hero.webp" type="image/webp">
 <link rel="preload" as="script" href="assets/udhr-app.min.js?v=1">
 <link rel="preload" href="assets/data/1.json" as="fetch">
@@ -221,7 +221,7 @@
   </div>
 </details>
 <div id="articles"></div>
-<div class="load-state" id="loadState" role="status">正在载入前五条正文…</div>
+<div class="load-state" id="loadState" role="status" aria-live="polite">正在载入前五条正文…</div>
 <div id="loadSentinel" aria-hidden="true"></div>
       </section>
 
@@ -418,7 +418,14 @@
     state.classList.remove('is-error');
     state.innerHTML = '正在载入条文…';
   }
-  function hideState() { if (state) state.hidden = true; }
+  function updateProgress() {
+    if (!state) return;
+    if (loaded >= TOTAL) { state.hidden = true; return; }
+    state.hidden = false;
+    state.classList.remove('is-error');
+    state.classList.add('is-progress');
+    state.innerHTML = '已加载 ' + (loaded * 5) + ' / 30 条 · 继续下滑加载';
+  }
 
   function fetchChunk(n) {
     return fetch('assets/data/' + n + '.json', { cache: 'force-cache' }).then(function (res) {
@@ -434,7 +441,7 @@
       return fetchChunk(n).then(function (chunk) {
         window.__udhrAppend(chunk);
         loaded = n;
-        hideState();
+        updateProgress();
         return step();
       }).catch(function (e) {
         showError(e);
