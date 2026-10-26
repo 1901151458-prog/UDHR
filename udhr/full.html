@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="《世界人权宣言》简体中文、繁體中文、English 三语全文：三十条条文、人的处境、思想来源、求助渠道与个人权利清单。">
+<title>世界人权宣言 · 世界人權宣言 · Universal Declaration of Human Rights</title>
+
+<script src="/sw-register.js" defer></script>
+<link rel="stylesheet" href="assets/udhr.css">
+<link rel="preload" as="image" href="assets/hero.webp" type="image/webp">
+</head>
+<body>
+
+<a class="skip-link" href="#doc-top">跳到宣言正文</a>
+
+<div class="read-progress" aria-hidden="true"><span class="fill" id="readFill"></span></div>
+
+<div class="bg-art" aria-hidden="true"></div>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+
+
+<!-- 正文两侧题记（“天降生民”简繁同形，共用一组字形） -->
+<div class="side-note left"  lang="zh-Hans" aria-hidden="true">天降生民</div>
+<div class="side-note right" lang="en"      aria-hidden="true">natural rights are conferred by god upon man</div>
+
+<main id="doc-top" tabindex="-1" aria-label="世界人权宣言 全文 简体中文 繁體中文 English">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header class="hero">
+
+    <!-- 粒子在此汇聚成字 -->
+    <div class="particle-stage"></div>
+
+    <div class="rule"></div>
+
+    <p class="adopted">
+      <span class="lang-line" lang="zh-Hans">联合国大会一九四八年十二月十日　第 二一七A(III) 号决议通过</span>
+      <span class="lang-line" lang="zh-Hant">聯合國大會一九四八年十二月十日　第 二一七A(III) 號決議通過</span>
+      <span class="lang-line" lang="en">Adopted by the United Nations General Assembly · 10 December 1948</span>
+    </p>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>滚动 · 滾動 · SCROLL</span>
+      <span class="line"></span>
+    </div>
+
+  </header>
+
+  <!-- ═══════════════ DOCUMENT ═══════════════ -->
+  <div class="doc">
+    <div class="wrap">
+
+      <section class="section" aria-labelledby="lbl-preamble">
+        <div class="section-head">
+          <h2 class="label" id="lbl-preamble"><span lang="zh-Hans">序言</span><span class="sep" aria-hidden="true">·</span><span lang="zh-Hant">序言</span><span class="sep" aria-hidden="true">·</span><span lang="en">Preamble</span></h2>
+          <div class="bar" aria-hidden="true"></div>
+        </div>
+
+        <div id="preamble"></div>
+      </section>
+
+      <section class="section" aria-labelledby="lbl-articles">
+        <div class="section-head">
+          <h2 class="label" id="lbl-articles"><span lang="zh-Hans">正文</span><span class="sep" aria-hidden="true">·</span><span lang="zh-Hant">正文</span><span class="sep" aria-hidden="true">·</span><span lang="en">Articles</span></h2>
+          <div class="bar" aria-hidden="true"></div>
+          <div class="toc-ctl">
+            <button type="button" class="toc-open" id="tocOpen"
+                    aria-haspopup="dialog" aria-controls="tocSheet">
+              目录 · 三十条 · INDEX
+            </button>
+          </div>
+        </div>
+
+        <details class="help help-index" id="helpIndex">
+  <summary>
+    <span class="cap">求助渠道总索引<span class="en">Index of all channels</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">先把本页所有渠道归总。带 <span class="h-kind">对中国可用</span> 标记的，从中国境内就能直接使用（在线提交即可，不需要人在国外）；带 <span class="h-kind">须批准</span> 的，个人来文对中国不可用。</p>
+
+    <p class="idx-group">按目的找</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>要补发工资与赔偿</b></span><span class="h-scope">国内：12333 劳动保障监察、<b>劳动争议仲裁</b>（时效一年）、法院。</span></li>
+      <li class="h-item"><span class="h-name"><b>要公司被调查、整改</b></span><span class="h-scope">国内：12333、12350 安全生产举报；供应链内德企：<a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">BAFA 供应链投诉</a>（对中国可用，可匿名）。</span></li>
+      <li class="h-item"><span class="h-name"><b>要一个记录、把事情摆到台面</b></span><span class="h-scope"><a href="https://spsubmission.ohchr.org/" target="_blank" rel="noopener noreferrer">联合国特别程序</a>（对中国可用，任何个人可提）、买家举报系统、媒体。</span></li>
+      <li class="h-item"><span class="h-name"><b>要调解、双方谈</b></span><span class="h-scope"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD 国家联络点</a>（对中国可用）、全球工会。</span></li>
+      <li class="h-item"><span class="h-name"><b>要庇护 / 难民保护</b></span><span class="h-scope"><a href="https://help.unhcr.org/" target="_blank" rel="noopener noreferrer">联合国难民署求助站</a>。</span></li>
+      <li class="h-item"><span class="h-name"><b>被拘者探视 / 失踪人员</b></span><span class="h-scope"><a href="https://www.icrc.org/en/contact" target="_blank" rel="noopener noreferrer">红十字国际委员会</a>（人道求助）。</span></li>
+    </ul>
+
+    <p class="idx-group">按侵权类型找</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>欠薪、强制加班</b></span><span class="h-scope">12333、仲裁；供应链内 → BAFA / 买家举报系统（对中国可用）。</span></li>
+      <li class="h-item"><span class="h-name"><b>强迫劳动、人口贩运</b></span><span class="h-scope">ILO、IOM、BAFA、买家系统。</span></li>
+      <li class="h-item"><span class="h-name"><b>歧视（种族 / 性别 / 残疾）</b></span><span class="h-scope">国内：12338 妇联、仲裁；国际：特别程序（对中国可用）。条约机构个人来文对中国不可用。</span></li>
+      <li class="h-item"><span class="h-name"><b>酷刑、任意拘押、强迫失踪</b></span><span class="h-scope">特别程序（对中国可用）、ICRC 人道求助；强迫失踪委员会紧急行动（须该国已加入公约）。</span></li>
+      <li class="h-item"><span class="h-name"><b>妇女、儿童权益</b></span><span class="h-scope">国内：12338、12348；国际：UNICEF、UN Women（了解与协助）；个人来文对中国不可用。</span></li>
+      <li class="h-item"><span class="h-name"><b>健康、受教育权</b></span><span class="h-scope">WHO（了解）；<a href="https://www.unesco.org/en/node/66661" target="_blank" rel="noopener noreferrer">UNESCO 受教育权来文</a>（对中国可用，任何个人可提）。</span></li>
+      <li class="h-item"><span class="h-name"><b>结社、工会权利</b></span><span class="h-scope">ILO 结社自由投诉（须经工人组织）、12351 工会热线。</span></li>
+      <li class="h-item"><span class="h-name"><b>外国企业供应链内的侵权</b></span><span class="h-scope">BAFA、OECD 国家联络点、买家举报系统——<b>全部可从中国境内在线提交</b>。</span></li>
+      <li class="h-item"><span class="h-name"><b>亚行 / 世行投资项目</b></span><span class="h-scope">ADB 问责机制、世界银行 CAO（对中国可用）。</span></li>
+    </ul>
+
+    <p class="idx-group">对中国是否可用 · 速查</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><b>联合国条约机构个人来文</b></span><span class="h-scope">对中国不可用（未批准任何来文议定书）。</span></li>
+      <li class="h-item"><span class="h-name"><b>联合国特别程序 / 人权理事会来文 / UPR</b></span><span class="h-scope">对中国可用（无批准前提；UPR 经 NGO 参与）。</span></li>
+      <li class="h-item"><span class="h-name"><b>UNESCO 受教育权来文</b></span><span class="h-scope">对中国可用（任何个人可提）。</span></li>
+      <li class="h-item"><span class="h-name"><b>ILO 结社自由投诉</b></span><span class="h-scope">对中国可用（须经工人组织提交）。</span></li>
+      <li class="h-item"><span class="h-name"><b>ADB 问责机制 / 世界银行 CAO</b></span><span class="h-scope">对中国可用（项目相关）。</span></li>
+      <li class="h-item"><span class="h-name"><b>德国 NCP / 买家举报系统 / BAFA</b></span><span class="h-scope">对中国可用（从中国境内在线提交）。</span></li>
+      <li class="h-item"><span class="h-name"><b>地区人权法院（欧洲 / 美洲 / 非洲）</b></span><span class="h-scope">按居住/发生地适用；亚洲无此类法院。</span></li>
+    </ul>
+  </div>
+</details>
+<details class="help help-general" id="helpGeneral">
+  <summary>
+    <span class="cap">求助渠道通用说明<span class="en">General guidance &amp; regional mechanisms</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><a href="https://www.echr.coe.int/apply-to-the-court" target="_blank" rel="noopener noreferrer">欧洲人权法院</a><span class="h-en">European Court of Human Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交申诉</span></span><span class="h-scope">受理对《欧洲人权公约》缔约国的个人申诉；须先穷尽国内救济。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.oas.org/ext/en/human-rights/iachr-petitions-and-cases-system" target="_blank" rel="noopener noreferrer">美洲人权委员会</a><span class="h-en">Inter-American Commission on Human Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交申诉</span></span><span class="h-scope">受理美洲国家组织成员国的个人申诉。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://achpr.au.int/en/communications-procedure" target="_blank" rel="noopener noreferrer">非洲人权和民族权委员会</a><span class="h-en">African Commission on Human and Peoples' Rights</span><span class="h-kind">地区机制</span><span class="h-can">可提交来文</span></span><span class="h-scope">受理《非洲人权和民族权宪章》下的个人来文；另见<a href="https://www.african-court.org/afchpr/how-to-file-a-case/" target="_blank" rel="noopener noreferrer">非洲人权和民族权法院</a>。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.ohchr.org/en/home" target="_blank" rel="noopener noreferrer">联合国人权事务高级专员办事处</a><span class="h-en">OHCHR</span><span class="h-kind">通用入口</span></span><span class="h-scope">条约机构申诉总入口：<a href="https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies" target="_blank" rel="noopener noreferrer">个人来文</a> · <a href="https://www.ohchr.org/en/special-procedures-human-rights-council" target="_blank" rel="noopener noreferrer">特别程序</a>（提交来文：<a href="https://spsubmission.ohchr.org/" target="_blank" rel="noopener noreferrer">spsubmission.ohchr.org</a>）。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://ganhri.org/membership/" target="_blank" rel="noopener noreferrer">国家人权机构全球联盟</a><span class="h-en">GANHRI</span><span class="h-kind">通用入口</span></span><span class="h-scope">查找所在国的国家人权机构（NHRI）名录；另见联合国人权高专办<a href="https://www.ohchr.org/en/countries/nhri" target="_blank" rel="noopener noreferrer">NHRI 名录</a>。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.theioi.org/" target="_blank" rel="noopener noreferrer">国际监察专员协会</a><span class="h-en">International Ombudsman Institute</span><span class="h-kind">通用入口</span></span><span class="h-scope">查找各国监察专员（Ombudsman）。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.icrc.org/en/contact" target="_blank" rel="noopener noreferrer">红十字国际委员会</a><span class="h-en">ICRC</span><span class="h-kind">人道组织</span></span><span class="h-scope">探视被拘者、失踪人员、人道求助。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.icc-cpi.int/" target="_blank" rel="noopener noreferrer">国际刑事法院</a><span class="h-en">International Criminal Court</span><span class="h-kind">说明</span></span><span class="h-scope">只起诉灭绝、危害人类、战争罪等最严重国际罪行，不受理个人赔偿或申诉——与个人求助是两回事。</span></li>
+    <li class="h-item"><span class="h-name"><a href="https://www.unodc.org/unodc/en/justice-and-prison-reform/legal-aid.html" target="_blank" rel="noopener noreferrer">联合国毒品和犯罪问题办公室 · 法律援助</a><span class="h-en">UNODC · Legal Aid</span><span class="h-kind">通用入口</span></span><span class="h-scope">注意：不存在权威的全球「各国免费法律咨询」名录；最可靠的办法始终是咨询所在国的本地法律援助机构或律师。</span></li>
+    </ul>
+    <p class="h-note">五条须知：一、条约机构的个人来文通常要求该国已批准相应公约（及任择议定书）、已用尽国内救济、同一事项未在其他国际程序审理；二、条约机构不提供律师、不发放补偿、不能强制一国执行，其结论是「意见」；三、紧急人身危险（酷刑、强迫失踪）有更快的紧急程序；四、地区机制（欧洲、美洲、非洲）往往比联合国机制更有效力，应优先考虑；五、不确定时，先找所在国的法律援助、国家人权机构、监察专员或工会；六、除东盟政府间人权委员会（AICHR）的咨询性机制外，亚洲目前没有可受理个人申诉的区域人权法院或委员会；七、中国未批准任何来文议定书，条约机构个人来文对中国不可用，中国读者请优先使用「适用于中国的国际求助途径」（特别程序、UNESCO 来文等）与国内渠道。本页为信息汇编，不构成法律意见；个案请咨询当地法律援助或执业律师。</p>
+  </div>
+</details>
+<details class="help help-supply" id="helpSupply">
+  <summary>
+    <span class="cap">企业责任与供应链渠道<span class="en">Corporate accountability &amp; supply-chain grievance</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">适用于在跨国供应链中工作的人——供应商工厂的工人、实习生、劳务工。若侵权发生在某家外国大企业的供应链里，除了国内渠道，还可以向买家所在国的机制与买家企业的举报系统求助。<b>这些渠道从中国境内就可以直接在线使用——不需要人在国外，多数支持匿名。</b></p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><a href="https://www.bafa.de/EN/Supply_Chain_Act/Submit_Complaint/submit_complaint_node.html" target="_blank" rel="noopener noreferrer">德国联邦经济事务和出口管制局 · 供应链投诉</a><span class="h-en">BAFA · LkSG Complaints Procedure</span><span class="h-kind">供应链</span><span class="h-can">可匿名</span></span><span class="h-scope">任何人（包括外国供应商的工人）都可提交；在线表格可匿名。<b>对中国适用：从中国境内可直接在线提交，不需要人在国外。</b>前提：该外国公司是受约束德国企业（2024 年起德国境内员工 1,000 人以上）的供应商。本人受影响的申请会得到反馈；一般线索由 BAFA 依职权调查。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.oecd.org/en/networks/national-contact-points-for-responsible-business-conduct/database.html" target="_blank" rel="noopener noreferrer">OECD《跨国企业准则》国家联络点数据库</a><span class="h-en">OECD National Contact Points</span><span class="h-kind">供应链</span></span><span class="h-scope">任何利害关系方都可提交「特定实例」（<a href="https://mneguidelines.oecd.org/specificinstances.htm" target="_blank" rel="noopener noreferrer">程序说明</a>）；联络点做调解与斡旋，非裁决、结果无约束力，不要求先穷尽内部渠道。<b>对中国适用：可向相关国家的联络点从中国境内在线提交。</b>各国联络点名单以数据库为准。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://commission.europa.eu/topics/human-rights/your-fundamental-rights-eu/protection-whistleblowers_en" target="_blank" rel="noopener noreferrer">欧盟举报人保护</a><span class="h-en">EU Whistleblower Protection</span><span class="h-kind">供应链</span></span><span class="h-scope">指令保护以「举报人与欧盟实体存在工作相关联系」为前提（条文：<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L1937" target="_blank" rel="noopener noreferrer">2019/1937</a>）；中国供应商工人通常不属其直接保护范围，正确路径是买家企业的投诉渠道——德国《供应链尽职调查法》第 8 条要求企业投诉程序对供应链人士开放。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.volkswagen-group.com/en/our-whistleblower-system-16041.html" target="_blank" rel="noopener noreferrer">大众集团 · 举报系统</a><span class="h-en">Volkswagen Group Complaints Procedure</span><span class="h-kind">买家渠道</span></span><span class="h-scope">德国车企多设有面向供应链的官方举报/申诉机制（可匿名），受理供应商工厂内的人权与劳工问题。<b>对中国适用：供应商工厂的工人可从中国境内直接在线提交。</b></span></li>
+      <li class="h-item"><span class="h-name"><a href="https://bmwgroup.speakup.report/main" target="_blank" rel="noopener noreferrer">宝马集团 · 举报渠道</a><span class="h-en">BMW Group SpeakUP</span><span class="h-kind">买家渠道</span></span><span class="h-scope">宝马集团官方举报系统（自其合规页提取的官方链接）。<b>对中国适用：可从中国境内在线提交。</b></span></li>
+      <li class="h-item"><span class="h-name"><a href="https://group.mercedes-benz.com/bpo/en/" target="_blank" rel="noopener noreferrer">梅赛德斯-奔驰集团 · 商业实践办公室</a><span class="h-en">Mercedes-Benz Group BPO</span><span class="h-kind">买家渠道</span></span><span class="h-scope">处理供应链相关举报的官方渠道。这类企业举报系统一般受理员工、业务伙伴与第三方举报，多数支持匿名；供应链工人的法律依据是德国《供应链尽职调查法》第 8 条。<b>对中国适用：可从中国境内在线提交。</b></span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.mohrss.gov.cn/" target="_blank" rel="noopener noreferrer">人力资源和社会保障部 · 12333</a><span class="h-en">MOHRSS China · 12333</span><span class="h-kind">国内一线</span><span class="h-can">先尝试</span></span><span class="h-scope">欠薪、强制加班等劳动争议应先走国内渠道：12333 热线、劳动保障监察投诉、劳动仲裁。</span></li>
+    </ul>
+    <p class="h-note">匿名示例：一家汽车零部件供应商的实习生遇到欠薪和强制加班，可以按顺序尝试——① 国内：拨打 12333 或向人社部门劳动保障监察投诉、申请劳动仲裁；② 供应链：若产品供应给受德国《供应链尽职调查法》约束的车企，向德国联邦经济事务和出口管制局（BAFA）提交供应链投诉，任何人可提、可匿名；③ 买家渠道：通过该车企官网的举报系统提交；④ 跨国准则：向 OECD 国家联络点提交「特定实例」寻求调解。走 ②③④ 之前，先把合同、考勤、工资记录、聊天记录整理并备份。</p>
+  </div>
+</details>
+<details class="help help-check" id="helpCheck">
+  <summary>
+    <span class="cap">怎么确认哪条渠道适合自己<span class="en">Is this channel right for you?</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">在提交前，用下面七个问题过一遍。答不出来或拿不准，就先补证据、先走国内渠道。</p>
+    <ol class="h-check">
+      <li><b>你在哪里工作？</b>先看你所在国有什么渠道——国内渠道通常最快、最便宜、最不怕语言障碍。</li>
+      <li><b>侵权属于哪一类？</b>欠薪与加班→劳动监察/仲裁；强迫劳动→ILO 与供应链机制；歧视→对应条约委员会；安全→职业安全机构。</li>
+      <li><b>投诉对象是谁？</b>直接雇主走国内渠道；若你是供应商工人、侵权发生在某外国买家的供应链内，才轮到 BAFA、OECD 联络点与买家举报系统。</li>
+      <li><b>你有证据吗？</b>合同、考勤、工资单、聊天记录、照片、证人——多数机制要求有可核实的材料；先备份再提交。</li>
+      <li><b>你能实名吗？</b>可匿名的：BAFA、多数买家举报系统、12333 部分渠道；通常需要身份的：OECD 联络点、劳动仲裁、条约机构个人来文。</li>
+      <li><b>试过内部渠道吗？</b>许多机制要求先向企业内部或本地渠道申诉（或书面说明为何不可行）；先做这一步能显著提高受理率。</li>
+      <li><b>你要什么结果？</b>要赔偿→劳动仲裁/法院；要调查与整改→BAFA 或买家渠道；要调解→OECD 联络点；要记录与曝光→媒体、联合国特别程序（最后手段）。</li>
+    </ol>
+    <p class="h-note">快速判断：工作地在中国 + 欠薪/加班 + 直接雇主 = 12333 与劳动仲裁优先；供应商工人 + 买家是受约束的欧盟企业 = BAFA（可匿名）或买家举报系统；要钱优先仲裁，要整改优先供应链机制。无论走哪条，先把证据备份到公司拿不到的地方。</p>
+    <p class="h-note">风险提示：举报可能带来报复。欧盟举报人指令与多国法律有保护条款，但执行程度不一；保留全部证据副本，必要时先咨询律师或工会。</p>
+  </div>
+</details>
+
+<details class="help help-guide" id="helpGuide">
+  <summary>
+    <span class="cap">维权步骤指南<span class="en">Step-by-step guide to seeking remedy</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note">按顺序走。多数情况下前四步就够；只有侵权发生在跨国供应链内、涉及强迫劳动、或国内渠道确实无效时，才进入国际渠道。</p>
+    <ol class="h-check">
+      <li><b>想清楚要什么。</b>要补发工资与赔偿 → 仲裁/法院；要公司被调查整改 → 劳动保障监察、安全生产举报或买家渠道；要一个说法与记录 → 举报系统、媒体、联合国特别程序。目标决定路线。</li>
+      <li><b>把证据留全、备份。</b>劳动合同、录用通知、考勤与打卡记录、工资条和银行流水、工作群聊天记录、邮件、录音录像（注意本地法律对录音的要求）、能作证的同事。全部复制到公司拿不到的地方：个人邮箱、云盘、可信亲友。</li>
+      <li><b>先走内部渠道并留痕。</b>向 HR 或主管书面提出，保存往来记录；有工会的找工会；公司有举报系统的先用。许多国际机制要求先内部申诉，或书面说明为何不可行——先做这一步，后面处处顺。</li>
+      <li><b>国内渠道（中国，一般最快）。</b>① 12333 人力资源社会保障服务热线：欠薪、强制加班、社保等劳动保障监察投诉；② 劳动争议仲裁：要赔偿走这条，注意申请仲裁的时效是知道权利被侵害之日起一年；③ 12348 法律援助咨询热线：经济困难可申请免费法律援助；④ 12351 职工维权热线（工会）；⑤ 12338 妇女维权热线（妇联）；⑥ 12345 政务服务便民热线（转办）；⑦ 12350 安全生产举报投诉电话。欠薪另可留意「全国根治欠薪线索反映平台」。</li>
+      <li><b>国际渠道（何时才用）。</b>侵权发生在外国大企业的供应链里（见上方「企业责任与供应链渠道」）；涉及强迫劳动、人口贩运；或国内渠道确实无效、不敢用——再考虑联合国特别程序、UNESCO 来文程序、亚洲开发银行/世界银行问责机制等（见「适用于中国的国际求助途径」）。注意：国际渠道不意味着要出国——绝大多数从国内就能在线提交。</li>
+      <li><b>提交写清楚五件事。</b>时间、地点、经过（一次说清一件事）；证据清单（编号）；明确诉求；是否要求保密/匿名；你的联系方式。短比长好，事实比形容词好。</li>
+      <li><b>保护自己。</b>优先选择支持匿名的渠道；提交前评估报复风险；保留全部证据副本；必要时先咨询律师、工会或可信的劳工组织再行动。</li>
+    </ol>
+    <p class="h-note">一句话顺序：留证据 → 内部留痕 → 国内渠道（12333/仲裁/12348）→ 跨国供应链才上国际渠道 → 全程保护自己。</p>
+  </div>
+</details>
+
+<details class="help help-china" id="helpChina">
+  <summary>
+    <span class="cap">适用于中国的国际求助途径<span class="en">International channels available from China</span></span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="help-body">
+    <p class="src-note"><b>先说结论：</b>联合国条约机构的「个人来文」程序对中国全部不可用——中国未批准《公民权利和政治权利国际公约》及其任择议定书，也未加入经社文、妇女、儿童、残疾人等公约的来文议定书（《禁止酷刑公约》亦未作第 22 条声明；依据：联合国条约集 UNTC，2026 年 10 月核实）。但下面的渠道不需要条约批准，对中国可用。</p>
+    <ul class="h-list">
+      <li class="h-item"><span class="h-name"><a href="https://spsubmission.ohchr.org/" target="_blank" rel="noopener noreferrer">联合国特别程序 · 提交来文</a><span class="h-en">UN Special Procedures submission</span><span class="h-kind">可用</span><span class="h-can">任何个人可提</span></span><span class="h-scope">人权理事会专题报告员受理任何个人/团体的来文，不要求条约批准，任何国家适用——是对中国最直接可用的联合国通道。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.ohchr.org/en/hr-bodies/hrc/complaint-procedure" target="_blank" rel="noopener noreferrer">人权理事会来文程序（原 1503 程序）</a><span class="h-en">HRC Complaint Procedure</span><span class="h-kind">可用</span></span><span class="h-scope">针对严重系统性侵权的保密程序，任何来源可提交；不以个人救济为目标，而是把问题列入理事会议程。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.ohchr.org/en/hr-bodies/upr/upr-home" target="_blank" rel="noopener noreferrer">普遍定期审议（UPR）</a><span class="h-en">Universal Periodic Review</span><span class="h-kind">可用</span></span><span class="h-scope">中国定期接受审议；个人可向参与撰写影子报告的 NGO 提供材料，由 NGO 汇总提交。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.unesco.org/en/node/66661" target="_blank" rel="noopener noreferrer">联合国教科文组织 · 受教育权来文程序</a><span class="h-en">UNESCO 104 EX/Decision 3.3</span><span class="h-kind">可用</span><span class="h-can">任何个人可提</span></span><span class="h-scope">任何个人或团体可就受教育权受侵害向教科文组织提交来文，对成员国（含中国）适用，无批准前提。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.ilo.org/international-labour-standards/ilo-supervisory-system-regular-supervision/applying-and-promoting-international-labour-standards/committee-freedom-association-cfa" target="_blank" rel="noopener noreferrer">国际劳工组织 · 结社自由委员会投诉</a><span class="h-en">ILO Committee on Freedom of Association</span><span class="h-kind">可用</span></span><span class="h-scope">须经工人或雇主组织提交（个人不能直接提交）；中国是国际劳工组织成员国。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.adb.org/who-we-are/accountability-mechanism/how-file-complaint" target="_blank" rel="noopener noreferrer">亚洲开发银行问责机制</a><span class="h-en">ADB Accountability Mechanism</span><span class="h-kind">可用</span><span class="h-can">可提交投诉</span></span><span class="h-scope">适用于亚行资助的在华项目造成的损害或违约。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.cao-ombudsman.org/" target="_blank" rel="noopener noreferrer">世界银行集团合规顾问监察员</a><span class="h-en">World Bank CAO</span><span class="h-kind">可用</span><span class="h-can">可提交投诉</span></span><span class="h-scope">适用于国际金融公司（IFC）/多边投资担保机构（MIGA）在华投资项目的社区投诉。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.bmwk.de/Redaktion/EN/Dossier/national-contact-point-for-the-oecd-guidelines.html" target="_blank" rel="noopener noreferrer">德国国家联络点（OECD 准则）</a><span class="h-en">German NCP</span><span class="h-kind">可用</span></span><span class="h-scope">投诉对象是在华经营的德国企业时，向其母国（德国）联络点提交「特定实例」。</span></li>
+      <li class="h-item"><span class="h-name"><a href="https://www.industriall-union.org/" target="_blank" rel="noopener noreferrer">全球产业工会联合会（IndustriALL）</a><span class="h-en">IndustriALL Global Union</span><span class="h-kind">可用</span></span><span class="h-scope">汽车、电子、纺织等行业的全球工会联合会，可为供应链工人提供联系与支持。</span></li>
+    </ul>
+    <p class="h-note">国内热线官方页面：<a href="http://www.mohrss.gov.cn/" target="_blank" rel="noopener noreferrer">12333 人社部</a> · <a href="https://www.12348.gov.cn/" target="_blank" rel="noopener noreferrer">12348 中国法律服务网</a> · <a href="https://www.acftu.org.cn/" target="_blank" rel="noopener noreferrer">12351 全国总工会</a> · <a href="https://www.women.org.cn/" target="_blank" rel="noopener noreferrer">12338 全国妇联</a> · <a href="https://www.gov.cn/zhengce/content/202506/content_7029400.htm" target="_blank" rel="noopener noreferrer">12345 国办规范</a> · <a href="https://www.mem.gov.cn/" target="_blank" rel="noopener noreferrer">12350 应急管理部</a>。欠薪线索平台无独立稳定网址，入口在国务院客户端与 12333 小程序。</p>
+    <p class="h-note">选择顺序建议：国内渠道（12333/仲裁/12348）→ 跨国供应链走 BAFA 或买家举报 → 对中国可用的两大联合国通道（特别程序、UNESCO 来文）→ 项目相关的 ADB/CAO → 全球工会支持。</p>
+  </div>
+</details>
+
+<div id="articles"></div>
+      </section>
+
+      <div class="colophon">
+        <div class="mark" lang="zh-Hans">人人生而自由，在尊严和权利上一律平等。</div>
+        <div class="mark" lang="zh-Hant">人人生而自由，在尊嚴和權利上一律平等。</div>
+        <div class="sub"  lang="en">All human beings are born free and equal in dignity and rights.</div>
+        <div class="year">1948</div>
+      </div>
+
+      <!-- 1948 至今：同一句话，已经过去了多少天 -->
+      <div class="counter" role="group" aria-labelledby="cnt-cap">
+        <div class="num" id="daysNum">—</div>
+        <p class="cap" id="cnt-cap">
+          <strong>和平与尊严，从来不是遗产，而是每天的功课。</strong>
+          <span lang="zh-Hans">宣言没有期限，也没有假期。自一九四八年十二月十日通过之日起，它在每一天重新开始生效——包括今天。</span>
+        </p>
+      </div>
+
+      <div class="ending">
+
+        <!-- 回望第一条：第一条是种子，第三十条是森林 -->
+        <div class="echo">
+          <p class="kicker" lang="zh-Hans">回望第一条 · 第一条是种子，第三十条是森林</p>
+          <p class="kicker" lang="zh-Hant">回望第一條 · 第一條是種子，第三十條是森林</p>
+          <p class="kicker" lang="en">Looking back at Article 1</p>
+          <p class="body" lang="zh-Hans">人人生而自由，在尊严和权利上一律平等。他们赋有理性和良心，并应以兄弟关系的精神相对待。</p>
+          <p class="body" lang="zh-Hant">人人生而自由，在尊嚴和權利上一律平等。他們賦有理性和良心，並應以兄弟關係的精神相對待。</p>
+          <p class="body en" lang="en">All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.</p>
+          <p class="src" lang="zh-Hans">第一条 · 其余各条，都是这一条的具体化</p>
+          <p class="src" lang="zh-Hant">第一條 · 其餘各條，都是這一條的具體化</p>
+          <p class="src" lang="en">Article 1 · every article after it is this one, made specific</p>
+        </div>
+
+        <div class="ending-block">
+          <div class="big" lang="zh-Hans">独立</div>
+          <div class="big" lang="zh-Hant">獨立</div>
+          <div class="big" lang="en">INDEPENDENCE</div>
+        </div>
+
+        <div class="ending-block">
+          <div class="big" lang="zh-Hans">自尊</div>
+          <div class="big" lang="zh-Hant">自尊</div>
+          <div class="big" lang="en">SELF-RESPECT</div>
+        </div>
+
+        <div class="ending-block">
+          <div class="big" lang="zh-Hans">神圣</div>
+          <div class="big" lang="zh-Hant">神聖</div>
+          <div class="big" lang="en">SACRED</div>
+        </div>
+
+        <div class="ending-block quote">
+          <p class="q"   lang="zh-Hans">你们愿意人怎样待你们，你们也要怎样待人。</p>
+          <p class="q"   lang="zh-Hant">你們願意人怎樣待你們，你們也要怎樣待人。</p>
+          <p class="q"   lang="en">In everything, do to others what you would have them do to you.</p>
+          <p class="src" lang="zh-Hans">基督教 · 《马太福音》七章十二节</p>
+          <p class="src" lang="zh-Hant">基督教 · 《馬太福音》七章十二節</p>
+          <p class="src" lang="en">Christianity · Matthew 7:12</p>
+        </div>
+
+        <div class="ending-block quote">
+          <p class="q"   lang="zh-Hans">己所不欲，勿施于人。</p>
+          <p class="q"   lang="zh-Hant">己所不欲，勿施於人。</p>
+          <p class="q"   lang="en">Do not impose on others what you do not wish for yourself.</p>
+          <p class="src" lang="zh-Hans">儒家 · 《论语·卫灵公》</p>
+          <p class="src" lang="zh-Hant">儒家 · 《論語·衛靈公》</p>
+          <p class="src" lang="en">Confucianism · The Analects · Wei Ling Gong</p>
+        </div>
+
+        <div class="ending-block golden">
+          <p class="g-kicker" lang="zh-Hans">同一句话，其他古老的说法</p>
+          <p class="g-kicker" lang="zh-Hant">同一句話，其他古老的說法</p>
+          <p class="g-kicker" lang="en">The same rule, said elsewhere and long ago</p>
+          <div class="g-grid" id="goldenGrid">
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">你所憎恶的，不要施于你的同伴。这就是全部律法，其余都是解释——去学吧。</p>
+              <p class="g-q en" lang="en">That which is hateful to you, do not do to your fellow. This is the whole Torah; the rest is the explanation — go and learn.</p>
+              <p class="g-src" lang="zh-Hans">犹太教 · 希勒尔 · 《巴比伦塔木德·安息日篇》31a</p>
+              <p class="g-src" lang="en">Judaism · Hillel · Babylonian Talmud, Shabbat 31a</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">你们任何一人都没有真正的信仰，除非他为自己兄弟所喜爱的，正如为自己所喜爱的。</p>
+              <p class="g-q en" lang="en">None of you [truly] believes until he loves for his brother what he loves for himself.</p>
+              <p class="g-src" lang="zh-Hans">伊斯兰教 · 圣训 · 布哈里与穆斯林圣训集共收 · 纳瓦维四十则 第 13</p>
+              <p class="g-src" lang="en">Islam · Hadith · Bukhari &amp; Muslim, via An-Nawawi, Forty Hadith No. 13</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">一切众生皆畏惧刀杖，一切众生皆真爱生命；将心比心，人不应该杀害或教唆杀害。</p>
+              <p class="g-q en" lang="en">All tremble at force, dear is life to all. Likening others to oneself, kill not nor cause to kill.</p>
+              <p class="g-src" lang="zh-Hans">佛教 · 《法句经·刀杖品》129–130 偈 · 了参法师译（流传版）</p>
+              <p class="g-src" lang="en">Buddhism · Dhammapada, Daṇḍavagga 129–130</p>
+            </div>
+            <div class="g-card">
+              <p class="g-q" lang="zh-Hans">因此，绝对命令只有一条：要只按照你同时能够愿意它成为一条普遍法则的那个准则去行动。</p>
+              <p class="g-q en" lang="en">Act only in accordance with that maxim through which you can at the same time will that it become a universal law.</p>
+              <p class="g-src" lang="zh-Hans">伊曼努尔·康德 · 《道德形而上学奠基》(1785) · AA IV: 421</p>
+              <p class="g-src" lang="en">Immanuel Kant · Groundwork of the Metaphysics of Morals, AA IV: 421</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════════ 我的权利清单：读者的选择 ═══════════════ -->
+<div class="rights-bar" id="rightsBar" role="region" aria-label="我的权利清单">
+  <span class="count" id="rightsCount" aria-live="polite"><b>0</b>条被你记下</span>
+  <button type="button" class="go" id="rightsOpen">查看我的清单</button>
+  <button type="button" class="reset" id="rightsReset">清空</button>
+</div>
+
+<dialog class="sheet" id="rightsSheet" aria-labelledby="sheetTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <div>
+        <h2 id="sheetTitle">我的权利清单</h2>
+        <p class="sub" lang="zh-Hans">这不是一份收藏，而是一次清点：在这三十条里，哪些是你此刻最不愿失去的。</p>
+        <p class="sub" lang="en">Not a collection, but an inventory: which of these thirty would you least want to lose.</p>
+      </div>
+      <button type="button" class="sheet-close" id="sheetClose" aria-label="关闭清单">✕</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+    <div class="sheet-foot">
+      <span class="hint" id="sheetHint">点选条文下方的「记下这一条」，清单会随阅读累积。</span>
+      <div class="btns">
+        <button type="button" class="btn ghost" id="sheetCopy">复制为文字</button>
+        <button type="button" class="btn ghost" id="sheetPrint">打印 / 存为 PDF</button>
+        <button type="button" class="btn primary" id="sheetDone">继续阅读</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<button type="button" class="toc-float" id="tocFloat"
+        aria-haspopup="dialog" aria-controls="tocSheet" aria-label="打开三十条目录">
+  <span class="tf-ico" aria-hidden="true">≡</span>
+  <span class="tf-txt" aria-hidden="true">目录</span>
+</button>
+<dialog class="sheet toc" id="tocSheet" aria-labelledby="tocTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <div>
+        <h2 id="tocTitle">三十条 · 目录</h2>
+        <p class="sub" lang="zh-Hans">按意义单元排列，点击条号直达那一条。</p>
+        <p class="sub" lang="en">Grouped by the five sections. Tap a number to jump.</p>
+      </div>
+      <button type="button" class="sheet-close" id="tocClose" aria-label="关闭目录">✕</button>
+    </div>
+    <div class="sheet-body" id="tocBody"></div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<noscript>
+  <p style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:40;
+            max-width:92vw;padding:.8em 1.4em;text-align:center;
+            font-family:Georgia,'Songti SC','SimSun',serif;font-size:14px;line-height:1.7;
+            color:#f0d5a0;background:rgba(6,16,32,.94);
+            border:1px solid rgba(217,179,130,.45);border-radius:10px">
+    本页的宣言正文由浏览器脚本排版；脚本被停用时，正文不会显示。请允许脚本运行，或改用文字版阅读。
+  </p>
+</noscript>
+
+<script>
+(function () {
+'use strict';
+
+/* ══════════════════════════════════════════════════════════════
+   数据：序言 & 三十条（简体 / 繁體 / English 三语并列）
+   ══════════════════════════════════════════════════════════════ */
+const PREAMBLE = [
+  { cn:'鉴于对人类家庭所有成员的固有尊严及其平等的和不移的权利的承认，乃是世界自由、正义与和平的基础，',
+    tw:'鑒於對人類家庭所有成員的固有尊嚴及其平等的和不移的權利的承認，乃是世界自由、正義與和平的基礎，',
+    en:'Whereas recognition of the inherent dignity and of the equal and inalienable rights of all members of the human family is the foundation of freedom, justice and peace in the world,' },
+  { cn:'鉴于对人权的无视和侮蔑已发展为野蛮暴行，这些暴行玷污了人类的良心，而一个人人享有言论和信仰自由并免予恐惧和匮乏的世界的来临，已被宣布为普通人民的最高愿望，',
+    tw:'鑒於對人權的無視和侮蔑已發展為野蠻暴行，這些暴行玷污了人類的良心，而一個人人都享有言論和信仰自由並免於恐懼和匱乏的世界的來臨，已被宣佈為普通人民的最高願望，',
+    en:'Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind, and the advent of a world in which human beings shall enjoy freedom of speech and belief and freedom from fear and want has been proclaimed as the highest aspiration of the common people,' },
+  { cn:'鉴于为使人类不致迫不得已铤而走险对暴政和压迫进行反叛，有必要使人权受法治的保护，',
+    tw:'鑒於為使人類不致迫不得已鋌而走險對暴政和壓迫進行反叛，有必要使人權受法治的保護，',
+    en:'Whereas it is essential, if man is not to be compelled to have recourse, as a last resort, to rebellion against tyranny and oppression, that human rights should be protected by the rule of law,' },
+  { cn:'鉴于有必要促进各国间友好关系的发展，',
+    tw:'鑒於有必要促進各國間友好關係的發展，',
+    en:'Whereas it is essential to promote the development of friendly relations between nations,' },
+  { cn:'鉴于各联合国国家的人民已在联合国宪章中重申他们对基本人权、人格尊严和价值以及男女平等权利的信念，并决心促成较大自由中的社会进步和生活水平的改善，',
+    tw:'鑒於各聯合國國家的人民已在聯合國憲章中重申他們對基本人權、人格尊嚴和價值以及男女平等權利的信念，並決心促成較大自由中的社會進步和生活水準的改善，',
+    en:'Whereas the peoples of the United Nations have in the Charter reaffirmed their faith in fundamental human rights, in the dignity and worth of the human person and in the equal rights of men and women and have determined to promote social progress and better standards of life in larger freedom,' },
+  { cn:'鉴于各会员国业已誓愿同联合国合作以促进对人权和基本自由的普遍尊重和遵行，',
+    tw:'鑒於各會員國業已誓願同聯合國合作以促進對人權和基本自由的普遍尊重和遵行，',
+    en:'Whereas Member States have pledged themselves to achieve, in co-operation with the United Nations, the promotion of universal respect for and observance of human rights and fundamental freedoms,' },
+  { cn:'鉴于对这些权利和自由的普遍了解对于这个誓愿的充分实现具有很大的重要性，',
+    tw:'鑒於對這些權利和自由的普遍了解對於這個誓願的充分實現具有很大的重要性，',
+    en:'Whereas a common understanding of these rights and freedoms is of the greatest importance for the full realization of this pledge,' },
+  { cn:'因此现在，大会发布这一世界人权宣言，作为所有人民和所有国家努力实现的共同标准，以期每一个人和社会机构经常铭念本宣言，努力通过教诲和教育促进对权利和自由的尊重，并通过国家的和国际的渐进措施，使这些权利和自由在各会员国本身人民及在其管辖下领土的人民中得到普遍和有效的承认和遵行。',
+    tw:'因此現在，大會發佈這一世界人權宣言，作為所有人民和所有國家努力實現的共同標準，以期每一個人和社會機構經常銘念本宣言，努力通過教誨和教育促進對權利和自由的尊重，並通過國家的和國際的漸進措施，使這些權利和自由在各會員國本身人民及在其管轄下領土的人民中得到普遍和有效的承認和遵行。',
+    en:'Now, therefore, THE GENERAL ASSEMBLY proclaims THIS UNIVERSAL DECLARATION OF HUMAN RIGHTS as a common standard of achievement for all peoples and all nations, to the end that every individual and every organ of society, keeping this Declaration constantly in mind, shall strive by teaching and education to promote respect for these rights and freedoms and by progressive measures, national and international, to secure their universal and effective recognition and observance, both among the peoples of Member States themselves and among the peoples of territories under their jurisdiction.' }
+];
+
+const ARTICLES = [
+  {n:1, cn:'人人生而自由，在尊严和权利上一律平等。他们赋有理性和良心，并应以兄弟关系的精神相对待。',
+       tw:'人人生而自由，在尊嚴和權利上一律平等。他們賦有理性和良心，並應以兄弟關係的精神相對待。',
+       en:'All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.'},
+  {n:2, cn:'人人有资格享有本宣言所载的一切权利和自由，不分种族、肤色、性别、语言、宗教、政治或其他见解、国籍或社会出身、财产、出生或其他身份等任何区别。并且不得因一人所属的国家或领土的政治的、行政的或者国际的地位之不同而有所区别，无论该领土是独立领土、托管领土、非自治领土或者处于其他任何主权受限制的情况之下。',
+       tw:'人人有資格享有本宣言所載的一切權利和自由，不分種族、膚色、性別、語言、宗教、政治或其他見解、國籍或社會出身、財產、出生或其他身分等任何區別。並且不得因一人所屬的國家或領土的政治的、行政的或者國際的地位之不同而有所區別，無論該領土是獨立領土、託管領土、非自治領土或者處於其他任何主權受限制的情況之下。',
+       en:'Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.'},
+  {n:3, cn:'人人有权享有生命、自由和人身安全。',
+       tw:'人人有權享有生命、自由和人身安全。',
+       en:'Everyone has the right to life, liberty and security of person.'},
+  {n:4, cn:'任何人不得使为奴隶或奴役；一切形式的奴隶制度和奴隶买卖，均应予以禁止。',
+       tw:'任何人不得使為奴隸或奴役；一切形式的奴隸制度和奴隸買賣，均應予以禁止。',
+       en:'No one shall be held in slavery or servitude; slavery and the slave trade shall be prohibited in all their forms.'},
+  {n:5, cn:'任何人不得加以酷刑，或施以残忍的、不人道的或侮辱性的待遇或刑罚。',
+       tw:'任何人不得加以酷刑，或施以殘忍的、不人道的或侮辱性的待遇或刑罰。',
+       en:'No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment.'},
+  {n:6, cn:'人人在任何地方有权被承认在法律前的人格。',
+       tw:'人人在任何地方有權被承認在法律前的人格。',
+       en:'Everyone has the right to recognition everywhere as a person before the law.'},
+  {n:7, cn:'法律之前人人平等，并有权享受法律的平等保护，不受任何歧视。人人有权享受平等保护，以免受违反本宣言的任何歧视行为以及煽动这种歧视的任何行为之害。',
+       tw:'法律之前人人平等，並有權享受法律的平等保護，不受任何歧視。人人有權享受平等保護，以免受違反本宣言的任何歧視行為以及煽動這種歧視的任何行為之害。',
+       en:'All are equal before the law and are entitled without any discrimination to equal protection of the law. All are entitled to equal protection against any discrimination in violation of this Declaration and against any incitement to such discrimination.'},
+  {n:8, cn:'任何人当宪法或法律所赋予他的基本权利遭受侵害时，有权由合格的国家法庭对这种侵害行为作有效的补救。',
+       tw:'任何人當憲法或法律所賦予他的基本權利遭受侵害時，有權由合格的國家法庭對這種侵害行為作有效的補救。',
+       en:'Everyone has the right to an effective remedy by the competent national tribunals for acts violating the fundamental rights granted him by the constitution or by law.'},
+  {n:9, cn:'任何人不得加以任意逮捕、拘禁或放逐。',
+       tw:'任何人不得加以任意逮捕、拘禁或放逐。',
+       en:'No one shall be subjected to arbitrary arrest, detention or exile.'},
+  {n:10, cn:'人人完全平等地有权由一个独立而无偏倚的法庭进行公正的和公开的审讯，以确定他的权利和义务并判定对他提出的任何刑事指控。',
+        tw:'人人完全平等地有權由一個獨立而無偏倚的法庭進行公正的和公開的審訊，以確定他的權利和義務並判定對他提出的任何刑事指控。',
+        en:'Everyone is entitled in full equality to a fair and public hearing by an independent and impartial tribunal, in the determination of his rights and obligations and of any criminal charge against him.'},
+  {n:11, cn:'（一）凡受刑事控告者，在未经获得辩护上所需的一切保证的公开审判而依法证实有罪以前，有权被视为无罪。<br>（二）任何人的任何行为或不行为，在其发生时依国家法或国际法均不构成刑事罪者，不得被判为犯有刑事罪。刑罚不得重于犯罪时适用的法律规定。',
+        tw:'（一）凡受刑事控告者，在未經獲得辯護上所需的一切保證的公開審判而依法證實有罪以前，有權被視為無罪。<br>（二）任何人的任何行為或不行為，在其發生時依國家法或國際法均不構成刑事罪者，不得被判為犯有刑事罪。刑罰不得重於犯罪時適用的法律規定。',
+        en:'(1) Everyone charged with a penal offence has the right to be presumed innocent until proved guilty according to law in a public trial at which he has had all the guarantees necessary for his defence.<br>(2) No one shall be held guilty of any penal offence on account of any act or omission which did not constitute a penal offence, under national or international law, at the time when it was committed. Nor shall a heavier penalty be imposed than the one that was applicable at the time the penal offence was committed.'},
+  {n:12, cn:'任何人的私生活、家庭、住宅和通信不得任意干涉，他的荣誉和名誉不得加以攻击。人人有权享受法律保护，以免受这种干涉或攻击。',
+        tw:'任何人的私生活、家庭、住宅和通信不得任意干涉，他的榮譽和名譽不得加以攻擊。人人有權享受法律保護，以免受這種干涉或攻擊。',
+        en:'No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.'},
+  {n:13, cn:'（一）人人在各国境内有权自由迁徙和居住。<br>（二）人人有权离开任何国家，包括其本国在内，并有权返回他的国家。',
+        tw:'（一）人人在各國境內有權自由遷徙和居住。<br>（二）人人有權離開任何國家，包括其本國在內，並有權返回他的國家。',
+        en:'(1) Everyone has the right to freedom of movement and residence within the borders of each state.<br>(2) Everyone has the right to leave any country, including his own, and to return to his country.'},
+  {n:14, cn:'（一）人人有权在其他国家寻求和享受庇护以避免迫害。<br>（二）在真正由于非政治性的罪行或违背联合国的宗旨和原则的行为而被起诉的情况下，不得援用此种权利。',
+        tw:'（一）人人有權在其他國家尋求和享受庇護以避免迫害。<br>（二）在真正由於非政治性的罪行或違背聯合國的宗旨和原則的行為而被起訴的情況下，不得援用此種權利。',
+        en:'(1) Everyone has the right to seek and to enjoy in other countries asylum from persecution.<br>(2) This right may not be invoked in the case of prosecutions genuinely arising from non-political crimes or from acts contrary to the purposes and principles of the United Nations.'},
+  {n:15, cn:'（一）人人有权享有国籍。<br>（二）任何人的国籍不得任意剥夺，亦不得否认其改变国籍的权利。',
+        tw:'（一）人人有權享有國籍。<br>（二）任何人的國籍不得任意剝奪，亦不得否認其改變國籍的權利。',
+        en:'(1) Everyone has the right to a nationality.<br>(2) No one shall be arbitrarily deprived of his nationality nor denied the right to change his nationality.'},
+  {n:16, cn:'（一）成年男女，不受种族、国籍或宗教的任何限制，有权婚嫁和成立家庭。他们在婚姻方面，在结婚期间和在解除婚约时，应有平等的权利。<br>（二）只有经男女双方的自由的和完全的同意，才能缔婚。<br>（三）家庭是天然的和基本的社会单元，并应受社会和国家的保护。',
+        tw:'（一）成年男女，不受種族、國籍或宗教的任何限制，有權婚嫁和成立家庭。他們在婚姻方面，在結婚期間和在解除婚約時，應有平等的權利。<br>（二）只有經男女雙方的自由的和完全的同意，才能締婚。<br>（三）家庭是天然的和基本的社會單元，並應受社會和國家的保護。',
+        en:'(1) Men and women of full age, without any limitation due to race, nationality or religion, have the right to marry and to found a family. They are entitled to equal rights as to marriage, during marriage and at its dissolution.<br>(2) Marriage shall be entered into only with the free and full consent of the intending spouses.<br>(3) The family is the natural and fundamental group unit of society and is entitled to protection by society and the State.'},
+  {n:17, cn:'（一）人人得有单独的财产所有权以及同他人合有的所有权。<br>（二）任何人的财产不得任意剥夺。',
+        tw:'（一）人人得有單獨的財產所有權以及同他人合有的所有權。<br>（二）任何人的財產不得任意剝奪。',
+        en:'(1) Everyone has the right to own property alone as well as in association with others.<br>(2) No one shall be arbitrarily deprived of his property.'},
+  {n:18, cn:'人人有思想、良心和宗教自由的权利；此项权利包括改变他的宗教或信仰的自由，以及单独或集体、公开或秘密地以教义、实践、礼拜和戒律表示他的宗教或信仰的自由。',
+        tw:'人人有思想、良心和宗教自由的權利；此項權利包括改變他的宗教或信仰的自由，以及單獨或集體、公開或秘密地以教義、實踐、禮拜和戒律表示他的宗教或信仰的自由。',
+        en:'Everyone has the right to freedom of thought, conscience and religion; this right includes freedom to change his religion or belief, and freedom, either alone or in community with others and in public or private, to manifest his religion or belief in teaching, practice, worship and observance.'},
+  {n:19, cn:'人人有权享有主张和发表意见的自由；此项权利包括持有主张而不受干涉的自由，和通过任何媒介和不论国界寻求、接受和传递消息和思想的自由。',
+        tw:'人人有權享有主張和發表意見的自由；此項權利包括持有主張而不受干涉的自由，和通過任何媒介和不論國界尋求、接受和傳遞消息和思想的自由。',
+        en:'Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers.'},
+  {n:20, cn:'（一）人人有权享有和平集会和结社的自由。<br>（二）任何人不得迫使隶属于某一团体。',
+        tw:'（一）人人有權享有和平集會和結社的自由。<br>（二）任何人不得迫使隸屬於某一團體。',
+        en:'(1) Everyone has the right to freedom of peaceful assembly and association.<br>(2) No one may be compelled to belong to an association.'},
+  {n:21, cn:'（一）人人有直接或通过自由选择的代表参与治理本国的权利。<br>（二）人人有平等机会参加本国公务的权利。<br>（三）人民的意志是政府权力的基础；这一意志应以定期的和真正的选举予以表现，而选举应依据普遍和平等的投票权，并以不记名投票或相当的自由投票程序进行。',
+        tw:'（一）人人有直接或通過自由選擇的代表參與治理本國的權利。<br>（二）人人有平等機會參加本國公務的權利。<br>（三）人民的意志是政府權力的基礎；這一意志應以定期的和真正的選舉予以表現，而選舉應依據普遍和平等的投票權，並以不記名投票或相當的自由投票程序進行。',
+        en:'(1) Everyone has the right to take part in the government of his country, directly or through freely chosen representatives.<br>(2) Everyone has the right of equal access to public service in his country.<br>(3) The will of the people shall be the basis of the authority of government; this will shall be expressed in periodic and genuine elections which shall be by universal and equal suffrage and shall be held by secret vote or by equivalent free voting procedures.'},
+  {n:22, cn:'每个人，作为社会的一员，有权享受社会保障，并有权享受他的个人尊严和人格的自由发展所必需的经济、社会和文化方面各种权利的实现，这种实现是通过国家努力和国际合作并依照各国的组织和资源情况。',
+        tw:'每個人，作為社會的一員，有權享受社會保障，並有權享受他的個人尊嚴和人格的自由發展所必需的經濟、社會和文化方面各種權利的實現，這種實現是通過國家努力和國際合作並依照各國的組織和資源情況。',
+        en:'Everyone, as a member of society, has the right to social security and is entitled to realization, through national effort and international co-operation and in accordance with the organization and resources of each State, of the economic, social and cultural rights indispensable for his dignity and the free development of his personality.'},
+  {n:23, cn:'（一）人人有权工作、自由选择职业、享受公正和合适的工作条件并享受免于失业的保障。<br>（二）人人有同工同酬的权利，不受任何歧视。<br>（三）每一个工作的人，有权享受公正和合适的报酬，保证使他本人和家属有一个符合人的尊严的生活条件，必要时并辅以其他方式的社会保障。<br>（四）人人有为维护其利益而组织和参加工会的权利。',
+        tw:'（一）人人有權工作、自由選擇職業、享受公正和合適的工作條件並享受免於失業的保障。<br>（二）人人有同工同酬的權利，不受任何歧視。<br>（三）每一個工作的人，有權享受公正和合適的報酬，保證使他本人和家屬有一個符合人的尊嚴的生活條件，必要時並輔以其他方式的社會保障。<br>（四）人人有為維護其利益而組織和參加工會的權利。',
+        en:'(1) Everyone has the right to work, to free choice of employment, to just and favourable conditions of work and to protection against unemployment.<br>(2) Everyone, without any discrimination, has the right to equal pay for equal work.<br>(3) Everyone who works has the right to just and favourable remuneration ensuring for himself and his family an existence worthy of human dignity, and supplemented, if necessary, by other means of social protection.<br>(4) Everyone has the right to form and to join trade unions for the protection of his interests.'},
+  {n:24, cn:'人人有享有休息和闲暇的权利，包括工作时间有合理限制和定期给薪休假的权利。',
+        tw:'人人有享有休息和閒暇的權利，包括工作時間有合理限制和定期給薪休假的權利。',
+        en:'Everyone has the right to rest and leisure, including reasonable limitation of working hours and periodic holidays with pay.'},
+  {n:25, cn:'（一）人人有权享受为维持他本人和家属的健康和福利所需的生活水准，包括食物、衣着、住房、医疗和必要的社会服务；在遭到失业、疾病、残废、守寡、衰老或在其他不能控制的情况下丧失谋生能力时，有权享受保障。<br>（二）母亲和儿童有权享受特别照顾和协助。一切儿童，无论婚生或非婚生，都应享受同样的社会保护。',
+        tw:'（一）人人有權享受為維持他本人和家屬的健康和福利所需的生活水準，包括食物、衣著、住房、醫療和必要的社會服務；在遭到失業、疾病、殘廢、守寡、衰老或在其他不能控制的情況下喪失謀生能力時，有權享受保障。<br>（二）母親和兒童有權享受特別照顧和協助。一切兒童，無論婚生或非婚生，都應享受同樣的社會保護。',
+        en:'(1) Everyone has the right to a standard of living adequate for the health and well-being of himself and of his family, including food, clothing, housing and medical care and necessary social services, and the right to security in the event of unemployment, sickness, disability, widowhood, old age or other lack of livelihood in circumstances beyond his control.<br>(2) Motherhood and childhood are entitled to special care and assistance. All children, whether born in or out of wedlock, shall enjoy the same social protection.'},
+  {n:26, cn:'（一）人人都有受教育的权利，教育应当免费，至少在初级和基本阶段应如此。初级教育应属义务性质。技术和职业教育应普遍设立。高等教育应根据成绩而对一切人平等开放。<br>（二）教育的目的在于充分发展人的个性并加强对人权和基本自由的尊重。教育应促进各国、各种族或各宗教集团间的了解、容忍和友谊，并应促进联合国维护和平的各项活动。<br>（三）父母对其子女所应受的教育的种类，有优先选择的权利。',
+        tw:'（一）人人都有受教育的權利，教育應當免費，至少在初級和基本階段應如此。初級教育應屬義務性質。技術和職業教育應普遍設立。高等教育應根據成績而對一切人平等開放。<br>（二）教育的目的在於充分發展人的個性並加強對人權和基本自由的尊重。教育應促進各國、各種族或各宗教集團間的了解、容忍和友誼，並應促進聯合國維護和平的各項活動。<br>（三）父母對其子女所應受的教育的種類，有優先選擇的權利。',
+        en:'(1) Everyone has the right to education. Education shall be free, at least in the elementary and fundamental stages. Elementary education shall be compulsory. Technical and professional education shall be made generally available and higher education shall be equally accessible to all on the basis of merit.<br>(2) Education shall be directed to the full development of the human personality and to the strengthening of respect for human rights and fundamental freedoms. It shall promote understanding, tolerance and friendship among all nations, racial or religious groups, and shall further the activities of the United Nations for the maintenance of peace.<br>(3) Parents have a prior right to choose the kind of education that shall be given to their children.'},
+  {n:27, cn:'（一）人人有权自由参加社会的文化生活，享受艺术，并分享科学进步及其产生的福利。<br>（二）人人对由于他所创作的任何科学、文学或美术作品而产生的精神的和物质的利益，有享受保护的权利。',
+        tw:'（一）人人有權自由參加社會的文化生活，享受藝術，並分享科學進步及其產生的福利。<br>（二）人人對由於他所創作的任何科學、文學或美術作品而產生的精神和物質的利益，有享受保護的權利。',
+        en:'(1) Everyone has the right freely to participate in the cultural life of the community, to enjoy the arts and to share in scientific advancement and its benefits.<br>(2) Everyone has the right to the protection of the moral and material interests resulting from any scientific, literary or artistic production of which he is the author.'},
+  {n:28, cn:'人人有权要求一种社会的和国际的秩序，在这种秩序中，本宣言所载的权利和自由能获得充分实现。',
+        tw:'人人有權要求一種社會的和國際的秩序，在這種秩序中，本宣言所載的權利和自由能獲得充分實現。',
+        en:'Everyone is entitled to a social and international order in which the rights and freedoms set forth in this Declaration can be fully realized.'},
+  {n:29, cn:'（一）人人对社会负有义务，因为只有在社会中他的个性才可能得到自由和充分的发展。<br>（二）人人在行使他的权利和自由时，只受法律所确定的限制，确定此种限制的唯一目的在于保证对旁人的权利和自由给予应有的承认和尊重，并在一个民主的社会中适应道德、公共秩序和普遍福利的正当需要。<br>（三）这些权利和自由的行使，无论在任何情形下均不得违背联合国的宗旨和原则。',
+        tw:'（一）人人對社會負有義務，因為只有在社會中他的個性才可能得到自由和充分的發展。<br>（二）人人在行使他的權利和自由時，只受法律所確定的限制，確定此種限制的唯一目的在於保證對旁人的權利和自由給予應有的承認和尊重，並在一個民主的社會中適應道德、公共秩序和普遍福利的正當需要。<br>（三）這些權利和自由的行使，無論在任何情形下均不得違背聯合國的宗旨和原則。',
+        en:'(1) Everyone has duties to the community in which alone the free and full development of his personality is possible.<br>(2) In the exercise of his rights and freedoms, everyone shall be subject only to such limitations as are determined by law solely for the purpose of securing due recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality, public order and the general welfare in a democratic society.<br>(3) These rights and freedoms may in no case be exercised contrary to the purposes and principles of the United Nations.'},
+  {n:30, cn:'本宣言的任何条文，不得解释为默许任何国家、集团或个人有权进行任何旨在破坏本宣言所载的任何权利和自由的活动或行为。',
+        tw:'本宣言的任何條文，不得解釋為默許任何國家、集團或個人有權進行任何旨在破壞本宣言所載的任何權利和自由的活動或行為。',
+        en:'Nothing in this Declaration may be interpreted as implying for any State, group or person any right to engage in any activity or to perform any act aimed at the destruction of any of the rights and freedoms set forth herein.'}
+];
+
+/* 条号的中文数字：条文渲染与「我的权利清单」共用 */
+const CN_NUM = ['零','一','二','三','四','五','六','七','八','九','十',
+                '十一','十二','十三','十四','十五','十六','十七','十八','十九','二十',
+                '二十一','二十二','二十三','二十四','二十五','二十六','二十七','二十八','二十九','三十'];
+
+/* ══════════════════════════════════════════════════════════════
+   情感叙事层 · 意义单元：三十条不是三十块石头，而是五段路
+   ══════════════════════════════════════════════════════════════ */
+const UNITS = [
+  { no:'壹', cn:'活着，并且是个人', tw:'活著，並且是個人', en:'TO LIVE, AND TO BE A PERSON', a:[1,2,3,4,5,6] },
+  { no:'貳', cn:'不受任意支配',     tw:'不受任意支配',     en:'NOT TO BE AT ANYONE’S MERCY', a:[7,8,9,10,11] },
+  { no:'叁', cn:'在自己的生活里自由', tw:'在自己的生活裡自由', en:'FREE WITHIN ONE’S OWN LIFE', a:[12,13,14,15,16,17] },
+  { no:'肆', cn:'说话，相聚，被听见', tw:'說話，相聚，被聽見', en:'TO SPEAK, TO GATHER, TO BE HEARD', a:[18,19,20,21] },
+  { no:'伍', cn:'有尊严地生活',       tw:'有尊嚴地生活',       en:'TO LIVE IN DIGNITY', a:[22,23,24,25,26,27,28,29,30] }
+];
+
+/* ══════════════════════════════════════════════════════════════
+   情感叙事层 · 人的处境
+   每条正文之前，给读者一个入口：不是解释法律，而是提醒你，
+   这一条关乎的那件事，平常是什么样子。场景是具体的、日常的，
+   为的是让抽象的“权利”落到一个能被想象的人身上。
+   —— 此段不属于《世界人权宣言》正文，仅为阅读引导。
+   ══════════════════════════════════════════════════════════════ */
+const NOTES = {
+  "1": {
+    "cn": "一九四七年初，三个人开始在纽约起草这份文件：主席埃莉诺·罗斯福，黎巴嫩的马利克，中国的张彭春。他们写第一句时先定下一个前提——人的尊严不靠任何人授予。第一条的第一句话，就从这个前提开始。",
+    "tw": "一九四七年初，三個人開始在紐約起草這份文件：主席埃莉諾·羅斯福，黎巴嫩的馬利克，中國的張彭春。他們寫第一句時先定下一個前提——人的尊嚴不靠任何人授予。第一條的第一句話，就從這個前提開始。",
+    "en": "In early 1947, three people began drafting this document in New York: Eleanor Roosevelt as chair, Charles Malik of Lebanon, and Peng-chun Chang of China. Before writing the first sentence they fixed one premise: no one grants a person dignity. The first sentence of Article 1 begins from there."
+  },
+  "2": {
+    "cn": "这份宣言通过的同一年，一九四八年，南非国民党上台，开始把种族隔离写进法律：住哪个区、上哪个学校、坐哪节车厢，都由肤色决定。第二条是把这些做法逐条否定的清单。",
+    "tw": "這份宣言通過的同一年，一九四八年，南非國民黨上台，開始把種族隔離寫進法律：住哪個區、上哪個學校、坐哪節車廂，都由膚色決定。第二條是把這些做法逐條否定的清單。",
+    "en": "The year this Declaration was adopted, 1948, South Africa's National Party came to power and began writing apartheid into law: which district you lived in, which school you attended, which carriage you rode, all decided by skin colour. Article 2 is a list that negates those rules one by one."
+  },
+  "3": {
+    "cn": "一九四五年到一九四六年，纽伦堡的法庭第一次用「危害人类罪」审判一个国家机器对生命的系统屠杀。判决里写下的不是「战争输了」，而是「人的生命不能任意剥夺」。第三条把这层意思变成了每个人的权利。",
+    "tw": "一九四五年到一九四六年，紐倫堡的法庭第一次用「危害人類罪」審判一個國家機器對生命的系統屠殺。判決裡寫下的不是「戰爭輸了」，而是「人的生命不能任意剝奪」。第三條把這層意思變成了每個人的權利。",
+    "en": "In 1945 and 1946, the tribunal at Nuremberg for the first time tried a state's systematic killing as a crime against humanity. What the judgment recorded was not \"the war was lost\" but \"human life may not be taken at will.\" Article 3 turns that into a right belonging to every person."
+  },
+  "4": {
+    "cn": "据国际劳工组织与伙伴机构二零二二年的联合估计，今天全球仍有约五千万人活在「现代奴隶制」里：强迫劳动、抵债劳动、强迫婚姻。这一条写的不是过去，是现在。",
+    "tw": "據國際勞工組織與夥伴機構二零二二年的聯合估計，今天全球仍有約五千萬人活在「現代奴隸制」裡：強迫勞動、抵債勞動、強迫婚姻。這一條寫的不是過去，是現在。",
+    "en": "A joint estimate by the International Labour Organization and partners in 2022 put the number of people living in modern slavery today at about fifty million: forced labour, debt bondage, forced marriage. This article is written about the present, not the past."
+  },
+  "5": {
+    "cn": "一八五九年，瑞士商人亨利·杜南路过意大利的索尔费里诺战场，看见约四万名死伤者躺在战场上，没有人管。他放下生意救伤，后来有了红十字会和《日内瓦公约》：各国承诺，对不再参战的人，禁止酷刑和虐待。第五条是把这条承诺写给每一个人。",
+    "tw": "一八五九年，瑞士商人亨利·杜南路過意大利的索爾費里諾戰場，看見約四萬名死傷者躺在戰場上，沒有人管。他放下生意救傷，後來有了紅十字會和《日內瓦公約》：各國承諾，對不再參戰的人，禁止酷刑和虐待。第五條是把這條承諾寫給每一個人。",
+    "en": "In 1859, the Swiss businessman Henry Dunant passed the battlefield of Solferino in Italy and saw some forty thousand dead and wounded lying there with no one to care for them. He set his business aside to help. From that came the Red Cross and the Geneva Conventions, under which states promise that torture and ill-treatment are forbidden. Article 5 extends that promise to every person."
+  },
+  "6": {
+    "cn": "一九三五年，纳粹德国颁布《帝国公民法》，宣布犹太人不再是公民。人还在，法律上却「不存在」了：不能起诉，不能订合同，财产被没收。第六条就是回答这件事：每一个人，在任何地方，都必须被法律承认为人。",
+    "tw": "一九三五年，納粹德國頒佈《帝國公民法》，宣佈猶太人不再是公民。人還在，法律上卻「不存在」了：不能起訴，不能訂合同，財產被沒收。第六條就是回答這件事：每一個人，在任何地方，都必須被法律承認爲人。",
+    "en": "In 1935, Nazi Germany's Reich Citizenship Law declared that Jews were no longer citizens. The people remained, but in law they \"did not exist\": they could not sue, could not make contracts, their property was confiscated. Article 6 is the answer: every person, everywhere, must be recognised as a person before the law."
+  },
+  "7": {
+    "cn": "宣言通过时，美国不少州的学校还实行「隔离但平等」：黑人孩子和白人孩子分开上学。六年之后的一九五四年，最高法院才在布朗案中裁定这种隔离违宪。第七条要的是：法律本身不偏袒任何人。",
+    "tw": "宣言通過時，美國不少州的學校還實行「隔離但平等」：黑人孩子和白人孩子分開上學。六年之後的一九五四年，最高法院才在布朗案中裁定這種隔離違憲。第七條要的是：法律本身不偏袒任何人。",
+    "en": "When the Declaration was adopted, schools in several American states still practised \"separate but equal\": Black children and white children taught apart. Six years later, in 1954, the Supreme Court ruled in Brown v. Board of Education that such segregation was unconstitutional. What Article 7 demands is that the law itself favour no one."
+  },
+  "8": {
+    "cn": "一二一五年，英格兰《大宪章》第三十九条写明：自由人非经依法审判，不得被拘捕、监禁或剥夺财产。这份八百多年前的文件，第一次把「先走法律，再动人」写成了白纸黑字。第八条把同一个道理，变成每个人都能实际使用的一条路。",
+    "tw": "一二一五年，英格蘭《大憲章》第三十九條寫明：自由人非經依法審判，不得被拘捕、監禁或剝奪財產。這份八百多年前的文件，第一次把「先走法律，再動人」寫成了白紙黑字。第八條把同一個道理，變成每個人都能實際使用的一條路。",
+    "en": "In 1215, clause 39 of England's Magna Carta stated that no free man shall be arrested, imprisoned or deprived of his property except by lawful judgment. That document, more than eight hundred years old, was among the first to put in writing that the law comes before any man is touched. Article 8 turns the same principle into a path every person can actually use."
+  },
+  "9": {
+    "cn": "一九三三年以后，纳粹德国用「保护性拘留」这个词，不经审判就把人无限期关进集中营：没有罪名，没有期限，没有律师。第九条禁止的，正是这种「带走一个人，不需要任何理由」。",
+    "tw": "一九三三年以後，納粹德國用「保護性拘留」這個詞，不經審判就把人無限期關進集中營：沒有罪名，沒有期限，沒有律師。第九條禁止的，正是這種「帶走一個人，不需要任何理由」。",
+    "en": "After 1933, Nazi Germany used the term \"protective custody\" to hold people in concentration camps indefinitely without trial: no charge, no time limit, no lawyer. What Article 9 forbids is exactly this: taking a person away without needing any reason."
+  },
+  "10": {
+    "cn": "一九四五年十一月到一九四六年十月，纽伦堡审判当着全世界记者的面公开进行：二十四名主要战犯被起诉，其中二十二人出庭受审，判决书用四种语言印发。第十条说，审判必须公开、法庭必须独立——因为秘密审判往往先有结论，再补「证据」。",
+    "tw": "一九四五年十一月到一九四六年十月，紐倫堡審判當著全世界記者的面公開進行：二十四名主要戰犯被起訴，其中二十二人出庭受審，判決書用四種語言印發。第十條說，審判必須公開、法庭必須獨立——因為秘密審判往往先有結論，再補「證據」。",
+    "en": "From November 1945 to October 1946, the Nuremberg trial was conducted openly before the world's press: twenty-four major war criminals indicted, twenty-two of them tried in court, the judgment published in four languages. Article 10 says trials must be public and courts independent, because secret trials usually reach the verdict first and find the \"evidence\" afterwards."
+  },
+  "11": {
+    "cn": "一七八九年，法国《人权与公民权宣言》第九条已经写明：任何人在被宣告有罪之前，都应被推定为无罪。一百五十九年后，这个道理进了世界宣言的第十一条，还加了一句：不能用事后制定的法律给人定罪。",
+    "tw": "一七八九年，法國《人權與公民權宣言》第九條已經寫明：任何人在被宣告有罪之前，都應被推定為無罪。一百五十九年後，這個道理進了世界宣言的第十一條，還加了一句：不能用事後制定的法律給人定罪。",
+    "en": "In 1789, article 9 of the French Declaration of the Rights of Man and of the Citizen already stated that every person is presumed innocent until declared guilty. A hundred and fifty-nine years later the same principle entered Article 11 of this Declaration, with one addition: no one may be convicted under a law made after the act."
+  },
+  "12": {
+    "cn": "一九四八年，乔治·奥威尔正在苏格兰的朱拉岛上写《一九八四》。他写的「老大哥在看着你」——墙上的屏幕、无时不在的监听——是一个隐私消失之后的世界。同一年，第十二条把住宅、家庭和通信划成国家不得任意进入的地方。",
+    "tw": "一九四八年，喬治·奧威爾正在蘇格蘭的朱拉島上寫《一九八四》。他寫的「老大哥在看著你」——牆上的屏幕、無時不在的監聽——是一個隱私消失之後的世界。同一年，第十二條把住宅、家庭和通信劃成國家不得任意進入的地方。",
+    "en": "In 1948, George Orwell was writing Nineteen Eighty-Four on the island of Jura in Scotland. His \"Big Brother is watching you\" — the screen on the wall, the listening that never stops — describes a world after privacy is gone. In that same year, Article 12 drew a line around home, family and correspondence, a place the state may not enter at will."
+  },
+  "13": {
+    "cn": "宣言通过前五个月，一九四八年六月，苏联封锁了通往西柏林的陆路。柏林变成一座孤岛，两百多万人靠空运生活了将近一年。第十三条写的「离开」和「返回」，在那一年不是抽象的词，是两百多万柏林人的现实。",
+    "tw": "宣言通過前五個月，一九四八年六月，蘇聯封鎖了通往西柏林的陸路。柏林變成一座孤島，兩百多萬人靠空運生活了將近一年。第十三條寫的「離開」和「返回」，在那一年不是抽象的詞，是兩百多萬柏林人的現實。",
+    "en": "Five months before this Declaration was adopted, in June 1948, the Soviet Union blockaded the land routes into West Berlin. The city became an island, its two million people supplied by air for almost a year. The \"leave\" and \"return\" written into Article 13 were not abstract words that year; they were the daily reality of more than two million people."
+  },
+  "14": {
+    "cn": "一九三九年，客轮「圣路易斯号」载着九百多名逃离德国的犹太难民横渡大西洋。古巴、美国、加拿大先后拒绝它靠岸，船只能开回欧洲，其中许多人后来死在集中营。第十四条写的「寻求和享受庇护」，就是给这样的船留一个可以靠岸的地方。",
+    "tw": "一九三九年，客輪「聖路易斯號」載著九百多名逃離德國的猶太難民橫渡大西洋。古巴、美國、加拿大先後拒絕它靠岸，船只能開回歐洲，其中許多人後來死在集中營。第十四條寫的「尋求和享受庇護」，就是給這樣的船留一個可以靠岸的地方。",
+    "en": "In 1939, the liner St. Louis crossed the Atlantic carrying more than nine hundred Jewish refugees fleeing Germany. Cuba, the United States and Canada in turn refused to let it land; the ship sailed back to Europe, and many of those aboard later died in the camps. The \"seek and enjoy asylum\" of Article 14 exists so that such a ship has somewhere to come ashore."
+  },
+  "15": {
+    "cn": "哲学家汉娜·阿伦特一九三七年被纳粹德国剥夺国籍，此后十四年没有任何国家的护照——她成了无国籍者。据联合国难民署统计，今天全球登记在册的无国籍者仍有四百多万，实际人数被认为远高于此，其中许多是孩子。第十五条说：国籍不是赏赐，不能随便拿走。",
+    "tw": "哲學家漢娜·阿倫特一九三七年被納粹德國剝奪國籍，此後十四年沒有任何國家的護照——她成了無國籍者。據聯合國難民署統計，今天全球登記在冊的無國籍者仍有四百多萬，實際人數被認為遠高於此，其中許多是孩子。第十五條說：國籍不是賞賜，不能隨便拿走。",
+    "en": "The philosopher Hannah Arendt was stripped of her German citizenship by the Nazis in 1937 and spent the next fourteen years without any country's passport: she was stateless. UNHCR still counts more than four million registered stateless people today, and the true figure is believed to be far higher — many of them children. Article 15 says nationality is not a favour, and it may not be taken away at will."
+  },
+  "16": {
+    "cn": "联合国儿童基金会估计，今天活着的妇女和女童里，约有六点四亿人在十八岁以前结过婚。她们中的许多人，在「我愿意」说出口之前没有任何选择。第十六条只要求一件事：结婚，必须两个人都自己愿意。",
+    "tw": "聯合國兒童基金會估計，今天活著的婦女和女童裡，約有六點四億人在十八歲以前結過婚。她們中的許多人，在「我願意」說出口之前沒有任何選擇。第十六條只要求一件事：結婚，必須兩個人都自己願意。",
+    "en": "UNICEF estimates that some 640 million women and girls alive today were married before the age of eighteen. Many of them had no choice at all before the words \"I do\" were said. Article 16 asks one thing only: marriage must be the free consent of the two people themselves."
+  },
+  "17": {
+    "cn": "在联合国的起草会议上，这一条吵得最凶：一派主张私有财产神圣不可侵犯，一派主张财产应当公有。最后的文字是双方都能接受的折中——承认财产权，同时禁止任意剥夺。第十七条是这场争论留下的产物。",
+    "tw": "在聯合國的起草會議上，這一條吵得最兇：一派主張私有財產神聖不可侵犯，一派主張財產應當公有。最後的文字是雙方都能接受的折中——承認財產權，同時禁止任意剝奪。第十七條是這場爭論留下的產物。",
+    "en": "No article was fought over harder in the United Nations drafting meetings: one side held private property sacred and inviolable; the other held that property belongs to all. The final text is the compromise both could accept: property rights recognised, arbitrary deprivation forbidden. Article 17 is what that argument left behind."
+  },
+  "18": {
+    "cn": "一五九八年，法王亨利四世签署《南特敕令》，让天主教徒和新教徒能在同一个国家各自信自己的。将近九十年后它被废除，但「信什么不能由命令决定」这个道理留了下来。第十八条把它写给了思想、良心和宗教。",
+    "tw": "一五九八年，法王亨利四世簽署《南特敕令》，讓天主教徒和新教徒能在同一個國家各自信自己的。將近九十年後它被廢除，但「信什麼不能由命令決定」這個道理留了下來。第十八條把它寫給了思想、良心和宗教。",
+    "en": "In 1598, King Henry IV of France signed the Edict of Nantes, allowing Catholics and Protestants to practise their own faith in the same country. It was revoked nearly ninety years later, but the principle survived: what a person believes cannot be decided by decree. Article 18 writes that principle for thought, conscience and religion."
+  },
+  "19": {
+    "cn": "两千五百多年前，郑国的子产没有拆毁国人议论朝政的「乡校」。他说：他们说得好，我就照做；他们反对的，我就改正——这是我的老师，为什么要拆？这大概是中国典籍里最早为公开议论辩护的记录。第十九条保护的，就是这种「能说」。",
+    "tw": "兩千五百多年前，鄭國的子產沒有拆毀國人議論朝政的「鄉校」。他說：他們說得好，我就照做；他們反對的，我就改正——這是我的老師，為什麼要拆？這大概是中國典籍裡最早為公開議論辯護的記錄。第十九條保護的，就是這種「能說」。",
+    "en": "More than twenty-five centuries ago, Zichan of Zheng refused to demolish the village school where people criticised the government. What they praise, I will do, he said; what they oppose, I will correct — they are my teachers, why tear it down? It may be the earliest defence of open criticism in the Chinese classics. Article 19 protects exactly that power to speak."
+  },
+  "20": {
+    "cn": "一九四八年七月，就在这份宣言通过前五个月，国际劳工组织通过了《结社自由和保护组织权公约》——工人组织工会的权利，第一次有了国际条约的明文。第二十条把同样的自由，写给了每一个人。",
+    "tw": "一九四八年七月，就在這份宣言通過前五個月，國際勞工組織通過了《結社自由和保護組織權公約》——工人組織工會的權利，第一次有了國際條約的明文。第二十條把同樣的自由，寫給了每一個人。",
+    "en": "In July 1948, five months before this Declaration was adopted, the International Labour Organization adopted the Freedom of Association and Protection of the Right to Organise Convention: for the first time, an international treaty expressly protected the right of workers to form unions. Article 20 writes the same freedom for every person."
+  },
+  "21": {
+    "cn": "宣言通过的那一年，瑞士的妇女还没有投票权，她们要等到一九七一年。起草国里也有这样的例子：智利到一九四九年才给妇女投票权，黎巴嫩要到一九五二年。第二十一条不是描述一九四八年的现实，是给世界定下标准。",
+    "tw": "宣言通過的那一年，瑞士的婦女還沒有投票權，她們要等到一九七一年。起草國裡也有這樣的例子：智利到一九四九年才給婦女投票權，黎巴嫩要到一九五二年。第二十一條不是描述一九四八年的現實，是給世界定下標準。",
+    "en": "In the year this Declaration was adopted, women in Switzerland still had no vote; they had to wait until 1971. Even among the drafting countries: Chile granted women the vote only in 1949, and Lebanon in 1952. Article 21 does not describe the reality of 1948; it sets the standard."
+  },
+  "22": {
+    "cn": "一九四二年，战时英国政府请经济学家贝弗里奇写了一份报告，主张国家应当托住失业、生病、衰老的人——「从摇篮到坟墓」的说法由此而来。六年后的第二十二条，把这份思路写成每个人的权利：社会应当接住撑不住的人。",
+    "tw": "一九四二年，戰時英國政府請經濟學家貝弗里奇寫了一份報告，主張國家應當托住失業、生病、衰老的人——「從搖籃到墳墓」的說法由此而來。六年後的第二十二條，把這份思路寫成每個人的權利：社會應當接住撐不住的人。",
+    "en": "In 1942, Britain's wartime government asked the economist William Beveridge to write a report proposing that the state should support the unemployed, the sick and the old — the origin of the phrase \"from the cradle to the grave.\" Six years later, Article 22 made that idea the right of every person: society must catch those who can no longer hold on."
+  },
+  "23": {
+    "cn": "一九一九年，第一次世界大战后的和平会议创立了国际劳工组织，理由写进了《凡尔赛条约》：「普遍的持久和平，只能建立在社会正义的基础上。」一九五一年，它通过《同酬公约》（第 100 号）。第二十三条把这些写成每个人的权利。",
+    "tw": "一九一九年，第一次世界大戰後的和平會議創立了國際勞工組織，理由寫進了《凡爾賽條約》：「普遍的持久和平，只能建立在社會正義的基礎上。」一九五一年，它通過《同酬公約》（第 100 號）。第二十三條把這些寫成每個人的權利。",
+    "en": "In 1919, the peace conference after the First World War created the International Labour Organization, with the reason written into the Treaty of Versailles: universal and lasting peace can be established only if it is based upon social justice. In 1951 the ILO adopted the Equal Remuneration Convention (No. 100). Article 23 makes these things the right of every worker."
+  },
+  "24": {
+    "cn": "一八八六年五月，美国芝加哥的工人上街要求八小时工作制，罢工中发生爆炸，四名工人后来被判绞刑。为了纪念他们，才有了五一国际劳动节。第二十四条写的休息和带薪假期，就是从这一百多年的争取里来的。",
+    "tw": "一八八六年五月，美國芝加哥的工人上街要求八小時工作制，罷工中發生爆炸，四名工人後來被判絞刑。為了紀念他們，才有了五一國際勞動節。第二十四條寫的休息和帶薪假期，就是從這一百多年的爭取裡來的。",
+    "en": "In May 1886, workers in Chicago marched for the eight-hour day. A bomb exploded during the strike, and four workers were later hanged. May Day was created in their memory. The rest and paid holidays written into Article 24 came out of more than a century of such struggle."
+  },
+  "25": {
+    "cn": "世界卫生组织成立于一九四八年四月七日，与这份宣言同一年。它的章程开宗明义：健康不只是没有病，而是身体、心理和社会都完好的状态。第二十五条说的食物、衣着、住房和医疗，就是这种「完好」的底子。",
+    "tw": "世界衛生組織成立於一九四八年四月七日，與這份宣言同一年。它的章程開宗明義：健康不只是沒有病，而是身體、心理和社會都完好的狀態。第二十五條說的食物、衣著、住房和醫療，就是這種「完好」的底子。",
+    "en": "The World Health Organization was founded on 7 April 1948, the same year as this Declaration. Its Constitution opens with a definition: health is a state of complete physical, mental and social well-being, not merely the absence of disease. The food, clothing, housing and medical care named in Article 25 are the foundation of that well-being."
+  },
+  "26": {
+    "cn": "联合国教科文组织统计，今天全球仍有约七点七亿成年人不会读写，其中三分之二是妇女。也就是说，一九四八年写下的「人人都有受教育的权利」，到今天还没有全部兑现。第二十六条不是纪念碑，是待办清单。",
+    "tw": "聯合國教科文組織統計，今天全球仍有約七點七億成年人不會讀寫，其中三分之二是婦女。也就是說，一九四八年寫下的「人人都有受教育的權利」，到今天還沒有全部兌現。第二十六條不是紀念碑，是待辦清單。",
+    "en": "UNESCO counts about 770 million adults in the world today who cannot read or write, two thirds of them women. In other words, the \"everyone has the right to education\" written down in 1948 has still not been fully delivered. Article 26 is not a monument; it is a to-do list."
+  },
+  "27": {
+    "cn": "一八八六年，十多个国家在瑞士伯尔尼签署《伯尔尼公约》，第一次约定：作者的作品跨出国界，也受保护。这大概是「保护创作者」第一次成为国际约定。第二十七条更进一步：作者的精神利益，也要保护。",
+    "tw": "一八八六年，十多個國家在瑞士伯爾尼簽署《伯爾尼公約》，第一次約定：作者的作品跨出國界，也受保護。這大概是「保護創作者」第一次成為國際約定。第二十七條更進一步：作者的精神利益，也要保護。",
+    "en": "In 1886, more than ten countries signed the Berne Convention in Switzerland, agreeing for the first time that an author's work is protected when it crosses borders. It was perhaps the first time that protecting creators became an international agreement. Article 27 goes further: the author's moral interests are protected too."
+  },
+  "28": {
+    "cn": "一九四五年《联合国宪章》生效，世界第一次有了一个以「免后世再遭战祸」开头的组织。三年后，这份宣言成为它发布的第一份普遍性权利文件。第二十八条说：每一个人，都有权要求一个让这些权利真正兑现的世界。",
+    "tw": "一九四五年《聯合國憲章》生效，世界第一次有了一個以「免後世再遭戰禍」開頭的組織。三年後，這份宣言成為它發佈的第一份普遍性權利文件。第二十八條說：每一個人，都有權要求一個讓這些權利真正兌現的世界。",
+    "en": "The Charter of the United Nations took effect in 1945, creating the first world organization whose opening words speak of saving succeeding generations from the scourge of war. Three years later, this Declaration became its first universal bill of rights. Article 28 says every person may claim a world in which these rights actually come true."
+  },
+  "29": {
+    "cn": "在联合国的起草会议上，有人担心：如果一份文件只讲权利、不讲义务，会不会变成「想干什么就干什么」的许可证？最后的回答是第二十九条：权利可以受法律限制，但这个限制本身，只能是为了尊重别人的权利和自由。",
+    "tw": "在聯合國的起草會議上，有人擔心：如果一份文件只講權利、不講義務，會不會變成「想幹什麼就幹什麼」的許可證？最後的回答是第二十九條：權利可以受法律限制，但這個限制本身，只能是為了尊重別人的權利和自由。",
+    "en": "At the United Nations drafting meetings, some worried that a document speaking only of rights and never of duties might become a licence to do anything one likes. The answer became Article 29: rights may be limited by law, but the limitation itself may exist only to secure respect for the rights and freedoms of others."
+  },
+  "30": {
+    "cn": "联合国的起草者特意加了最后一条，为的是防止这份宣言被反过来用：有人打着「权利」的旗号，去破坏别人同样的权利。第三十条是这份文件给自己的保险——权利不能成为拆掉权利的锤子。",
+    "tw": "聯合國的起草者特意加了最後一條，為的是防止這份宣言被反過來用：有人打著「權利」的旗號，去破壞別人同樣的權利。第三十條是這份文件給自己的保險——權利不能成為拆掉權利的錘子。",
+    "en": "The United Nations drafters added this final article on purpose: to stop the Declaration from being turned against itself by someone who invokes \"rights\" in order to destroy the same rights of others. Article 30 is the document's insurance against itself: a right must never become the hammer that breaks rights."
+  }
+};;;;
+
+/* ══════════════════════════════════════════════════════════════
+   思想来源层 · 基督教与儒家典籍
+   每条之下可展开，说明该条的思想来源与历史渊源。
+
+   体例：
+   · 基督教部分引《圣经》和合本原文；
+   · 儒家部分引先秦典籍原文（文言），并附英译；
+   · 两者与《宣言》条文之间是「渊源 / 呼应」关系，不是引用关系；
+   · 凡不能确证为直接出处者，在 note 里写明「思想呼应」；
+   · hist 说明该观念进入现代人权文本的线索，不替代学术考据。
+   ══════════════════════════════════════════════════════════════ */
+const SOURCES = {
+  1:{
+    conf:[{text:'人人有贵于己者，弗思耳矣。',
+           tw:'人人有貴於己者，弗思耳矣。',
+           src:'《孟子·告子上》',
+           en:'Mencius, Gaozi I — “Everyone has that which is noble in himself; they simply do not think about it.”',
+           note:'儒家不把人的尊贵建立在出身与等级上，而说它本来就在每个人身上。这是与“固有尊严”最接近的中文典籍表述。'},
+          {text:'天命之谓性，率性之谓道，修道之谓教。',
+           tw:'天命之謂性，率性之謂道，修道之謂教。',
+           src:'子思《中庸》第一章（旧题子思作，《史记·孔子世家》载“子思作《中庸》”）',
+           en:'Zisi, The Doctrine of the Mean, ch. 1 (traditionally attributed to Zisi) — “What Heaven has conferred is called human nature; to follow this nature is called the Way; to cultivate the Way is called teaching.”',
+           note:'人的本性来自天赋，不由人间权力授予——这是“固有尊严”在儒家传统里的另一套说法。'},
+          {text:'个个人心有仲尼，自将闻见苦遮迷。而今指与真头面，只是良知更莫疑。',
+           tw:'個個人心有仲尼，自將聞見苦遮迷。而今指與真頭面，只是良知更莫疑。',
+           src:'王阳明《咏良知四首示诸生》其一（《王文成公全书》卷二十）',
+           en:'Wang Yangming, “Four Poems on Liangzhi, Shown to My Students,” No. 1 — “Every heart contains a Confucius; hearing and seeing have veiled it. Now I point out the true face: it is nothing but liangzhi — do not doubt it.”',
+           note:'明代王阳明（1472–1529）说得更直接：圣人不在别处，人人心里都有。这与第一条的“固有尊严”异曲同工。'}],
+    christ:[{text:'神就照着自己的形像造人，乃是照着他的形像造男造女。',
+             src:'创世记 1:27',
+             en:'Genesis 1:27 — “So God created man in his own image, in the image of God he created him; male and female he created them.”',
+             note:'“形像”意味着人的价值不由任何人间标准授予，因而也不可被谁收回。另见诗篇 8:5。'}],
+    hist:'第一条历经五版。起草委员会主席为埃莉诺·罗斯福，中国代表张彭春为副主席，并且是最初三人核心起草小组之一（据联合国官网 Drafters of the Declaration）。其中 conscience（良心）一词由张彭春提出：他以其传统中的“仁”为理据，主张单以 reason（理性）不足以构成人的根本特质；此说见于哥伦比亚大学《宣言》起草史项目与 Morsink 的档案研究（Origins, Drafting, and Intent, 1999）。须注意：文本最终采用的是 conscience 而非“仁”，第一条是多方折中的产物，并非某一文明的独占贡献。另据联合国官网，All men 改为 All human beings 由印度代表 Hansa Mehta 促成。'
+  },
+  2:{
+    conf:[{text:'有教无类。',
+           tw:'有教無類。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “In teaching, there should be no distinction of classes.”',
+           note:'教育不问出身，是儒家最具平等意味的主张之一。'}],
+    christ:[{text:'并不分犹太人、希利尼人，自主的、为奴的，或男或女，因为你们在基督耶稣里都成为一了。',
+             src:'加拉太书 3:28',
+             en:'Galatians 3:28 — “There is neither Jew nor Greek, there is neither slave nor free, there is no male and female, for you are all one in Christ Jesus.”',
+             note:'另见使徒行传 10:34-35：“神是不偏待人。”'}],
+    hist:'把“不分种族、肤色、性别、语言、宗教……”逐项写出，被视为对纳粹种族法与殖民差别待遇的直接回应。'
+  },
+  3:{
+    conf:[{text:'身体发肤，受之父母，不敢毁伤，孝之始也。',
+           tw:'身體髮膚，受之父母，不敢毀傷，孝之始也。',
+           src:'《孝经·开宗明义章》',
+           en:'The Classic of Filial Piety, ch. 1 — “My body, hair and skin are received from my parents; I dare not injure them. This is the beginning of filial piety.”',
+           note:'以“不敢毁伤”肯定身体不可侵犯，与现代人身安全权在精神上相通；其出发点却是孝，而非个人权利，属思想呼应。'}],
+    christ:[{text:'凡流人血的，他的血也必被人所流，因为神造人是照自己的形像造的。',
+             src:'创世记 9:6',
+             en:'Genesis 9:6 — “Whoever sheds the blood of man, by man shall his blood be shed, for God made man in his own image.”',
+             note:'另见出埃及记 20:13“不可杀人”。'}],
+    hist:'生命权被列为第一条实体权利，与战后对“国家可以任意处置个人生命”的反思直接相关；人身安全则针对失踪、酷刑与法外处决。'
+  },
+  4:{
+    conf:[{text:'庖有肥肉，厩有肥马，民有饥色，野有饿莩，此率兽而食人也。',
+           tw:'庖有肥肉，廄有肥馬，民有飢色，野有餓莩，此率獸而食人也。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “In your kitchen there is fat meat, in your stables fat horses, but the people look hungry and in the wilds lie the bodies of the starved. This is leading beasts to devour men.”',
+           note:'思想呼应，非直接出处。先秦儒家没有主张废除奴隶制，也没有与废奴对应的概念；此句提供的是“不可把人不当人”的方向。'}],
+    christ:[{text:'拐带人口，或是把人卖了，或是留在他手下，必要把他治死。',
+             src:'出埃及记 21:16',
+             en:'Exodus 21:16 — “Whoever steals a man and sells him, and anyone found in possession of him, shall be put to death.”',
+             note:'《圣经》并未一开始就废除奴隶制，但直接把“把人卖了”定为死罪；此后废奴运动长期以此为据。另见提摩太前书 1:10（和合本作“抢人口的”）、加拉太书 3:28。'}],
+    hist:'1948 年时仍有国家主张保留奴隶制的合法地位，最终文本以“一切形式的奴隶制度和奴隶买卖”一并禁止，是当时谈判中较激烈的一处。'
+  },
+  5:{
+    conf:[{text:'己所不欲，勿施于人。',
+           tw:'己所不欲，勿施於人。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “Do not impose on others what you yourself do not desire.”',
+           note:'子贡问“有一言而可以终身行之者乎”，孔子以此句答之，并称其为“恕”。（《颜渊》篇另有“克己复礼为仁”一章，与此句不同。）'}],
+    christ:[{text:'所以，无论何事，你们愿意人怎样待你们，你们也要怎样待人，因为这就是律法和先知的道理。',
+             src:'马太福音 7:12',
+             en:'Matthew 7:12 — “So whatever you wish that others would do to you, do also to them, for this is the Law and the Prophets.”',
+             note:'思想呼应，非直接出处：没有人愿意被这样对待，这是禁止酷刑最直接的道德依据。'}],
+    hist:'酷刑之禁在起草时几乎无争议，分歧在于条文是否也约束“非国家”的施暴者。'
+  },
+  6:{
+    conf:[{text:'徒善不足以为政，徒法不能以自行。',
+           tw:'徒善不足以為政，徒法不能以自行。',
+           src:'《孟子·离娄上》',
+           en:'Mencius, Li Lou I — “Goodness alone is not enough for government; laws alone cannot carry themselves into practice.”',
+           note:'强调一个人在法律秩序中的位置必须被明确承认，与“法律前的人格”相通；属思想呼应。'}],
+    christ:[{text:'因为神不偏待人。',
+             src:'罗马书 2:11',
+             en:'Romans 2:11 — “For God shows no partiality.”',
+             note:'另见创世记 1:27：人格的根据在于人是照着神的形像造的。'}],
+    hist:'“法律前的人格”针对的是纳粹时期剥夺犹太人国籍、使其失去诉讼资格的做法。'
+  },
+  7:{
+    conf:[{text:'刑罚不中，则民无所措手足。',
+           tw:'刑罰不中，則民無所措手足。',
+           src:'《论语·子路》',
+           en:'The Analects, Zi Lu — “If punishments are not meted out correctly, the people will not know where to put hand or foot.”',
+           note:'“中”指恰当、一致：同一行为应得同一评价。（法家《商君书·赏刑》另有“刑无等级”，属另一传统，可作参照。）'}],
+    christ:[{text:'你们施行审判，不可行不义；不可偏护穷人，也不可重看有势力的人，只要按着公义审判你的邻舍。',
+             src:'利未记 19:15',
+             en:'Leviticus 19:15 — “You shall do no injustice in court. You shall not be partial to the poor or defer to the great, but in righteousness shall you judge your neighbour.”'}],
+    hist:'《宣言》特意写了两层：法律之前的平等，以及免于歧视的平等保护；后者要求法律本身不得区别对待。'
+  },
+  8:{
+    conf:[{text:'及陷乎罪，然后从而刑之，是罔民也。',
+           tw:'及陷乎罪，然後從而刑之，是罔民也。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “To wait until the people fall into crime and then punish them is to entrap the people.”',
+           note:'批评“先使人无以为生、再以刑加之”，正是“须有可救济之途”的古代表述。'}],
+    christ:[{text:'学习行善，寻求公平，解救受欺压的；给孤儿伸冤，为寡妇辨屈。',
+             src:'以赛亚书 1:17',
+             en:'Isaiah 1:17 — “Learn to do good; seek justice, correct oppression; bring justice to the fatherless, plead the widow’s cause.”'}],
+    hist:'“有效补救”这一条要求国家提供可以实际使用的救济途径，而不只是宣布权利。'
+  },
+  9:{
+    conf:[{text:'钦哉，钦哉，惟刑之恤哉！',
+           tw:'欽哉，欽哉，惟刑之恤哉！',
+           src:'《尚书·舜典》',
+           en:'The Book of Documents, “Canon of Shun” — “Reverent, reverent! Be compassionate in the use of punishment.”',
+           note:'恤刑，是中国法制传统中对用刑谨慎的最早表述之一。另见《孟子·梁惠王下》：“左右皆曰可杀，勿听……国人皆曰可杀，然后察之。”'}],
+    christ:[{text:'无论什么人，被告还没有和原告对质，未得机会分诉所告他的事，就先定他的罪，这不是罗马人的条例。',
+             src:'使徒行传 25:16',
+             en:'Acts 25:16 — “It is not the custom of the Romans to give up anyone before the accused meets the accusers face to face and has opportunity to make his defence.”'}],
+    hist:'这一条针对盖世太保式的“保护性拘禁”：不经起诉、不告知理由、无处申辩。'
+  },
+  10:{
+    conf:[{text:'两造具备，师听五辞。',
+           tw:'兩造具備，師聽五辭。',
+           src:'《尚书·吕刑》',
+           en:'The Book of Documents, “Marquis of Lü on Punishments” — “When both parties are present, the judge hears the five pleadings.”',
+           note:'要求双方到场听审，是中国典籍中较早的程序要求。另可对照《论语·颜渊》“听讼，吾犹人也，必也使无讼乎”——孔子此处贬抑诉讼，与现代“公开审判权”方向相反，属对照而非渊源。'}],
+    christ:[{text:'不可在穷人争讼的事上屈枉正直。',
+             src:'出埃及记 23:6',
+             en:'Exodus 23:6 — “You shall not pervert the justice due to your poor in his lawsuit.”',
+             note:'另见申命记 16:19：“不可屈枉正直；不可看人的外貌。也不可受贿赂。”'}],
+    hist:'“独立而无偏倚的法庭”“公开审讯”这两项要求，是把审判权从行政权中分离出来的制度性表达。'
+  },
+  11:{
+    conf:[{text:'与其杀不辜，宁失不经。',
+           tw:'與其殺不辜，寧失不經。',
+           src:'《尚书·大禹谟》',
+           en:'The Book of Documents, “Counsels of the Great Yu” — “Rather than put to death the innocent, prefer to err on the side of leniency.”',
+           note:'宁可放过，不可错杀——这是无罪推定在中国典籍中最接近的表述。须注意：《大禹谟》属东晋伪古文《尚书》，非先秦真本；作为慎刑思想的来源引用是恰当的，但不宜称其为先秦原文。'}],
+    christ:[{text:'你们中间谁是没有罪的，谁就可以先拿石头打他。',
+             src:'约翰福音 8:7',
+             en:'John 8:7 — “Let him who is without sin among you be the first to throw a stone at him.”',
+             note:'和合本此处作“打他”。另见申命记 19:15：不可凭一个人的口作见证定案。'}],
+    hist:'“法不溯及既往”写在同一之中：纽伦堡审判之后，各国对“事后立法入罪”的警惕达到高点。'
+  },
+  12:{
+    conf:[{text:'父为子隐，子为父隐，直在其中矣。',
+           tw:'父為子隱，子為父隱，直在其中矣。',
+           src:'《论语·子路》',
+           en:'The Analects, Zi Lu — “The father conceals the misconduct of the son, and the son conceals the misconduct of the father; uprightness is to be found in this.”',
+           note:'讲的是亲亲相隐（亲属免于举发），与隐私权相关但不是同一观念。另见《礼记·曲礼上》：“将上堂，声必扬；入国不驰，入里必式。”'},
+          {text:'此谓诚于中，形于外，故君子必慎其独也。',
+           tw:'此謂誠於中，形於外，故君子必慎其獨也。',
+           src:'《大学》第六章（释诚意，旧题曾子作）',
+           en:'The Great Learning, ch. 6 (traditionally attributed to Zengzi) — “What is truly within will show without; therefore the junzi is watchful over himself when he is alone.”',
+           note:'“慎独”承认：每个人都有一个独处时只属于自己的角落。这是儒家对“人需要不被打扰的空间”的早期表达。'}],
+    christ:[{text:'你祷告的时候，要进你的内屋，关上门，祷告你在暗中的父。',
+             src:'马太福音 6:6',
+             en:'Matthew 6:6 — “But when you pray, go into your room and shut the door and pray to your Father who is in secret.”',
+             note:'思想呼应：这是自愿退隐，不是制度性的住宅不受侵犯。'}],
+    hist:'这一条的背景是秘密警察、窃听与告密体系；1948 年时“隐私”尚未成为通行的法律概念，措辞因此具体列举住宅与通信。'
+  },
+  13:{
+    conf:[{text:'关讥而不征，则天下之旅皆悦，而愿出于其路矣。',
+           tw:'關譏而不征，則天下之旅皆悅，而願出於其路矣。',
+           src:'《孟子·公孙丑上》',
+           en:'Mencius, Gong Sun Chou I — “If the frontier posts inspect but do not tax, then all the travellers of the world will be glad and wish to come out on those roads.”',
+           note:'关卡只稽查而不征税——这是古代对往来通行不加阻拦的具体依据。'}],
+    christ:[{text:'耶和华对亚伯兰说：“你要离开本地、本族、父家，往我所要指示你的地去。”',
+             src:'创世记 12:1',
+             en:'Genesis 12:1 — “Go from your country and your kindred and your father’s house to the land that I will show you.”'}],
+    hist:'迁徙自由与“返回本国的权利”写在同一之中，直接针对战后的人口流动与难民问题。'
+  },
+  14:{
+    conf:[{text:'远方之人闻君行仁政，愿受一廛而为氓。',
+           tw:'遠方之人聞君行仁政，願受一廛而為氓。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “Men from far away, hearing that you practise benevolent government, wish to receive a plot of land and become your people.”',
+           note:'远人来归、愿意接受安置，与庇护的精神相邻；古代并没有现代意义上的“庇护权”制度。'}],
+    christ:[{text:'不可欺压寄居的；因为你们在埃及地作过寄居的，知道寄居的心。',
+             src:'出埃及记 23:9 ／ 利未记 19:34',
+             en:'Exodus 23:9 / Leviticus 19:34 — “You shall not oppress a sojourner… you were sojourners in the land of Egypt.”',
+             note:'根据是“你们自己也曾经是外人”。另见马太福音 25:35“我作客旅，你们留我住”、希伯来书 13:2。'}],
+    hist:'起草时，南斯拉夫代表主张把庇护权写成个人的权利，而不是国家的裁量权；这一立场最终进入条文，但受第十四条第二款的限制。'
+  },
+  15:{
+    conf:[{text:'四海之内，皆兄弟也。',
+           tw:'四海之內，皆兄弟也。',
+           src:'《论语·颜渊》',
+           en:'The Analects, Yan Yuan — “Within the four seas, all men are brothers.”',
+           note:'另见《论语·子路》“近者说，远者来”——那是治术的效果，与国籍权仍有距离。'}],
+    christ:[{text:'这样，你们不再作外人和客旅，是与圣徒同国，是神家里的人了。',
+             src:'以弗所书 2:19',
+             en:'Ephesians 2:19 — “So then you are no longer strangers and aliens, but you are fellow citizens with the saints and members of the household of God.”',
+             note:'腓立比书 3:20 另有“天上的国民”，那是超越性的身份，与世俗国籍权不同层，属思想呼应。'}],
+    hist:'国籍权在大规模剥夺国籍（如 1935 年纳粹《帝国公民法》）之后被写入《宣言》，并特别禁止任意剥夺国籍。'
+  },
+  16:{
+    conf:[{text:'昏礼者，将合二姓之好，上以事宗庙，而下以继后世也。',
+           tw:'昏禮者，將合二姓之好，上以事宗廟，而下以繼後世也。',
+           src:'《礼记·昏义》',
+           en:'The Book of Rites, “The Meaning of Marriage” — “The ceremony of marriage is to unite the goodwill of two surnames, to serve the ancestral temple above and continue posterity below.”',
+           note:'传统婚礼重在“合二姓之好”，即两个家族之间的事；《宣言》改以结婚双方的自由同意为唯一条件，这是明显的转折。孟子曾批评不待父母之命而结合者（《滕文公下》），方向与“自由同意”相反，故此条属张力而非渊源。'}],
+    christ:[{text:'因此，人要离开父母，与妻子连合，二人成为一体。',
+             src:'创世记 2:24',
+             en:'Genesis 2:24 — “Therefore a man shall leave his father and his mother and hold fast to his wife, and they shall become one flesh.”',
+             note:'以弗所书 5:25 要求丈夫爱妻子，但同章也要求妻子顺服丈夫；单引一节有选择性引用之嫌，此处并记。'}],
+    hist:'“只有经男女双方自由的和完全的同意，才能缔婚”这一句，针对包办婚姻与童婚；当时也是争议较大的一条。'
+  },
+  17:{
+    conf:[{text:'夫仁政，必自经界始。',
+           tw:'夫仁政，必自經界始。',
+           src:'《孟子·滕文公上》',
+           en:'Mencius, Teng Wen Gong I — “Benevolent government must begin with the marking out of land boundaries.”',
+           note:'孟子认为整理田界、使人有恒产，是仁政的第一步（同篇：“有恒产者有恒心，无恒产者无恒心”）。另见《礼记·礼运》“货恶其弃于地也，不必藏于己”，但那是“大同”的共有倾向，与私有财产权并非同向，属思想呼应。'}],
+    christ:[{text:'不可偷盗。',
+             src:'出埃及记 20:15',
+             en:'Exodus 20:15 — “You shall not steal.”',
+             note:'十诫另禁止挪移邻舍的地界（申命记 19:14），财产边界在此被视为道德秩序的一部分。'}],
+    hist:'“财产权”在起草过程中最受意识形态争论：条文既不承认绝对的所有权，也禁止任意剥夺，是当时社会主义与自由主义代表之间的折中。'
+  },
+  18:{
+    conf:[{text:'三军可夺帅也，匹夫不可夺志也。',
+           tw:'三軍可奪帥也，匹夫不可奪志也。',
+           src:'《论语·子罕》',
+           en:'The Analects, Zi Han — “The three armies can be deprived of their commander, but the will of even a common man cannot be taken from him.”',
+           note:'讲的是志不可夺，与思想、良心自由的精神相邻；另见《论语·子路》“君子和而不同”。'},
+          {text:'良知者，孟子所谓『是非之心，人皆有之』者也。是非之心，不待虑而知，不待学而能，是故谓之良知。',
+           tw:'良知者，孟子所謂『是非之心，人皆有之』者也。是非之心，不待慮而知，不待學而能，是故謂之良知。',
+           src:'王阳明《大学问》（《王文成公全书》卷二十六）',
+           en:'Wang Yangming, Inquiry on the Great Learning (Complete Works of Wang Wencheng, juan 26) — “Liangzhi is what Mencius called ‘the sense of right and wrong that everyone possesses.’ The sense of right and wrong is known without deliberation and capable without learning — hence it is called liangzhi.”',
+           note:'王阳明把“良知”说成每个人心里本有的是非感——它不听命于任何外在命令，这正是良心自由的内在依据。'}],
+    christ:[{text:'神是个灵，所以拜他的必须用心灵和诚实拜他。',
+             src:'约翰福音 4:24',
+             en:'John 4:24 — “God is spirit, and those who worship him must worship in spirit and truth.”',
+             note:'另见使徒行传 5:29：“顺从神，不顺从人，是应当的。”'}],
+    hist:'这一条第一次把“改变宗教或信仰的自由”和“单独或集体、公开或秘密地表示”的自由写进国际文本。'
+  },
+  19:{
+    conf:[{text:'夫人朝夕退而游焉，以议执政之善否。其所善者，吾则行之；其所恶者，吾则改之。是吾师也，若之何毁之？',
+           tw:'夫人朝夕退而遊焉，以議執政之善否。其所善者，吾則行之；其所惡者，吾則改之。是吾師也，若之何毀之？',
+           src:'《左传·襄公三十一年》子产不毁乡校',
+           en:'Zuo Zhuan, 31st year of Duke Xiang — Zichan on not destroying the village school: “They discuss whether the government is good or bad. What they approve, I carry out; what they dislike, I reform. They are my teachers — why destroy it?”',
+           note:'子产不毁乡校，是中国典籍中为“议论国政”辩护的最著名段落。'}],
+    christ:[{text:'我们所看见所听见的，不能不说。',
+             src:'使徒行传 4:20',
+             en:'Acts 4:20 — “For we cannot but speak of what we have seen and heard.”',
+             note:'另见耶利米书 20:9：“我就含忍不住，不能自禁。”'}],
+    hist:'“不论国界”“通过任何媒介”这两处措辞，在 1948 年之后被反复援引：它把跨越国界的传播自由也写了进去。'
+  },
+  20:{
+    conf:[{text:'曾子曰：君子以文会友，以友辅仁。',
+           tw:'曾子曰：君子以文會友，以友輔仁。',
+           src:'《论语·颜渊》曾子语',
+           en:'The Analects, Yan Yuan — “The gentleman brings friends together through culture, and through friends promotes benevolence.”',
+           note:'另见《孟子·万章下》：“不挟长，不挟贵，不挟兄弟而友。友也者，友其德也。”'}],
+    christ:[{text:'都恒心遵守使徒的教训，彼此交接、擘饼、祈祷。',
+             src:'使徒行传 2:42',
+             en:'Acts 2:42 — “And they devoted themselves to the apostles’ teaching and fellowship, to the breaking of bread and the prayers.”',
+             note:'另见希伯来书 10:25：“你们不可停止聚会。”'}],
+    hist:'“任何人不得迫使隶属于某一团体”这半句，针对的是强制入会与强制性的群众组织。'
+  },
+  21:{
+    conf:[{text:'天视自我民视，天听自我民听。',
+           tw:'天視自我民視，天聽自我民聽。',
+           src:'《孟子·万章上》引《泰誓》',
+           en:'Cited in Mencius, Wan Zhang I, from the “Great Declaration” — “Heaven sees as my people see; Heaven hears as my people hear.”',
+           note:'此语常被引作中国民本思想的最高表述：天意即民意。今本《泰誓》属伪古文，但《孟子·万章上》确实引用了它。另见《孟子·尽心下》“民为贵，社稷次之，君为轻”。民本不等于民选，与现代选举问责仍有明确差别。'}],
+    christ:[{text:'并要从百姓中拣选有才能的人，就是敬畏神、诚实无妄、恨不义之财的人，派他们作千夫长、百夫长、五十夫长、十夫长，管理百姓。',
+             src:'出埃及记 18:21',
+             en:'Exodus 18:21 — “Moreover, look for able men from all the people, men who fear God, who are trustworthy and hate a bribe, and place such men over the people.”',
+             note:'思想呼应：这里是用人的标准，不是选举制度。罗马书 13:1-7 主张顺服掌权者，与“人民意志为政府权力基础”存在张力，故不并列引用。'}],
+    hist:'“人民的意志是政府权力的基础”是《宣言》中对政治正当性说得最直接的一句；不记名投票与定期选举也被具体写明。'
+  },
+  22:{
+    conf:[{text:'大道之行也，天下为公……故人不独亲其亲，不独子其子，使老有所终，壮有所用，幼有所长，矜寡孤独废疾者皆有所养。',
+           tw:'大道之行也，天下為公……故人不獨親其親，不獨子其子，使老有所終，壯有所用，幼有所長，矜寡孤獨廢疾者皆有所養。',
+           src:'《礼记·礼运》',
+           en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all… the aged find their end, the able their employment, the young their nurture, and the widowed, orphaned, solitary and disabled are all provided for.”',
+           note:'“皆有所养”常被视为中国典籍中最早的社会保障设想。另见《孟子·梁惠王下》：“此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。”'},
+          {text:'老吾老，以及人之老；幼吾幼，以及人之幼，天下可运于掌。',
+           tw:'老吾老，以及人之老；幼吾幼，以及人之幼，天下可運於掌。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “Treat the elders in your own family as elders, and extend it to the elders of others; treat the young in your own family as young, and extend it to the young of others — and the world may be turned in the palm of your hand.”',
+           note:'社会保障在儒家这里不是施舍，而是把对自己家人的照护，推及所有人的家人。'}],
+    christ:[{text:'你弟兄中若有一个穷人，你不可忍着心、揝着手不帮补你穷乏的弟兄。',
+             src:'申命记 15:7',
+             en:'Deuteronomy 15:7 — “If among you, one of your brothers should become poor, you shall not harden your heart or shut your hand against your poor brother.”',
+             note:'另见马太福音 25:35-40、哥林多后书 8:13-14“乃要均平”。'}],
+    hist:'第二十二条之后，《宣言》从公民与政治权利转向经济、社会、文化权利；这是 1948 年最艰难的一段谈判，也是后来两项国际公约分开制定的原因。'
+  },
+  23:{
+    conf:[{text:'明君制民之产，必使仰足以事父母，俯足以畜妻子，乐岁终身饱，凶年免于死亡。',
+           tw:'明君制民之產，必使仰足以事父母，俯足以畜妻子，樂歲終身飽，凶年免於死亡。',
+           src:'《孟子·梁惠王上》',
+           en:'Mencius, Liang Hui Wang I — “A wise ruler settles the people’s livelihood so that above they may serve their parents, below they may nourish wife and children, in good years they are full all their days, in bad years they escape death.”',
+           note:'说的是“一份劳动应当养得起一个家”，与“公正和合适的报酬”相近。'}],
+    christ:[{text:'困苦穷乏的雇工……你不可欺负他。要当日给他工价，不可等到日落。',
+             src:'申命记 24:14-15',
+             en:'Deuteronomy 24:14-15 — “You shall not oppress a hired worker who is poor and needy… You shall give him his wages on the same day, before the sun sets.”',
+             note:'另见雅各书 5:4“这工钱有声音呼叫”、提摩太前书 5:18“工人得工价是应当的”。'}],
+    hist:'“同工同酬”的写入经过长期推动；1948 年时仍有国家主张保留男女工资差别。'
+  },
+  24:{
+    conf:[{text:'张而不弛，文武弗能也；弛而不张，文武弗为也。一张一弛，文武之道也。',
+           tw:'張而不弛，文武弗能也；弛而不張，文武弗為也。一張一弛，文武之道也。',
+           src:'《礼记·杂记下》',
+           en:'The Book of Rites, “Miscellaneous Records II” — “To be always tense and never relaxed, even King Wen and King Wu could not sustain; to be always relaxed and never tense, neither would do. Now tense, now relaxed: that was their way.”',
+           note:'把休息看作治理与生活的必要节奏，可与休息权相互参照。另见《论语·述而》“子之燕居，申申如也，夭夭如也”。'}],
+    christ:[{text:'当记念安息日，守为圣日。',
+             src:'出埃及记 20:8',
+             en:'Exodus 20:8 — “Remember the Sabbath day, to keep it holy.”',
+             note:'安息日传统把“休息”当作义务与权利来对待，是最早的相关制度之一。（创世记 2:2：“到第七日，神造物的工已经完毕，就在第七日歇了他一切的工，安息了。”）'}],
+    hist:'八小时工作制、带薪休假在 1948 年仍属少数国家的现实；把它们写成普遍权利，在当时相当超前。'
+  },
+  25:{
+    conf:[{text:'老而无妻曰鳏，老而无夫曰寡，老而无子曰独，幼而无父曰孤。此四者，天下之穷民而无告者。文王发政施仁，必先斯四者。',
+           tw:'老而無妻曰鰥，老而無夫曰寡，老而無子曰獨，幼而無父曰孤。此四者，天下之窮民而無告者。文王發政施仁，必先斯四者。',
+           src:'《孟子·梁惠王下》',
+           en:'Mencius, Liang Hui Wang II — “The aged without a wife, the aged without a husband, the aged without children, the young without a father: these four are the distressed of the world with no one to appeal to. When King Wen issued his government and spread benevolence, he necessarily began with these four.”',
+           note:'“必先斯四者”——救助从最无告的人开始，是儒家对次序的明确主张。另见《礼记·礼运》“老有所终，壮有所用，幼有所长”。'}],
+    christ:[{text:'你们当为贫寒的人和孤儿伸冤；当为困苦和穷乏的人施行公义。当保护贫寒和穷乏的人，救他们脱离恶人的手。',
+             src:'诗篇 82:3-4',
+             en:'Psalm 82:3-4 — “Give justice to the weak and the fatherless; maintain the right of the afflicted and the destitute. Rescue the weak and the needy; deliver them from the hand of the wicked.”',
+             note:'另见以赛亚书 1:17、马太福音 25 章。'}],
+    hist:'“母亲和儿童有权享受特别照顾和协助”在当时尚属新提法；“无论婚生或非婚生”则针对对非婚生子女的歧视。'
+  },
+  26:{
+    conf:[{text:'有教无类。',
+           tw:'有教無類。',
+           src:'《论语·卫灵公》',
+           en:'The Analects, Wei Ling Gong — “In teaching, there should be no distinction of classes.”',
+           note:'孔子办学不问出身，是中国教育史上“教育向所有人开放”的源头表述。另见《论语·述而》“学而不厌，诲人不倦”、《孟子·尽心上》“得天下英才而教育之，三乐也”。'},
+          {text:'人生八岁，则自王公以下，至于庶人之子弟，皆入小学。',
+           tw:'人生八歲，則自王公以下，至於庶人之子弟，皆入小學。',
+           src:'朱熹《大学章句序》（《四书章句集注》）',
+           en:'Zhu Xi, Preface to the Great Learning with Collected Commentaries — “At the age of eight, from the sons of kings and dukes down to the sons of commoners, all entered the elementary school.”',
+           note:'南宋朱熹（1130–1200）追述的虽然是古制理想，但“不分贵贱、人人入学”的主张由此成为后世办学的重要依据。'}],
+    christ:[{text:'所以，你们要去，使万民作我的门徒……凡我所吩咐你们的，都教训他们遵守。',
+             src:'马太福音 28:19-20',
+             en:'Matthew 28:19-20 — “Go therefore and make disciples of all nations… teaching them to observe all that I have commanded you.”',
+             note:'另见箴言 1:7“敬畏耶和华是知识的开端”、提摩太后书 3:16。'}],
+    hist:'“至少在初级和基本阶段应如此”与“初级教育应属义务性质”，是把受教育权从理想转为国家义务的关键措辞。'
+  },
+  27:{
+    conf:[{text:'兴于诗，立于礼，成于乐。',
+           tw:'興於詩，立於禮，成於樂。',
+           src:'《论语·泰伯》',
+           en:'The Analects, Tai Bo — “It is by the Odes that the mind is aroused; by the Rites that the character is established; by Music that it is perfected.”',
+           note:'儒家把“乐”看作人格完成的最后一环，文化与艺术因此不是余事。另可对照《论语·述而》“述而不作，信而好古”——那推崇不事原创，与“知识产权保护”方向相反，属张力而非渊源。'}],
+    christ:[{text:'我也以我的灵充满了他，使他有智慧，有聪明，有知识，能做各样的工。',
+             src:'出埃及记 31:3',
+             en:'Exodus 31:3 — “And I have filled him with the Spirit of God, with ability and intelligence, with knowledge and all craftsmanship.”',
+             note:'思想呼应：此节讲的是圣灵赐技艺用于建造会幕，与“知识产权”关联间接。'}],
+    hist:'“知识产权”进入人权文本是 1948 年的新事；当时的讨论集中在作者的精神利益是否应受保护，而非单纯的财产权。'
+  },
+  28:{
+    conf:[{text:'大道之行也，天下为公。选贤与能，讲信修睦。',
+           tw:'大道之行也，天下為公。選賢與能，講信修睦。',
+           src:'《礼记·礼运》',
+           en:'The Book of Rites, “Evolution of Rites” — “When the Great Way prevails, the world is shared by all; the worthy and the able are chosen; trust is cultivated and harmony maintained.”',
+           note:'“天下为公”的“大同”理想后来被孙中山反复引用。另见《论语·季氏》：“不患寡而患不均，不患贫而患不安。盖均无贫，和无寡，安无倾。”'},
+          {text:'万物并育而不相害，道并行而不相悖。',
+           tw:'萬物並育而不相害，道並行而不相悖。',
+           src:'子思《中庸》第三十章',
+           en:'Zisi, The Doctrine of the Mean, ch. 30 — “All things are nourished together without harming one another; all ways proceed together without conflicting.”',
+           note:'不同的国家、文化与道路可以并存而不互相伤害——这是《中庸》给“国际秩序”最宽的一条路。'}],
+    christ:[{text:'他们要将刀打成犁头，把枪打成镰刀。这国不举刀攻击那国；他们也不再学习战事。',
+             src:'以赛亚书 2:4 ／ 弥迦书 4:3',
+             en:'Isaiah 2:4 / Micah 4:3 — “They shall beat their swords into ploughshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more.”'}],
+    hist:'“人人有权要求一种社会的和国际的秩序”这一条较抽象，落点在序言所说的“世界自由、正义与和平”。'
+  },
+  29:{
+    conf:[{text:'己欲立而立人，己欲达而达人。',
+           tw:'己欲立而立人，己欲達而達人。',
+           src:'《论语·雍也》',
+           en:'The Analects, Yong Ye — “Wishing to establish himself, he establishes others; wishing to succeed himself, he helps others succeed.”',
+           note:'与“己所不欲，勿施于人”互为两面：权利与义务在此是同一件事的两端。'},
+          {text:'尽己之谓忠，推己之谓恕。',
+           tw:'盡己之謂忠，推己之謂恕。',
+           src:'朱熹《论语集注·里仁》「吾道一以贯之」章注',
+           en:'Zhu Xi, Collected Commentaries on the Analects, “Li Ren” — “Doing one’s utmost is called zhong; extending oneself to others is called shu.”',
+           note:'朱熹把曾子的“忠恕”拆成两句：对自己尽本分，对别人将心比心——这正是权利与义务的平衡点。'}],
+    christ:[{text:'弟兄们，你们蒙召是要得自由，只是不可将你们的自由当作放纵情欲的机会，总要用爱心互相服事。',
+             src:'加拉太书 5:13',
+             en:'Galatians 5:13 — “For you were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh, but through love serve one another.”',
+             note:'另见马太福音 22:21“该撒的物当归给该撒”、罗马书 13:8-10、彼得前书 2:16。'}],
+    hist:'第二十九条是《宣言》中最具张力的一条：它承认权利须受法律限制，同时把这种限制严格限定在“承认和尊重旁人的权利与自由”“道德、公共秩序和普遍福利”之内。'
+  },
+  30:{
+    conf:[{text:'人必自侮，然后人侮之；家必自毁，然后人毁之；国必自伐，然后人伐之。',
+           tw:'人必自侮，然後人侮之；家必自毀，然後人毀之；國必自伐，然後人伐之。',
+           src:'《孟子·离娄上》',
+           en:'Mencius, Li Lou I — “A man must first insult himself before others insult him; a house must first be destroyed from within before others destroy it; a state must first attack itself before others attack it.”',
+           note:'思想呼应，非直接出处。先秦儒家中没有与“滥用权利”直接对应的条文；此句提供的是“自取其祸”的思维方式。'}],
+    christ:[{text:'因为有些人偷着进来，就是自古被定受刑罚的，是不虔诚的，将我们神的恩变作放纵情欲的机会。',
+             src:'犹大书 1:4 ／ 彼得前书 2:16',
+             en:'Jude 4 / 1 Peter 2:16 — “…ungodly people, who pervert the grace of our God into sensuality.” / “Live as people who are free, not using your freedom as a cover-up for evil.”',
+             note:'这一传统反复提醒：自由与恩典都可能被滥用，因此需要自我限制的条款。'}],
+    hist:'第三十条是一条“自我防卫条款”，在人权文书里并不常见：它禁止任何人以《宣言》所载权利为名，去破坏《宣言》所载的权利。'
+  }
+};
+
+/* ══════════════════════════════════════════════════════════════
+   求助与监督渠道 · 机构字典
+   kind: treaty 联合国条约机构 / agency 专门机构 / regional 地区机制 /
+         humanitarian 人道组织 / general 通用入口
+   url 为官方主页，complaint 为个人申诉（来文）入口；
+   全部 URL 须经逐站实测后方可上线。
+   ══════════════════════════════════════════════════════════════ */
+const AGENCIES = {
+  /* ── 联合国条约机构 ── */
+  CCPR:  {zh:'人权事务委员会', en:'Human Rights Committee', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/ccpr', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《公民权利和政治权利国际公约》' },
+  CESCR: {zh:'经济、社会及文化权利委员会', en:'Committee on Economic, Social and Cultural Rights', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cescr', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《经济、社会及文化权利国际公约》' },
+  CERD:  {zh:'消除种族歧视委员会', en:'Committee on the Elimination of Racial Discrimination', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cerd', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《消除一切形式种族歧视国际公约》' },
+  CEDAW: {zh:'消除对妇女歧视委员会', en:'Committee on the Elimination of Discrimination against Women', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cedaw', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《消除对妇女一切形式歧视公约》' },
+  CAT:   {zh:'禁止酷刑委员会', en:'Committee against Torture', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cat', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《禁止酷刑公约》，可直接受理个人来文' },
+  CRC:   {zh:'儿童权利委员会', en:'Committee on the Rights of the Child', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/crc', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《儿童权利公约》' },
+  CRPD:  {zh:'残疾人权利委员会', en:'Committee on the Rights of Persons with Disabilities', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/crpd', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《残疾人权利公约》' },
+  CED:   {zh:'强迫失踪问题委员会', en:'Committee on Enforced Disappearances', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/ced', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'可发「紧急行动请求」查找失踪者' },
+  CMW:   {zh:'移徙工人委员会', en:'Committee on Migrant Workers', kind:'treaty', url:'https://www.ohchr.org/en/treaty-bodies/cmw', complaint:'https://www.ohchr.org/en/treaty-bodies/individual-communications-procedures-treaty-bodies', scope:'监督《保护所有移徙工人及其家庭成员权利国际公约》' },
+  /* ── 联合国专门机构 ── */
+  ILO:   {zh:'国际劳工组织', en:'International Labour Organization', kind:'agency', url:'https://www.ilo.org/', complaint:'https://www.ilo.org/international-labour-standards/ilo-supervisory-system-special-procedures/complaint-procedure-art26', scope:'劳工标准监督与投诉（结社自由、强迫劳动、同工同酬）' },
+  UNESCO:{zh:'联合国教科文组织', en:'UNESCO', kind:'agency', url:'https://www.unesco.org/en/right-education', scope:'受教育权与文化权利的监督' },
+  WHO:   {zh:'世界卫生组织', en:'World Health Organization', kind:'agency', url:'https://www.who.int/health-topics/human-rights', scope:'健康权' },
+  UNHCR: {zh:'联合国难民署', en:'UNHCR, the UN Refugee Agency', kind:'agency', url:'https://help.unhcr.org/', scope:'庇护申请、难民与无国籍者求助' },
+  UNICEF:{zh:'联合国儿童基金会', en:'UNICEF', kind:'agency', url:'https://www.unicef.org/protection', scope:'儿童保护' },
+  UNWOMEN:{zh:'联合国妇女署', en:'UN Women', kind:'agency', url:'https://www.unwomen.org/en', scope:'妇女权利' },
+  IOM:   {zh:'国际移民组织', en:'International Organization for Migration', kind:'agency', url:'https://www.iom.int/', scope:'移民与人口贩运求助' },
+  /* ── 人道组织 ── */
+  ICRC:  {zh:'红十字国际委员会', en:'International Committee of the Red Cross', kind:'humanitarian', url:'https://www.icrc.org/en/contact', scope:'探视被拘者、失踪人员、人道求助' }
+};
+
+/* 每条条文对应的渠道：un 条约机构 / spec 专门机构 / regional 地区机制 */
+const HELPLINES = {
+  1:{un:['CCPR','CESCR'], note:'不确定向哪个机构申诉时，先联系所在国的国家人权机构或监察专员（见上方通用说明）。'},
+  2:{un:['CERD','CEDAW','CRPD','CCPR'], note:'按歧视理由选择委员会：种族→消除种族歧视委员会，性别→消除对妇女歧视委员会，残疾→残疾人权利委员会。'},
+  3:{un:['CCPR'], humanitarian:['ICRC'], note:'任意剥夺生命、失踪与酷刑相关，可向人权事务委员会提交来文；失踪人员与探视被拘者的人道请求，联系红十字国际委员会。'},
+  4:{un:['CCPR','CEDAW','CRC'], spec:['ILO','IOM'], note:'强迫劳动可向国际劳工组织投诉；人口贩运可联系国际移民组织。'},
+  5:{un:['CAT','CCPR'], humanitarian:['ICRC'], note:'禁止酷刑委员会可直接受理个人来文（须该国承认其职权）。'},
+  6:{un:['CCPR']},
+  7:{un:['CCPR','CERD','CEDAW','CRPD'], note:'歧视类申诉按歧视理由对应不同委员会（种族/性别/残疾等）。'},
+  8:{un:['CCPR'], note:'通常须先穷尽国内救济（法院、监察专员、国家人权机构），再向条约机构提交来文。'},
+  9:{un:['CCPR','CED'], humanitarian:['ICRC'], note:'强迫失踪可向强迫失踪问题委员会提交紧急请求（须该国已加入公约）。'},
+  10:{un:['CCPR']},
+  11:{un:['CCPR']},
+  12:{un:['CCPR','CRC']},
+  13:{un:['CCPR','CMW'], spec:['IOM']},
+  14:{un:['CAT','CCPR'], spec:['UNHCR'], note:'庇护申请向所在国或难民署驻当地办事处提出；不遣返原则由禁止酷刑委员会与《难民公约》共同保障。'},
+  15:{un:['CRC'], spec:['UNHCR'], note:'无国籍状态可向联合国难民署求助，其负有专门的无国籍者保护职责。'},
+  16:{un:['CEDAW','CRC','CCPR'], note:'强迫婚姻、童婚可向消除对妇女歧视委员会或儿童权利委员会申诉。'},
+  17:{un:['CCPR','CEDAW']},
+  18:{un:['CCPR']},
+  19:{un:['CCPR'], spec:['UNESCO'], note:'表达自由案件可向人权事务委员会提交；记者与媒体安全另有联合国教科文组织机制。'},
+  20:{un:['CCPR'], spec:['ILO'], note:'工会权利被侵害可向国际劳工组织结社自由委员会投诉（该机制不要求穷尽国内救济）。'},
+  21:{un:['CCPR','CEDAW']},
+  22:{un:['CESCR'], spec:['ILO'], note:'经社文权利委员会受理个人来文的条件：该国已批准《经社文权利公约任择议定书》。'},
+  23:{un:['CESCR','CEDAW'], spec:['ILO'], note:'同工同酬、强迫劳动、职业安全可向国际劳工组织投诉。'},
+  24:{un:['CESCR'], spec:['ILO']},
+  25:{un:['CESCR','CRC','CEDAW'], spec:['WHO','UNICEF'], note:'健康与基本生活水准向经社文权利委员会申诉；儿童处境可联系儿童基金会。'},
+  26:{un:['CESCR','CRC','CEDAW'], spec:['UNESCO'], note:'受教育权可向经社文权利委员会申诉。'},
+  27:{un:['CESCR'], spec:['UNESCO'], note:'文化权利与作者权益可向经社文权利委员会申诉。'},
+  28:{un:['CESCR'], note:'这一条较抽象，通常作为其他权利受侵害时的背景主张。'},
+  29:{un:['CCPR','CESCR'], note:'当限制超出必要限度时，按被限制的具体权利提交来文。'},
+  30:{un:['CCPR'], note:'常与其他条款一并援引。'}
+};
+
+/* ══════════════════════════════════════════════════════════════
+   渲染：三语并列 · 意义单元 · 人的处境
+   （标记状态由下方的「我的权利清单」负责恢复）
+   ══════════════════════════════════════════════════════════════ */
+(function renderContent () {
+  const LANG_ATTR = { 'lang-cn':'zh-Hans', 'lang-tw':'zh-Hant', 'lang-en':'en' };
+
+  const block = (cls, text) =>
+    `<div class="lang ${cls}" lang="${LANG_ATTR[cls]}">` +
+      text.split('<br>').map(s => `<p>${s}</p>`).join('') +
+    `</div>`;
+
+  const pWrap = document.getElementById('preamble');
+  pWrap.innerHTML = '';          /* 幂等：重复执行时覆盖而非叠加 */
+  PREAMBLE.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'clause';
+    div.innerHTML =
+      block('lang-cn', item.cn) +
+      block('lang-tw', item.tw) +
+      block('lang-en', item.en);
+    pWrap.appendChild(div);
+  });
+
+  const unitOf = n => UNITS.find(u => u.a.indexOf(n) !== -1);
+
+  const noteHtml = n => {
+    const t = NOTES[n];
+    if (!t) return '';
+    return `<div class="note">
+        <span class="tag">人的处境 · 一件真事</span>
+        <span class="ln-cn" lang="zh-Hans">${t.cn}</span>
+        ${t.tw && t.tw !== t.cn ? `<span class="ln-tw" lang="zh-Hant">${t.tw}</span>` : ''}
+        <span class="ln-en" lang="en">${t.en}</span>
+      </div>`;
+  };
+
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  const quoteHtml = (q, cls) => {
+    const tw = q.tw && q.tw !== q.text
+      ? `<div class="txt tw" lang="zh-Hant">${esc(q.tw)}</div>` : '';
+    return `<div class="quote ${cls}">
+        <span class="tradition">${cls === 'conf' ? '儒家典籍' : '基督教典籍'}</span>
+        <div class="txt" lang="zh-Hans">${esc(q.text)}</div>
+        ${tw}
+        <div class="src">${esc(q.src)}${q.en ? `<span class="en">${esc(q.en)}</span>` : ''}</div>
+        ${q.note ? `<div class="gloss">${esc(q.note)}</div>` : ''}
+      </div>`;
+  };
+
+  const helpHtml = n => {
+    const h = HELPLINES[n];
+    if (!h || (!h.un && !h.spec && !h.regional)) return '';
+    const kinds = {
+      treaty:'联合国条约机构', agency:'联合国专门机构', regional:'地区机制', humanitarian:'人道组织', general:'通用入口'
+    };
+    const item = key => {
+      const a = AGENCIES[key];
+      if (!a) return '';
+      const url = a.complaint || a.url;
+      return `<li class="h-item">
+        <span class="h-name">
+          <a href="${url}" target="_blank" rel="noopener noreferrer">${esc(a.zh)}</a>
+          ${a.en ? `<span class="h-en">${esc(a.en)}</span>` : ''}
+          <span class="h-kind">${kinds[a.kind] || '机构'}</span>
+          ${a.complaint && a.complaint !== a.url ? '<span class="h-can">可提交申诉</span>' : ''}
+        </span>
+        ${a.scope ? `<span class="h-scope">${esc(a.scope)}</span>` : ''}
+      </li>`;
+    };
+    const list = [].concat(h.un, h.spec, h.regional, h.general).filter(Boolean);
+    return `<details class="help" id="help-${n}">
+        <summary>
+          <span class="cap">求助与监督渠道
+            <span class="en">Where to seek help &amp; oversight</span></span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="help-body">
+          <ul class="h-list">${list.map(item).join('')}</ul>
+          ${h.note ? `<p class="h-note">${esc(h.note)}</p>` : ''}
+          <p class="h-disclaimer"><b>须知：</b>联合国条约机构的个人来文通常要求：该国已批准相应公约、已用尽国内救济、同一事项未在其他国际程序中审理；条约机构不提供律师，其结论以「意见」形式作出。紧急人身危险请优先联系本地法律援助、红十字国际委员会或所在国监察机构。<b>对中国读者：</b>中国未批准任何来文议定书，条约机构个人来文对中国不可用——请改用上方「适用于中国的国际求助途径」中的渠道。</p>
+        </div>
+      </details>`;
+  };
+
+  const srcHtml = n => {
+    const s = SOURCES[n];
+    if (!s) return '';
+    return `<details class="sources" id="sources-${n}">
+        <summary>
+          <span class="cap">查看思想来源
+            <span class="en">Sources &amp; tradition</span></span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="src-body">
+          <p class="src-note">这一条写在 1948 年，但它所回答的问题并不新。下面是两个更古老的传统在同一件事上说过的部分，供对照其来源与渊源。</p>
+          ${(s.conf || []).map(q => quoteHtml(q, 'conf')).join('')}
+          ${(s.christ || []).map(q => quoteHtml(q, 'christ')).join('')}
+          ${s.hist ? `<div class="src-hist"><span class="tag">历史渊源</span>${s.hist}</div>` : ''}
+          <p class="src-disclaimer"><b>辨析：</b>典籍与《宣言》条文之间是渊源与呼应的关系，不是引用关系；标注“思想呼应”者，表示该条在这个传统里没有直接对应，只有相近的问题意识。《宣言》是世俗文本，其条文不建立在任何宗教或学派之上。</p>
+        </div>
+      </details>`;
+  };
+
+  const aWrap = document.getElementById('articles');
+  aWrap.innerHTML = '';          /* 幂等：重复执行时覆盖而非叠加 */
+  let currentUnit = null;
+
+  ARTICLES.forEach(a => {
+    const u = unitOf(a.n);
+    if (u && u !== currentUnit) {
+      currentUnit = u;
+      const ul = document.createElement('div');
+      ul.className = 'unit-label';
+      ul.innerHTML =
+        `<span class="ln" aria-hidden="true"></span>
+         <span class="txt" lang="zh-Hans">${u.no} · ${u.cn}
+           <span class="no" lang="en">${u.en}</span>
+         </span>
+         <span class="ln r" aria-hidden="true"></span>`;
+      aWrap.appendChild(ul);
+    }
+
+    const art = document.createElement('article');
+    art.className = 'article' + (a.n === 1 ? ' highlight' : '');
+    art.id = 'art-' + a.n;
+    art.tabIndex = -1;                    /* 不进 Tab 序列（否则键盘用户要穿过 30 个条文） */
+    art.setAttribute('tabindex', '-1');   /* 可编程聚焦：目录跳转后由脚本 focus */
+    art.dataset.n = String(a.n);
+    art.dataset.cn = a.cn.replace(/<br>/g, ' ');
+    art.dataset.tw = a.tw.replace(/<br>/g, ' ');
+    art.dataset.en = a.en.replace(/<br>/g, ' ');
+    art.innerHTML =
+      `<div class="art-label">
+         <span class="cn" lang="zh-Hans">第${CN_NUM[a.n]}条</span>
+         <span class="dot" aria-hidden="true"></span>
+         <span class="tw" lang="zh-Hant">第${CN_NUM[a.n]}條</span>
+         <span class="dot" aria-hidden="true"></span>
+         <span class="en" lang="en">Article ${a.n}</span>
+       </div>` +
+      noteHtml(a.n) +
+      block('lang-cn', a.cn) +
+      block('lang-tw', a.tw) +
+      block('lang-en', a.en) +
+      srcHtml(a.n) +
+      helpHtml(a.n) +
+      `<div class="act">
+         <button type="button" class="mark-btn" data-mark="${a.n}"
+                 aria-pressed="false"
+                 aria-label="记下第${CN_NUM[a.n]}条：这一条与我有关">
+           <span class="ico" aria-hidden="true">✦</span><span class="lbl">这一条，与我有关</span>
+         </button>
+       </div>`;
+    aWrap.appendChild(art);
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   三十条目录：按条号直达
+   ══════════════════════════════════════════════════════════════ */
+(function toc () {
+  const openBtn = document.getElementById('tocOpen');
+  const float   = document.getElementById('tocFloat');
+  const dlg     = document.getElementById('tocSheet');
+  const body    = document.getElementById('tocBody');
+  if (!openBtn || !dlg || !body) return;
+  let opener = openBtn;
+
+  body.innerHTML = UNITS.map(u =>
+    `<div class="unit-row">
+       <div class="u-name" lang="zh-Hans">${u.no} · ${u.cn}</div>
+       <div class="chips">
+         ${u.a.map(n =>
+           `<button type="button" class="chip" data-toc-n="${n}"
+                    aria-label="跳到第${CN_NUM[n]}条">
+              <span class="no" aria-hidden="true">${n}</span>
+              <span class="cn" aria-hidden="true">第${CN_NUM[n]}条</span>
+            </button>`).join('')}
+       </div>
+     </div>`).join('');
+
+  function close () {
+    if (typeof dlg.close === 'function' && dlg.open) dlg.close();
+    else dlg.removeAttribute('open');
+  }
+
+  function openFrom (btn) {
+    opener = btn;
+    if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); }
+    else dlg.setAttribute('open', '');
+  }
+
+  openBtn.addEventListener('click', () => openFrom(openBtn));
+
+  if (float) {
+    float.addEventListener('click', () => openFrom(float));
+    /* 正文标题处的目录按钮滚出屏幕后，常驻按钮浮现 */
+    let raf = false;
+    function updateFloat () {
+      raf = false;
+      let show = false;
+      try { show = openBtn.getBoundingClientRect().top < -60; } catch (e) {}
+      float.classList.toggle('on', show);
+    }
+    window.addEventListener('scroll', () => {
+      if (raf) return; raf = true;
+      requestAnimationFrame(updateFloat);
+    }, { passive: true });
+    window.addEventListener('resize', updateFloat, { passive: true });
+    updateFloat();
+  }
+
+  dlg.addEventListener('close', () => { if (opener) opener.focus(); });
+
+  dlg.addEventListener('click', e => {
+    if (e.target.closest && e.target.closest('#tocClose')) { close(); return; }
+    const chip = e.target.closest ? e.target.closest('.chip') : null;
+    if (!chip) return;
+    const n   = Number(chip.dataset.tocN);
+    const art = document.getElementById('art-' + n);
+    close();
+    if (art) {
+      if (art.scrollIntoView) {
+        try { art.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        catch (e) { art.scrollIntoView(); }
+      }
+      art.classList.remove('jump');
+      void art.offsetWidth;            /* 重置动画，连续点同一条也能再次闪示 */
+      art.classList.add('jump');
+      art.focus({ preventScroll: true });
+    }
+  });
+})();
+
+
+/* ══════════════════════════════════════════════════════════════
+   粒子系统 —— 更清晰 / 更大 / 笔画更细
+   关键调整：
+   · 无描边 + 700 字重 → 笔画纤细
+   · 采样密度提高（gap ≈ 1.5 DPR）→ 轮廓锐利
+   · 粒子尺寸 = 采样间距 × 系数 → 无空隙也不糊
+   · 拖尾淡出加快 → 减少拖影，边界清晰
+   · 汇聚时流场近乎为零 → 粒子稳定贴合目标点
+   ══════════════════════════════════════════════════════════════ */
+const cv  = document.getElementById('bg');
+const ctx = cv.getContext('2d', { alpha: true });
+
+/* 每个理念同时以 简体 / 繁體 / English 三种语言形式呈现（同屏并列），
+   三者共用同一字体栈、字重、字距与字号，以示完全平等。
+   注：联合国《世界人权宣言》英文正式全称为
+   “Universal Declaration of Human Rights”，不可省略 “of Human Rights”。
+   自由取 FREEDOM（序言及多数条文用词）；LIBERTY 仅见于第三条 “life, liberty and security”。*/
+const CONCEPTS = [
+  { cn:'世界人权宣言', tw:'世界人權宣言', en:'UNIVERSAL DECLARATION|OF HUMAN RIGHTS' },
+  { cn:'尊严',         tw:'尊嚴',         en:'DIGNITY'     },
+  { cn:'自由',         tw:'自由',         en:'FREEDOM'     },
+  { cn:'平等',         tw:'平等',         en:'EQUALITY'    },
+  { cn:'健康',         tw:'健康',         en:'HEALTH'      }
+];
+CONCEPTS.forEach(c => {
+  const lines = [c.cn];
+  if (c.tw !== c.cn) lines.push(c.tw);          /* 简繁同形时不重复 */
+  c.en.split('|').forEach(t => lines.push(t));
+  c.lines = lines;
+});
+let conceptIdx = 0;
+
+let W = 0, H = 0, DPR = 1;
+
+let N = 0;
+let px = new Float32Array(0), py = new Float32Array(0);
+let vx = new Float32Array(0), vy = new Float32Array(0);
+let tx = new Float32Array(0), ty = new Float32Array(0);
+let phase = new Float32Array(0);
+let colorIdx = new Uint8Array(0);
+
+let mode = 'gather';
+let modeStart = 0;
+let k = 0;
+
+const K_MAX  = 0.05;      /* 更高的弹簧刚度 → 更紧贴目标 */
+const DAMP   = 0.88;
+
+const mouse = { x:-1e5, y:-1e5, sx:-1e5, sy:-1e5 };
+
+/* ── 蓝金渐变调色板（16 档） ── */
+const STOPS = [
+  [ 36,  84, 178],
+  [ 91, 146, 229],
+  [143, 195, 240],
+  [232, 240, 250],
+  [245, 215, 160],
+  [217, 179, 130],
+  [168, 124,  74]
+];
+const PALETTE = [];
+const CN = 16;
+for (let i = 0; i < CN; i++) {
+  const t = i / (CN - 1) * (STOPS.length - 1);
+  const seg = Math.min(Math.floor(t), STOPS.length - 2);
+  const lt  = t - seg;
+  const a = STOPS[seg], b = STOPS[seg + 1];
+  const r = Math.round(a[0] + (b[0] - a[0]) * lt);
+  const g = Math.round(a[1] + (b[1] - a[1]) * lt);
+  const bl = Math.round(a[2] + (b[2] - a[2]) * lt);
+  PALETTE.push(`rgb(${r}, ${g}, ${bl})`);
+}
+let colorStart = new Int32Array(CN + 1);
+
+/* ── 星空粒子（象征宇宙） ── */
+let NS = 0;
+let starX = new Float32Array(0), starY = new Float32Array(0);
+let starR = new Float32Array(0), starPh = new Float32Array(0), starSp = new Float32Array(0);
+let starCol = [];
+const STAR_COLORS = ['#dfe9ff', '#c9dcff', '#ffffff', '#f0d8ae'];
+
+function buildStars () {
+  const cssArea = (W / DPR) * (H / DPR);
+  NS = Math.max(70, Math.min(240, Math.round(cssArea / 17000)));
+  starX = new Float32Array(NS); starY = new Float32Array(NS);
+  starR = new Float32Array(NS); starPh = new Float32Array(NS); starSp = new Float32Array(NS);
+  starCol = new Array(NS);
+  for (let i = 0; i < NS; i++) {
+    starX[i] = Math.random() * W;
+    starY[i] = Math.random() * H;
+    starR[i] = (0.5 + Math.random() * 1.3) * DPR;
+    starPh[i] = Math.random() * Math.PI * 2;
+    starSp[i] = 0.4 + Math.random() * 1.6;
+    const r = Math.random();
+    starCol[i] = r < 0.62 ? STAR_COLORS[0]
+               : r < 0.82 ? STAR_COLORS[1]
+               : r < 0.94 ? STAR_COLORS[2]
+               :            STAR_COLORS[3];
+  }
+}
+
+const FONT_BODY = 'Georgia,"Times New Roman","Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif';
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+/* ── 星云粒子：柔和、缓慢流动的背景光雾 ── */
+const NEB_RGB = [[112,162,232], [150,192,246], [240,214,158], [214,226,246]];
+let nebSprites = [];
+let NN = 0;
+let nebX = new Float32Array(0), nebY = new Float32Array(0);
+let nebR = new Float32Array(0), nebPh = new Float32Array(0);
+let nebSp = new Float32Array(0), nebA = new Float32Array(0);
+let nebC = new Uint8Array(0);
+
+function makeNebSprites () {
+  nebSprites = NEB_RGB.map(rgb => {
+    const s = document.createElement('canvas');
+    s.width = s.height = 64;
+    const c = s.getContext('2d');
+    const gr = c.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gr.addColorStop(0,    'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',.92)');
+    gr.addColorStop(0.35, 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',.30)');
+    gr.addColorStop(1,    'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',0)');
+    c.fillStyle = gr;
+    c.fillRect(0, 0, 64, 64);
+    return s;
+  });
+}
+
+function buildNebula () {
+  if (!nebSprites.length) makeNebSprites();
+  const cssArea = (W / DPR) * (H / DPR);
+  NN = Math.max(36, Math.min(130, Math.round(cssArea / 16000)));
+  nebX = new Float32Array(NN); nebY = new Float32Array(NN);
+  nebR = new Float32Array(NN); nebPh = new Float32Array(NN);
+  nebSp = new Float32Array(NN); nebA = new Float32Array(NN);
+  nebC = new Uint8Array(NN);
+  for (let i = 0; i < NN; i++) {
+    nebX[i] = Math.random() * W;
+    nebY[i] = Math.random() * H;
+    nebR[i] = (26 + Math.random() * 96) * DPR;
+    nebPh[i] = Math.random() * Math.PI * 2;
+    nebSp[i] = 0.10 + Math.random() * 0.32;
+    nebA[i] = 0.05 + Math.random() * 0.10;
+    const q = Math.random();
+    nebC[i] = q < 0.40 ? 0 : q < 0.72 ? 1 : q < 0.90 ? 3 : 2;
+  }
+}
+
+/* 采样间距（渲染时用来计算粒子尺寸，使粒子刚好填满字形） */
+let sampleGap = 3;
+
+/* ── 多行文字 → 采样点 ──
+   三语共用同一字体栈 / 字重 / 字距 / 字号，仅按最长行与行数自适应，确保完全一致 */
+function samplePoints (lines) {
+  const off = document.createElement('canvas');
+  off.width  = Math.max(1, W);
+  off.height = Math.max(1, H);
+  const o = off.getContext('2d', { willReadFrequently:true });
+  o.fillStyle = '#fff';
+  o.strokeStyle = '#fff';
+  o.lineJoin = 'round';
+  o.lineCap  = 'round';
+  o.textAlign = 'center';
+  o.textBaseline = 'middle';
+  o.font = `700 100px ${FONT_BODY}`;
+  o.letterSpacing = '0.04em';
+
+  const L = Math.max(1, lines.length);
+  const LINE_GAP = 1.34;                 /* 统一行高系数 */
+  const targetW  = Math.min(W * 0.96, 1240 * DPR);
+
+  /* 以最长行决定宽度上限 */
+  let maxRatio = 0.0001;
+  for (const ln of lines) {
+    const ratio = (o.measureText(ln).width || 1) / 100;
+    if (ratio > maxRatio) maxRatio = ratio;
+  }
+
+  const fsByWidth  = targetW / maxRatio;
+  const fsByHeight = (H * 0.44) / (L * LINE_GAP);
+  let fs = Math.min(fsByWidth, fsByHeight);
+  fs = Math.max(fs, 34 * DPR);
+  fs = Math.min(fs, 300 * DPR);
+
+  o.font = `700 ${fs}px ${FONT_BODY}`;
+  o.letterSpacing = '0.04em';
+
+  const cx = W / 2;
+  const cy = H * 0.29;
+  const lineH = fs * LINE_GAP;
+  lines.forEach((ln, i) => {
+    o.fillText(ln, cx, cy + (i - (L - 1) / 2) * lineH);
+  });
+
+  const data = o.getImageData(0, 0, W, H).data;
+
+  /* 高密度采样：gap ≈ 1.5 DPR，点上限提高 */
+  const MAXP = 34000;
+  let gap = Math.max(2, Math.round(1.5 * DPR));
+  let pts = [];
+
+  for (let guard = 0; guard < 16; guard++) {
+    pts = [];
+    for (let y = 0; y < H; y += gap) {
+      const row = y * W;
+      for (let x = 0; x < W; x += gap) {
+        if (data[(row + x) * 4 + 3] > 110) pts.push(x, y);
+      }
+    }
+    if (pts.length / 2 <= MAXP) break;
+    gap = Math.round(gap * 1.2) + 1;
+  }
+
+  sampleGap = gap;
+  return { pts: pts, fs: fs, cy: cy, lineH: lineH };
+}
+
+/* ── 数组伸缩 ── */
+function resizeArrays (M) {
+  if (M === N) return;
+  const _px = new Float32Array(M), _py = new Float32Array(M);
+  const _vx = new Float32Array(M), _vy = new Float32Array(M);
+  const _tx = new Float32Array(M), _ty = new Float32Array(M);
+  const _ph = new Float32Array(M);
+  const _ci = new Uint8Array(M);
+
+  const keep = Math.min(M, N);
+  for (let i = 0; i < keep; i++) {
+    _px[i] = px[i]; _py[i] = py[i];
+    _vx[i] = vx[i]; _vy[i] = vy[i];
+    _tx[i] = tx[i]; _ty[i] = ty[i];
+    _ph[i] = phase[i];
+    _ci[i] = colorIdx[i];
+  }
+  for (let i = keep; i < M; i++) {
+    _px[i] = Math.random() * W;
+    _py[i] = Math.random() * H;
+    _ph[i] = Math.random() * Math.PI * 2;
+    _ci[i] = i % CN;
+  }
+
+  px = _px; py = _py; vx = _vx; vy = _vy;
+  tx = _tx; ty = _ty; phase = _ph; colorIdx = _ci;
+  N = M;
+}
+
+function reorderByColor () {
+  const counts = new Int32Array(CN);
+  for (let i = 0; i < N; i++) counts[colorIdx[i]]++;
+  colorStart[0] = 0;
+  for (let c = 0; c < CN; c++) colorStart[c + 1] = colorStart[c] + counts[c];
+
+  const _px = new Float32Array(N), _py = new Float32Array(N);
+  const _vx = new Float32Array(N), _vy = new Float32Array(N);
+  const _tx = new Float32Array(N), _ty = new Float32Array(N);
+  const _ph = new Float32Array(N);
+
+  const pos = new Int32Array(CN);
+  for (let c = 0; c < CN; c++) pos[c] = colorStart[c];
+
+  for (let i = 0; i < N; i++) {
+    const c = colorIdx[i];
+    const j = pos[c]++;
+    _px[j] = px[i]; _py[j] = py[i];
+    _vx[j] = vx[i]; _vy[j] = vy[i];
+    _tx[j] = tx[i]; _ty[j] = ty[i];
+    _ph[j] = phase[i];
+  }
+
+  px = _px; py = _py; vx = _vx; vy = _vy;
+  tx = _tx; ty = _ty; phase = _ph;
+
+  let idx = 0;
+  for (let c = 0; c < CN; c++) {
+    const cnt = counts[c];
+    for (let m = 0; m < cnt; m++) colorIdx[idx++] = c;
+  }
+}
+
+function setTargets (pts) {
+  const M = pts.length >> 1;
+  if (M === 0) return false;
+  resizeArrays(M);
+
+  let minX = Infinity, maxX = -Infinity;
+  for (let i = 0; i < M; i++) {
+    const x = pts[i * 2];
+    if (x < minX) minX = x;
+    if (x > maxX) maxX = x;
+  }
+  const span = maxX - minX || 1;
+
+  for (let i = 0; i < N; i++) {
+    tx[i] = pts[i * 2];
+    ty[i] = pts[i * 2 + 1];
+    const t = (tx[i] - minX) / span;
+    colorIdx[i] = Math.min(CN - 1, Math.floor(t * CN));
+  }
+
+  reorderByColor();
+  return true;
+}
+
+
+/* 采样并切换到第 conceptIdx 个理念 */
+function showConcept (nextMode) {
+  const c = CONCEPTS[conceptIdx];
+  const s = samplePoints(c.lines);
+  const ok = setTargets(s.pts);
+  mode = ok ? nextMode : 'scatter';
+  modeStart = performance.now();
+}
+
+function startNextWord (nextMode) {
+  conceptIdx = (conceptIdx + 1) % CONCEPTS.length;
+  showConcept(nextMode);
+}
+
+function resize () {
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = Math.floor(window.innerWidth  * DPR);
+  H = Math.floor(window.innerHeight * DPR);
+  cv.width = W; cv.height = H;
+  cv.style.width  = window.innerWidth  + 'px';
+  cv.style.height = window.innerHeight + 'px';
+  buildStars();
+  buildNebula();
+}
+
+let scrolledAway = false;
+
+let lastT = 0;
+
+function loop (now) {
+  if (document.hidden) {            /* 标签页在后台：跳过计算与绘制，省电 */
+    requestAnimationFrame(loop);
+    return;
+  }
+  if (!lastT) lastT = now;
+  let dt = (now - lastT) / 16.667;
+  lastT = now;
+  dt = Math.min(Math.max(dt, 0.25), 2.5);
+
+  const t = now * 0.001;
+
+  const el = now - modeStart;
+  if (scrolledAway) {
+    k *= 0.94;
+  } else if (mode === 'gather') {
+    k = easeOutCubic(Math.min(el / 1200, 1)) * K_MAX;
+    if (el > 1200) { mode = 'hold'; modeStart = now; }
+  } else if (mode === 'hold') {
+    k = K_MAX * 1.7;
+    if (el > 2800) startNextWord('morph');
+  } else if (mode === 'morph') {
+    const p = Math.min(el / 1400, 1);
+    const dip = Math.sin(p * Math.PI);
+    k = K_MAX * (1 - 0.45 * dip);
+    if (p >= 1) { mode = 'hold'; modeStart = now; }
+  } else {
+    k *= 0.90;
+    if (el > 800) startNextWord('gather');
+  }
+
+  mouse.sx += (mouse.x - mouse.sx) * Math.min(1, 0.28 * dt);
+  mouse.sy += (mouse.y - mouse.sy) * Math.min(1, 0.28 * dt);
+
+  /* 拖尾淡出加快 → 减少拖影，字形边缘更锐利 */
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.fillStyle = 'rgba(0,0,0,0.34)';
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalCompositeOperation = 'lighter';
+
+  if (N === 0) { requestAnimationFrame(loop); return; }
+
+  const conv = Math.min(k / K_MAX, 1);
+
+  const R    = 150 * DPR, R2 = R * R;
+  /* 汇聚时流场几乎为零 → 粒子稳定贴合目标点，边界清晰 */
+  const flow = 0.06 + (1 - conv) * 1.10;
+  const BND  = 70 * DPR;
+
+  for (let i = 0; i < N; i++) {
+    const x = px[i], y = py[i];
+    let vxi = vx[i], vyi = vy[i];
+    let fx = 0, fy = 0;
+    const ph = phase[i];
+
+    const ang = Math.sin(x * 0.0016 + t * 0.50 + ph) * 2.0
+              + Math.cos(y * 0.0019 - t * 0.35 + ph * 1.3) * 2.0
+              + Math.sin((x + y) * 0.0008 + t * 0.9) * 1.2;
+    fx += Math.cos(ang) * flow;
+    fy += Math.sin(ang) * flow;
+    fy -= 0.012;
+
+    if (k > 0) {
+      fx += (tx[i] - x) * k;
+      fy += (ty[i] - y) * k;
+    }
+
+    const dx = x - mouse.sx, dy = y - mouse.sy;
+    const d2 = dx * dx + dy * dy;
+    if (d2 < R2 && d2 > 0.01) {
+      const d = Math.sqrt(d2);
+      const f = 1 - d / R;
+      const ff = f * f * 46 * DPR;
+      fx += (dx / d) * ff;
+      fy += (dy / d) * ff;
+    }
+
+    if (x < BND)     fx += (BND - x) * 0.004;
+    if (x > W - BND) fx -= (x - (W - BND)) * 0.004;
+    if (y < BND)     fy += (BND - y) * 0.004;
+    if (y > H - BND) fy -= (y - (H - BND)) * 0.004;
+
+    vxi = (vxi + fx * dt) * Math.pow(DAMP, dt);
+    vyi = (vyi + fy * dt) * Math.pow(DAMP, dt);
+
+    const sp2 = vxi * vxi + vyi * vyi;
+    if (sp2 > 1600) { const s = 40 / Math.sqrt(sp2); vxi *= s; vyi *= s; }
+
+    px[i] = x + vxi * dt;
+    py[i] = y + vyi * dt;
+    vx[i] = vxi;
+    vy[i] = vyi;
+  }
+
+  /* ── 星云：柔和光雾，缓慢流动（象征宇宙） ── */
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < NN; i++) {
+    const nx = nebX[i] + Math.sin(t * nebSp[i] * 0.6  + nebPh[i])       * 76 * DPR;
+    const ny = nebY[i] + Math.cos(t * nebSp[i] * 0.45 + nebPh[i] * 1.3) * 52 * DPR;
+    const nr = nebR[i] * (0.86 + 0.14 * Math.sin(t * nebSp[i] * 0.9 + nebPh[i]));
+    ctx.globalAlpha = (scrolledAway ? 0.5 : 1) *
+                      nebA[i] * (0.6 + 0.4 * Math.sin(t * nebSp[i] * 0.7 + nebPh[i] * 2));
+    ctx.drawImage(nebSprites[nebC[i]], nx - nr, ny - nr, nr * 2, nr * 2);
+  }
+  ctx.globalAlpha = 1;
+
+  /* ── 星空：恒定微光 + 缓慢闪烁（象征宇宙） ── */
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < NS; i++) {
+    const tw = 0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * starSp[i] + starPh[i]));
+    ctx.globalAlpha = (scrolledAway ? 0.04 : 0.10) * tw;
+    ctx.fillStyle = starCol[i];
+    const sr = starR[i];
+    ctx.fillRect(starX[i] - sr * 0.5, starY[i] - sr * 0.5, sr, sr);
+  }
+
+  /* ── 绘制：粒子尺寸与采样间距挂钩，既无空隙也不模糊 ── */
+  const baseSize = Math.max(1, sampleGap * 0.98);
+  const s    = baseSize * (0.5 + conv * 0.62);   /* 汇聚时 ≈ 采样间距，填满字形 */
+  const half = s * 0.5;
+
+  ctx.globalAlpha = (0.92 + conv * 0.08);
+
+  for (let c = 0; c < CN; c++) {
+    ctx.fillStyle = PALETTE[c];
+    const s0 = colorStart[c], s1 = colorStart[c + 1];
+    for (let i = s0; i < s1; i++) {
+      ctx.fillRect(px[i] - half, py[i] - half, s, s);
+    }
+  }
+
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+
+  requestAnimationFrame(loop);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   事件
+   ══════════════════════════════════════════════════════════════ */
+function setMouse (cx, cy) {
+  mouse.x = cx * DPR;
+  mouse.y = cy * DPR;
+}
+
+window.addEventListener('mousemove', e => setMouse(e.clientX, e.clientY), { passive:true });
+window.addEventListener('touchmove', e => {
+  if (e.touches[0]) setMouse(e.touches[0].clientX, e.touches[0].clientY);
+}, { passive:true });
+
+function clearMouse () {
+  mouse.x = mouse.sx = -1e5;
+  mouse.y = mouse.sy = -1e5;
+}
+window.addEventListener('mouseleave', clearMouse);
+window.addEventListener('touchend',   clearMouse);
+window.addEventListener('touchcancel', clearMouse);
+
+window.addEventListener('pointerdown', () => {
+  if (!scrolledAway && mode !== 'morph') startNextWord('morph');
+});
+
+window.addEventListener('scroll', () => {
+  const away = window.scrollY > window.innerHeight * 0.55;
+  if (away !== scrolledAway) {
+    scrolledAway = away;
+    if (!scrolledAway) {
+      showConcept('gather');
+      k = 0;
+    }
+  }
+}, { passive:true });
+
+let resizeTimer = 0;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const oldW = W, oldH = H;
+    resize();
+    if (oldW && oldH) {
+      const sx = W / oldW, sy = H / oldH;
+      for (let i = 0; i < N; i++) { px[i] *= sx; py[i] *= sy; }
+    }
+    if (!scrolledAway) {
+      showConcept(mode === 'gather' ? 'gather' : 'hold');
+    }
+  }, 160);
+});
+
+/* ══════════════════════════════════════════════════════════════
+   启动
+   ══════════════════════════════════════════════════════════════ */
+resize();
+
+(function boot () {
+  conceptIdx = 0;
+  const c = CONCEPTS[0];
+  const s = samplePoints(c.lines);
+  resizeArrays(s.pts.length >> 1);
+  for (let i = 0; i < N; i++) {
+    px[i] = Math.random() * W;
+    py[i] = Math.random() * H;
+    phase[i] = Math.random() * Math.PI * 2;
+  }
+  setTargets(s.pts);
+  mode = 'gather';
+  modeStart = performance.now();
+  k = 0;
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   正文显影：文字进入视口时，由粒子汇聚成形，随后文字淡入
+   ══════════════════════════════════════════════════════════════ */
+(function revealSystem () {
+  const reduce = window.matchMedia &&
+                 window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const docEl = document.querySelector('.doc');
+  if (!docEl || reduce) return;
+
+  const queue = [];
+  let active = 0;
+  const MAX_ACTIVE = 2;
+
+  /* ── 采样一段文字的字形轮廓（逐字定位，兼容三种语言与两端对齐） ── */
+  function collectGlyphs (el, rect, scale) {
+    const cw = Math.max(1, Math.round(rect.width  * scale));
+    const ch = Math.max(1, Math.round(rect.height * scale));
+    const off = document.createElement('canvas');
+    off.width = cw; off.height = ch;
+    const o = off.getContext('2d', { willReadFrequently: true });
+    o.fillStyle = '#fff';
+    o.textBaseline = 'middle';
+
+    const range = document.createRange();
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    let node, count = 0;
+
+    while ((node = walker.nextNode())) {
+      const parent = node.parentElement;
+      if (!parent) continue;
+      const cs = getComputedStyle(parent);
+      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+      o.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      const text = node.nodeValue;
+      for (let i = 0; i < text.length; i++) {
+        const chr = text[i];
+        if (!chr.trim()) continue;
+        if (++count > 3200) return null;              /* 超大段落退回普通淡入 */
+        range.setStart(node, i);
+        range.setEnd(node, i + 1);
+        const r = range.getBoundingClientRect();
+        if (!r.width && !r.height) continue;
+        o.fillText(chr,
+          (r.left - rect.left) * scale,
+          (r.top + r.height / 2 - rect.top) * scale);
+      }
+    }
+
+    const data = o.getImageData(0, 0, cw, ch).data;
+    let gap = Math.max(3, Math.round(4 * scale));
+    let pts = [];
+    const MAXP = 5200;
+    for (let guard = 0; guard < 12; guard++) {
+      pts = [];
+      for (let y = 0; y < ch; y += gap) {
+        const row = y * cw;
+        for (let x = 0; x < cw; x += gap) {
+          if (data[(row + x) * 4 + 3] > 110) pts.push(x, y);
+        }
+      }
+      if (pts.length / 2 <= MAXP) break;
+      gap = Math.round(gap * 1.25) + 1;
+    }
+    return { pts, gap };
+  }
+
+  function finish (el) {
+    el.style.opacity = '1';
+    el.classList.remove('reveal');
+    el.__rstate = 'shown';
+    active--;
+    pump();
+  }
+
+  function animate (el) {
+    const rect = el.getBoundingClientRect();
+    /* 已滚出视口：直接显示，不再演示 */
+    if (rect.width < 4 || rect.height < 4 ||
+        rect.bottom < 0 || rect.top > window.innerHeight - 40) {
+      finish(el); return;
+    }
+
+    const scale = Math.max(0.42,
+      Math.min(DPR, 2, 1240 / rect.width, 1500 / rect.height));
+    const g0 = collectGlyphs(el, rect, scale);
+    if (!g0 || (g0.pts.length >> 1) < 24) { finish(el); return; }
+
+    const M  = g0.pts.length >> 1;
+    const cw = Math.round(rect.width * scale);
+    const ch = Math.round(rect.height * scale);
+    const cv2 = document.createElement('canvas');
+    cv2.className = 'reveal-fx';
+    cv2.width = cw; cv2.height = ch;
+    cv2.style.width  = rect.width  + 'px';
+    cv2.style.height = rect.height + 'px';
+    const dr = docEl.getBoundingClientRect();
+    cv2.style.left = (rect.left - dr.left) + 'px';
+    cv2.style.top  = (rect.top  - dr.top ) + 'px';
+    docEl.appendChild(cv2);
+    const g = cv2.getContext('2d');
+
+    const sx = new Float32Array(M), sy = new Float32Array(M);
+    const tx = new Float32Array(M), ty = new Float32Array(M);
+    const ph = new Float32Array(M), dl = new Float32Array(M);
+    const ci = new Uint8Array(M);
+
+    let minX = 1e9, maxX = -1e9;
+    for (let i = 0; i < M; i++) {
+      const px0 = g0.pts[i * 2], py0 = g0.pts[i * 2 + 1];
+      tx[i] = px0; ty[i] = py0;
+      if (px0 < minX) minX = px0;
+      if (px0 > maxX) maxX = px0;
+    }
+    const span = (maxX - minX) || 1;
+    const spread = Math.max(cw, ch) * 0.72;
+
+    for (let i = 0; i < M; i++) {
+      const ang = Math.random() * Math.PI * 2;
+      const rad = spread * (0.06 + Math.random() * 0.72);
+      sx[i] = Math.max(-cw * 0.10, Math.min(cw * 1.10, tx[i] + Math.cos(ang) * rad));
+      sy[i] = Math.max(-ch * 0.10, Math.min(ch * 1.10, ty[i] + Math.sin(ang) * rad));
+      ph[i] = Math.random() * Math.PI * 2;
+      dl[i] = Math.random() * 0.34;
+      ci[i] = Math.min(CN - 1, Math.floor(((tx[i] - minX) / span) * CN));
+    }
+
+    const DUR = 700, HOLD = 140, OUT = 300;
+    const t0 = performance.now();
+    const dot = Math.max(1, g0.gap * 0.86);
+    let textOn = false;
+
+    function frame (now) {
+      const e = now - t0;
+      const fade = e <= DUR + HOLD ? 1
+                 : Math.max(0, 1 - (e - DUR - HOLD) / OUT);
+
+      g.clearRect(0, 0, cw, ch);
+      g.globalCompositeOperation = 'lighter';
+
+      if (fade > 0) {
+        for (let i = 0; i < M; i++) {
+          let p = (e / DUR - dl[i]) / (1 - dl[i]);
+          if (p < 0) p = 0; else if (p > 1) p = 1;
+          const ease = 1 - Math.pow(1 - p, 3);
+          const wob  = (1 - ease) * 9 * scale;
+          const x = sx[i] + (tx[i] - sx[i]) * ease
+                  + Math.sin(ph[i] + e * 0.004) * wob;
+          const y = sy[i] + (ty[i] - sy[i]) * ease
+                  + Math.cos(ph[i] * 1.7 + e * 0.005) * wob;
+          g.globalAlpha = (0.30 + 0.62 * ease) * fade;
+          g.fillStyle = PALETTE[ci[i]];
+          g.fillRect(x - dot * 0.5, y - dot * 0.5, dot, dot);
+        }
+      }
+
+      if (!textOn && e > DUR * 0.5) {
+        textOn = true;
+        el.style.transition = 'opacity .55s ease-out';
+        el.style.opacity = '1';
+        el.classList.remove('reveal');
+      }
+
+      if (fade > 0) {
+        requestAnimationFrame(frame);
+      } else {
+        cv2.remove();
+        finish(el);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function pump () {
+    while (active < MAX_ACTIVE && queue.length) {
+      const el = queue.shift();
+      if (el.__rstate !== 'queued') continue;
+      el.__rstate = 'animating';
+      active++;
+      requestAnimationFrame(() => animate(el));
+    }
+  }
+
+  const blocks = [].slice.call(
+    document.querySelectorAll('.clause, .article, .section-head, .ending-block'));
+
+  blocks.forEach(el => {
+    el.__rstate = 'idle';
+    el.classList.add('reveal');
+  });
+
+  /* 滚动（向上或向下皆可）时扫描：进入视口即汇聚成字；
+     完全离开视口后重新待命，使再次滑入时仍有粒子汇聚效果 */
+  let ticking = false;
+  function scan () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      const vh = window.innerHeight;
+      for (let i = 0; i < blocks.length; i++) {
+        const el = blocks[i];
+        const st = el.__rstate;
+        const r = el.getBoundingClientRect();
+        if (st === 'shown') {
+          if (r.bottom < -vh * 0.28 || r.top > vh * 1.28) {
+            el.__rstate = 'idle';
+            el.classList.add('reveal');
+            el.style.opacity = '';
+            el.style.transition = '';
+          }
+        } else if (st === 'idle') {
+          if (r.top < vh * 1.02 && r.bottom > vh * 0.02) {
+            el.__rstate = 'queued';
+            queue.push(el);
+          }
+        }
+      }
+      pump();
+    });
+  }
+
+  window.addEventListener('scroll', scan, { passive: true });
+  window.addEventListener('resize', scan, { passive: true });
+  scan();
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   背景浓淡：首屏最浓 → 正文更淡 → 结尾恢复首屏浓度
+   并在正文两侧显示题记“天降生民 / natural rights…”
+   ══════════════════════════════════════════════════════════════ */
+(function atmosphere () {
+  const bgArt    = document.querySelector('.bg-art');
+  const notes    = [].slice.call(document.querySelectorAll('.side-note'));
+  const ending   = document.querySelector('.ending');
+  const articles = document.getElementById('articles');
+  if (!bgArt) return;
+
+  const HERO_OP = 0.55, BODY_OP = 0.32;
+
+  let raf = false;
+  function update () {
+    raf = false;
+    const vh = window.innerHeight;
+    const y  = window.scrollY;
+    const artTop = articles ? (articles.getBoundingClientRect().top + y) : Infinity;
+    const endTop = ending  ? (ending.getBoundingClientRect().top + y)  : Infinity;
+
+    const inEnding = y + vh * 0.55 > endTop;
+    const inBody   = !inEnding && y > vh * 0.45;
+
+    bgArt.style.opacity = String(inEnding ? HERO_OP : (inBody ? BODY_OP : HERO_OP));
+
+    const showNotes = !inEnding && (y + vh * 0.85 > artTop) && (y + vh * 0.35 < endTop);
+    for (let i = 0; i < notes.length; i++) notes[i].classList.toggle('show', showNotes);
+  }
+
+  function onScroll () {
+    if (raf) return;
+    raf = true;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   读者参与层 · 我的权利清单
+   三十条读到最后，如果读者一条都没有留下，那这就只是一篇文章。
+   读者可以逐条记下「与我有关」的那些，清单随阅读累积，可复制、可打印。
+   —— 清单只存在读者自己的浏览器里，不上传、不统计。
+   ══════════════════════════════════════════════════════════════ */
+(function rights () {
+  const KEY = 'udhr.myRights.v1';
+  const aWrap = document.getElementById('articles');
+  if (!aWrap) return;
+
+  /* localStorage 在 file:// 或隐私模式下可能直接抛错，因此做一层内存兜底 */
+  const mem = {};
+  const store = {
+    get (k) {
+      try { return window.localStorage.getItem(k); }
+      catch (e) { return Object.prototype.hasOwnProperty.call(mem, k) ? mem[k] : null; }
+    },
+    set (k, v) {
+      try { window.localStorage.setItem(k, v); } catch (e) { mem[k] = v; }
+    }
+  };
+
+  const marked = new Set();
+  const toCn = n => CN_NUM[n] || String(n);
+
+  function load () {
+    try {
+      const raw = store.get(KEY);
+      if (!raw) return;
+      const arr = JSON.parse(raw);
+      if (Array.isArray(arr)) arr.forEach(n => { if (NOTES[n]) marked.add(Number(n)); });
+    } catch (e) { /* 数据损坏时静默重来，不打扰读者 */ }
+  }
+  function save () {
+    try { store.set(KEY, JSON.stringify(Array.from(marked).sort((a, b) => a - b))); }
+    catch (e) {}
+  }
+
+  /* ── DOM：浮条 / 清单 / 提示 ── */
+  const bar    = document.getElementById('rightsBar');
+  const countE = document.getElementById('rightsCount');
+  const dlg    = document.getElementById('rightsSheet');
+  const bodyE  = document.getElementById('sheetBody');
+  const hintE  = document.getElementById('sheetHint');
+  const toastE = document.getElementById('toast');
+
+  let toastTimer = 0;
+  function toast (msg) {
+    if (!toastE) return;
+    toastE.textContent = msg;
+    toastE.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastE.classList.remove('on'), 2000);
+  }
+
+  /* ── 标记状态 ── */
+  function applyMark (n, on) {
+    const art = document.getElementById('art-' + n);
+    if (!art) return;
+    art.classList.toggle('marked', on);
+    const btn = art.querySelector('.mark-btn');
+    if (btn) {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const lbl = btn.querySelector('.lbl');
+      if (lbl) lbl.textContent = on ? '已记下 · 与我有关' : '这一条，与我有关';
+    }
+  }
+
+  function toggle (n) {
+    if (marked.has(n)) marked.delete(n); else marked.add(n);
+    const on = marked.has(n);
+    applyMark(n, on);
+    save(); refresh();
+    toast(on ? '已记下 · 第' + toCn(n) + '条' : '已取消 · 第' + toCn(n) + '条');
+    if (dlg && dlg.open) renderSheet();
+  }
+
+  function refresh () {
+    const size = marked.size;
+    if (countE) countE.innerHTML = '<b>' + size + '</b>条被你记下';
+    if (bar) bar.classList.toggle('on', size > 0);
+  }
+
+  function listHtml () {
+    const ns = Array.from(marked).sort((a, b) => a - b);
+    if (!ns.length) {
+      return '<p class="empty">你还没有记下任何一条。<br>' +
+             '往上读，遇到让你停顿的那一句，点一下条文下方的「这一条，与我有关」。<br>' +
+             '清单只保存在你自己的浏览器里，不上传，也不会有别人看到。</p>';
+    }
+    return ns.map(n => {
+      const raw = document.getElementById('art-' + n);
+      const cn = raw ? raw.dataset.cn : '';
+      const en = raw ? raw.dataset.en : '';
+      return '<div class="pick">' +
+          '<span class="no">第' + toCn(n) + '条</span>' +
+          '<span class="txt" lang="zh-Hans">' + cn +
+            '<span class="en" lang="en">' + en + '</span>' +
+          '</span>' +
+          '<button type="button" class="drop" data-drop="' + n + '">去掉</button>' +
+        '</div>';
+    }).join('');
+  }
+
+  function renderSheet () {
+    if (bodyE) bodyE.innerHTML = listHtml();
+    if (hintE) {
+      hintE.textContent = marked.size
+        ? '共 ' + marked.size + ' 条。这张清单只属于你，可以复制带走，也可以打印出来贴在看得见的地方。'
+        : '点选条文下方的「这一条，与我有关」，清单会随阅读累积。';
+    }
+  }
+
+  function openSheet () {
+    renderSheet();
+    if (!dlg) return;
+    if (typeof dlg.showModal === 'function') {
+      if (!dlg.open) dlg.showModal();
+    } else {
+      dlg.setAttribute('open', '');
+    }
+  }
+  function closeSheet () {
+    if (!dlg) return;
+    if (typeof dlg.close === 'function') { if (dlg.open) dlg.close(); }
+    else dlg.removeAttribute('open');
+  }
+
+  /* ── 导出为纯文字 ── */
+  function asText () {
+    const ns = Array.from(marked).sort((a, b) => a - b);
+    const head = [
+      '我的权利清单',
+      '《世界人权宣言》 · 一九四八年十二月十日通过',
+      '共 ' + ns.length + ' 条',
+      '',
+      '——这不是一份收藏，而是一次清点：在这三十条里，',
+      '哪些是我此刻最不愿失去的。',
+      ''
+    ];
+    const items = ns.map(n => {
+      const raw = document.getElementById('art-' + n);
+      const cn = raw ? raw.dataset.cn : '';
+      const tw = raw ? raw.dataset.tw : '';
+      const en = raw ? raw.dataset.en : '';
+      return ['第' + toCn(n) + '条', cn, tw && tw !== cn ? tw : '', en, '']
+        .filter(l => l !== '').join('\n');
+    });
+    return head.concat(items).join('\n');
+  }
+
+  async function copyText () {
+    const text = asText();
+    let ok = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        ok = true;
+      }
+    } catch (e) { ok = false; }
+    if (!ok) {
+      /* 退回可选中文本：让读者自己复制 */
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      ta.remove();
+    }
+    toast(ok ? '已复制到剪贴板' : '请手动复制（浏览器未允许自动复制）');
+  }
+
+  /* ── 事件 ── */
+  aWrap.addEventListener('click', e => {
+    const btn = e.target.closest ? e.target.closest('.mark-btn') : null;
+    if (!btn) return;
+    toggle(Number(btn.dataset.mark));
+  });
+
+  if (bar) {
+    bar.addEventListener('click', e => {
+      const open  = e.target.closest ? e.target.closest('#rightsOpen')  : null;
+      const reset = e.target.closest ? e.target.closest('#rightsReset') : null;
+      if (open) openSheet();
+      if (reset) {
+        marked.clear(); save();
+        /* 逐条复位：不依赖复合选择器，兼容性更稳 */
+        aWrap.querySelectorAll('.article').forEach(el => {
+          if (el.classList.contains('marked')) applyMark(Number(el.dataset.n), false);
+        });
+        refresh(); renderSheet();
+        toast('清单已清空');
+      }
+    });
+  }
+
+  if (dlg) {
+    dlg.addEventListener('click', e => {
+      const drop = e.target.closest ? e.target.closest('.drop') : null;
+      if (drop) { toggle(Number(drop.dataset.drop)); return; }
+      if (e.target.closest && e.target.closest('#sheetClose, #sheetDone')) closeSheet();
+    });
+    dlg.addEventListener('close', () => { if (bar) bar.focus(); });
+  }
+  const copyBtn = document.getElementById('sheetCopy');
+  if (copyBtn) copyBtn.addEventListener('click', copyText);
+  const printBtn = document.getElementById('sheetPrint');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      closeSheet();
+      toast('已打开打印视图 · 可存为 PDF');
+      setTimeout(() => { try { window.print(); } catch (e) {} }, 240);
+    });
+  }
+
+  /* ── 恢复上次的清单 ── */
+  load();
+  marked.forEach(n => applyMark(n, true));
+  refresh();
+
+  /* 首次到访：三秒后轻轻告诉读者可以做什么 */
+  let firstTime = false;
+  try {
+    firstTime = !store.get('udhr.seen.v1');
+    if (firstTime) store.set('udhr.seen.v1', '1');
+  } catch (e) {}
+  if (firstTime) setTimeout(() => toast('读到某一条时，可以点它下方的「与我有关」'), 3200);
+
+  window.__myRights = { asText: asText, open: openSheet };
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   1948.12.10 → 今天：同一句话，已经过去了多少天
+   ══════════════════════════════════════════════════════════════ */
+(function sinceAdoption () {
+  const el = document.getElementById('daysNum');
+  if (!el) return;
+  const adopted = Date.UTC(1948, 11, 10);
+  function tick () {
+    const now = new Date();
+    const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    el.textContent = Math.floor((today - adopted) / 86400000).toLocaleString('en-US');
+  }
+  tick();
+  setInterval(tick, 60000);
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   阅读进度：页首那一线，是读到了第几分之几
+   ══════════════════════════════════════════════════════════════ */
+(function readProgress () {
+  const barEl = document.querySelector('.read-progress');
+  const fill = document.getElementById('readFill');
+  if (!barEl || !fill) return;
+  let raf = false;
+  function update () {
+    raf = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    fill.style.width = (p * 100).toFixed(2) + '%';
+    barEl.classList.toggle('on', window.scrollY > 40);
+  }
+  window.addEventListener('scroll', () => {
+    if (raf) return;
+    raf = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+
+requestAnimationFrame(loop);
+
+})();
+</script>
+
+<div class="doc-link-fixed-group">
+<a class="doc-link-fixed" href="../index.html" title="回到三部文献首页"><b>三部文献</b> 首页</a>
+<a class="doc-link-fixed" href="../magna-carta/" title="英国大宪章 · 三语对照"><b>大宪章</b> 1215</a>
+<a class="doc-link-fixed second" href="../declaration/" title="美国独立宣言 · 三语对照"><b>独立宣言</b> 1776</a>
+</div>
+</body>
+</html>
