@@ -1,0 +1,29 @@
+{
+  "name": "世界人权宣言",
+  "short_name": "人权宣言",
+  "description": "世界人权宣言 · 离线可读",
+  "lang": "zh-CN",
+  "start_url": "/UDHR/",
+  "scope": "/UDHR/",
+  "display": "standalone",
+  "background_color": "#0b131b",
+  "theme_color": "#0b131b",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
